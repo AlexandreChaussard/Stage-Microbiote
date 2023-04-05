@@ -1,5 +1,5 @@
 from src.data.dataloader import generate_gaussian
-from src.model.EM import GaussianMixture
+from src.model import GaussianMixture
 import src.utils.viz as viz
 
 

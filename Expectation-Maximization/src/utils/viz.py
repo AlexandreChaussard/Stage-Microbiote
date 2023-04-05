@@ -3,9 +3,9 @@ import numpy as np
 from src.utils.distribution import pdf_gaussian
 
 
-def plot_2d_gaussians_samples(X, y):
+def plot_2d_gaussians_samples(X, y, subtitle=""):
     fig, axs = plt.subplots()
-    fig.suptitle("Gaussian samples")
+    fig.suptitle(f"Gaussian samples \n{subtitle}")
 
     labels = np.unique(y)
     for label in labels:
