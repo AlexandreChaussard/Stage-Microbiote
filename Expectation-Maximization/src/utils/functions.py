@@ -11,3 +11,9 @@ def binary_cross_entropy(y_hat, y):
 
 def derivative_binary_cross_entropy(y_hat, y, X):
     return X.T @ (y_hat.reshape(-1, 1) - y.reshape(-1, 1))
+
+
+def onehot(i, size):
+    v = np.zeros(size)
+    v[i] = 1
+    return v

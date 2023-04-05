@@ -35,6 +35,10 @@ class EMAbstract(ABC):
     def maximization_step(self, expectations):
         pass
 
+    @abstractmethod
+    def predict_proba(self, X):
+        pass
+
     def train(self, n_steps, printEvery=-1):
         for _ in range(n_steps):
             # Expectation step then maximization step using the output of the expectation if it has one
@@ -65,7 +69,6 @@ class GaussianMixture(EMAbstract):
         self.sigma = np.abs(0.5 * np.random.randn(z_dim))
         # generate a uniform simplex vector for pi
         self.pi = np.ones(z_dim) / z_dim
-        print(self.mu, self.sigma)
 
     def predict_proba(self, X):
         # Predict the probability for X to belong to a given gaussian P(Z = c | X)
