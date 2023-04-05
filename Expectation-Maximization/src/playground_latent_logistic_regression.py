@@ -2,7 +2,7 @@ from src.data.dataloader import generate_gaussian
 from src.model import LatentLogisticRegression, GaussianMixture
 from src.utils.viz import plot_2d_gaussians_samples
 
-mu_list = [-0.1, 0.3]
+mu_list = [-0.1, 0.5]
 sigma_list = [0.1, 0.2]
 
 X, y = generate_gaussian(
@@ -21,7 +21,7 @@ X_test, y_test = X[n_train:], y[n_train:]
 latent_model = GaussianMixture(z_dim=2, seed=0)
 latent_model.fit(X)
 latent_model.train(
-    n_steps=10,
+    n_steps=100,
     printEvery=10
 )
 
