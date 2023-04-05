@@ -8,12 +8,15 @@ class EMAbstract(ABC):
     Abstract class for the EM implementations
     """
 
-    def __init__(self, pdf, z_dim):
+    def __init__(self, pdf, z_dim, seed=None):
+        # Seed the environment
+        np.random.seed(seed)
+
         # We first give ourselves a family of conditional distributions p_cond which modelizes
         # P_theta (X|Z)
         # Which is parameterized by theta (parameters to be learnt)
         # In the gaussian mixture case, it corresponds to the family of multivariate gaussians
-        self.p_cond = pdf_gaussian
+        self.p_cond = pdf
 
         # We define the size of the hidden states that would determine X
         # We decide that Z is discrete
@@ -50,15 +53,17 @@ class GaussianMixture(EMAbstract):
     The dependence model is the most simple as each Z is independent from the others conditionally to its respective Y.
     """
 
-    def __init__(self, z_dim, mu_list, sigma_list, distrib_list):
-        super().__init__(pdf_gaussian, z_dim)
+    def __init__(self, z_dim, seed=None):
+        super().__init__(pdf_gaussian, z_dim, seed)
 
         # We define the initialization of the parameter the EM algorithm
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
-        self.mu = mu_list
-        self.sigma = sigma_list
-        self.pi = distrib_list
+        self.mu = np.random.randn(z_dim)
+        self.sigma = np.abs(0.5 * np.random.randn(z_dim))
+        # generate a uniform simplex vector for pi
+        self.pi = np.ones(z_dim) / z_dim
+        print(self.mu, self.sigma)
 
     def expectation_step(self):
         expectations = []

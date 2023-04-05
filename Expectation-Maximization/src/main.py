@@ -8,10 +8,6 @@ def __main__():
     mu_list = [0.3, -0.7]
     sigma_list = [0.1, 0.4]
 
-    mu_0 = [0.6, 0.3]
-    sigma_0 = [1.2, 0.8]
-    pi_0 = [1/len(mu_0)]*len(mu_0)
-
     X, y = generate_gaussian(
         n_samples=100,
         d=1,
@@ -21,9 +17,7 @@ def __main__():
 
     gmm = GaussianMixture(
         z_dim=2,
-        mu_list=mu_0,
-        sigma_list=sigma_0,
-        distrib_list=pi_0
+        seed=0
     )
 
     gmm.fit(X)
