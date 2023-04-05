@@ -1,7 +1,6 @@
-from src.dataloader import generate_gaussian
-from src.EM import GaussianMixture
-import src.viz as viz
-import matplotlib.pyplot as plt
+from src.data.dataloader import generate_gaussian
+from src.model.EM import GaussianMixture
+import src.utils.viz as viz
 
 
 def __main__():

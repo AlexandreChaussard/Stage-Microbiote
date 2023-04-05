@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from src.distribution import pdf_gaussian
+from src.utils.distribution import pdf_gaussian
 
 
 def plot_2d_gaussians_samples(X, y):
