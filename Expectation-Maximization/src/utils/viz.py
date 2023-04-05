@@ -39,7 +39,7 @@ def plot_1d_gaussian_samples_with_pdf(X, y, mu_list, sigma_list, n_bins, subtitl
         indexes = np.where(y == label)
         axs.hist(X[indexes], bins=n_bins, alpha=0.5, color="C0")
 
-    abscisse = np.linspace(np.min(X), np.max(X), 200)
+    abscisse = np.linspace(np.min(X), np.max(X), 200).reshape([-1, 1])
     for i in range(len(mu_list)):
         mu = mu_list[i]
         sigma = sigma_list[i]

@@ -131,4 +131,4 @@ class LatentLogisticRegression(BinaryClassifier):
             # Compute the probability
             proba[i] = sigmoid(self.W_e.squeeze().dot(embedding) + self.W_x.squeeze().dot(x))
 
-        return proba.reshape(-1, 1), np.array(E)
+        return proba.reshape(-1, 1)

@@ -21,7 +21,7 @@ X_test, y_test = X[n_train:], y[n_train:]
 latent_model = GaussianMixture(z_dim=2, seed=0)
 latent_model.fit(X)
 latent_model.train(
-    n_steps=100,
+    n_steps=10,
     printEvery=10
 )
 

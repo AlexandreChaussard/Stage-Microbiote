@@ -65,8 +65,8 @@ class GaussianMixture(EMAbstract):
         # We define the initialization of the parameter the EM algorithm
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
-        self.mu = np.random.randn(z_dim)
-        self.sigma = np.abs(0.5 * np.random.randn(z_dim))
+        self.mu = np.random.randn(z_dim).tolist()
+        self.sigma = np.abs(0.5 * np.random.randn(z_dim)).tolist()
         # generate a uniform simplex vector for pi
         self.pi = np.ones(z_dim) / z_dim
 
