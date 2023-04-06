@@ -44,7 +44,7 @@ for k, mu in enumerate(benchmark_mu):
     X_train, y_train, X_test, y_test = get_train_test(X, y, n_train)
 
     # Learn the latent model first
-    latent_model = GaussianMixture(z_dim=2, seed=0)
+    latent_model = GaussianMixture(z_dim=2, seed=1)
     latent_model.fit(X)
     latent_model.train(
         n_steps=30,

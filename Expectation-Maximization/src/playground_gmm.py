@@ -49,4 +49,4 @@ def case_2d():
     viz.plot_2d_gaussians_samples_with_pdf(X, y, mu=gmm.mu, sigma=gmm.sigma, subtitle="(estimated)")
 
 
-case_1d()
+case_2d()

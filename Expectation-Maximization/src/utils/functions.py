@@ -6,7 +6,7 @@ def sigmoid(x):
 
 
 def binary_cross_entropy(y_hat, y):
-    return -(y * np.log(y_hat) + (1 - y) * np.log(1 - y_hat)).mean()
+    return np.mean(y * np.log(y_hat) + (1 - y) * np.log(1 - y_hat))
 
 
 def derivative_binary_cross_entropy(y_hat, y, X):
