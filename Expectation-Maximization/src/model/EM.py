@@ -45,9 +45,6 @@ class EMAbstract(ABC):
             self.maximization_step(self.expectation_step())
             if printEvery > 0 and _ % printEvery == 0:
                 print(f"[*] EM ({_}/{n_steps})")
-
-        self.expectation_step()
-
         return self
 
 
@@ -62,13 +59,16 @@ class GaussianMixture(EMAbstract):
     def __init__(self, z_dim, seed=None):
         super().__init__(pdf_gaussian, z_dim, seed)
 
+    def fit(self, X):
+        super().fit(X)
+
         # We define the initialization of the parameter the EM algorithm
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
-        self.mu = np.random.randn(z_dim).tolist()
-        self.sigma = np.abs(0.5 * np.random.randn(z_dim)).tolist()
+        self.mu = np.random.randn(self.z_dim, X.shape[1])
+        self.sigma = 0.1 * np.random.randn(self.z_dim, X.shape[1]) ** 2
         # generate a uniform simplex vector for pi
-        self.pi = np.ones(z_dim) / z_dim
+        self.pi = np.ones(self.z_dim) / self.z_dim
 
     def predict_proba(self, X):
         # Predict the probability for X to belong to a given gaussian P(Z = c | X)

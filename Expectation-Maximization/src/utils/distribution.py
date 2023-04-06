@@ -12,4 +12,5 @@ def pdf_gaussian(x, mu, sigma):
     else:
         mu_list = mu
         sigma_matrix = np.diag(sigma)
-    return stats.multivariate_normal(mean=mu_list, cov=sigma_matrix ** 2).pdf(x)
+    eval = stats.multivariate_normal(mean=mu_list, cov=sigma_matrix**2).pdf(x)
+    return eval
