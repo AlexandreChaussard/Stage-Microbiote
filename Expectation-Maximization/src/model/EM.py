@@ -73,23 +73,16 @@ class GaussianMixture(EMAbstract):
     def predict_proba(self, X):
         # Predict the probability for X to belong to a given gaussian P(Z = c | X)
         # matrix of proba of size n x z_dim
-        probas = []
-        for x in X:
-            proba_belonging = [self.p_cond(x, self.mu[c], self.sigma[c]) for c in range(self.z_dim)]
-            probas.append(proba_belonging)
-        return np.array(probas)
 
-    def expectation_step(self):
+        # List of probabilities of belonging to a given gaussian
         expectations = []
 
-        # At this stage, we evaluate the probability of each sample to belong to a given gaussian
-        # as P(Z = c | X), and we normalize it by the sum of the proba of belonging to any gaussian
-        for x in self.X:
+        for x in X:
             sum_distrib = 0
             for c in range(self.z_dim):
                 sum_distrib += self.pi[c] * self.p_cond(x, self.mu[c], self.sigma[c])
 
-            # List of probabilities of belonging to a given gaussian normalized
+            # List of probabilities of belonging to a given gaussian for a unique sample in X
             proba_belonging = np.zeros(self.z_dim)
             for c in range(self.z_dim):
                 proba_belonging[c] = self.pi[c] * self.p_cond(x, self.mu[c], self.sigma[c]) / sum_distrib
@@ -97,6 +90,11 @@ class GaussianMixture(EMAbstract):
             expectations.append(proba_belonging)
 
         return np.array(expectations)
+
+    def expectation_step(self):
+        # At this stage, we evaluate the probability of each sample to belong to a given gaussian
+        # as P(Z = c | X)
+        return self.predict_proba(self.X)
 
     def maximization_step(self, expectations):
         # In the maximization step, we update the parameters of the gaussian mixture

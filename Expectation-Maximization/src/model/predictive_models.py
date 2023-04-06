@@ -75,10 +75,11 @@ class LatentLogisticRegression(BinaryClassifier):
     Simple logistic regression with latent conditioning
     """
 
-    def __init__(self, latent_model: EMAbstract):
+    def __init__(self, latent_model: EMAbstract, embedding_strategy="onehot"):
         self.W_x = None
         self.W_e = None
         self.latent_model = latent_model
+        self.embedding_strategy = embedding_strategy
 
     def fit(self, X, y):
         super().fit(X, y)
@@ -110,13 +111,19 @@ class LatentLogisticRegression(BinaryClassifier):
     def embed(self, X):
         # This function is meant to embed the matrix X using its latent module Z
         E = []
-        for x in X:
+        latent_probas = self.latent_model.predict_proba(X)
+        for i, x in enumerate(X):
             # Build the embedding representation of X by determining Z from X
             # Then attach a latent model to each sample of X to be onehot encoded for instance
             # which forms the embedding
-            latent_proba = self.latent_model.predict_proba(x)
-            attached_latent_label = np.argmax(latent_proba, axis=1).squeeze()
-            embedding = onehot(attached_latent_label, self.latent_model.z_dim)
+            latent_proba = latent_probas[i]
+            if self.embedding_strategy == "probability":
+                # Embedding using the probability of belonging to each gaussian
+                embedding = latent_proba
+            else:
+                # Default strategy is onehot embedding
+                attached_latent_label = np.argmax(latent_proba, axis=1).squeeze()
+                embedding = onehot(attached_latent_label, self.latent_model.z_dim)
             E.append(embedding)
         return np.array(E)
 
