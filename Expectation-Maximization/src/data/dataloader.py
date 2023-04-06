@@ -5,7 +5,7 @@ def generate_gaussian(n_samples, d, mu_list, sigma_list):
     X = []
     Y = []
     mu_list = np.array(mu_list)
-    if (d > 1 and type(mu_list[0]) != np.ndarray) or d != mu_list.shape[1]:
+    if (d > 1 and type(mu_list[0]) != np.ndarray) or (len(mu_list) > 1 and d != mu_list.shape[1]):
         print(f"Dimension error: d = {d} but mu is of shape {mu_list.shape}")
         return
 
@@ -22,3 +22,12 @@ def generate_gaussian(n_samples, d, mu_list, sigma_list):
 
     Y = Y.reshape(-1)
     return X, Y
+
+
+def get_train_test(X, y, n_train):
+    indexes = np.arange(0, len(X), 1)
+    np.random.shuffle(indexes)
+
+    X_train, y_train = X[indexes[:n_train]], y[indexes[:n_train]]
+    X_test, y_test = X[indexes[n_train:]], y[indexes[n_train:]]
+    return X_train, y_train, X_test, y_test

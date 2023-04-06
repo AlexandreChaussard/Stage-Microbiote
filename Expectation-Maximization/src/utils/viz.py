@@ -30,7 +30,7 @@ def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle=""):
     X_contour, Y_contour = np.meshgrid(abscisse, ordonnee)
     pos = np.dstack((X_contour, Y_contour))
     Z_contour = None
-    for i in range(len(labels)):
+    for i in range(len(mu)):
         Z = pdf_gaussian(pos, np.array(mu[i]), sigma[i])
         if Z_contour is not None:
             Z_contour += Z

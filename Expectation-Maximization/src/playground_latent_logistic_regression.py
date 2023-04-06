@@ -1,9 +1,10 @@
-from src.data.dataloader import generate_gaussian
+from src.data.dataloader import generate_gaussian, get_train_test
 from src.model import LatentLogisticRegression, GaussianMixture
 from src.utils.viz import plot_2d_gaussians_samples, plot_2d_gaussians_samples_with_pdf
 
-mu_list = [[-0.1, -0.2], [0.5, 0.6]]
-sigma_list = [[0.1, 0.12], [0.2, 0.1]]
+
+mu_list = [[-0.1, -0.2], [-0.2, -0.1]]
+sigma_list = [[0.1, 0.15], [0.2, 0.1]]
 
 X, y = generate_gaussian(
     n_samples=200,
@@ -13,22 +14,20 @@ X, y = generate_gaussian(
 )
 
 n_train = 100
-
-X_train, y_train = X[:n_train], y[:n_train]
-X_test, y_test = X[n_train:], y[n_train:]
+X_train, y_train, X_test, y_test = get_train_test(X, y, n_train)
 
 # Learn the latent model first
 latent_model = GaussianMixture(z_dim=2, seed=0)
 latent_model.fit(X)
 latent_model.train(
-    n_steps=20,
+    n_steps=60,
     printEvery=10
 )
 
 # Then perform a logistic regression that uses the latent model structure
 model = LatentLogisticRegression(
     latent_model=latent_model,
-    embedding_strategy="probability"
+    embedding_strategy="onehot"
 )
 model.fit(X_train, y_train)
 model.train(

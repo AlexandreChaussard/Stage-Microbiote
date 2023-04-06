@@ -117,15 +117,19 @@ class LatentLogisticRegression(BinaryClassifier):
             # Then attach a latent model to each sample of X to be onehot encoded for instance
             # which forms the embedding
             latent_proba = latent_probas[i]
-            if self.embedding_strategy == "probability":
+            if self.embedding_strategy is None:
+                # If we don't have an embedding strategy, we set the embed vector to its null representation
+                embedding = np.zeros(self.latent_model.z_dim)
+            elif self.embedding_strategy == "probability":
                 # Embedding using the probability of belonging to each gaussian
                 embedding = latent_proba
             else:
                 # Default strategy is onehot embedding
-                attached_latent_label = np.argmax(latent_proba, axis=1).squeeze()
+                attached_latent_label = np.argmax(latent_proba).squeeze()
                 embedding = onehot(attached_latent_label, self.latent_model.z_dim)
             E.append(embedding)
-        return np.array(E)
+        E = np.array(E)
+        return E
 
     def predict_proba(self, X):
         proba = np.zeros(X.shape[0])
