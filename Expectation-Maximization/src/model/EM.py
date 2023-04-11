@@ -1,7 +1,11 @@
 from abc import ABC, abstractmethod
 import numpy as np
+from scipy.special import logsumexp
+
 from src.utils.distribution import pdf_gaussian
 from src.utils.functions import sigmoid, onehot
+
+from sklearn.cluster import KMeans
 
 
 class EMAbstract(ABC):
@@ -12,6 +16,7 @@ class EMAbstract(ABC):
     def __init__(self, pdf, z_dim, seed=None):
         # Seed the environment
         np.random.seed(seed)
+        self.seed = seed
 
         # We first give ourselves a family of conditional distributions p_cond which modelizes
         # P_theta (X|Z)
@@ -63,11 +68,13 @@ class GaussianMixture(EMAbstract):
     def fit(self, X, y=None):
         super().fit(X)
 
+        kmean = KMeans(n_clusters=self.z_dim, random_state=self.seed).fit(X)
+
         # We define the initialization of the parameter the EM algorithm
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
-        self.mu = np.random.randn(self.z_dim, X.shape[1])
-        self.sigma = 0.1 * np.random.randn(self.z_dim, X.shape[1]) ** 2
+        self.mu = kmean.cluster_centers_
+        self.sigma = 0.1 * np.random.randn(self.z_dim, X.shape[1])**2
         # generate a uniform simplex vector for pi
         self.pi = np.ones(self.z_dim) / self.z_dim
 
@@ -79,18 +86,17 @@ class GaussianMixture(EMAbstract):
         expectations = []
 
         for x in X:
-            sum_distrib = 0
-            for c in range(self.z_dim):
-                sum_distrib += self.pi[c] * self.p_cond(x, self.mu[c], self.sigma[c])
 
             # List of probabilities of belonging to a given gaussian for a unique sample in X
             proba_belonging = np.zeros(self.z_dim)
             for c in range(self.z_dim):
-                proba_belonging[c] = self.pi[c] * self.p_cond(x, self.mu[c], self.sigma[c]) / sum_distrib
+                proba_belonging[c] = np.log(self.pi[c]) + np.log(self.p_cond(x, self.mu[c], self.sigma[c]))
 
+            proba_belonging -= logsumexp(proba_belonging)
             expectations.append(proba_belonging)
 
-        return np.array(expectations)
+        expectations = np.array(np.exp(expectations))
+        return expectations
 
     def expectation_step(self):
         # At this stage, we evaluate the probability of each sample to belong to a given gaussian
@@ -103,19 +109,15 @@ class GaussianMixture(EMAbstract):
         # as part of the exponential family
         for c in range(self.z_dim):
 
-            N_c = expectations[:, c].sum()
-            sum_mu = 0
-            sum_sigma = 0
-            for i, x in enumerate(self.X):
-                sum_mu += x * expectations[i][c]
-                sum_sigma += (x - self.mu[c]) ** 2 * expectations[i][c]
+            t_ic = expectations[:, c].reshape(-1, 1)
+            N_c = t_ic.sum()
 
             # Update of pi_c
-            self.pi[c] = np.mean(expectations[:, c])
+            self.pi[c] = np.mean(t_ic)
             # update of mu_c
-            self.mu[c] = sum_mu / N_c
+            self.mu[c] = np.sum(self.X * t_ic, axis=0) / N_c
             # update of sigma_c
-            self.sigma[c] = np.sqrt(sum_sigma / N_c)
+            self.sigma[c] = np.sqrt(np.sum((self.X - self.mu[c])**2 * t_ic, axis=0) / N_c)
 
 
 class GaussianMixtureClassifier(EMAbstract):
@@ -131,9 +133,10 @@ class GaussianMixtureClassifier(EMAbstract):
     The strategy to build e_k is through onehot encoding: k -> [0,..., 1, 0, ..., 0] at k-th position
     """
 
-    def __init__(self, z_dim, learning_rate=0.1, seed=None):
+    def __init__(self, z_dim, learning_rate=0.1, n_iter=100, seed=None):
         super().__init__(pdf_gaussian, z_dim, seed)
         self.learning_rate = learning_rate
+        self.n_iter = n_iter
 
     def fit(self, X, y=None):
         super().fit(X)
@@ -170,19 +173,18 @@ class GaussianMixtureClassifier(EMAbstract):
         # List of probabilities of belonging to a given gaussian
         expectations = []
 
-        for x in X:
-            sum_distrib = 0
-            for c in range(self.z_dim):
-                sum_distrib += self.pi[c] \
-                               * self.classifier_predict(c, x) \
-                               * self.p_cond(x, self.mu[c], self.sigma[c])
+        for i, x_i in enumerate(X):
+            y_i = self.y[i]
 
-            # List of probabilities of belonging to a given gaussian for a unique sample in X
+            # List of probabilities of belonging to a given gaussian for a unique sample in X (t_ik)
             proba_belonging = np.zeros(self.z_dim)
             for c in range(self.z_dim):
+                y_hat = self.classifier_predict(c, x_i)
                 proba_belonging[c] = self.pi[c] \
-                                     * self.classifier_predict(c, x) \
-                                     * self.p_cond(x, self.mu[c], self.sigma[c]) / sum_distrib
+                                     * y_i * y_hat + (1 - y_i) * (1 - y_hat) \
+                                     * self.p_cond(x_i, self.mu[c], self.sigma[c])
+
+            proba_belonging /= proba_belonging.sum()
 
             expectations.append(proba_belonging)
 
@@ -214,11 +216,15 @@ class GaussianMixtureClassifier(EMAbstract):
             self.sigma[c] = np.sqrt(sum_sigma / N_c)
 
             # update the classification parameters
-            dW_e = 0
-            dW_x = 0
-            for i, y in enumerate(self.y):
-                dW_e += (y - self.classifier_predict(c, self.X[i])) * expectations[i][c] * self.embed(c)
-                dW_x += (y - self.classifier_predict(c, self.X[i])) * expectations[i][c] * self.X[i]
+            for _ in range(self.n_iter):
+                dW_e = 0
+                dW_x = 0
+                for i, y_i in enumerate(self.y):
+                    x_i = self.X[i]
+                    y_hat = self.classifier_predict(c, x_i)
 
-            self.W_e[c] = self.W_e[c] + self.learning_rate * dW_e
-            self.W_x[c] = self.W_x[c] + self.learning_rate * dW_x
+                    dW_e += (y_i - y_hat) * expectations[i][c] * self.embed(c)
+                    dW_x += (y_i - y_hat) * expectations[i][c] * x_i
+
+                self.W_e[c] = self.W_e[c] + self.learning_rate * dW_e
+                self.W_x[c] = self.W_x[c] + self.learning_rate * dW_x

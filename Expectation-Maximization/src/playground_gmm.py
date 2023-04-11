@@ -20,14 +20,14 @@ def case_1d():
     )
 
     gmm.fit(X)
-    gmm.train(n_steps=10, printEvery=10)
+    gmm.train(n_steps=100, printEvery=10)
 
     viz.plot_1d_gaussian_samples_with_pdf(X, y, mu_list=mu_list, sigma_list=sigma_list, n_bins=20, subtitle="(truth)")
     viz.plot_1d_gaussian_samples_with_pdf(X, y, mu_list=gmm.mu, sigma_list=gmm.sigma, n_bins=20, subtitle="(estimated)")
 
 
 def case_2d():
-    mu_list = [[-0.1, -0.2], [-0.1, -0.3]]
+    mu_list = [[-0.1, -0.2], [0.2, 0.3]]
     sigma_list = [[0.1, 0.15], [0.2, 0.1]]
 
     X, y = generate_gaussian(
@@ -49,4 +49,4 @@ def case_2d():
     viz.plot_2d_gaussians_samples_with_pdf(X, y, mu=gmm.mu, sigma=gmm.sigma, subtitle="(estimated)")
 
 
-case_1d()
+case_2d()

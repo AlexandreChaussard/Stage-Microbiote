@@ -17,3 +17,19 @@ def onehot(i, size):
     v = np.zeros(size)
     v[i] = 1
     return v
+
+
+def identify_permutation(v1, v2):
+    """
+    Function to identify the permutation vector from v1 to v2.
+    Example:
+        identify([-1,2], [2,-1])
+    Output:
+        [1, 0]
+    """
+    permutation = [1, 0]
+    dist = np.linalg.norm(v1 - v2)
+    if np.linalg.norm(v1 - v2[permutation]) < dist:
+        return permutation
+    else:
+        return [0, 1]
