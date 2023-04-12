@@ -160,11 +160,14 @@ class GaussianMixtureClassifier(EMAbstract):
     def embed(self, c):
         return onehot(c, self.z_dim)
 
-    def classifier_predict(self, c, x):
+    def classifier_predict_proba(self, k, x, W_e=None, W_x=None):
+        if W_e is None or W_x is None:
+            W_e = self.W_e
+            W_x = self.W_x
         # First we onehot the class to turn it into an embedding vector
-        e = self.embed(c)
+        e = self.embed(k)
         # then we compute P(Y = 1 | X, Z = k)
-        return sigmoid(self.W_e[c].dot(e) + self.W_x[c].dot(x))
+        return sigmoid(W_e[k].dot(e) + W_x[k].dot(x))
 
     def predict_proba(self, X):
         # Evaluate P(Z = c | X, Y)
@@ -179,16 +182,34 @@ class GaussianMixtureClassifier(EMAbstract):
             # List of probabilities of belonging to a given gaussian for a unique sample in X (t_ik)
             proba_belonging = np.zeros(self.z_dim)
             for c in range(self.z_dim):
-                y_hat = self.classifier_predict(c, x_i)
-                proba_belonging[c] = self.pi[c] \
-                                     * y_i * y_hat + (1 - y_i) * (1 - y_hat) \
-                                     * self.p_cond(x_i, self.mu[c], self.sigma[c])
+                y_hat = self.classifier_predict_proba(c, x_i)
+                proba_belonging[c] = np.log(self.pi[c]) \
+                                     + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat) \
+                                     + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c]))
 
-            proba_belonging /= proba_belonging.sum()
+            proba_belonging -= logsumexp(proba_belonging)
 
             expectations.append(proba_belonging)
 
-        return np.array(expectations)
+        return np.array(np.exp(expectations))
+
+    def eval_Q(self, pi, mu, sigma, W_e, W_x):
+
+        total = 0
+        expectations = self.predict_proba(self.X)
+
+        for c in range(self.z_dim):
+
+            for i in range(len(self.X)):
+                x_i = self.X[i]
+                y_i = self.y[i]
+                y_hat = self.classifier_predict_proba(c, x_i, W_e, W_x)
+                t_ic = expectations[i][c]
+
+                total += (np.log(pi[c])
+                          + np.log(self.p_cond(x_i, mu, sigma))
+                          + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_i)) * t_ic
+        return total
 
     def expectation_step(self):
         # At this stage, we evaluate the probability of each sample to belong to a given group
@@ -201,30 +222,39 @@ class GaussianMixtureClassifier(EMAbstract):
         # as part of the exponential family
         for c in range(self.z_dim):
 
-            N_c = expectations[:, c].sum()
-            sum_mu = 0
-            sum_sigma = 0
-            for i, x in enumerate(self.X):
-                sum_mu += x * expectations[i][c]
-                sum_sigma += (x - self.mu[c]) ** 2 * expectations[i][c]
+            t_ic = expectations[:, c].reshape(-1, 1)
+            N_c = t_ic.sum()
 
             # Update of pi_c
-            self.pi[c] = np.mean(expectations[:, c])
+            self.pi[c] = np.mean(t_ic)
             # update of mu_c
-            self.mu[c] = sum_mu / N_c
+            self.mu[c] = np.sum(self.X * t_ic, axis=0) / N_c
             # update of sigma_c
-            self.sigma[c] = np.sqrt(sum_sigma / N_c)
+            self.sigma[c] = np.sqrt(np.sum((self.X - self.mu[c]) ** 2 * t_ic, axis=0) / N_c)
 
             # update the classification parameters
+            W_e = self.W_e.copy()
+            W_x = self.W_x.copy()
+            # Evaluation step
+            eval = self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x)
             for _ in range(self.n_iter):
                 dW_e = 0
                 dW_x = 0
                 for i, y_i in enumerate(self.y):
                     x_i = self.X[i]
-                    y_hat = self.classifier_predict(c, x_i)
+                    y_hat = self.classifier_predict_proba(c, x_i)
+                    t_ic = expectations[i][c]
+                    e_ic = self.embed(c)
 
-                    dW_e += (y_i - y_hat) * expectations[i][c] * self.embed(c)
-                    dW_x += (y_i - y_hat) * expectations[i][c] * x_i
+                    dW_e += (y_i - y_hat) * t_ic * e_ic
+                    dW_x += (y_i - y_hat) * t_ic * x_i
 
-                self.W_e[c] = self.W_e[c] + self.learning_rate * dW_e
-                self.W_x[c] = self.W_x[c] + self.learning_rate * dW_x
+                W_e[c] = W_e[c] + self.learning_rate * dW_e
+                W_x[c] = W_x[c] + self.learning_rate * dW_x
+
+                # measurement of the improvement
+                measurement = self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x)
+                if eval < measurement:
+                    self.W_e = W_e.copy()
+                    self.W_x = W_x.copy()
+                    eval = measurement
