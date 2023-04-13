@@ -24,7 +24,7 @@ class BinaryClassifier(ABC):
 
     def predict(self, X):
         probas = self.predict_proba(X)
-        label = probas.copy()
+        label = probas.copy().astype(np.int32)
         label[probas > 0.5] = 1
         label[probas <= 0.5] = 0
         return label.squeeze()

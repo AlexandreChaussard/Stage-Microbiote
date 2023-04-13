@@ -162,14 +162,8 @@ class GaussianMixtureClassifier(EMAbstract):
         # Data parameter, for which one row is a W_x_k
         self.W_x = np.zeros((self.z_dim, X.shape[1]))
 
-    def embed(self, c):
-        return onehot(c, self.z_dim)
-
-    def classify(self, X):
-        # Output Y knowing X, Z
-        # Initialize the output Y vector
-        y = np.zeros(len(X))
-
+    def estimate_Z(self, X):
+        # This function enables to compute Z only knowing X (not Y)
         # Compute P(Z = c | X) and threshold to 0.5 to obtain Z
         Z = np.zeros(len(X), np.int32)
         for i in range(len(X)):
@@ -179,6 +173,41 @@ class GaussianMixtureClassifier(EMAbstract):
                 probas[c] = np.log(self.pi[c]) + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c]))
             # the normalization step is unnecessary to determine the maximum
             Z[i] = np.argmax(probas)
+        return Z
+
+    def compute_loglikelihood(self, X, Y):
+        # Compute the log-likelihood as
+        # log p(X, Y) = log E[p(X, Y, Z)] = log E[p(Z)p(X|Z)p(Y|X,Z)] = log sum_k(p(Y|X,Z=k)p(X|Z=k)p(Y|X,Z=k))
+        # Finally, since all (X_i, Y_i) are iid, log p(X, Y) = sum_i log p(X_i, Y_i)
+
+        # First we need to estimate Z
+        Z = self.estimate_Z(X)
+        # Then we can compute the log-likelihood
+        ll = 0
+        for i, x_i in enumerate(X):
+            z_i = Z[i]
+            y_i = Y[i]
+            y_hat = self.classifier_predict_proba(z_i, x_i)
+            values = np.zeros(self.z_dim)
+            for c in range(self.z_dim):
+                values[c] = np.log(self.pi[c]) \
+                            + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c])) \
+                            + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)
+
+            ll += logsumexp(values)
+
+        return ll
+
+    def embed(self, c):
+        return onehot(c, self.z_dim)
+
+    def classify(self, X):
+        # Output Y knowing X, Z
+        # Initialize the output Y vector
+        y = np.zeros(len(X), np.int32)
+
+        # Estimate Z from X only since we do not observe Y
+        Z = self.estimate_Z(X)
 
         for i in range(len(X)):
             x_i = X[i]
