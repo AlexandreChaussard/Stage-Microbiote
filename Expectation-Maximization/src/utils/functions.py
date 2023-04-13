@@ -33,3 +33,7 @@ def identify_permutation(v1, v2):
         return permutation
     else:
         return [0, 1]
+
+
+def accuracy(y_true, y_pred):
+    return (y_true == y_pred).mean()

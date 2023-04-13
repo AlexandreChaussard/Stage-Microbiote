@@ -28,6 +28,9 @@ class EMAbstract(ABC):
         # We decide that Z is discrete
         self.z_dim = z_dim
 
+        # We add a breakpoint in the algorithm to stop it during the training if something has went wrong
+        self.stop_training = False
+
     def fit(self, X, y=None):
         # Just fetch the dataset
         self.X = X
@@ -47,6 +50,9 @@ class EMAbstract(ABC):
 
     def train(self, n_steps, printEvery=-1):
         for _ in range(n_steps):
+            if self.stop_training:
+                self.stop_training = False
+                break
             # Expectation step then maximization step using the output of the expectation if it has one
             self.maximization_step(self.expectation_step())
             if printEvery > 0 and _ % printEvery == 0:
@@ -74,7 +80,7 @@ class GaussianMixture(EMAbstract):
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
         self.mu = kmean.cluster_centers_
-        self.sigma = 0.1 * np.random.randn(self.z_dim, X.shape[1])**2
+        self.sigma = 0.1 * np.random.randn(self.z_dim, X.shape[1]) ** 2
         # generate a uniform simplex vector for pi
         self.pi = np.ones(self.z_dim) / self.z_dim
 
@@ -108,7 +114,6 @@ class GaussianMixture(EMAbstract):
         # derived from the derivative of E[log p(X, Z)|X] which is explicit in the gaussian case
         # as part of the exponential family
         for c in range(self.z_dim):
-
             t_ic = expectations[:, c].reshape(-1, 1)
             N_c = t_ic.sum()
 
@@ -117,7 +122,7 @@ class GaussianMixture(EMAbstract):
             # update of mu_c
             self.mu[c] = np.sum(self.X * t_ic, axis=0) / N_c
             # update of sigma_c
-            self.sigma[c] = np.sqrt(np.sum((self.X - self.mu[c])**2 * t_ic, axis=0) / N_c)
+            self.sigma[c] = np.sqrt(np.sum((self.X - self.mu[c]) ** 2 * t_ic, axis=0) / N_c)
 
 
 class GaussianMixtureClassifier(EMAbstract):
@@ -147,18 +152,40 @@ class GaussianMixtureClassifier(EMAbstract):
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
         self.mu = np.random.randn(self.z_dim, X.shape[1])
-        self.sigma = 0.1 * np.random.randn(self.z_dim, X.shape[1]) ** 2
+        self.sigma = np.random.randn(self.z_dim, X.shape[1]) ** 2 + 1
         # generate a uniform simplex vector for pi
         self.pi = np.ones(self.z_dim) / self.z_dim
 
         # We also get parameters from the classification framework as
         # Embedding parameter, for which one row is a W_e_k
-        self.W_e = np.zeros(self.z_dim, self.z_dim)
+        self.W_e = np.zeros((self.z_dim, self.z_dim))
         # Data parameter, for which one row is a W_x_k
-        self.W_x = np.zeros(self.z_dim, X.shape[1])
+        self.W_x = np.zeros((self.z_dim, X.shape[1]))
 
     def embed(self, c):
         return onehot(c, self.z_dim)
+
+    def classify(self, X):
+        # Output Y knowing X, Z
+        # Initialize the output Y vector
+        y = np.zeros(len(X))
+
+        # Compute P(Z = c | X) and threshold to 0.5 to obtain Z
+        Z = np.zeros(len(X), np.int32)
+        for i in range(len(X)):
+            x_i = X[i]
+            probas = np.zeros(self.z_dim)
+            for c in range(self.z_dim):
+                probas[c] = np.log(self.pi[c]) + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c]))
+            # the normalization step is unnecessary to determine the maximum
+            Z[i] = np.argmax(probas)
+
+        for i in range(len(X)):
+            x_i = X[i]
+            z_i = Z[i]
+            proba = self.classifier_predict_proba(z_i, x_i)
+            y[i] = (proba > 0.5) * 1
+        return y
 
     def classifier_predict_proba(self, k, x, W_e=None, W_x=None):
         if W_e is None or W_x is None:
@@ -174,7 +201,7 @@ class GaussianMixtureClassifier(EMAbstract):
         # matrix of proba of size n x z_dim
 
         # List of probabilities of belonging to a given gaussian
-        expectations = []
+        expectations = np.zeros((len(X), self.z_dim))
 
         for i, x_i in enumerate(X):
             y_i = self.y[i]
@@ -189,7 +216,7 @@ class GaussianMixtureClassifier(EMAbstract):
 
             proba_belonging -= logsumexp(proba_belonging)
 
-            expectations.append(proba_belonging)
+            expectations[i] = proba_belonging
 
         return np.array(np.exp(expectations))
 
@@ -207,8 +234,8 @@ class GaussianMixtureClassifier(EMAbstract):
                 t_ic = expectations[i][c]
 
                 total += (np.log(pi[c])
-                          + np.log(self.p_cond(x_i, mu, sigma))
-                          + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_i)) * t_ic
+                          + np.log(self.p_cond(x_i, mu[c], sigma[c]))
+                          + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)) * t_ic
         return total
 
     def expectation_step(self):
@@ -231,6 +258,10 @@ class GaussianMixtureClassifier(EMAbstract):
             self.mu[c] = np.sum(self.X * t_ic, axis=0) / N_c
             # update of sigma_c
             self.sigma[c] = np.sqrt(np.sum((self.X - self.mu[c]) ** 2 * t_ic, axis=0) / N_c)
+            if 0 in self.sigma[c]:
+                print("One gaussian has been set to 0.")
+                self.stop_training = True
+                break
 
             # update the classification parameters
             W_e = self.W_e.copy()
