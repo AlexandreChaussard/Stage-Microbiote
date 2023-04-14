@@ -4,7 +4,9 @@ import pandas as pd
 import src.utils.functions as functions
 
 
-def generate_gaussian(n_samples, d, mu_list, sigma_list):
+def generate_gaussian(n_samples, d, mu_list, sigma_list, seed=None):
+    np.random.seed(seed)
+
     X = []
     Y = []
     mu_list = np.array(mu_list)
@@ -27,7 +29,7 @@ def generate_gaussian(n_samples, d, mu_list, sigma_list):
     return X, Y
 
 
-def generate_conditional_binary_observations(X, Z, seed=None):
+def generate_conditional_binary_observations(X, Z, seed=None, returnParams=False):
     """
     Generate conditional binary observations Y such that:
     P(Y = 1 | X, Z=k) = sigmoid(W_e_k^T e_k + W_x_k^T X_i)
@@ -55,6 +57,8 @@ def generate_conditional_binary_observations(X, Z, seed=None):
         proba = functions.sigmoid(W_e_k.dot(e_k) + W_x_k.dot(x_i))
         y[i] = (proba > 0.5) * 1
 
+    if returnParams:
+        return y, W_e, W_x
     return y
 
 

@@ -42,7 +42,7 @@ def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle=""):
     for i, label in enumerate(labels):
         indexes = np.where(y == label)
         sub_X = X[indexes]
-        axs.plot(sub_X[:, 0], sub_X[:, 1], marker="o", linestyle="", label=str(int(label)))
+        axs.plot(sub_X[:, 0], sub_X[:, 1], marker="o", linestyle="", label=str(int(label)), alpha=0.2)
 
     axs.legend()
     plt.show()

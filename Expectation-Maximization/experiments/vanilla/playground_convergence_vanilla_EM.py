@@ -163,14 +163,15 @@ def boxplot_converged_results_1d_case(
         permutation = funtions.identify_permutation(mu_list, gmm.mu)
         distance_mu = np.linalg.norm(mu_list - gmm.mu[permutation])
 
-        mu_0 = gmm.mu[permutation]
+        mu_k = gmm.mu[permutation]
 
         limit_count = 100
         try:
-            while distance_mu / np.linalg.norm(mu_0) > precision and limit_count > 0:
+            while distance_mu / np.linalg.norm(mu_k) > precision and limit_count > 0:
                 gmm.train(n_steps=1, printEvery=10)
                 distance_mu = np.linalg.norm(mu_list - gmm.mu[permutation])
                 limit_count -= 1
+                mu_k = gmm.mu[permutation]
         except:
             continue
 

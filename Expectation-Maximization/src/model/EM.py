@@ -4,6 +4,7 @@ from scipy.special import logsumexp
 
 from src.utils.distribution import pdf_gaussian
 from src.utils.functions import sigmoid, onehot
+from src.utils.optimizers import Optimizer
 
 from sklearn.cluster import KMeans
 
@@ -31,6 +32,9 @@ class EMAbstract(ABC):
         # We add a breakpoint in the algorithm to stop it during the training if something has went wrong
         self.stop_training = False
 
+        # Print argument that can be added to the print when training
+        self.printArgs = ""
+
     def fit(self, X, y=None):
         # Just fetch the dataset
         self.X = X
@@ -56,7 +60,7 @@ class EMAbstract(ABC):
             # Expectation step then maximization step using the output of the expectation if it has one
             self.maximization_step(self.expectation_step())
             if printEvery > 0 and _ % printEvery == 0:
-                print(f"[*] EM ({_}/{n_steps})")
+                print(f"[*] EM ({_}/{n_steps}): {self.printArgs}")
         return self
 
 
@@ -138,10 +142,14 @@ class GaussianMixtureClassifier(EMAbstract):
     The strategy to build e_k is through onehot encoding: k -> [0,..., 1, 0, ..., 0] at k-th position
     """
 
-    def __init__(self, z_dim, learning_rate=0.1, n_iter=100, seed=None):
+    def __init__(
+            self,
+            z_dim,
+            optimizer,
+            seed=None
+    ):
         super().__init__(pdf_gaussian, z_dim, seed)
-        self.learning_rate = learning_rate
-        self.n_iter = n_iter
+        self.optimizer = optimizer
 
     def fit(self, X, y=None):
         super().fit(X)
@@ -267,6 +275,33 @@ class GaussianMixtureClassifier(EMAbstract):
                           + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)) * t_ic
         return total
 
+    def Q_fun_W_e(self, W_e_c, c):
+        total = 0
+        W_e = np.stack((W_e_c, W_e_c))
+        expectations = self.predict_proba(self.X)
+
+        for i in range(len(self.X)):
+            x_i = self.X[i]
+            y_i = self.y[i]
+            y_hat = self.classifier_predict_proba(c, x_i, W_e, self.W_x)
+            t_ic = expectations[i][c]
+            total += (y_i * np.log(y_hat) + (1. - y_i) * np.log(1. - y_hat)) * t_ic
+        return -total
+
+    def Q_fun_W_x(self, W_x_c, c):
+        total = 0
+        W_x = np.stack((W_x_c, W_x_c))
+        expectations = self.predict_proba(self.X)
+
+        for i in range(len(self.X)):
+            x_i = self.X[i]
+            y_i = self.y[i]
+            y_hat = self.classifier_predict_proba(c, x_i, self.W_e, W_x)
+            t_ic = expectations[i][c]
+
+            total += (y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)) * t_ic
+        return -total
+
     def expectation_step(self):
         # At this stage, we evaluate the probability of each sample to belong to a given group
         # as P(Z = c | X, Y)
@@ -293,24 +328,55 @@ class GaussianMixtureClassifier(EMAbstract):
                 break
 
             # update the classification parameters
+            # Multiple optimization approaches are proposed:
+            # CMAES - SGD - GD
+
+            # CMAES Optim
+            if self.optimizer.method_name == "CMAES":
+                self.W_e[c] = self.optimizer.minimize(self.Q_fun_W_e, self.W_e[c], 1, (c,))
+                self.W_x[c] = self.optimizer.minimize(self.Q_fun_W_x, self.W_x[c], 1, (c,))
+                self.printArgs = "likelihood: " + str(self.compute_loglikelihood(self.X, self.y))
+                continue
+
+            # Gradient Descent-like methods (SGD & GD)
             W_e = self.W_e.copy()
             W_x = self.W_x.copy()
             # Evaluation step
             eval = self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x)
-            for _ in range(self.n_iter):
+            for _ in range(self.optimizer.n_iter):
                 dW_e = 0
                 dW_x = 0
-                for i, y_i in enumerate(self.y):
-                    x_i = self.X[i]
-                    y_hat = self.classifier_predict_proba(c, x_i)
-                    t_ic = expectations[i][c]
-                    e_ic = self.embed(c)
 
-                    dW_e += (y_i - y_hat) * t_ic * e_ic
-                    dW_x += (y_i - y_hat) * t_ic * x_i
+                if self.optimizer.method_name == "SGD":
+                    indexes = np.random.choice(np.arange(0, len(self.y)), size=self.optimizer.batch_size, replace=False)
+                    for i in indexes:
+                        x_i = self.X[i]
+                        y_i = self.y[i]
+                        y_hat = self.classifier_predict_proba(c, x_i)
+                        t_ic = expectations[i][c]
+                        e_ic = self.embed(c)
 
-                W_e[c] = W_e[c] + self.learning_rate * dW_e
-                W_x[c] = W_x[c] + self.learning_rate * dW_x
+                        dW_e += (y_i - y_hat) * t_ic * e_ic
+                        dW_x += (y_i - y_hat) * t_ic * x_i
+
+                    decay = 1
+                    if self.optimizer.step_size_decay:
+                        decay = _ + 1
+
+                    W_e[c] = W_e[c] + self.optimizer.learning_rate / decay * dW_e
+                    W_x[c] = W_x[c] + self.optimizer.learning_rate / decay * dW_x
+                else:  # Default is gradient descent
+                    for i, y_i in enumerate(self.y):
+                        x_i = self.X[i]
+                        y_hat = self.classifier_predict_proba(c, x_i)
+                        t_ic = expectations[i][c]
+                        e_ic = self.embed(c)
+
+                        dW_e += (y_i - y_hat) * t_ic * e_ic
+                        dW_x += (y_i - y_hat) * t_ic * x_i
+
+                    W_e[c] = W_e[c] + self.optimizer.learning_rate * dW_e
+                    W_x[c] = W_x[c] + self.optimizer.learning_rate * dW_x
 
                 # measurement of the improvement
                 measurement = self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x)
@@ -318,3 +384,5 @@ class GaussianMixtureClassifier(EMAbstract):
                     self.W_e = W_e.copy()
                     self.W_x = W_x.copy()
                     eval = measurement
+
+            self.printArgs = "likelihood: " + str(self.compute_loglikelihood(self.X, self.y))
