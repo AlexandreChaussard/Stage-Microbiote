@@ -62,25 +62,18 @@ def generate_conditional_binary_observations(X, Z, seed=None, returnParams=False
     return y
 
 
-
 def get_NIPICOL(path="./"):
-    df = pd.read_excel(
-        os.path.join(path, "data_NIPICOL.xlsx")
+    df = pd.read_csv(
+        os.path.join(path, "nipicol_asv.txt"), sep="	"
     )
-    # This column is empty
-    df = df.drop(columns=["taxonomy"])
-    # This column seems to be a concatenation of the "Taxon" and "Feature ID"
-    df = df.drop(columns=["Unnamed: 0"])
     return df
 
 
-def get_POP(path="./"):
-    df = pd.read_excel(
-        os.path.join("data", "data_POP.xlsx")
+def get_mapping_NIPICOL(path="./"):
+    df = pd.read_csv(
+        os.path.join(path, "mapping_nipicol.txt"), sep="	"
     )
-    # The first column seems like the concatenation of the "Taxon" and "Feature ID"
-    df[["Taxon", "Feature ID"]] = df["Unnamed: 0"].str.split(';otu_', expand=True)
-    df = df.drop(columns=["Unnamed: 0"])
+    df.columns = ['id'] + df.columns[1:].tolist()
     return df
 
 
