@@ -1,5 +1,6 @@
 from src.data.dataloader import generate_gaussian, generate_conditional_binary_observations
 import src.utils.viz as viz
+import numpy as np
 
 mu_list = [[-0.1, -0.2], [0.5, 0.3]]
 sigma_list = [[0.1, 0.15], [0.2, 0.1]]

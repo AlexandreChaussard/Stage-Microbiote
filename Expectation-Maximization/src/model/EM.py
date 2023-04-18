@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import numpy as np
 from scipy.special import logsumexp
+import scipy.optimize as optim
 
 from src.utils.distribution import pdf_gaussian
 from src.utils.functions import sigmoid, onehot
@@ -48,10 +49,6 @@ class EMAbstract(ABC):
     def maximization_step(self, expectations):
         pass
 
-    @abstractmethod
-    def predict_proba(self, X):
-        pass
-
     def train(self, n_steps, printEvery=-1):
         for _ in range(n_steps):
             if self.stop_training:
@@ -88,14 +85,14 @@ class GaussianMixture(EMAbstract):
         # generate a uniform simplex vector for pi
         self.pi = np.ones(self.z_dim) / self.z_dim
 
-    def predict_proba(self, X):
+    def expectation_step(self):
         # Predict the probability for X to belong to a given gaussian P(Z = c | X)
         # matrix of proba of size n x z_dim
 
         # List of probabilities of belonging to a given gaussian
         expectations = []
 
-        for x in X:
+        for x in self.X:
 
             # List of probabilities of belonging to a given gaussian for a unique sample in X
             proba_belonging = np.zeros(self.z_dim)
@@ -107,11 +104,6 @@ class GaussianMixture(EMAbstract):
 
         expectations = np.array(np.exp(expectations))
         return expectations
-
-    def expectation_step(self):
-        # At this stage, we evaluate the probability of each sample to belong to a given gaussian
-        # as P(Z = c | X)
-        return self.predict_proba(self.X)
 
     def maximization_step(self, expectations):
         # In the maximization step, we update the parameters of the gaussian mixture
@@ -176,34 +168,24 @@ class GaussianMixtureClassifier(EMAbstract):
         if self.W_x is None:
             self.W_x = np.zeros((self.z_dim, X.shape[1]))
 
-    def estimate_Z(self, X):
-        # This function enables to compute Z only knowing X (not Y)
-        # Compute P(Z = c | X) and threshold to 0.5 to obtain Z
-        Z = np.zeros(len(X), np.int32)
-        for i in range(len(X)):
-            x_i = X[i]
-            probas = np.zeros(self.z_dim)
-            for c in range(self.z_dim):
-                probas[c] = np.log(self.pi[c]) + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c]))
-            # the normalization step is unnecessary to determine the maximum
-            Z[i] = np.argmax(probas)
-        return Z
+        # Save the values of Q(theta, theta_hat)
+        self.Q_values = [self.eval_Q(self.pi, self.mu, self.sigma, self.W_e, self.W_x)]
+        # Save the likelihood values
+        self.likelihood_values = []
 
     def compute_loglikelihood(self, X, Y):
         # Compute the log-likelihood as
         # log p(X, Y) = log E[p(X, Y, Z)] = log E[p(Z)p(X|Z)p(Y|X,Z)] = log sum_k(p(Y|X,Z=k)p(X|Z=k)p(Y|X,Z=k))
         # Finally, since all (X_i, Y_i) are iid, log p(X, Y) = sum_i log p(X_i, Y_i)
 
-        # First we need to estimate Z
-        Z = self.estimate_Z(X)
-        # Then we can compute the log-likelihood
+        # Compute the log-likelihood
         ll = 0
         for i, x_i in enumerate(X):
-            z_i = Z[i]
             y_i = Y[i]
-            y_hat = self.classifier_predict_proba(z_i, x_i)
             values = np.zeros(self.z_dim)
             for c in range(self.z_dim):
+                # Compute P(Y = 1 | X, Z=c)
+                y_hat = self.classifier_predict_proba(c, x_i)
                 values[c] = np.log(self.pi[c]) \
                             + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c])) \
                             + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)
@@ -237,7 +219,7 @@ class GaussianMixtureClassifier(EMAbstract):
                 log_proba_y[k] = np.log(self.classifier_predict_proba(k, x_i)) + log_t_i[k]
 
             proba[i] = np.exp(logsumexp(log_proba_y))
-        assert((proba < 1).all())
+        assert ((proba < 1).all())
         y = (proba > 0.5) * 1
         return y
 
@@ -251,34 +233,10 @@ class GaussianMixtureClassifier(EMAbstract):
         # then we compute P(Y = 1 | X, Z = k)
         return sigmoid(W_e[k].dot(e) + W_x[k].dot(x))
 
-    def predict_proba(self, X):
-        # Evaluate P(Z = c | X, Y)
-        # matrix of proba of size n x z_dim
-
-        # List of probabilities of belonging to a given gaussian
-        expectations = np.zeros((len(X), self.z_dim))
-
-        for i, x_i in enumerate(X):
-            y_i = self.y[i]
-
-            # List of probabilities of belonging to a given gaussian for a unique sample in X (t_ik)
-            proba_belonging = np.zeros(self.z_dim)
-            for c in range(self.z_dim):
-                y_hat = self.classifier_predict_proba(c, x_i)
-                proba_belonging[c] = np.log(self.pi[c]) \
-                                     + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat) \
-                                     + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c]))
-
-            proba_belonging -= logsumexp(proba_belonging)
-
-            expectations[i] = proba_belonging
-
-        return np.array(np.exp(expectations))
-
     def eval_Q(self, pi, mu, sigma, W_e, W_x):
 
         total = 0
-        expectations = self.predict_proba(self.X)
+        expectations = self.expectation_step()
 
         for c in range(self.z_dim):
 
@@ -296,7 +254,7 @@ class GaussianMixtureClassifier(EMAbstract):
     def Q_fun_W_e(self, W_e_c, c):
         total = 0
         W_e = np.stack((W_e_c, W_e_c))
-        expectations = self.predict_proba(self.X)
+        expectations = self.expectation_step()
 
         for i in range(len(self.X)):
             x_i = self.X[i]
@@ -309,7 +267,7 @@ class GaussianMixtureClassifier(EMAbstract):
     def Q_fun_W_x(self, W_x_c, c):
         total = 0
         W_x = np.stack((W_x_c, W_x_c))
-        expectations = self.predict_proba(self.X)
+        expectations = self.expectation_step()
 
         for i in range(len(self.X)):
             x_i = self.X[i]
@@ -322,13 +280,44 @@ class GaussianMixtureClassifier(EMAbstract):
 
     def expectation_step(self):
         # At this stage, we evaluate the probability of each sample to belong to a given group
-        # as P(Z = c | X, Y)
-        return self.predict_proba(self.X)
+        # as P(Z = c | X, Y):
+        # P(Z=c|X,Y) = P(Z=c) P(X|Z=c) P(Y|X, Z=c) / sum_l (same)
+        # matrix of proba of size n x z_dim
+
+        # List of probabilities of belonging to a given gaussian t_ik
+        expectations = np.zeros((len(self.X), self.z_dim))
+
+        for i, x_i in enumerate(self.X):
+            y_i = self.y[i]
+
+            # List of probabilities of belonging to a given gaussian for a unique sample in X (t_ik)
+            proba_belonging = np.zeros(self.z_dim)
+            for c in range(self.z_dim):
+                y_hat = self.classifier_predict_proba(c, x_i)
+                proba_belonging[c] = np.log(self.pi[c]) \
+                                     + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat) \
+                                     + np.log(self.p_cond(x_i, self.mu[c], self.sigma[c]))
+
+            proba_belonging -= logsumexp(proba_belonging)
+
+            expectations[i] = proba_belonging
+
+        return np.array(np.exp(expectations))
 
     def maximization_step(self, expectations):
         # In the maximization step, we update the parameters of the gaussian mixture
         # derived from the derivative of E[log p(X, Z)|X] which is explicit in the gaussian case
         # as part of the exponential family
+
+        # Save variables to perform the comparison of iterates and keep only the improvements
+        W_e = self.W_e.copy()
+        W_x = self.W_x.copy()
+
+        # Evaluation of Q at the current parameters
+        # This serves as the acceptation criterion for the iterates of the gradient descent
+        # We want to make sure that Q(theta_k+1, theta_hat) > Q(theta_k, theta_hat)
+        eval = self.Q_values[-1]
+
         for c in range(self.z_dim):
 
             t_ic = expectations[:, c].reshape(-1, 1)
@@ -357,10 +346,6 @@ class GaussianMixtureClassifier(EMAbstract):
                 continue
 
             # Gradient Descent-like methods (SGD & GD)
-            W_e = self.W_e.copy()
-            W_x = self.W_x.copy()
-            # Evaluation step
-            eval = self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x)
             for _ in range(self.optimizer.n_iter):
                 dW_e = 0
                 dW_x = 0
@@ -374,15 +359,15 @@ class GaussianMixtureClassifier(EMAbstract):
                         t_ic = expectations[i][c]
                         e_ic = self.embed(c)
 
-                        dW_e += (y_i - y_hat) * t_ic * e_ic
-                        dW_x += (y_i - y_hat) * t_ic * x_i
+                        dW_e += - (y_i - y_hat) * t_ic * e_ic
+                        dW_x += - (y_i - y_hat) * t_ic * x_i
 
                     decay = 1
                     if self.optimizer.step_size_decay:
                         decay = _ + 1
 
-                    W_e[c] = W_e[c] + self.optimizer.learning_rate / decay * dW_e
-                    W_x[c] = W_x[c] + self.optimizer.learning_rate / decay * dW_x
+                    W_e[c] -= self.optimizer.learning_rate / decay * dW_e
+                    W_x[c] -= self.optimizer.learning_rate / decay * dW_x
                 else:  # Default is gradient descent
                     for i, y_i in enumerate(self.y):
                         x_i = self.X[i]
@@ -390,17 +375,20 @@ class GaussianMixtureClassifier(EMAbstract):
                         t_ic = expectations[i][c]
                         e_ic = self.embed(c)
 
-                        dW_e += (y_i - y_hat) * t_ic * e_ic
-                        dW_x += (y_i - y_hat) * t_ic * x_i
+                        dW_e += -(y_i - y_hat) * t_ic * e_ic
+                        dW_x += -(y_i - y_hat) * t_ic * x_i
 
-                    W_e[c] = W_e[c] + self.optimizer.learning_rate * dW_e
-                    W_x[c] = W_x[c] + self.optimizer.learning_rate * dW_x
+                    W_e[c] -= self.optimizer.learning_rate * dW_e
+                    W_x[c] -= self.optimizer.learning_rate * dW_x
 
                 # measurement of the improvement
                 measurement = self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x)
-                if eval < measurement:
+                if measurement > eval:
                     self.W_e = W_e.copy()
                     self.W_x = W_x.copy()
                     eval = measurement
+                    self.Q_values.append(eval)
 
-            self.printArgs = "likelihood: " + str(self.compute_loglikelihood(self.X, self.y))
+            ll = self.compute_loglikelihood(self.X, self.y)
+            self.likelihood_values.append(ll)
+            self.printArgs = "\n  * likelihood: " + str(ll) + "\n  * Q: " + str(self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x))
