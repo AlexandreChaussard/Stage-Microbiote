@@ -8,13 +8,13 @@ mu_list = [[-0.1, -0.2], [0.5, 0.3]]
 sigma_list = [[0.1, 0.15], [0.2, 0.1]]
 
 X, Z = generate_gaussian(
-    n_samples=400,
+    n_samples=200,
     d=2,
     mu_list=mu_list,
     sigma_list=sigma_list
 )
 
-X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=200)
+X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
 
 seed = 8
 y_train, y_test = generate_conditional_binary_observations(X_train, Z_train, seed=seed), \

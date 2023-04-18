@@ -146,10 +146,14 @@ class GaussianMixtureClassifier(EMAbstract):
             self,
             z_dim,
             optimizer,
-            seed=None
+            seed=None,
+            W_e_init=None,
+            W_x_init=None
     ):
         super().__init__(pdf_gaussian, z_dim, seed)
         self.optimizer = optimizer
+        self.W_e = W_e_init
+        self.W_x = W_x_init
 
     def fit(self, X, y=None):
         super().fit(X)
@@ -166,9 +170,11 @@ class GaussianMixtureClassifier(EMAbstract):
 
         # We also get parameters from the classification framework as
         # Embedding parameter, for which one row is a W_e_k
-        self.W_e = np.zeros((self.z_dim, self.z_dim))
+        if self.W_e is None:
+            self.W_e = np.zeros((self.z_dim, self.z_dim))
         # Data parameter, for which one row is a W_x_k
-        self.W_x = np.zeros((self.z_dim, X.shape[1]))
+        if self.W_x is None:
+            self.W_x = np.zeros((self.z_dim, X.shape[1]))
 
     def estimate_Z(self, X):
         # This function enables to compute Z only knowing X (not Y)
@@ -210,21 +216,33 @@ class GaussianMixtureClassifier(EMAbstract):
         return onehot(c, self.z_dim)
 
     def classify(self, X):
-        # Output Y knowing X, Z
-        # Initialize the output Y vector
-        y = np.zeros(len(X), np.int32)
+        # Output Y knowing X:
+        # P(Y | X) = sum_k P(Y | X, Z=k) P(X|Z=k)P(Z=k) / sum_l P(X|Z=l)P(Z=l)
 
-        # Estimate Z from X only since we do not observe Y
-        Z = self.estimate_Z(X)
+        # Initialize the proba vector
+        proba = np.zeros(len(X))
 
         for i in range(len(X)):
             x_i = X[i]
-            z_i = Z[i]
-            proba = self.classifier_predict_proba(z_i, x_i)
-            y[i] = (proba > 0.5) * 1
+
+            log_t_i = np.zeros(self.z_dim)
+            for l in range(self.z_dim):
+                log_t_i[l] = np.log(self.pi[l]) + np.log(self.p_cond(x_i, self.mu[l], self.sigma[l]))
+
+            log_t_i -= logsumexp(log_t_i)
+
+            log_proba_y = np.zeros(self.z_dim)
+
+            for k in range(self.z_dim):
+                log_proba_y[k] = np.log(self.classifier_predict_proba(k, x_i)) + log_t_i[k]
+
+            proba[i] = np.exp(logsumexp(log_proba_y))
+        assert((proba < 1).all())
+        y = (proba > 0.5) * 1
         return y
 
     def classifier_predict_proba(self, k, x, W_e=None, W_x=None):
+        # Predicts P(Y = 1 | X, Z=k)
         if W_e is None or W_x is None:
             W_e = self.W_e
             W_x = self.W_x
