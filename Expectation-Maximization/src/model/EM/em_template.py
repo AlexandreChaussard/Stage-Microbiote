@@ -31,6 +31,7 @@ class EMAbstract(ABC):
     def fit(self, X, y=None):
         # Just fetch the dataset
         self.X = X
+        self.n_samples = len(X)
         return self
 
     @abstractmethod

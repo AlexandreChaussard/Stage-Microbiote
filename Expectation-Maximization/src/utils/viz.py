@@ -18,7 +18,7 @@ def plot_2d_gaussians_samples(X, y, subtitle=""):
     plt.show()
 
 
-def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle=""):
+def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle="", alpha=0.2):
     fig, axs = plt.subplots()
     fig.suptitle(f"Gaussian samples \n{subtitle}")
 
@@ -39,11 +39,17 @@ def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle=""):
 
     axs.contourf(X_contour, Y_contour, Z_contour, cmap=colormap.get_cmap('binary'))
 
-    for i, label in enumerate(labels):
-        indexes = np.where(y == label)
-        sub_X = X[indexes]
-        axs.plot(sub_X[:, 0], sub_X[:, 1], marker="o", linestyle="", label=str(int(label)), alpha=0.2)
-
+    indexes = np.arange(0, len(X))
+    np.random.shuffle(indexes)
+    label_axes = np.zeros(len(labels))
+    for i in indexes:
+        x_i = X[i]
+        y_i = int(y[i])
+        if label_axes[y_i] == 1:
+            axs.plot(x_i[0], x_i[1], marker="o", linestyle="", color=f"C{y_i}", alpha=alpha)
+        else:
+            label_axes[y_i] = 1
+            axs.plot(x_i[0], x_i[1], marker="o", linestyle="", color=f"C{y_i}", alpha=alpha, label=y_i)
     axs.legend()
     plt.show()
 

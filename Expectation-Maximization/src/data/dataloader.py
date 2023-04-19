@@ -29,7 +29,7 @@ def generate_gaussian(n_samples, d, mu_list, sigma_list, seed=None):
     return X, Y
 
 
-def generate_conditional_binary_observations(X, Z, seed=None, returnParams=False):
+def generate_conditional_binary_observations(X, Z, W_e=None, W_x=None, seed=None, returnParams=False):
     """
     Generate conditional binary observations Y such that:
     P(Y = 1 | X, Z=k) = sigmoid(W_e_k^T e_k + W_x_k^T X_i)
@@ -40,22 +40,23 @@ def generate_conditional_binary_observations(X, Z, seed=None, returnParams=False
 
     # Initialize the weights of the observation
     onehot_length = len(np.unique(Z))
-    W_e = np.random.randn(onehot_length, onehot_length)
-    W_x = np.random.randn(onehot_length, X.shape[1])
+    if W_e is None:
+        W_e = np.random.randn(onehot_length, onehot_length)
+    if W_x is None:
+        W_x = np.random.randn(onehot_length, X.shape[1])
 
     # Observations
-    y = np.zeros(Z.shape)
+    y = np.zeros(Z.shape, np.int32)
 
     for i in range(len(Z)):
-        z_i = Z[i]
+        k = Z[i]
         x_i = X[i]
-        W_e_k = W_e[z_i]
-        W_x_k = W_x[z_i]
 
-        e_k = functions.onehot(z_i, onehot_length)
+        e_k = functions.onehot(k, onehot_length)
 
-        proba = functions.sigmoid(W_e_k.dot(e_k) + W_x_k.dot(x_i))
-        y[i] = (proba > 0.5) * 1
+        proba = functions.sigmoid(W_e[k].dot(e_k) + W_x[k].dot(x_i))
+        eps = np.random.random()
+        y[i] = (eps < proba) * 1
 
     if returnParams:
         return y, W_e, W_x

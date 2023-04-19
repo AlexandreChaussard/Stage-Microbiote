@@ -1,7 +1,7 @@
 from src.model.EM.em_template import EMAbstract
 import numpy as np
 from scipy.special import logsumexp
-
+from autograd import grad
 from src.utils.distribution import pdf_gaussian
 from src.utils.functions import sigmoid, onehot
 
@@ -25,12 +25,18 @@ class GaussianMixtureClassifier(EMAbstract):
             optimizer,
             seed=None,
             W_e_init=None,
-            W_x_init=None
+            W_x_init=None,
+            pi_init=None,
+            mu_init=None,
+            sigma_init=None
     ):
         super().__init__(pdf_gaussian, z_dim, seed)
         self.optimizer = optimizer
         self.W_e = W_e_init
         self.W_x = W_x_init
+        self.mu = mu_init
+        self.sigma = sigma_init
+        self.pi = pi_init
 
     def fit(self, X, y=None):
         super().fit(X)
@@ -40,10 +46,13 @@ class GaussianMixtureClassifier(EMAbstract):
 
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
-        self.mu = np.random.randn(self.z_dim, X.shape[1])
-        self.sigma = np.random.randn(self.z_dim, X.shape[1]) ** 2 + 1
+        if self.mu is None:
+            self.mu = np.random.randn(self.z_dim, X.shape[1])
+        if self.sigma is None:
+            self.sigma = np.random.randn(self.z_dim, X.shape[1]) ** 2 + 1
         # generate a uniform simplex vector for pi
-        self.pi = np.ones(self.z_dim) / self.z_dim
+        if self.pi is None:
+            self.pi = np.ones(self.z_dim) / self.z_dim
 
         # We also get parameters from the classification framework as
         # Embedding parameter, for which one row is a W_e_k
@@ -127,7 +136,7 @@ class GaussianMixtureClassifier(EMAbstract):
         # First we onehot the class to turn it into an embedding vector
         e = self.embed(k)
         # then we compute P(Y = 1 | X, Z = k)
-        return sigmoid(W_e[k].dot(e) + W_x[k].dot(x))
+        return sigmoid(np.dot(W_e[k], e) + np.dot(W_x[k], x))
 
     def eval_Q(self, pi, mu, sigma, W_e, W_x):
 
@@ -145,15 +154,15 @@ class GaussianMixtureClassifier(EMAbstract):
                 total += (np.log(pi[c])
                           + np.log(self.p_cond(x_i, mu[c], sigma[c]))
                           + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)) * t_ic
-        return total
+        return total / self.n_samples
 
-    def optim_Q_W_x(self, W_x, pi, mu, sigma, W_e):
+    def optim_Q_W_x(self, W_x):
         W_x = W_x.reshape(self.W_x.shape)
-        return -self.eval_Q(pi, mu, sigma, W_e, W_x)
+        return -self.eval_Q(self.pi, self.mu, self.sigma, self.W_e, W_x)
 
-    def optim_Q_W_e(self, W_e, pi, mu, sigma, W_x):
+    def optim_Q_W_e(self, W_e):
         W_e = W_e.reshape(self.W_e.shape)
-        return -self.eval_Q(pi, mu, sigma, W_e, W_x)
+        return -self.eval_Q(self.pi, self.mu, self.sigma, W_e, self.W_x)
 
     def expectation_step(self):
         # At this stage, we evaluate the probability of each sample to belong to a given group
@@ -215,15 +224,13 @@ class GaussianMixtureClassifier(EMAbstract):
             self.W_e = self.optimizer.minimize(
                 self.optim_Q_W_e,
                 x0=self.W_e.reshape(-1, 1),
-                sigma0=1,
-                fun_args=(self.pi, self.mu, self.sigma, self.W_x)
+                sigma0=1
             ).reshape(self.W_e.shape)
 
             self.W_x = self.optimizer.minimize(
                 self.optim_Q_W_x,
                 x0=self.W_x.reshape(-1, 1),
-                sigma0=1,
-                fun_args=(self.pi, self.mu, self.sigma, self.W_e)
+                sigma0=1
             ).reshape(self.W_x.shape)
 
             ll = self.compute_loglikelihood(self.X, self.y)
@@ -275,8 +282,13 @@ class GaussianMixtureClassifier(EMAbstract):
                         t_ic = expectations[i][c]
                         e_ic = self.embed(c)
 
-                        dW_e += - (y_i - y_hat) * t_ic * e_ic
-                        dW_x += - (y_i - y_hat) * t_ic * x_i
+                        dW_e += - (y_i - y_hat) * t_ic * e_ic / self.n_samples
+                        dW_x += - (y_i - y_hat) * t_ic * x_i / self.n_samples
+
+                    autograd_dW_e = grad(self.optim_Q_W_e)
+                    autograd_dW_x = grad(self.optim_Q_W_x)
+                    assert(np.linalg.norm(autograd_dW_e(self.W_e)[c] - dW_e) < 10e-2)
+                    assert(np.linalg.norm(autograd_dW_x(self.W_x)[c] - dW_x) < 10e-2)
 
                     W_e[c] -= self.optimizer.learning_rate * dW_e
                     W_x[c] -= self.optimizer.learning_rate * dW_x
@@ -293,31 +305,3 @@ class GaussianMixtureClassifier(EMAbstract):
             self.likelihood_values.append(ll)
             self.printArgs = "\n  * likelihood: " + str(ll) + "\n  * Q: " + str(
                 self.eval_Q(self.pi, self.mu, self.sigma, W_e, W_x))
-
-    # Optimization functions for CMAES
-    def Q_fun_W_e(self, W_e_c, c):
-        total = 0
-        W_e = np.stack((W_e_c, W_e_c))
-        expectations = self.expectation_step()
-
-        for i in range(len(self.X)):
-            x_i = self.X[i]
-            y_i = self.y[i]
-            y_hat = self.classifier_predict_proba(c, x_i, W_e, self.W_x)
-            t_ic = expectations[i][c]
-            total += (y_i * np.log(y_hat) + (1. - y_i) * np.log(1. - y_hat)) * t_ic
-        return -total
-
-    def Q_fun_W_x(self, W_x_c, c):
-        total = 0
-        W_x = np.stack((W_x_c, W_x_c))
-        expectations = self.expectation_step()
-
-        for i in range(len(self.X)):
-            x_i = self.X[i]
-            y_i = self.y[i]
-            y_hat = self.classifier_predict_proba(c, x_i, self.W_e, W_x)
-            t_ic = expectations[i][c]
-
-            total += (y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)) * t_ic
-        return -total

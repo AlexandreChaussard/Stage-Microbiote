@@ -6,14 +6,14 @@ from src.utils.optimizers import GradientDescent
 import matplotlib.pyplot as plt
 import numpy as np
 
-mu_list = [[-0.1, -0.2], [0.5, 0.3]]
-sigma_list = [[0.1, 0.15], [0.2, 0.1]]
+mu_list = np.array([[-0.1, -0.2], [0.5, 0.3]])
+sigma_list = np.array([[0.1, 0.15], [0.2, 0.1]])
 
 X, Z = generate_gaussian(
     n_samples=200,
     d=2,
     mu_list=mu_list,
-    sigma_list=sigma_list
+    sigma_list=sigma_list,
 )
 
 X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
@@ -24,12 +24,12 @@ y_test, W_e, W_x = generate_conditional_binary_observations(X_test, Z_test, seed
 
 gmm = GaussianMixtureClassifier(
     z_dim=2,
-    optimizer=GradientDescent(learning_rate=0.05, n_iter=30),
+    optimizer=GradientDescent(learning_rate=0.05, n_iter=10),
     seed=1
 )
 gmm.fit(X_train, y_train)
 
-n_EM_steps = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+n_EM_steps = [1, 5, 10, 15, 20]
 
 accuracies = []
 likelihood = []
@@ -58,8 +58,8 @@ for i, n_EM_step in enumerate(n_EM_steps):
 
     distances_to_params[i][0] = np.linalg.norm(gmm.mu[permutation] - mu_list)
     distances_to_params[i][1] = np.linalg.norm(gmm.sigma[permutation] - sigma_list)
-    distances_to_params[i][2] = np.linalg.norm(gmm.W_e - W_e)
-    distances_to_params[i][3] = np.linalg.norm(gmm.W_x - W_x)
+    distances_to_params[i][2] = np.linalg.norm(gmm.W_e[permutation] - W_e)
+    distances_to_params[i][3] = np.linalg.norm(gmm.W_x[permutation] - W_x)
 
 fig, axs = plt.subplots(1, 2, figsize=(15, 9))
 axs[0].plot(n_EM_steps, accuracies)
@@ -85,3 +85,42 @@ viz.plot_2d_gaussians_samples_with_pdf(X_test, y_test, mu=mu_list, sigma=sigma_l
 viz.plot_2d_gaussians_samples_with_pdf(X_test, y_pred, mu=gmm.mu, sigma=gmm.sigma, subtitle="(estimated)")
 
 plt.show()
+
+print("-=== Parameters objectives ===-")
+print("--------------------")
+print("W_e / W_e_hat:")
+print(W_e)
+print(gmm.W_e)
+print("--------------------")
+print("W_x / W_x_hat:")
+print(W_x)
+print(gmm.W_x)
+print("--------------------")
+
+gmm = GaussianMixtureClassifier(
+    z_dim=2,
+    optimizer=GradientDescent(learning_rate=0.05, n_iter=10),
+    seed=1,
+    W_e_init=W_e,
+    W_x_init=W_x,
+    sigma_init=sigma_list,
+    mu_init=mu_list,
+    pi_init=[.5, .5]
+)
+gmm.fit(X_train, y_train)
+expectations = gmm.expectation_step()
+dW_e = 0
+dW_x = 0
+for c in range(2):
+    for i in range(len(X_train)):
+        x_i = X_train[i]
+        y_i = y_train[i]
+        t_ic = expectations[i][c]
+        y_hat = gmm.classifier_predict_proba(c, x_i)
+        e_ic = gmm.embed(c)
+
+        dW_e += - (y_i - y_hat) * t_ic * e_ic / len(X_train)
+        dW_x += - (y_i - y_hat) * t_ic * x_i / len(X_train)
+
+print("optim: dW_e", dW_e)
+print("optim: dW_x", dW_x)

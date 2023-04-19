@@ -13,7 +13,7 @@ X, Z = generate_gaussian(
     n_samples=200,
     d=2,
     mu_list=mu_list,
-    sigma_list=sigma_list
+    sigma_list=sigma_list,
 )
 
 X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
@@ -24,8 +24,8 @@ y_test, W_e, W_x = generate_conditional_binary_observations(X_test, Z_test, seed
 
 gmm = GaussianMixtureClassifier(
     z_dim=2,
-    optimizer=GradientDescent(learning_rate=0.05, n_iter=10),
-    seed=1,
+    optimizer=GradientDescent(learning_rate=6, n_iter=10),
+    seed=1
 )
 gmm.fit(X_train, y_train)
 gmm.train(n_steps=15, printEvery=1)
@@ -39,11 +39,13 @@ viz.plot_2d_gaussians_samples_with_pdf(X_test, y_pred, mu=gmm.mu, sigma=gmm.sigm
 
 print("-=== Parameters objectives ===-")
 print("--------------------")
-print("W_e - W_e_hat:")
-print(W_e - gmm.W_e)
+print("W_e / W_e_hat:")
+print(W_e)
+print(gmm.W_e)
 print("--------------------")
-print("W_x - W_x_hat:")
-print(W_x - gmm.W_x)
+print("W_x / W_x_hat:")
+print(W_x)
+print(gmm.W_x)
 print("--------------------")
 
 fig, axs = plt.subplots(1, 2, figsize=(15, 9))
