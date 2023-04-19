@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import numpy as np
 
 from src.utils.functions import sigmoid, binary_cross_entropy, derivative_binary_cross_entropy, onehot
-from src.model.EM import EMAbstract
+from src.model.EM.em_template import EMAbstract
 
 
 class BinaryClassifier(ABC):

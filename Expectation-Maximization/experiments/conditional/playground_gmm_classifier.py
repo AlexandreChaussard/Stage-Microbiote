@@ -6,8 +6,8 @@ from src.utils.optimizers import GradientDescent, StochasticGradientDescent, CMA
 import matplotlib.pyplot as plt
 import numpy as np
 
-mu_list = [[-0.1, -0.2], [0.5, 0.3]]
-sigma_list = [[0.1, 0.15], [0.2, 0.1]]
+mu_list = np.array([[-0.1, -0.2], [0.5, 0.3]])
+sigma_list = np.array([[0.1, 0.15], [0.2, 0.1]])
 
 X, Z = generate_gaussian(
     n_samples=200,
@@ -26,7 +26,6 @@ gmm = GaussianMixtureClassifier(
     z_dim=2,
     optimizer=GradientDescent(learning_rate=0.05, n_iter=10),
     seed=1,
-    W_e_init=W_e
 )
 gmm.fit(X_train, y_train)
 gmm.train(n_steps=15, printEvery=1)
@@ -50,6 +49,12 @@ print("--------------------")
 fig, axs = plt.subplots(1, 2, figsize=(15, 9))
 axs[0].plot(gmm.Q_values, label="$Q(\omega, \widehat{\omega})$", marker=".")
 axs[1].plot(gmm.likelihood_values, label="likelihood", marker=".")
+axs[1].axhline(
+    y=gmm.compute_loglikelihood(X_train, y_train, pi=[.5, .5], mu=mu_list, sigma=sigma_list, W_e=W_e, W_x=W_x),
+    color='r',
+    linestyle='--',
+    label="Optimal"
+)
 axs[0].legend()
 axs[1].legend()
 fig.suptitle("Q and likelihood values over training")
