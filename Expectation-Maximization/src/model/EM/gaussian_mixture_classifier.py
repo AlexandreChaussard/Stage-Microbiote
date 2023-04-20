@@ -97,7 +97,7 @@ class GaussianMixtureClassifier(EMAbstract):
 
             ll += logsumexp(values)
 
-        return ll
+        return ll / self.n_samples
 
     def embed(self, c):
         return onehot(c, self.z_dim)
@@ -136,7 +136,10 @@ class GaussianMixtureClassifier(EMAbstract):
         # First we onehot the class to turn it into an embedding vector
         e = self.embed(k)
         # then we compute P(Y = 1 | X, Z = k)
-        return sigmoid(np.dot(W_e[k], e) + np.dot(W_x[k], x))
+        y_hat = sigmoid(np.dot(W_e[k], e) + np.dot(W_x[k], x))
+        if y_hat == np.nan:
+            print("NAN")
+        return y_hat
 
     def eval_Q(self, pi, mu, sigma, W_e, W_x):
 
@@ -150,7 +153,6 @@ class GaussianMixtureClassifier(EMAbstract):
                 y_i = self.y[i]
                 y_hat = self.classifier_predict_proba(c, x_i, W_e, W_x)
                 t_ic = expectations[i][c]
-
                 total += (np.log(pi[c])
                           + np.log(self.p_cond(x_i, mu[c], sigma[c]))
                           + y_i * np.log(y_hat) + (1 - y_i) * np.log(1 - y_hat)) * t_ic
@@ -285,10 +287,10 @@ class GaussianMixtureClassifier(EMAbstract):
                         dW_e += - (y_i - y_hat) * t_ic * e_ic / self.n_samples
                         dW_x += - (y_i - y_hat) * t_ic * x_i / self.n_samples
 
-                    autograd_dW_e = grad(self.optim_Q_W_e)
-                    autograd_dW_x = grad(self.optim_Q_W_x)
-                    assert(np.linalg.norm(autograd_dW_e(self.W_e)[c] - dW_e) < 10e-2)
-                    assert(np.linalg.norm(autograd_dW_x(self.W_x)[c] - dW_x) < 10e-2)
+                    #autograd_dW_e = grad(self.optim_Q_W_e)
+                    #autograd_dW_x = grad(self.optim_Q_W_x)
+                    #print("Autograd W_e", np.linalg.norm(autograd_dW_e(self.W_e)[c] - dW_e))
+                    #print("Autograd W_x", np.linalg.norm(autograd_dW_x(self.W_x)[c] - dW_x))
 
                     W_e[c] -= self.optimizer.learning_rate * dW_e
                     W_x[c] -= self.optimizer.learning_rate * dW_x

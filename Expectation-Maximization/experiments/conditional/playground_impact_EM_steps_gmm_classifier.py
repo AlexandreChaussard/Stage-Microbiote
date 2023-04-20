@@ -6,8 +6,8 @@ from src.utils.optimizers import GradientDescent
 import matplotlib.pyplot as plt
 import numpy as np
 
-mu_list = np.array([[-0.1, -0.2], [0.5, 0.3]])
-sigma_list = np.array([[0.1, 0.15], [0.2, 0.1]])
+mu_list = np.array([[-1, -2], [5, 3]])
+sigma_list = np.array([[1, 1.5], [2, 1]])
 
 X, Z = generate_gaussian(
     n_samples=200,
@@ -18,18 +18,18 @@ X, Z = generate_gaussian(
 
 X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
 
-seed = 8
+seed = 6
 y_train = generate_conditional_binary_observations(X_train, Z_train, seed=seed)
 y_test, W_e, W_x = generate_conditional_binary_observations(X_test, Z_test, seed=seed, returnParams=True)
 
 gmm = GaussianMixtureClassifier(
     z_dim=2,
-    optimizer=GradientDescent(learning_rate=0.05, n_iter=10),
+    optimizer=GradientDescent(learning_rate=0.1, n_iter=10),
     seed=1
 )
 gmm.fit(X_train, y_train)
 
-n_EM_steps = [1, 5, 10, 15, 20]
+n_EM_steps = [1, 10, 20, 30, 40, 50, 60, 70]
 
 accuracies = []
 likelihood = []
@@ -58,7 +58,7 @@ for i, n_EM_step in enumerate(n_EM_steps):
 
     distances_to_params[i][0] = np.linalg.norm(gmm.mu[permutation] - mu_list)
     distances_to_params[i][1] = np.linalg.norm(gmm.sigma[permutation] - sigma_list)
-    distances_to_params[i][2] = np.linalg.norm(gmm.W_e[permutation] - W_e)
+    distances_to_params[i][2] = np.linalg.norm(np.diag(gmm.W_e)[permutation] - np.diag(W_e))
     distances_to_params[i][3] = np.linalg.norm(gmm.W_x[permutation] - W_x)
 
 fig, axs = plt.subplots(1, 2, figsize=(15, 9))

@@ -2,12 +2,12 @@ from src.data.dataloader import generate_gaussian, generate_conditional_binary_o
 import src.utils.viz as viz
 from src.model import GaussianMixtureClassifier
 from src.utils.functions import accuracy
-from src.utils.optimizers import GradientDescent, StochasticGradientDescent, CMAES
+from src.utils.optimizers import MultiStepGradientDescent, GradientDescent, StochasticGradientDescent, CMAES
 import matplotlib.pyplot as plt
 import numpy as np
 
-mu_list = np.array([[-0.1, -0.2], [0.5, 0.3]])
-sigma_list = np.array([[0.1, 0.15], [0.2, 0.1]])
+mu_list = np.array([[-1, -2], [5, 3]])
+sigma_list = np.array([[1, 1.5], [2, 1]])
 
 X, Z = generate_gaussian(
     n_samples=200,
@@ -18,17 +18,17 @@ X, Z = generate_gaussian(
 
 X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
 
-seed = 8
+seed = 6
 y_train = generate_conditional_binary_observations(X_train, Z_train, seed=seed)
 y_test, W_e, W_x = generate_conditional_binary_observations(X_test, Z_test, seed=seed, returnParams=True)
 
 gmm = GaussianMixtureClassifier(
     z_dim=2,
-    optimizer=GradientDescent(learning_rate=6, n_iter=10),
-    seed=1
+    optimizer=GradientDescent(learning_rate=0.1, n_iter=20),
+    seed=1,
 )
 gmm.fit(X_train, y_train)
-gmm.train(n_steps=15, printEvery=1)
+gmm.train(n_steps=30, printEvery=1)
 
 y_pred = gmm.classify(X_test)
 

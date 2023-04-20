@@ -6,8 +6,8 @@ from src.utils.optimizers import GradientDescent
 import matplotlib.pyplot as plt
 import numpy as np
 
-mu_list = [[-0.1, -0.2], [0.5, 0.3]]
-sigma_list = [[0.1, 0.15], [0.2, 0.1]]
+mu_list = np.array([[-1, -2], [5, 3]])
+sigma_list = np.array([[1, 1.5], [2, 1]])
 
 X, Z = generate_gaussian(
     n_samples=200,
@@ -18,7 +18,7 @@ X, Z = generate_gaussian(
 
 X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
 
-seed = 8
+seed = 6
 y_train = generate_conditional_binary_observations(X_train, Z_train, seed=seed)
 y_test, W_e, W_x = generate_conditional_binary_observations(X_test, Z_test, seed=seed, returnParams=True)
 

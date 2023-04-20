@@ -14,6 +14,12 @@ class GradientDescent(Optimizer):
         super(GradientDescent, self).__init__("GD", learning_rate, n_iter)
 
 
+class MultiStepGradientDescent(Optimizer):
+    def __init__(self, learning_rates, n_iter):
+        super(MultiStepGradientDescent, self).__init__("GD", learning_rates, n_iter)
+        self.learning_rates = learning_rates
+
+
 class StochasticGradientDescent(Optimizer):
     def __init__(self, learning_rate, n_iter, step_size_decay=False, batch_size=1):
         super(StochasticGradientDescent, self).__init__("SGD", learning_rate, n_iter)

@@ -8,10 +8,10 @@ from src.utils.functions import accuracy
 from src.utils.optimizers import GradientDescent
 import matplotlib.pyplot as plt
 
-mu_list = np.array([[-0.1, -0.2], [0.5, 0.3]])
-sigma_list = np.array([[0.1, 0.15], [0.2, 0.1]])
+mu_list = np.array([[-1, -2], [5, 3]])
+sigma_list = np.array([[1, 1.5], [2, 1]])
 
-seed = 8
+seed = 6
 X, Z = generate_gaussian(
     n_samples=500,
     d=2,
