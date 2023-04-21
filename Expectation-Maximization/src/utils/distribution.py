@@ -12,5 +12,10 @@ def pdf_gaussian(x, mu, sigma):
     else:
         mu_list = mu
         sigma_matrix = np.diag(sigma)
+    if 0 in np.diag(sigma_matrix):
+        if np.linalg.norm(x - mu) == 0:
+            return np.inf
+        else:
+            return 0
     eval = stats.multivariate_normal(mean=mu_list, cov=sigma_matrix**2).pdf(x)
     return eval

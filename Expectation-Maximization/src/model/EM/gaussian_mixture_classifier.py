@@ -32,11 +32,17 @@ class GaussianMixtureClassifier(EMAbstract):
     ):
         super().__init__(pdf_gaussian, z_dim, seed)
         self.optimizer = optimizer
-        self.W_e = W_e_init
-        self.W_x = W_x_init
-        self.mu = mu_init
-        self.sigma = sigma_init
-        self.pi = pi_init
+        self.W_e_init = W_e_init
+        self.W_x_init = W_x_init
+        self.mu_init = mu_init
+        self.sigma_init = sigma_init
+        self.pi_init = pi_init
+
+        self.W_e = None
+        self.W_x = None
+        self.mu = None
+        self.sigma = None
+        self.pi = None
 
     def fit(self, X, y=None):
         super().fit(X)
@@ -46,21 +52,31 @@ class GaussianMixtureClassifier(EMAbstract):
 
         # In the case of the gaussian mixture model, theta is given by:
         # theta = [mu_1, ..., mu_c, sigma_1, ..., sigma_c, pi_1, ..., pi_c]
-        if self.mu is None:
+        if self.mu_init is None:
             self.mu = np.random.randn(self.z_dim, X.shape[1])
-        if self.sigma is None:
+        else:
+            self.mu = self.mu_init
+        if self.sigma_init is None:
             self.sigma = np.random.randn(self.z_dim, X.shape[1]) ** 2 + 1
+        else:
+            self.sigma = self.sigma_init
         # generate a uniform simplex vector for pi
-        if self.pi is None:
+        if self.pi_init is None:
             self.pi = np.ones(self.z_dim) / self.z_dim
+        else:
+            self.pi = self.pi_init
 
         # We also get parameters from the classification framework as
         # Embedding parameter, for which one row is a W_e_k
-        if self.W_e is None:
+        if self.W_e_init is None:
             self.W_e = np.zeros((self.z_dim, self.z_dim))
+        else:
+            self.W_e = self.W_e_init
         # Data parameter, for which one row is a W_x_k
-        if self.W_x is None:
+        if self.W_x_init is None:
             self.W_x = np.zeros((self.z_dim, X.shape[1]))
+        else:
+            self.W_x = self.W_x_init
 
         # Save the values of Q(theta, theta_hat)
         self.Q_values = [self.eval_Q(self.pi, self.mu, self.sigma, self.W_e, self.W_x)]
@@ -124,7 +140,11 @@ class GaussianMixtureClassifier(EMAbstract):
                 log_proba_y[k] = np.log(self.classifier_predict_proba(k, x_i)) + log_t_i[k]
 
             proba[i] = np.exp(logsumexp(log_proba_y))
-        assert ((proba < 1).all())
+
+        if ((proba <= 1).all() and (proba >= 0).all()) is False:
+            print("Proba is not a probability vector.")
+            print(proba)
+            assert False
         y = (proba > 0.5) * 1
         return y
 
@@ -200,7 +220,6 @@ class GaussianMixtureClassifier(EMAbstract):
         # First we compute the exact optimum for the gaussian models we have
         # These are exactly computed from the maximum likelihood estimator
         for c in range(self.z_dim):
-
             # Column vector of [t_ic]_i for the case Z = c
             t_c = expectations[:, c].reshape(-1, 1)
             N_c = t_c.sum()
@@ -287,10 +306,10 @@ class GaussianMixtureClassifier(EMAbstract):
                         dW_e += - (y_i - y_hat) * t_ic * e_ic / self.n_samples
                         dW_x += - (y_i - y_hat) * t_ic * x_i / self.n_samples
 
-                    #autograd_dW_e = grad(self.optim_Q_W_e)
-                    #autograd_dW_x = grad(self.optim_Q_W_x)
-                    #print("Autograd W_e", np.linalg.norm(autograd_dW_e(self.W_e)[c] - dW_e))
-                    #print("Autograd W_x", np.linalg.norm(autograd_dW_x(self.W_x)[c] - dW_x))
+                    # autograd_dW_e = grad(self.optim_Q_W_e)
+                    # autograd_dW_x = grad(self.optim_Q_W_x)
+                    # print("Autograd W_e", np.linalg.norm(autograd_dW_e(self.W_e)[c] - dW_e))
+                    # print("Autograd W_x", np.linalg.norm(autograd_dW_x(self.W_x)[c] - dW_x))
 
                     W_e[c] -= self.optimizer.learning_rate * dW_e
                     W_x[c] -= self.optimizer.learning_rate * dW_x

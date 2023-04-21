@@ -63,11 +63,23 @@ def generate_conditional_binary_observations(X, Z, W_e=None, W_x=None, seed=None
     return y
 
 
-def get_NIPICOL(path="./"):
+def get_NIPICOL(precision, path="./"):
     df = pd.read_csv(
         os.path.join(path, "nipicol_asv.txt"), sep="	"
     )
-    return df
+    df = df.drop(columns=df.columns[df.columns.str.contains('bis')])
+
+    precisions = ['d', 'p', 'c', 'o', 'f', 'g']
+    if precision >= len(precisions):
+        print(f"Precision must be between 0 and {len(precisions)-1}.")
+        return None
+
+    rdf = df[df['ASV_ID'].str.contains(f'{precisions[precision]}__')]
+    if precision < len(precisions) - 1:
+        rdf['ASV_ID'] = rdf['ASV_ID'].str.split(f'{precisions[precision + 1]}__', n=1, expand=True)[0]
+        rdf = rdf.groupby(by='ASV_ID').sum()
+
+    return rdf
 
 
 def get_mapping_NIPICOL(path="./"):
@@ -75,6 +87,7 @@ def get_mapping_NIPICOL(path="./"):
         os.path.join(path, "mapping_nipicol.txt"), sep="	"
     )
     df.columns = ['id'] + df.columns[1:].tolist()
+    df = df.drop(index=df[df.id.str.contains('bis')].index)
     return df
 
 
