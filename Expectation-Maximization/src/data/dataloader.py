@@ -1,7 +1,11 @@
+import warnings
+
 import numpy as np
 import os
 import pandas as pd
 import src.utils.functions as functions
+
+warnings.filterwarnings("ignore")
 
 
 def generate_gaussian(n_samples, d, mu_list, sigma_list, seed=None):
@@ -69,15 +73,23 @@ def get_NIPICOL(precision, path="./"):
     )
     df = df.drop(columns=df.columns[df.columns.str.contains('bis')])
 
-    precisions = ['d', 'p', 'c', 'o', 'f', 'g']
+    precisions = ['d', 'p', 'c', 'o', 'f', 'g', 's']
     if precision >= len(precisions):
-        print(f"Precision must be between 0 and {len(precisions)-1}.")
+        print(f"Precision must be between 0 and {len(precisions) - 1}.")
         return None
 
     rdf = df[df['ASV_ID'].str.contains(f'{precisions[precision]}__')]
     if precision < len(precisions) - 1:
         rdf['ASV_ID'] = rdf['ASV_ID'].str.split(f'{precisions[precision + 1]}__', n=1, expand=True)[0]
-        rdf = rdf.groupby(by='ASV_ID').sum()
+
+    def remove_last_sep(asv_id):
+        i = -1
+        while asv_id[i] != '|':
+            i -= 1
+        return asv_id[:i]
+
+    rdf['ASV_ID'] = rdf['ASV_ID'].apply(remove_last_sep)
+    rdf = rdf.groupby(by='ASV_ID').sum()
 
     return rdf
 
