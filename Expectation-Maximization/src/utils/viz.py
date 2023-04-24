@@ -25,8 +25,8 @@ def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle="", alpha=0.2):
     labels = np.unique(y)
 
     # Plot the contours first
-    abscisse = np.linspace(np.min(X[:, 0])-0.1, np.max(X[:, 0])+0.1, 100)
-    ordonnee = np.linspace(np.min(X[:, 1])-0.1, np.max(X[:, 1])+0.1, 100)
+    abscisse = np.linspace(np.min(X[:, 0]) - 0.1, np.max(X[:, 0]) + 0.1, 100)
+    ordonnee = np.linspace(np.min(X[:, 1]) - 0.1, np.max(X[:, 1]) + 0.1, 100)
     X_contour, Y_contour = np.meshgrid(abscisse, ordonnee)
     pos = np.dstack((X_contour, Y_contour))
     Z_contour = None
@@ -82,4 +82,26 @@ def plot_1d_gaussian_samples_with_pdf(X, y, mu_list, sigma_list, n_bins, subtitl
         sigma = sigma_list[i]
         axs.plot(abscisse, pdf_gaussian(abscisse, mu, sigma), color="C0")
 
+    plt.show()
+
+
+def plot_individual_microbiota(images, n_rows, n_cols):
+    fig, axs = plt.subplots(n_rows, n_cols, figsize=(10, 9))
+    i = 0
+    j = 0
+    for image in images:
+        axs[i][j].imshow(image, cmap='Blues')
+
+        j += 1
+        if j % n_cols == 0:
+            i += 1
+            j = 0
+
+    for i in range(len(axs)):
+        for j in range(len(axs[i])):
+            axs[i][j].set_xticks([])
+            axs[i][j].set_yticks([])
+            axs[i][j].axis('off')
+
+    fig.suptitle("Image representation of microbiota abundance")
     plt.show()
