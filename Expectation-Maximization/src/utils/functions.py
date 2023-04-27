@@ -1,4 +1,5 @@
 import autograd.numpy as np
+import scipy.special as special
 
 
 def sigmoid(x):
@@ -37,3 +38,15 @@ def identify_permutation(v1, v2):
 
 def accuracy(y_true, y_pred):
     return (y_true == y_pred).mean()
+
+
+def gamma(z):
+    return special.gamma(z)
+
+
+def digamma(z):
+    return special.digamma(z)
+
+
+def invdigamma(z):
+    return None

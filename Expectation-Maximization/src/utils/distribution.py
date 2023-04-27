@@ -17,5 +17,9 @@ def pdf_gaussian(x, mu, sigma):
             return np.inf
         else:
             return 0
-    eval = stats.multivariate_normal(mean=mu_list, cov=sigma_matrix**2).pdf(x)
+    eval = stats.multivariate_normal(mean=mu_list, cov=sigma_matrix ** 2).pdf(x)
     return eval
+
+
+def pdf_dirichlet(x, alpha):
+    return stats.dirichlet.pdf(x, alpha)
