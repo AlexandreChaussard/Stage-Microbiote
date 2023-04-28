@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as colormap
 import numpy as np
 from src.utils.distribution import pdf_gaussian
+from src.utils.distribution import pdf_dirichlet
 
 
 def plot_2d_gaussians_samples(X, y, subtitle=""):
@@ -39,6 +40,27 @@ def plot_2d_gaussians_samples_with_pdf(X, y, mu, sigma, subtitle="", alpha=0.2):
 
     axs.contourf(X_contour, Y_contour, Z_contour, cmap=colormap.get_cmap('binary'))
 
+    indexes = np.arange(0, len(X))
+    np.random.shuffle(indexes)
+    label_axes = np.zeros(len(labels))
+    for i in indexes:
+        x_i = X[i]
+        y_i = int(y[i])
+        if label_axes[y_i] == 1:
+            axs.plot(x_i[0], x_i[1], marker="o", linestyle="", color=f"C{y_i}", alpha=alpha)
+        else:
+            label_axes[y_i] = 1
+            axs.plot(x_i[0], x_i[1], marker="o", linestyle="", color=f"C{y_i}", alpha=alpha, label=y_i)
+    axs.legend()
+    plt.show()
+
+
+def plot_2d_dirichlet_samples_with_pdf(X, y, alpha_list, subtitle="", alpha=0.2):
+    fig, axs = plt.subplots()
+    fig.suptitle(f"Gaussian samples \n{subtitle}")
+
+    labels = np.unique(y)
+    
     indexes = np.arange(0, len(X))
     np.random.shuffle(indexes)
     label_axes = np.zeros(len(labels))

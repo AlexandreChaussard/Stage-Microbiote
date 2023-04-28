@@ -48,5 +48,17 @@ def digamma(z):
     return special.digamma(z)
 
 
-def invdigamma(z):
-    return None
+def derive_digamma(z, n):
+    return special.polygamma(n, z)
+
+
+def invdigamma(y, n_iter=5):
+    if y >= -2.22:
+        x = np.exp(y) + .5
+    else:
+        gamma = - digamma(1)
+        x = -1 / (y + gamma)
+
+    for _ in range(n_iter):
+        x = x - (digamma(x) - y) / derive_digamma(x, 1)
+    return x

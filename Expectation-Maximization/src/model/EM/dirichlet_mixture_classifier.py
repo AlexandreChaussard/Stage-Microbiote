@@ -53,6 +53,7 @@ class DirichletMixtureClassifier(EMAbstract):
         # theta = [alpha_1, alpha_2, ..., pi_1, ..., pi_c]
         if self.alpha_init is None:
             self.alpha = np.random.randn(self.z_dim, X.shape[1])
+            self.alpha += np.abs(np.min(self.alpha)) + np.abs(np.random.random())
         else:
             self.alpha = self.alpha
 
@@ -214,14 +215,16 @@ class DirichletMixtureClassifier(EMAbstract):
         # These are exactly computed from the maximum likelihood estimator
         for c in range(self.z_dim):
             # Column vector of [t_ic]_i for the case Z = c
-            t_c = expectations[:, c].reshape(-1, 1)
-            N_c = t_c.sum()
+            t_c = expectations[:, c].reshape(-1,)
 
             # Update of pi_c
             self.pi[c] = np.mean(t_c)
             # update of alpha_c
-            for _ in range(self.n_iter_alpha):
-                self.alpha[c] = invdigamma((t_c * self.X[:, c]).sum() / t_c.sum() + digamma(self.alpha[c].sum()))
+            for j in range(len(self.alpha[c])):
+                for _ in range(self.n_iter_alpha):
+                    self.alpha[c][j] = invdigamma(
+                        np.dot(t_c, np.log(self.X[:, j])) / t_c.sum() + digamma(self.alpha[c].sum())
+                    )
 
         # Then we proceed by computing the regression parameters
         # These do not have an analytical optimum, and will be approached using iterative procedures

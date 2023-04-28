@@ -16,6 +16,6 @@ X, Z = generate_gaussian(
 seed=6
 y = generate_conditional_binary_observations(X, Z, seed=seed)
 
-viz.plot_2d_gaussians_samples_with_pdf(X, y, mu=mu_list, sigma=sigma_list, subtitle=f"Conditional binary observations (seed {seed})")
+viz.plot_2d_gaussians_samples_with_pdf(X, y, mu=mu_list, sigma=sigma_list, subtitle=f"Conditional binary observations (seed {seed})", alpha=0.8)
 
 plt.show()
