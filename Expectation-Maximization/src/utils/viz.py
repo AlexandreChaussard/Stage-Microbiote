@@ -63,11 +63,11 @@ def plot_2d_dirichlet_samples_with_pdf(X, y, alpha_list, subtitle="", alpha=0.2)
     
     indexes = np.arange(0, len(X))
     np.random.shuffle(indexes)
-    label_axes = np.zeros(len(labels))
+    label_axes = {}
     for i in indexes:
         x_i = X[i]
         y_i = int(y[i])
-        if label_axes[y_i] == 1:
+        if y_i in label_axes:
             axs.plot(x_i[0], x_i[1], marker="o", linestyle="", color=f"C{y_i}", alpha=alpha)
         else:
             label_axes[y_i] = 1

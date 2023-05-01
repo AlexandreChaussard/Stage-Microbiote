@@ -8,7 +8,7 @@ from src.utils.optimizers import GradientDescent
 
 alpha_list = [[5, 3, 20], [15, 4, 2]]
 
-seed = 6
+seed = 621
 X, Z = generate_dirichlet(
     n_samples=100,
     alpha_list=alpha_list,

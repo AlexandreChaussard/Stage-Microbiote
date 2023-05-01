@@ -8,14 +8,14 @@ import numpy as np
 
 alpha_list = [[5, 3, 20], [15, 4, 2]]
 
-seed = 6
+seed = 621
 X, Z = generate_dirichlet(
-    n_samples=100,
+    n_samples=400,
     alpha_list=alpha_list,
     seed=seed
 )
 
-X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=100)
+X_train, Z_train, X_test, Z_test = get_train_test(X, Z, n_train=200)
 
 y_train = generate_conditional_binary_observations(X_train, Z_train, seed=seed)
 y_test, W_e, W_x = generate_conditional_binary_observations(X_test, Z_test, seed=seed, returnParams=True)
@@ -68,9 +68,9 @@ fig.suptitle("Metrics / EM Step with GD 20 steps and 100 training samples")
 
 fig2, axs2 = plt.subplots(1, distances_to_params.shape[1], figsize=(15, 6))
 title = [
-    "$\Vert \Alpha^* - \Alpha \Vert$",
-    "$\Vert W_e^* - W_e \Vert$",
-    "$\Vert W_x^* - W_x \Vert$",
+    r"$\Vert \alpha^* - \alpha \Vert$",
+    r"$\Vert W_e^* - W_e \Vert$",
+    r"$\Vert W_x^* - W_x \Vert$",
 ]
 for i in range(distances_to_params.shape[1]):
     axs2[i].plot(n_EM_steps, distances_to_params[:, i])
