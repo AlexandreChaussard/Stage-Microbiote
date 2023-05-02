@@ -55,6 +55,96 @@
       \field{pages}{307\bibrangedash 392}
       \range{pages}{86}
     \endentry
+    \entry{pixel_cnn_paper}{article}{}
+      \name{author}{3}{}{%
+        {{hash=eb4d5c66a32d8ff3f8cb56e4544c1876}{%
+           family={Oord},
+           familyi={O\bibinitperiod},
+           given={Aäron},
+           giveni={A\bibinitperiod},
+           prefix={van\bibnamedelima den},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=d2d0778c1cdd451c75b874b58eec7564}{%
+           family={Kalchbrenner},
+           familyi={K\bibinitperiod},
+           given={Nal},
+           giveni={N\bibinitperiod}}}%
+        {{hash=481308b301166b521c74fde6566e97e6}{%
+           family={Kavukcuoglu},
+           familyi={K\bibinitperiod},
+           given={Koray},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{348035e4e7508c2ad5afa10801ed59fa}
+      \strng{fullhash}{348035e4e7508c2ad5afa10801ed59fa}
+      \strng{bibnamehash}{348035e4e7508c2ad5afa10801ed59fa}
+      \strng{authorbibnamehash}{348035e4e7508c2ad5afa10801ed59fa}
+      \strng{authornamehash}{348035e4e7508c2ad5afa10801ed59fa}
+      \strng{authorfullhash}{348035e4e7508c2ad5afa10801ed59fa}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Pixel Recurrent Neural Networks}
+      \field{volume}{abs/1601.06759}
+      \field{year}{2016}
+      \verb{eprint}
+      \verb 1601.06759
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1601.06759
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1601.06759
+      \endverb
+    \endentry
+    \entry{vq_vae_paper}{article}{}
+      \name{author}{3}{}{%
+        {{hash=eb4d5c66a32d8ff3f8cb56e4544c1876}{%
+           family={Oord},
+           familyi={O\bibinitperiod},
+           given={Aäron},
+           giveni={A\bibinitperiod},
+           prefix={van\bibnamedelima den},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=494b568c5dc85ba8f3f409635f9c5f25}{%
+           family={Vinyals},
+           familyi={V\bibinitperiod},
+           given={Oriol},
+           giveni={O\bibinitperiod}}}%
+        {{hash=481308b301166b521c74fde6566e97e6}{%
+           family={Kavukcuoglu},
+           familyi={K\bibinitperiod},
+           given={Koray},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{74239f879273f35feb364a42b1759ad4}
+      \strng{fullhash}{74239f879273f35feb364a42b1759ad4}
+      \strng{bibnamehash}{74239f879273f35feb364a42b1759ad4}
+      \strng{authorbibnamehash}{74239f879273f35feb364a42b1759ad4}
+      \strng{authornamehash}{74239f879273f35feb364a42b1759ad4}
+      \strng{authorfullhash}{74239f879273f35feb364a42b1759ad4}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Neural Discrete Representation Learning}
+      \field{volume}{abs/1711.00937}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1711.00937
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1711.00937
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1711.00937
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

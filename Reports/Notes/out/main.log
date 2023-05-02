@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  2 MAY 2023 14:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  2 MAY 2023 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -140,10 +140,11 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -746,14 +747,14 @@ Package: xparse 2023-02-02 L3 Experimental document command parser
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
 
-main.tex:57: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
+main.tex:59: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
 '.
 
 See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 \bibliographystyle{ieeetr}
+l.59 \bibliographystyle{ieeetr}
                                
 Use the package option 'style' instead.
 I'm ignoring this command.
@@ -767,20 +768,20 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -860,8 +861,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.bbl)
-Package biblatex Info: Reference section=0 on input line 75.
-Package biblatex Info: Reference segment=0 on input line 75.
+Package biblatex Info: Reference section=0 on input line 77.
+Package biblatex Info: Reference segment=0 on input line 77.
 
 (sections/titlepage.tex
 <images/logo_ipp.png, id=1, 270.51062pt x 270.00874pt>
@@ -907,7 +908,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2] (sections/vae.tex
 
-sections/vae.tex:43: Package amsmath Error: Erroneous nesting of equation struc
+sections/vae.tex:47: Package amsmath Error: Erroneous nesting of equation struc
 tures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -915,7 +916,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.43 \end{align}
+l.47 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -930,7 +931,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3]
 
-sections/vae.tex:62: Package amsmath Error: Erroneous nesting of equation struc
+sections/vae.tex:71: Package amsmath Error: Erroneous nesting of equation struc
 tures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -938,11 +939,19 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.62 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
+l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+<images/Reparameterized_Variational_Autoencoder.png, id=37, 803.0pt x 333.245pt
+>
+File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
+)
+<use images/Reparameterized_Variational_Autoencoder.png>
+Package pdftex.def Info: images/Reparameterized_Variational_Autoencoder.png  us
+ed on input line 100.
+(pdftex.def)             Requested size: 338.58632pt x 140.51619pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -960,7 +969,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5] (sections/bibpage.tex)
+[5 <./images/Reparameterized_Variational_Autoencoder.png>] (sections/vq_vae.tex
+<images/vq_vae_architecture.png, id=45, 839.63687pt x 178.16562pt>
+File: images/vq_vae_architecture.png Graphic file (type png)
+<use images/vq_vae_architecture.png>
+Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
+
+(pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
+<images/vq_vae_quantization.png, id=46, 815.54688pt x 330.73563pt>
+File: images/vq_vae_quantization.png Graphic file (type png)
+<use images/vq_vae_quantization.png>
+Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
+
+(pdftex.def)             Requested size: 338.58632pt x 137.30823pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -969,48 +990,132 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[6 <./images/vq_vae_architecture.png> <./images/vq_vae_quantization.png>]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 4
+6.
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+
+sections/vq_vae.tex:63: Package amsmath Error: Erroneous nesting of equation st
+ructures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/vq_vae.tex:72: Package amsmath Error: Erroneous nesting of equation st
+ructures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72           \end{align}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/vq_vae.tex:82: Package amsmath Error: Erroneous nesting of equation st
+ructures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82           \end{align}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8] (sections/bibpage.tex)
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
+.
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18657 strings out of 476315
- 377745 string characters out of 5787197
- 1863068 words of memory out of 5000000
- 38889 multiletter control sequences out of 15000+600000
- 526205 words of font info for 63 fonts, out of 8000000 for 9000
+ 18774 strings out of 476315
+ 381452 string characters out of 5787197
+ 1864068 words of memory out of 5000000
+ 38986 multiletter control sequences out of 15000+600000
+ 527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,16n,79p,679b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
+ <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\frigi\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\frigi\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\frigi\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk> <C:\Users\frigi\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk><C:/Users/f
-rigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
-:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-12.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmmi6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr12.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/frigi/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/frigi/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/frigi/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/frigi/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
-/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb>
+0\tcti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\frigi\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\frigi\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\
+frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk> <C:\
+Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk
+><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mex10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/frigi/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/frigi/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/frigi/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/fri
+gi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/U
+sers/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestrok
+e/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (7 pages, 295065 bytes).
+t\main.pdf (10 pages, 911777 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
+ 435 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
