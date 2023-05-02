@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  2 MAY 2023 16:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  2 MAY 2023 23:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1056,7 +1056,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8] (sections/bibpage.tex)
+[8] (sections/pixel_cnn.tex
+<images/masked_convolution_pixel_cnn.png, id=62, 214.8025pt x 176.66pt>
+File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
+<use images/masked_convolution_pixel_cnn.png>
+Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
+ line 26.
+(pdftex.def)             Requested size: 193.32045pt x 158.99252pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9 <./images/masked_convolution_pixel_cnn.png>])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10] (sections/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -1071,16 +1096,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[11] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18774 strings out of 476315
- 381452 string characters out of 5787197
+ 18792 strings out of 476315
+ 382153 string characters out of 5787197
  1864068 words of memory out of 5000000
- 38986 multiletter control sequences out of 15000+600000
+ 39000 multiletter control sequences out of 15000+600000
  527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,16n,79p,679b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1113,9 +1138,9 @@ fb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestrok
 e/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (10 pages, 911777 bytes).
+t\main.pdf (12 pages, 934021 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
+ 462 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
