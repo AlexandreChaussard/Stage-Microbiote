@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{numprint}
+\usepackage{url}
+\usepackage{dirtree}
+
+\usepackage[Glenn]{fncychap}
+\usepackage{enumitem}
+\usepackage{multicol}
+\pagestyle{plain}
+\usepackage{subfig}
+\usepackage{siunitx}
+
+% You can set the margine of the text by setting the top, bottom, left and right properties. Also, if using more than one columns, you can change the columnsep property to set the seperation space between two columns.
+\usepackage[a4paper,top=30mm,bottom=30mm,columnsep=6mm,left=20mm,right=20mm]{geometry}
+
+% uncommnet and change the following two commands to set seperation line width between coulmns.
+
+% \setlength{\columnsep}{1cm}
+% \setlength{\columnseprule}{0.6pt}
+
+%########################## Paper Meta data#########################
+% You can change the variables in the following section to set them globally thrghout the whole paper.
+
+% Title of the paper
+\newcommand{\papertitle}{Internship notes}
+\newcommand{\shorttitle}{}
+
+% Full name of the author(s)
+\newcommand{\authorname}{Alexandre CHAUSSARD}
+
+% Module code
+\newcommand{\acmodulecode}{01/05/2023}
+
+% Module name
+\newcommand{\acmodulename}{}
+
+% Name of the college
+\newcommand{\accollegename}{Laboratoire de Probabilité, Statistiques et Modélisation}
+
+% Date
+\newcommand{\wrdate}{May 2023}
+%########################## Paper Meta data#########################
+
+\usepackage{fancyhdr}
+
+\usepackage{biblatex}
+\bibliographystyle{ieeetr}
+\addbibresource{library.bib}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\textsc{\shorttitle}}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\acmodulecode\  \textsc{\acmodulename}}
+% \fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+
+
+\title{\papertitle}
+\author{\authorname}
+
+
+\begin{document}
+
+\input{sections/titlepage}
+
+\input{sections/introduction}
+
+\newpage
+\input{sections/vae}
+
+\newpage
+\input{sections/bibpage.tex}
+
+\end{document}
