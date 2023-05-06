@@ -1,15 +1,20 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{2}{}%
-\contentsline {section}{\numberline {2}Variational Auto-Encoders}{3}{}%
-\contentsline {subsection}{\numberline {2.1}Framework and optimization objective}{3}{}%
-\contentsline {subsection}{\numberline {2.2}Reparameterization trick}{4}{}%
-\contentsline {subsection}{\numberline {2.3}Architecture}{4}{}%
-\contentsline {subsection}{\numberline {2.4}Limits for our problem}{5}{}%
-\contentsline {section}{\numberline {3}VQ-VAE}{6}{}%
-\contentsline {subsection}{\numberline {3.1}Quick overview}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Framework and optimization objective}{6}{}%
-\contentsline {subsection}{\numberline {3.3}Discussion over some limiting aspects}{8}{}%
-\contentsline {section}{\numberline {4}PixelCNN}{9}{}%
-\contentsline {subsection}{\numberline {4.1}Overview}{9}{}%
-\contentsline {subsection}{\numberline {4.2}Usage in the VQ-VAE}{10}{}%
-\contentsline {section}{\numberline {5}Bibliography}{11}{}%
+\contentsline {section}{\numberline {2}Expectation-Maximization}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Overview}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Gaussian Mixture Linear Classifier}{4}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Framework and computations}{4}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Dataset generation}{5}{}%
+\contentsline {section}{\numberline {3}Variational Auto-Encoders}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Framework and optimization objective}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Reparameterization trick}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Architecture}{7}{}%
+\contentsline {subsection}{\numberline {3.4}Limits for our problem}{8}{}%
+\contentsline {section}{\numberline {4}VQ-VAE}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Quick overview}{9}{}%
+\contentsline {subsection}{\numberline {4.2}Framework and optimization objective}{9}{}%
+\contentsline {subsection}{\numberline {4.3}Discussion over some limiting aspects}{11}{}%
+\contentsline {section}{\numberline {5}PixelCNN}{12}{}%
+\contentsline {subsection}{\numberline {5.1}Overview}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Usage in the VQ-VAE}{13}{}%
+\contentsline {section}{\numberline {6}Bibliography}{14}{}%

@@ -13,6 +13,8 @@
 \usepackage{numprint}
 \usepackage{url}
 \usepackage{dirtree}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 %\usepackage[hidelinks]{hyperref}
 
 \usepackage[Glenn]{fncychap}
@@ -56,6 +58,8 @@
 \usepackage{fancyhdr}
 
 \usepackage{biblatex}
+\usepackage{algpseudocode}
+\usepackage{textcomp}
 \bibliographystyle{ieeetr}
 \addbibresource{library.bib}
 
@@ -75,19 +79,25 @@
 
 
 \begin{document}
+    
+% general section    
+\input{sections/general/titlepage.tex}
 
-\input{sections/titlepage}
+\input{sections/general/introduction.tex}
+\newpage
 
-\input{sections/introduction}
+% EM
+\input{sections/EM/EM.tex}
+
+% Discrete VAE
+\newpage
+\input{sections/discrete_vae/vae.tex}
+\newpage
+\input{sections/discrete_vae/vq_vae.tex}
+\newpage
+\input{sections/discrete_vae/pixel_cnn.tex}
 
 \newpage
-\input{sections/vae}
-\newpage
-\input{sections/vq_vae}
-\newpage
-\input{sections/pixel_cnn}
-
-\newpage
-\input{sections/bibpage.tex}
+\input{sections/general/bibpage.tex}
 
 \end{document}

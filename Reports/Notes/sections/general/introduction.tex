@@ -1,0 +1,20 @@
+\section{Introduction}
+
+
+Given observations of random variables $(X,Y)$, we suppose that there exist another set of random variables $Z$ that we do not observe,
+yet that characterize $(X,Y)$ conditionally to $Z$.
+$Z$ is then called a latent variable, or a hidden variable. \\
+
+For instance, if we observe the weights of a given population through $X$, and that we aim at inferring their height $Y$, knowing the
+sex of each individual through $Z$ could improve our predictions on $Y$.
+Hence, assuming that there exist a latent variable to a given model adds structure to the model while improving the explainability,
+as $Z$ characterizes the behavior of our dataset.
+Typically, clustering methods like KMeans or Gaussian Mixtures Models (GMM) provide a discrete $Z$ given the observations, which are
+interesting in the sense that they provide a categorical representation of our data. \\
+
+However, finding such $Z$ given the observations is not straight forward, and not all dataset respond to a latent process, and may be not even a discrete one. \\
+
+During this research internship, we aim at exploring latent models with discrete latent space in order to analyze the microbiota structure.
+Our first focus will be on various methods to conceive latent models like Expectation-Maximization and variational models.
+
+

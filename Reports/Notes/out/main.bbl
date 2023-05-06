@@ -19,6 +19,57 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{expectation_maximization_source}{article}{}
+      \name{author}{3}{}{%
+        {{hash=09d592a5388131e31704c9c4464439c9}{%
+           family={Dempster},
+           familyi={D\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=fe02498c1cfcd510f8d219a94a103188}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={N.\bibnamedelimi M.},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=fa537601df11ba114c0c74ca6806de99}{%
+           family={Rubin},
+           familyi={R\bibinitperiod},
+           given={D.\bibnamedelimi B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[Royal Statistical Society, Wiley]}%
+      }
+      \strng{namehash}{8a5d801114e869ed61f35e1fd30408ef}
+      \strng{fullhash}{8a5d801114e869ed61f35e1fd30408ef}
+      \strng{bibnamehash}{8a5d801114e869ed61f35e1fd30408ef}
+      \strng{authorbibnamehash}{8a5d801114e869ed61f35e1fd30408ef}
+      \strng{authornamehash}{8a5d801114e869ed61f35e1fd30408ef}
+      \strng{authorfullhash}{8a5d801114e869ed61f35e1fd30408ef}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A broadly applicable algorithm for computing maximum likelihood estimates from incomplete data is presented at various levels of generality. Theory showing the monotone behaviour of the likelihood and convergence of the algorithm is derived. Many examples are sketched, including missing value situations, applications to grouped, censored or truncated data, finite mixture models, variance component estimation, hyperparameter estimation, iteratively reweighted least squares and factor analysis.}
+      \field{issn}{00359246}
+      \field{journaltitle}{Journal of the Royal Statistical Society. Series B (Methodological)}
+      \field{number}{1}
+      \field{title}{Maximum Likelihood from Incomplete Data via the EM Algorithm}
+      \field{urlday}{6}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{volume}{39}
+      \field{year}{1977}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 38}
+      \range{pages}{38}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2984875
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2984875
+      \endverb
+    \endentry
     \entry{kingma2019introduction}{article}{}
       \true{moreauthor}
       \true{morelabelname}
