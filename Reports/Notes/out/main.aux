@@ -15,39 +15,53 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Gaussian Mixture Linear Classifier}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Framework and computations}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Dataset generation}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Generated samples out of $K=2$ gaussians, labelized using a logistic model (label 1 or 0). The density of the hidden gaussians is represented in the background using shades of grey (black intense, white almost 0)\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:samples_gmm_lc}{{1}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Generated samples out of $K=2$ gaussians, using the same parameters as for figure \ref {fig:samples_gmm_lc} divided by a factor 10.\relax }}{6}{}\protected@file@percent }
+\newlabel{fig:gmm_lc_badconditioning}{{2}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Dirichlet Mixture Linear Classifier}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Framework and objectives}{7}{}\protected@file@percent }
+\abx@aux@cite{0}{dirichlet_digamma_trick}
+\abx@aux@segm{0}{0}{dirichlet_digamma_trick}
+\abx@aux@cite{0}{dirichlet_digamma_trick}
+\abx@aux@segm{0}{0}{dirichlet_digamma_trick}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Dataset generation}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Generated samples out of $K=2$ dirichlet distributions, labelized using the sigmoid modelisation on $\mathbb  {P}(Y_i = 1)$.\relax }}{9}{}\protected@file@percent }
+\newlabel{fig:dirichlet_lc_badconditioning}{{3}{9}}
 \abx@aux@cite{0}{kingma2019introduction}
 \abx@aux@segm{0}{0}{kingma2019introduction}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Variational Auto-Encoders}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Framework and optimization objective}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reparameterization trick}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Architecture}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Illustration of a VAE with Gaussian prior (wikipedia)\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:vae_architecture}{{1}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Limits for our problem}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Variational Auto-Encoders}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Framework and optimization objective}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reparameterization trick}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Architecture}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Illustration of a VAE with Gaussian prior (wikipedia)\relax }}{12}{}\protected@file@percent }
+\newlabel{fig:vae_architecture}{{4}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Limits for our problem}{12}{}\protected@file@percent }
 \abx@aux@cite{0}{vq_vae_paper}
 \abx@aux@segm{0}{0}{vq_vae_paper}
 \abx@aux@cite{0}{pixel_cnn_paper}
 \abx@aux@segm{0}{0}{pixel_cnn_paper}
-\@writefile{toc}{\contentsline {section}{\numberline {4}VQ-VAE}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Quick overview}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces VQ-VAE architecture (source: Medium)\relax }}{9}{}\protected@file@percent }
-\newlabel{fig:vq_vae_architecture}{{2}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Architecture of the VQ-VAE: quantization layer (source: Medium)\relax }}{9}{}\protected@file@percent }
-\newlabel{fig:vq_vae_quantization}{{3}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Framework and optimization objective}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Discussion over some limiting aspects}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}VQ-VAE}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Quick overview}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces VQ-VAE architecture (source: Medium)\relax }}{13}{}\protected@file@percent }
+\newlabel{fig:vq_vae_architecture}{{5}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Architecture of the VQ-VAE: quantization layer (source: Medium)\relax }}{13}{}\protected@file@percent }
+\newlabel{fig:vq_vae_quantization}{{6}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Framework and optimization objective}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Discussion over some limiting aspects}{15}{}\protected@file@percent }
 \abx@aux@cite{0}{pixel_cnn_paper}
 \abx@aux@segm{0}{0}{pixel_cnn_paper}
-\@writefile{toc}{\contentsline {section}{\numberline {5}PixelCNN}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Overview}{12}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Masked convolution on an image (largest square), the big square represents the receptive field of the black pixel, the white area is masked\relax }}{12}{}\protected@file@percent }
-\newlabel{fig:masked_convolution_pixel_cnn}{{4}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Usage in the VQ-VAE}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}PixelCNN}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Overview}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Masked convolution on an image (largest square), the big square represents the receptive field of the black pixel, the white area is masked\relax }}{16}{}\protected@file@percent }
+\newlabel{fig:masked_convolution_pixel_cnn}{{7}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Usage in the VQ-VAE}{17}{}\protected@file@percent }
 \abx@aux@nociteall
-\@writefile{toc}{\contentsline {section}{\numberline {6}Bibliography}{14}{}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{B5DF70BAED2938E3A43C817403D31DD3}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Bibliography}{18}{}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{CE488AD178263564FBCE75E539B38D64}
 \abx@aux@defaultrefcontext{0}{expectation_maximization_source}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{kingma2019introduction}{nty/global//global/global}
+\abx@aux@defaultrefcontext{0}{dirichlet_digamma_trick}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{pixel_cnn_paper}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{vq_vae_paper}{nty/global//global/global}
-\gdef \@abspage@last{15}
+\gdef \@abspage@last{19}

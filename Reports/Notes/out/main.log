@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  6 MAY 2023 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  6 MAY 2023 23:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1008,6 +1008,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--42
 
  []
 
+) (sections/EM/GMM.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1018,49 +1019,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3]
 
-sections/EM/EM.tex:72: Package amsmath Error: Erroneous nesting of equation str
-uctures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.72 \end{align}
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-sections/EM/EM.tex:81: Package amsmath Error: Erroneous nesting of equation str
-uctures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \end{align}
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-sections/EM/EM.tex:96: Package amsmath Error: Erroneous nesting of equation str
-uctures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.96           \end{align}
-                          
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-sections/EM/EM.tex:104: Package amsmath Error: Erroneous nesting of equation st
+sections/EM/GMM.tex:21: Package amsmath Error: Erroneous nesting of equation st
 ructures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1068,8 +1027,50 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104             \end{align}
-                             
+l.21 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/EM/GMM.tex:30: Package amsmath Error: Erroneous nesting of equation st
+ructures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/EM/GMM.tex:45: Package amsmath Error: Erroneous nesting of equation st
+ructures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/EM/GMM.tex:53: Package amsmath Error: Erroneous nesting of equation st
+ructures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53     \end{align}
+                    
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -1081,7 +1082,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4])
+[4]
+Overfull \hbox (20.47322pt too wide) in paragraph at lines 77--78
+[]\T1/cmr/m/n/12 For each sam-ple, char-ac-ter-ized by ($\OML/cmm/m/it/12 X[]$\
+T1/cmr/m/n/12 , $\OML/cmm/m/it/12 Z[]$\T1/cmr/m/n/12 ), draw the la-bel of the 
+sam-ple as $\OML/cmm/m/it/12 Y[] \OMS/cmsy/m/n/12 ^^X B\OT1/cmr/m/n/12 (\OML/cm
+m/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W[]e[] \OT1/cmr/m/n/12 +
+ []
+
+<images/samples_gmm_lc.png, id=42, 419.5675pt x 343.78438pt>
+File: images/samples_gmm_lc.png Graphic file (type png)
+<use images/samples_gmm_lc.png>
+Package pdftex.def Info: images/samples_gmm_lc.png  used on input line 83.
+(pdftex.def)             Requested size: 293.69524pt x 240.64742pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1090,7 +1103,122 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5] (sections/discrete_vae/vae.tex
+[5]
+<images/samples_gmm_lc_badconditioning.png, id=46, 420.57124pt x 341.275pt>
+File: images/samples_gmm_lc_badconditioning.png Graphic file (type png)
+<use images/samples_gmm_lc_badconditioning.png>
+Package pdftex.def Info: images/samples_gmm_lc_badconditioning.png  used on inp
+ut line 96.
+(pdftex.def)             Requested size: 294.39786pt x 238.89085pt.
+) (sections/EM/dirichlet.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6 <./images/samples_gmm_lc.png> <./images/samples_gmm_lc_badconditioning.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
+
+ []
+
+
+sections/EM/dirichlet.tex:30: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
+
+sections/EM/dirichlet.tex:45: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45         \end{align}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/EM/dirichlet.tex:56: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56         \end{align}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/EM/dirichlet.tex:64: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64         \end{align}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<images/samples_dirichlet_lc.png, id=56, 411.5375pt x 320.19624pt>
+File: images/samples_dirichlet_lc.png Graphic file (type png)
+<use images/samples_dirichlet_lc.png>
+Package pdftex.def Info: images/samples_dirichlet_lc.png  used on input line 75
+.
+(pdftex.def)             Requested size: 288.07428pt x 224.13583pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9 <./images/samples_dirichlet_lc.png>] (sections/discrete_vae/vae.tex
 
 sections/discrete_vae/vae.tex:47: Package amsmath Error: Erroneous nesting of e
 quation structures;
@@ -1113,7 +1241,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6]
+[10]
 
 sections/discrete_vae/vae.tex:71: Package amsmath Error: Erroneous nesting of e
 quation structures;
@@ -1128,7 +1256,7 @@ l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/Reparameterized_Variational_Autoencoder.png, id=50, 803.0pt x 333.245pt
+<images/Reparameterized_Variational_Autoencoder.png, id=68, 803.0pt x 333.245pt
 >
 File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
 )
@@ -1144,7 +1272,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7])
+[11])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1153,15 +1281,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8 <./images/Reparameterized_Variational_Autoencoder.png>]
+[12 <./images/Reparameterized_Variational_Autoencoder.png>]
 (sections/discrete_vae/vq_vae.tex
-<images/vq_vae_architecture.png, id=58, 839.63687pt x 178.16562pt>
+<images/vq_vae_architecture.png, id=77, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
 Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
 
 (pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
-<images/vq_vae_quantization.png, id=59, 815.54688pt x 330.73563pt>
+<images/vq_vae_quantization.png, id=78, 815.54688pt x 330.73563pt>
 File: images/vq_vae_quantization.png Graphic file (type png)
 <use images/vq_vae_quantization.png>
 Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
@@ -1176,7 +1304,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9 <./images/vq_vae_architecture.png> <./images/vq_vae_quantization.png>]
+[13 <./images/vq_vae_architecture.png> <./images/vq_vae_quantization.png>]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 4
 6.
 
@@ -1233,7 +1361,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10])
+[14])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1242,8 +1370,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11] (sections/discrete_vae/pixel_cnn.tex
-<images/masked_convolution_pixel_cnn.png, id=73, 214.8025pt x 176.66pt>
+[15] (sections/discrete_vae/pixel_cnn.tex
+<images/masked_convolution_pixel_cnn.png, id=92, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
 Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
@@ -1258,7 +1386,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12 <./images/masked_convolution_pixel_cnn.png>])
+[16 <./images/masked_convolution_pixel_cnn.png>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1267,7 +1395,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13] (sections/general/bibpage.tex)
+[17] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -1282,16 +1410,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[18] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19509 strings out of 476315
- 394494 string characters out of 5787197
+ 19559 strings out of 476315
+ 396283 string characters out of 5787197
  1870068 words of memory out of 5000000
- 39693 multiletter control sequences out of 15000+600000
+ 39734 multiletter control sequences out of 15000+600000
  527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,16n,79p,679b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1326,9 +1454,9 @@ public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (15 pages, 982391 bytes).
+t\main.pdf (19 pages, 1410103 bytes).
 PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
+ 542 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

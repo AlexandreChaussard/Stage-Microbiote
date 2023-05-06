@@ -106,6 +106,27 @@
       \field{pages}{307\bibrangedash 392}
       \range{pages}{86}
     \endentry
+    \entry{dirichlet_digamma_trick}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=9076037ea01f5720a220ce315554e70a}{%
+           family={Minka},
+           familyi={M\bibinitperiod},
+           given={Thomas\bibnamedelima P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9076037ea01f5720a220ce315554e70a}
+      \strng{fullhash}{9076037ea01f5720a220ce315554e70a}
+      \strng{bibnamehash}{9076037ea01f5720a220ce315554e70a}
+      \strng{authorbibnamehash}{9076037ea01f5720a220ce315554e70a}
+      \strng{authornamehash}{9076037ea01f5720a220ce315554e70a}
+      \strng{authorfullhash}{9076037ea01f5720a220ce315554e70a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Estimating a Dirichlet distribution}
+      \field{year}{2012}
+    \endentry
     \entry{pixel_cnn_paper}{article}{}
       \name{author}{3}{}{%
         {{hash=eb4d5c66a32d8ff3f8cb56e4544c1876}{%
