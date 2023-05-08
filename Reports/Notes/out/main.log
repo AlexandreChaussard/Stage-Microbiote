@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  8 MAY 2023 19:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  8 MAY 2023 19:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -305,45 +305,188 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip63
 \algorithmicindent=\skip64
 )
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-04-22 v7.00x Hypertext links for LaTeX
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
+.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count297
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count298
+)
+\@linkdim=\dimen175
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-04-22 v7.00x Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count301
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-04-22 v7.00x Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4182.
+Package hyperref Info: Link nesting OFF on input line 4187.
+Package hyperref Info: Hyper index ON on input line 4190.
+Package hyperref Info: Plain pages OFF on input line 4197.
+Package hyperref Info: Backreferencing OFF on input line 4202.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4449.
+\c@Hy@tempcnt=\count302
+LaTeX Info: Redefining \url on input line 4787.
+\XeTeXLinkMargin=\dimen176
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count303
+\Field@Width=\dimen177
+\Fld@charsize=\dimen178
+Package hyperref Info: Hyper figures OFF on input line 6066.
+Package hyperref Info: Link nesting OFF on input line 6071.
+Package hyperref Info: Hyper index ON on input line 6074.
+Package hyperref Info: backreferencing OFF on input line 6081.
+Package hyperref Info: Link coloring OFF on input line 6086.
+Package hyperref Info: Link coloring with OCG OFF on input line 6091.
+Package hyperref Info: PDF/A mode OFF on input line 6096.
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count304
+\c@Item=\count305
+\c@Hfootnote=\count306
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2023-04-22 v7.00x Hyperref driver for pdfTeX
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip65
+)
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip65
-\mylen=\skip66
-\myhi=\skip67
-\px=\skip68
-\py=\skip69
-\pyy=\skip70
-\pxx=\skip71
-\backskip=\skip72
+\RW=\skip66
+\mylen=\skip67
+\myhi=\skip68
+\px=\skip69
+\py=\skip70
+\pyy=\skip71
+\pxx=\skip72
+\backskip=\skip73
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip73
-\enit@outerparindent=\dimen175
+\labelindent=\skip74
+\enit@outerparindent=\dimen179
 \enit@toks=\toks31
 \enit@inbox=\box58
-\enit@count@id=\count297
-\enitdp@description=\count298
+\enit@count@id=\count309
+\enitdp@description=\count310
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
-\c@tracingmulticols=\count299
+\c@tracingmulticols=\count311
 \mult@box=\box59
-\multicol@leftmargin=\dimen176
-\c@unbalance=\count300
-\c@collectmore=\count301
-\doublecol@number=\count302
-\multicoltolerance=\count303
-\multicolpretolerance=\count304
-\full@width=\dimen177
-\page@free=\dimen178
-\premulticols=\dimen179
-\postmulticols=\dimen180
-\multicolsep=\skip74
-\multicolbaselineskip=\skip75
+\multicol@leftmargin=\dimen180
+\c@unbalance=\count312
+\c@collectmore=\count313
+\doublecol@number=\count314
+\multicoltolerance=\count315
+\multicolpretolerance=\count316
+\full@width=\dimen181
+\page@free=\dimen182
+\premulticols=\dimen183
+\postmulticols=\dimen184
+\multicolsep=\skip75
+\multicolbaselineskip=\skip76
 \partial@page=\box60
 \last@line=\box61
-\maxbalancingoverflow=\dimen181
+\maxbalancingoverflow=\dimen185
 \mult@rightbox=\box62
 \mult@grightbox=\box63
 \mult@firstbox=\box64
@@ -384,15 +527,15 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \@tempa=\box99
 \@tempa=\box100
 \@tempa=\box101
-\c@minrows=\count305
-\c@columnbadness=\count306
-\c@finalcolumnbadness=\count307
-\last@try=\dimen182
-\multicolovershoot=\dimen183
-\multicolundershoot=\dimen184
+\c@minrows=\count317
+\c@columnbadness=\count318
+\c@finalcolumnbadness=\count319
+\last@try=\dimen186
+\multicolovershoot=\dimen187
+\multicolundershoot=\dimen188
 \mult@nat@firstbox=\box102
 \colbreak@box=\box103
-\mc@col@check@num=\count308
+\mc@col@check@num=\count320
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -402,189 +545,169 @@ Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen185
-\captionmargin=\dimen186
-\caption@leftmargin=\dimen187
-\caption@rightmargin=\dimen188
-\caption@width=\dimen189
-\caption@indent=\dimen190
-\caption@parindent=\dimen191
-\caption@hangindent=\dimen192
+\caption@tempdima=\dimen189
+\captionmargin=\dimen190
+\caption@leftmargin=\dimen191
+\caption@rightmargin=\dimen192
+\caption@width=\dimen193
+\caption@indent=\dimen194
+\caption@parindent=\dimen195
+\caption@hangindent=\dimen196
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count309
-\c@continuedfloat=\count310
+\c@caption@flags=\count321
+\c@continuedfloat=\count322
 Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
 )
-\c@KVtest=\count311
-\sf@farskip=\skip76
-\sf@captopadj=\dimen193
-\sf@capskip=\skip77
-\sf@nearskip=\skip78
-\c@subfigure=\count312
-\c@subfigure@save=\count313
-\c@lofdepth=\count314
-\c@subtable=\count315
-\c@subtable@save=\count316
-\c@lotdepth=\count317
-\sf@top=\skip79
-\sf@bottom=\skip80
+\c@KVtest=\count323
+\sf@farskip=\skip77
+\sf@captopadj=\dimen197
+\sf@capskip=\skip78
+\sf@nearskip=\skip79
+\c@subfigure=\count324
+\c@subfigure@save=\count325
+\c@lofdepth=\count326
+\c@subtable=\count327
+\c@subtable@save=\count328
+\c@lotdepth=\count329
+\sf@top=\skip80
+\sf@bottom=\skip81
 ) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
 Package: siunitx 2023-04-13 v3.2.5 A comprehensive (SI) units package
-\l__siunitx_angle_tmp_dim=\dimen194
+\l__siunitx_angle_tmp_dim=\dimen198
 \l__siunitx_angle_marker_box=\box104
 \l__siunitx_angle_unit_box=\box105
-\l__siunitx_compound_count_int=\count318
-\l__siunitx_number_exponent_fixed_int=\count319
-\l__siunitx_number_min_decimal_int=\count320
-\l__siunitx_number_min_integer_int=\count321
-\l__siunitx_number_round_precision_int=\count322
-\l__siunitx_number_lower_threshold_int=\count323
-\l__siunitx_number_upper_threshold_int=\count324
-\l__siunitx_number_group_first_int=\count325
-\l__siunitx_number_group_size_int=\count326
-\l__siunitx_number_group_minimum_int=\count327
+\l__siunitx_compound_count_int=\count330
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/translations\translatio
+ns.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_number_exponent_fixed_int=\count331
+\l__siunitx_number_min_decimal_int=\count332
+\l__siunitx_number_min_integer_int=\count333
+\l__siunitx_number_round_precision_int=\count334
+\l__siunitx_number_lower_threshold_int=\count335
+\l__siunitx_number_upper_threshold_int=\count336
+\l__siunitx_number_group_first_int=\count337
+\l__siunitx_number_group_size_int=\count338
+\l__siunitx_number_group_minimum_int=\count339
 \l__siunitx_table_tmp_box=\box106
-\l__siunitx_table_tmp_dim=\dimen195
-\l__siunitx_table_column_width_dim=\dimen196
+\l__siunitx_table_tmp_dim=\dimen199
+\l__siunitx_table_column_width_dim=\dimen256
 \l__siunitx_table_integer_box=\box107
 \l__siunitx_table_decimal_box=\box108
 \l__siunitx_table_uncert_box=\box109
 \l__siunitx_table_before_box=\box110
 \l__siunitx_table_after_box=\box111
-\l__siunitx_table_before_dim=\dimen197
-\l__siunitx_table_carry_dim=\dimen198
-\l__siunitx_unit_tmp_int=\count328
-\l__siunitx_unit_position_int=\count329
-\l__siunitx_unit_total_int=\count330
+\l__siunitx_table_before_dim=\dimen257
+\l__siunitx_table_carry_dim=\dimen258
+\l__siunitx_unit_tmp_int=\count340
+\l__siunitx_unit_position_int=\count341
+\l__siunitx_unit_total_int=\count342
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
-))
-\Gm@cnth=\count331
-\Gm@cntv=\count332
-\c@Gm@tempcnt=\count333
-\Gm@bindingoffset=\dimen199
-\Gm@wd@mp=\dimen256
-\Gm@odd@mp=\dimen257
-\Gm@even@mp=\dimen258
-\Gm@layoutwidth=\dimen259
-\Gm@layoutheight=\dimen260
-\Gm@layouthoffset=\dimen261
-\Gm@layoutvoffset=\dimen262
+)
+\Gm@cnth=\count343
+\Gm@cntv=\count344
+\c@Gm@tempcnt=\count345
+\Gm@bindingoffset=\dimen259
+\Gm@wd@mp=\dimen260
+\Gm@odd@mp=\dimen261
+\Gm@even@mp=\dimen262
+\Gm@layoutwidth=\dimen263
+\Gm@layoutheight=\dimen264
+\Gm@layouthoffset=\dimen265
+\Gm@layoutvoffset=\dimen266
 \Gm@dimlist=\toks32
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip81
-\f@nch@O@elh=\skip82
-\f@nch@O@erh=\skip83
-\f@nch@O@olh=\skip84
-\f@nch@O@orh=\skip85
-\f@nch@O@elf=\skip86
-\f@nch@O@erf=\skip87
-\f@nch@O@olf=\skip88
-\f@nch@O@orf=\skip89
+\f@nch@headwidth=\skip82
+\f@nch@O@elh=\skip83
+\f@nch@O@erh=\skip84
+\f@nch@O@olh=\skip85
+\f@nch@O@orh=\skip86
+\f@nch@O@elf=\skip87
+\f@nch@O@erf=\skip88
+\f@nch@O@olf=\skip89
+\f@nch@O@orf=\skip90
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
-.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
-ty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count334
-)
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count335
+\lrq@indent=\count346
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count336
-\c@listtotal=\count337
-\c@listcount=\count338
-\c@liststart=\count339
-\c@liststop=\count340
-\c@citecount=\count341
-\c@citetotal=\count342
-\c@multicitecount=\count343
-\c@multicitetotal=\count344
-\c@instcount=\count345
-\c@maxnames=\count346
-\c@minnames=\count347
-\c@maxitems=\count348
-\c@minitems=\count349
-\c@citecounter=\count350
-\c@maxcitecounter=\count351
-\c@savedcitecounter=\count352
-\c@uniquelist=\count353
-\c@uniquename=\count354
-\c@refsection=\count355
-\c@refsegment=\count356
-\c@maxextratitle=\count357
-\c@maxextratitleyear=\count358
-\c@maxextraname=\count359
-\c@maxextradate=\count360
-\c@maxextraalpha=\count361
-\c@abbrvpenalty=\count362
-\c@highnamepenalty=\count363
-\c@lownamepenalty=\count364
-\c@maxparens=\count365
-\c@parenlevel=\count366
-\blx@tempcnta=\count367
-\blx@tempcntb=\count368
-\blx@tempcntc=\count369
-\c@blx@maxsection=\count370
-\blx@maxsegment@0=\count371
-\blx@notetype=\count372
-\blx@parenlevel@text=\count373
-\blx@parenlevel@foot=\count374
-\blx@sectionciteorder@0=\count375
-\blx@sectionciteorderinternal@0=\count376
-\blx@entrysetcounter=\count377
-\blx@biblioinstance=\count378
-\labelnumberwidth=\skip90
-\labelalphawidth=\skip91
-\biblabelsep=\skip92
-\bibitemsep=\skip93
-\bibnamesep=\skip94
-\bibinitsep=\skip95
-\bibparsep=\skip96
-\bibhang=\skip97
+\c@tabx@nest=\count347
+\c@listtotal=\count348
+\c@listcount=\count349
+\c@liststart=\count350
+\c@liststop=\count351
+\c@citecount=\count352
+\c@citetotal=\count353
+\c@multicitecount=\count354
+\c@multicitetotal=\count355
+\c@instcount=\count356
+\c@maxnames=\count357
+\c@minnames=\count358
+\c@maxitems=\count359
+\c@minitems=\count360
+\c@citecounter=\count361
+\c@maxcitecounter=\count362
+\c@savedcitecounter=\count363
+\c@uniquelist=\count364
+\c@uniquename=\count365
+\c@refsection=\count366
+\c@refsegment=\count367
+\c@maxextratitle=\count368
+\c@maxextratitleyear=\count369
+\c@maxextraname=\count370
+\c@maxextradate=\count371
+\c@maxextraalpha=\count372
+\c@abbrvpenalty=\count373
+\c@highnamepenalty=\count374
+\c@lownamepenalty=\count375
+\c@maxparens=\count376
+\c@parenlevel=\count377
+\blx@tempcnta=\count378
+\blx@tempcntb=\count379
+\blx@tempcntc=\count380
+\c@blx@maxsection=\count381
+\blx@maxsegment@0=\count382
+\blx@notetype=\count383
+\blx@parenlevel@text=\count384
+\blx@parenlevel@foot=\count385
+\blx@sectionciteorder@0=\count386
+\blx@sectionciteorderinternal@0=\count387
+\blx@entrysetcounter=\count388
+\blx@biblioinstance=\count389
+\labelnumberwidth=\skip91
+\labelalphawidth=\skip92
+\biblabelsep=\skip93
+\bibitemsep=\skip94
+\bibnamesep=\skip95
+\bibinitsep=\skip96
+\bibparsep=\skip97
+\bibhang=\skip98
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count379
-\c@maxcomprange=\count380
-\c@mincompwidth=\count381
+\c@mincomprange=\count390
+\c@maxcomprange=\count391
+\c@mincompwidth=\count392
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -593,88 +716,88 @@ File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count382
-\c@savedafterword=\count383
-\c@annotator=\count384
-\c@savedannotator=\count385
-\c@author=\count386
-\c@savedauthor=\count387
-\c@bookauthor=\count388
-\c@savedbookauthor=\count389
-\c@commentator=\count390
-\c@savedcommentator=\count391
-\c@editor=\count392
-\c@savededitor=\count393
-\c@editora=\count394
-\c@savededitora=\count395
-\c@editorb=\count396
-\c@savededitorb=\count397
-\c@editorc=\count398
-\c@savededitorc=\count399
-\c@foreword=\count400
-\c@savedforeword=\count401
-\c@holder=\count402
-\c@savedholder=\count403
-\c@introduction=\count404
-\c@savedintroduction=\count405
-\c@namea=\count406
-\c@savednamea=\count407
-\c@nameb=\count408
-\c@savednameb=\count409
-\c@namec=\count410
-\c@savednamec=\count411
-\c@translator=\count412
-\c@savedtranslator=\count413
-\c@shortauthor=\count414
-\c@savedshortauthor=\count415
-\c@shorteditor=\count416
-\c@savedshorteditor=\count417
-\c@labelname=\count418
-\c@savedlabelname=\count419
-\c@institution=\count420
-\c@savedinstitution=\count421
-\c@lista=\count422
-\c@savedlista=\count423
-\c@listb=\count424
-\c@savedlistb=\count425
-\c@listc=\count426
-\c@savedlistc=\count427
-\c@listd=\count428
-\c@savedlistd=\count429
-\c@liste=\count430
-\c@savedliste=\count431
-\c@listf=\count432
-\c@savedlistf=\count433
-\c@location=\count434
-\c@savedlocation=\count435
-\c@organization=\count436
-\c@savedorganization=\count437
-\c@origlocation=\count438
-\c@savedoriglocation=\count439
-\c@origpublisher=\count440
-\c@savedorigpublisher=\count441
-\c@publisher=\count442
-\c@savedpublisher=\count443
-\c@language=\count444
-\c@savedlanguage=\count445
-\c@origlanguage=\count446
-\c@savedoriglanguage=\count447
-\c@pageref=\count448
-\c@savedpageref=\count449
-\shorthandwidth=\skip98
-\shortjournalwidth=\skip99
-\shortserieswidth=\skip100
-\shorttitlewidth=\skip101
-\shortauthorwidth=\skip102
-\shorteditorwidth=\skip103
-\locallabelnumberwidth=\skip104
-\locallabelalphawidth=\skip105
-\localshorthandwidth=\skip106
-\localshortjournalwidth=\skip107
-\localshortserieswidth=\skip108
-\localshorttitlewidth=\skip109
-\localshortauthorwidth=\skip110
-\localshorteditorwidth=\skip111
+\c@afterword=\count393
+\c@savedafterword=\count394
+\c@annotator=\count395
+\c@savedannotator=\count396
+\c@author=\count397
+\c@savedauthor=\count398
+\c@bookauthor=\count399
+\c@savedbookauthor=\count400
+\c@commentator=\count401
+\c@savedcommentator=\count402
+\c@editor=\count403
+\c@savededitor=\count404
+\c@editora=\count405
+\c@savededitora=\count406
+\c@editorb=\count407
+\c@savededitorb=\count408
+\c@editorc=\count409
+\c@savededitorc=\count410
+\c@foreword=\count411
+\c@savedforeword=\count412
+\c@holder=\count413
+\c@savedholder=\count414
+\c@introduction=\count415
+\c@savedintroduction=\count416
+\c@namea=\count417
+\c@savednamea=\count418
+\c@nameb=\count419
+\c@savednameb=\count420
+\c@namec=\count421
+\c@savednamec=\count422
+\c@translator=\count423
+\c@savedtranslator=\count424
+\c@shortauthor=\count425
+\c@savedshortauthor=\count426
+\c@shorteditor=\count427
+\c@savedshorteditor=\count428
+\c@labelname=\count429
+\c@savedlabelname=\count430
+\c@institution=\count431
+\c@savedinstitution=\count432
+\c@lista=\count433
+\c@savedlista=\count434
+\c@listb=\count435
+\c@savedlistb=\count436
+\c@listc=\count437
+\c@savedlistc=\count438
+\c@listd=\count439
+\c@savedlistd=\count440
+\c@liste=\count441
+\c@savedliste=\count442
+\c@listf=\count443
+\c@savedlistf=\count444
+\c@location=\count445
+\c@savedlocation=\count446
+\c@organization=\count447
+\c@savedorganization=\count448
+\c@origlocation=\count449
+\c@savedoriglocation=\count450
+\c@origpublisher=\count451
+\c@savedorigpublisher=\count452
+\c@publisher=\count453
+\c@savedpublisher=\count454
+\c@language=\count455
+\c@savedlanguage=\count456
+\c@origlanguage=\count457
+\c@savedoriglanguage=\count458
+\c@pageref=\count459
+\c@savedpageref=\count460
+\shorthandwidth=\skip99
+\shortjournalwidth=\skip100
+\shortserieswidth=\skip101
+\shorttitlewidth=\skip102
+\shortauthorwidth=\skip103
+\shorteditorwidth=\skip104
+\locallabelnumberwidth=\skip105
+\locallabelalphawidth=\skip106
+\localshorthandwidth=\skip107
+\localshortjournalwidth=\skip108
+\localshortserieswidth=\skip109
+\localshorttitlewidth=\skip110
+\localshortauthorwidth=\skip111
+\localshorteditorwidth=\skip112
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -685,19 +808,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count450
-\c@textcitetotal=\count451
-\c@textcitemaxnames=\count452
-\c@biburlbigbreakpenalty=\count453
-\c@biburlbreakpenalty=\count454
-\c@biburlnumpenalty=\count455
-\c@biburlucpenalty=\count456
-\c@biburllcpenalty=\count457
+\c@textcitecount=\count461
+\c@textcitetotal=\count462
+\c@textcitemaxnames=\count463
+\c@biburlbigbreakpenalty=\count464
+\c@biburlbreakpenalty=\count465
+\c@biburlnumpenalty=\count466
+\c@biburlucpenalty=\count467
+\c@biburllcpenalty=\count468
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count458
+\c@smartand=\count469
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -711,8 +834,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count459
-\c@bbx:relatedtotal=\count460
+\c@bbx:relatedcount=\count470
+\c@bbx:relatedtotal=\count471
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -747,7 +870,7 @@ Package: expl3 2023-04-20 L3 programming layer (loader)
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count461
+\l__color_backend_stack_int=\count472
 \l__pdf_internal_box=\box112
 ))
 Package biblatex Info: ... and expl3
@@ -772,16 +895,16 @@ cx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count462
-\c@ALG@rem=\count463
-\c@ALG@nested=\count464
-\ALG@tlm=\skip112
-\ALG@thistlm=\skip113
-\c@ALG@Lnr=\count465
-\c@ALG@blocknr=\count466
-\c@ALG@storecount=\count467
-\c@ALG@tmpcounter=\count468
-\ALG@tmplength=\skip114
+\c@ALG@line=\count473
+\c@ALG@rem=\count474
+\c@ALG@nested=\count475
+\ALG@tlm=\skip113
+\ALG@thistlm=\skip114
+\c@ALG@Lnr=\count476
+\c@ALG@blocknr=\count477
+\c@ALG@storecount=\count478
+\c@ALG@tmpcounter=\count479
+\ALG@tmplength=\skip115
 
 C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmic
 x.sty:112: LaTeX Error: Command \algorithmic already defined.
@@ -803,14 +926,14 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 
-main.tex:63: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
+main.tex:66: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
 '.
 
 See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 \bibliographystyle{ieeetr}
+l.66 \bibliographystyle{ieeetr}
                                
 Use the package option 'style' instead.
 I'm ignoring this command.
@@ -819,39 +942,43 @@ I'm ignoring this command.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count469
-\@quotereset=\count470
+\@quotelevel=\count480
+\@quotereset=\count481
 (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count471
-\scratchdimen=\dimen263
+\scratchcounter=\count482
+\scratchdimen=\dimen267
 \scratchbox=\box113
-\nofMPsegments=\count472
-\nofMParguments=\count473
+\nofMPsegments=\count483
+\nofMParguments=\count484
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count474
-\MPscratchDim=\dimen264
-\MPnumerator=\count475
-\makeMPintoPDFobject=\count476
+\MPscratchCnt=\count485
+\MPscratchDim=\dimen268
+\MPnumerator=\count486
+\makeMPintoPDFobject=\count487
 \everyMPtoPDFconversion=\toks34
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -864,9 +991,23 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
+Package hyperref Info: Link coloring OFF on input line 84.
+ (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.out)
+(C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tran
+slations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 84.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -917,11 +1058,11 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.bbl)
-Package biblatex Info: Reference section=0 on input line 81.
-Package biblatex Info: Reference segment=0 on input line 81.
+Package biblatex Info: Reference section=0 on input line 84.
+Package biblatex Info: Reference segment=0 on input line 84.
 
 (sections/general/titlepage.tex
-<images/logo_ipp.png, id=1, 270.51062pt x 270.00874pt>
+<images/logo_ipp.png, id=119, 270.51062pt x 270.00874pt>
 File: images/logo_ipp.png Graphic file (type png)
 <use images/logo_ipp.png>
 Package pdftex.def Info: images/logo_ipp.png  used on input line 9.
@@ -941,8 +1082,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-\tf@toc=\write4
-\openout4 = `main.toc'.
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
 
 
@@ -953,7 +1094,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[1]) (sections/general/introduction.tex
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.33 \newpage
+              [1]) (sections/general/introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
@@ -978,6 +1125,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2] (sections/EM/EM.tex
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 21.
+
 sections/EM/EM.tex:27: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
@@ -1091,7 +1241,7 @@ sam-ple as $\OML/cmm/m/it/12 Y[] \OMS/cmsy/m/n/12 ^^X B\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W[]e[] \OT1/cmr/m/n/12 +
  []
 
-<images/samples_gmm_lc.png, id=42, 419.5675pt x 343.78438pt>
+<images/samples_gmm_lc.png, id=230, 419.5675pt x 343.78438pt>
 File: images/samples_gmm_lc.png Graphic file (type png)
 <use images/samples_gmm_lc.png>
 Package pdftex.def Info: images/samples_gmm_lc.png  used on input line 83.
@@ -1105,7 +1255,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
-<images/samples_gmm_lc_badconditioning.png, id=46, 420.57124pt x 341.275pt>
+<images/samples_gmm_lc_badconditioning.png, id=236, 420.57124pt x 341.275pt>
 File: images/samples_gmm_lc_badconditioning.png Graphic file (type png)
 <use images/samples_gmm_lc_badconditioning.png>
 Package pdftex.def Info: images/samples_gmm_lc_badconditioning.png  used on inp
@@ -1196,7 +1346,7 @@ l.64         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/samples_dirichlet_lc.png, id=56, 411.5375pt x 320.19624pt>
+<images/samples_dirichlet_lc.png, id=255, 411.5375pt x 320.19624pt>
 File: images/samples_dirichlet_lc.png Graphic file (type png)
 <use images/samples_dirichlet_lc.png>
 Package pdftex.def Info: images/samples_dirichlet_lc.png  used on input line 75
@@ -1259,8 +1409,8 @@ l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/Reparameterized_Variational_Autoencoder.png, id=68, 803.0pt x 333.245pt
->
+<images/Reparameterized_Variational_Autoencoder.png, id=274, 803.0pt x 333.245p
+t>
 File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
 )
 <use images/Reparameterized_Variational_Autoencoder.png>
@@ -1286,13 +1436,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12 <./images/Reparameterized_Variational_Autoencoder.png>]
 (sections/variational_methods/vq_vae.tex
-<images/vq_vae_architecture.png, id=77, 839.63687pt x 178.16562pt>
+<images/vq_vae_architecture.png, id=287, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
 Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
 
 (pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
-<images/vq_vae_quantization.png, id=78, 815.54688pt x 330.73563pt>
+<images/vq_vae_quantization.png, id=289, 815.54688pt x 330.73563pt>
 File: images/vq_vae_quantization.png Graphic file (type png)
 <use images/vq_vae_quantization.png>
 Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
@@ -1374,7 +1524,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15] (sections/variational_methods/pixel_cnn.tex
-<images/masked_convolution_pixel_cnn.png, id=92, 214.8025pt x 176.66pt>
+<images/masked_convolution_pixel_cnn.png, id=312, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
 Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
@@ -1400,13 +1550,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [17] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
 (sections/microbiota_analysis/vq_tree_model.tex
-<images/abundance_tree_phylogenetic.png, id=100, 95.85812pt x 134.00063pt>
+<images/abundance_tree_phylogenetic.png, id=323, 95.85812pt x 134.00063pt>
 File: images/abundance_tree_phylogenetic.png Graphic file (type png)
 <use images/abundance_tree_phylogenetic.png>
 Package pdftex.def Info: images/abundance_tree_phylogenetic.png  used on input 
 line 9.
 (pdftex.def)             Requested size: 95.85788pt x 134.00027pt.
-<images/tree_to_image.png, id=101, 310.66063pt x 137.51375pt>
+<images/tree_to_image.png, id=326, 310.66063pt x 137.51375pt>
 File: images/tree_to_image.png Graphic file (type png)
 <use images/tree_to_image.png>
 Package pdftex.def Info: images/tree_to_image.png  used on input line 19.
@@ -1524,18 +1674,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 64DDBDDF81C53808DCDD108A37793EB0;4911.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19603 strings out of 476315
- 398430 string characters out of 5787197
+ 26767 strings out of 476315
+ 525715 string characters out of 5787197
  1869068 words of memory out of 5000000
- 39765 multiletter control sequences out of 15000+600000
+ 46773 multiletter control sequences out of 15000+600000
  527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,16n,79p,679b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
 1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -1567,9 +1719,9 @@ public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (22 pages, 1450221 bytes).
+t\main.pdf (22 pages, 1485504 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 
