@@ -20,4 +20,9 @@
 \contentsline {section}{\numberline {5}PixelCNN}{16}{}%
 \contentsline {subsection}{\numberline {5.1}Overview}{16}{}%
 \contentsline {subsection}{\numberline {5.2}Usage in the VQ-VAE}{17}{}%
-\contentsline {section}{\numberline {6}Bibliography}{18}{}%
+\contentsline {section}{\numberline {6}Variational Tree Walk}{18}{}%
+\contentsline {subsection}{\numberline {6.1}Microbiota dataset}{18}{}%
+\contentsline {subsection}{\numberline {6.2}Framework and optimization objectives}{19}{}%
+\contentsline {subsubsection}{\numberline {6.2.1}EM approach}{19}{}%
+\contentsline {subsection}{\numberline {6.3}Variational approach}{20}{}%
+\contentsline {section}{\numberline {7}Bibliography}{21}{}%

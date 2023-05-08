@@ -70,6 +70,65 @@
       \verb http://www.jstor.org/stable/2984875
       \endverb
     \endentry
+    \entry{microbiome_deeplearning_research}{article}{}
+      \name{author}{7}{}{%
+        {{hash=e8cb2e454b82d98d52e3631040486e75}{%
+           family={Hernández\bibnamedelima Medina},
+           familyi={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ef1ba6db2f551c9cf21738f4b4c79e61}{%
+           family={Kutuzova},
+           familyi={K\bibinitperiod},
+           given={Svetlana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f98652a8e2aae17fc7294ed3389c8c1c}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Knud\bibnamedelima Nor},
+           giveni={K\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=0c203487ed1daf9296cfdd102aa8c40c}{%
+           family={Johansen},
+           familyi={J\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+        {{hash=914fe44a06b2e8b0b13aeb6a839b7337}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Lars\bibnamedelima Hestbjerg},
+           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=c9b6d63ce136a49b628e2f47ddd7df25}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Mads},
+           giveni={M\bibinitperiod}}}%
+        {{hash=301582418cb01994a18bf202ecaebdb5}{%
+           family={Rasmussen},
+           familyi={R\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{7d772b8266f6aab0fe03181fd43a80a9}
+      \strng{fullhash}{8f617a2b75f26c04f53d7494cdf6cb4b}
+      \strng{bibnamehash}{7d772b8266f6aab0fe03181fd43a80a9}
+      \strng{authorbibnamehash}{7d772b8266f6aab0fe03181fd43a80a9}
+      \strng{authornamehash}{7d772b8266f6aab0fe03181fd43a80a9}
+      \strng{authorfullhash}{8f617a2b75f26c04f53d7494cdf6cb4b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISME Communications}
+      \field{number}{1}
+      \field{title}{Machine learning and deep learning applications in microbiome research}
+      \field{volume}{2}
+      \field{year}{2022}
+      \field{pages}{98}
+      \range{pages}{1}
+    \endentry
     \entry{kingma2019introduction}{article}{}
       \true{moreauthor}
       \true{morelabelname}

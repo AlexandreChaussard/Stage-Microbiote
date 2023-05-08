@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  6 MAY 2023 23:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  8 MAY 2023 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1061,6 +1061,15 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
+
 sections/EM/GMM.tex:53: Package amsmath Error: Erroneous nesting of equation st
 ructures;
 (amsmath)                trying to recover with `aligned'.
@@ -1075,14 +1084,6 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[4]
 Overfull \hbox (20.47322pt too wide) in paragraph at lines 77--78
 []\T1/cmr/m/n/12 For each sam-ple, char-ac-ter-ized by ($\OML/cmm/m/it/12 X[]$\
 T1/cmr/m/n/12 , $\OML/cmm/m/it/12 Z[]$\T1/cmr/m/n/12 ), draw the la-bel of the 
@@ -1395,7 +1396,116 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17] (sections/general/bibpage.tex)
+[17] (sections/discrete_vae/vq_tree_model.tex
+<images/abundance_tree_phylogenetic.png, id=100, 95.85812pt x 134.00063pt>
+File: images/abundance_tree_phylogenetic.png Graphic file (type png)
+<use images/abundance_tree_phylogenetic.png>
+Package pdftex.def Info: images/abundance_tree_phylogenetic.png  used on input 
+line 9.
+(pdftex.def)             Requested size: 95.85788pt x 134.00027pt.
+<images/tree_to_image.png, id=101, 310.66063pt x 137.51375pt>
+File: images/tree_to_image.png Graphic file (type png)
+<use images/tree_to_image.png>
+Package pdftex.def Info: images/tree_to_image.png  used on input line 19.
+(pdftex.def)             Requested size: 310.65987pt x 137.51341pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
+Overfull \hbox (7.71257pt too wide) in paragraph at lines 45--47
+[]\T1/cmr/m/n/12 Taking in-spi-ra-tion from the Pix-el-CNN, our model should le
+arn the dis-tri-bu-tion $\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+X[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 Z[]; T[]\OT1/cmr/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
+
+ []
+
+
+sections/discrete_vae/vq_tree_model.tex:66: Package amsmath Error: Erroneous ne
+sting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+sections/discrete_vae/vq_tree_model.tex:79: Undefined control sequence.
+<recently read> \p 
+                   
+l.79 ...ed directly, we propose an estimate of $\p
+                                                  _{\theta}(Z|X,T) = q_{\Phi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+sections/discrete_vae/vq_tree_model.tex:90: Package amsmath Error: Erroneous ne
+sting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/discrete_vae/vq_tree_model.tex:100: Package amsmath Error: Erroneous n
+esting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.100 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -1410,16 +1520,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[21] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19559 strings out of 476315
- 396283 string characters out of 5787197
- 1870068 words of memory out of 5000000
- 39734 multiletter control sequences out of 15000+600000
+ 19591 strings out of 476315
+ 397531 string characters out of 5787197
+ 1869068 words of memory out of 5000000
+ 39761 multiletter control sequences out of 15000+600000
  527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,16n,79p,679b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1454,9 +1564,9 @@ public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (19 pages, 1410103 bytes).
+t\main.pdf (22 pages, 1458978 bytes).
 PDF statistics:
- 542 PDF objects out of 1000 (max. 8388607)
+ 567 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
