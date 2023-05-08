@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  8 MAY 2023 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.2)  8 MAY 2023 19:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1219,10 +1219,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9 <./images/samples_dirichlet_lc.png>] (sections/discrete_vae/vae.tex
+[9 <./images/samples_dirichlet_lc.png>]
+(sections/variational_methods/intro_variational_methods.tex)
+(sections/variational_methods/vae.tex
 
-sections/discrete_vae/vae.tex:47: Package amsmath Error: Erroneous nesting of e
-quation structures;
+sections/variational_methods/vae.tex:47: Package amsmath Error: Erroneous nesti
+ng of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1244,8 +1246,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 
-sections/discrete_vae/vae.tex:71: Package amsmath Error: Erroneous nesting of e
-quation structures;
+sections/variational_methods/vae.tex:71: Package amsmath Error: Erroneous nesti
+ng of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1283,7 +1285,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12 <./images/Reparameterized_Variational_Autoencoder.png>]
-(sections/discrete_vae/vq_vae.tex
+(sections/variational_methods/vq_vae.tex
 <images/vq_vae_architecture.png, id=77, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
@@ -1313,8 +1315,8 @@ LaTeX Font Info:    Trying to load font information for U+dsrom on input line 4
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 
-sections/discrete_vae/vq_vae.tex:63: Package amsmath Error: Erroneous nesting o
-f equation structures;
+sections/variational_methods/vq_vae.tex:63: Package amsmath Error: Erroneous ne
+sting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1327,8 +1329,8 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/discrete_vae/vq_vae.tex:72: Package amsmath Error: Erroneous nesting o
-f equation structures;
+sections/variational_methods/vq_vae.tex:72: Package amsmath Error: Erroneous ne
+sting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1341,8 +1343,8 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/discrete_vae/vq_vae.tex:82: Package amsmath Error: Erroneous nesting o
-f equation structures;
+sections/variational_methods/vq_vae.tex:82: Package amsmath Error: Erroneous ne
+sting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1371,7 +1373,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15] (sections/discrete_vae/pixel_cnn.tex
+[15] (sections/variational_methods/pixel_cnn.tex
 <images/masked_convolution_pixel_cnn.png, id=92, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
@@ -1396,7 +1398,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17] (sections/discrete_vae/vq_tree_model.tex
+[17] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
+(sections/microbiota_analysis/vq_tree_model.tex
 <images/abundance_tree_phylogenetic.png, id=100, 95.85812pt x 134.00063pt>
 File: images/abundance_tree_phylogenetic.png Graphic file (type png)
 <use images/abundance_tree_phylogenetic.png>
@@ -1430,8 +1433,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--55
  []
 
 
-sections/discrete_vae/vq_tree_model.tex:66: Package amsmath Error: Erroneous ne
-sting of equation structures;
+sections/microbiota_analysis/vq_tree_model.tex:66: Package amsmath Error: Erron
+eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1457,7 +1460,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
-sections/discrete_vae/vq_tree_model.tex:79: Undefined control sequence.
+sections/microbiota_analysis/vq_tree_model.tex:79: Undefined control sequence.
 <recently read> \p 
                    
 l.79 ...ed directly, we propose an estimate of $\p
@@ -1469,8 +1472,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-sections/discrete_vae/vq_tree_model.tex:90: Package amsmath Error: Erroneous ne
-sting of equation structures;
+sections/microbiota_analysis/vq_tree_model.tex:90: Package amsmath Error: Erron
+eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1483,8 +1486,8 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/discrete_vae/vq_tree_model.tex:100: Package amsmath Error: Erroneous n
-esting of equation structures;
+sections/microbiota_analysis/vq_tree_model.tex:100: Package amsmath Error: Erro
+neous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
@@ -1526,10 +1529,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19591 strings out of 476315
- 397531 string characters out of 5787197
+ 19603 strings out of 476315
+ 398430 string characters out of 5787197
  1869068 words of memory out of 5000000
- 39761 multiletter control sequences out of 15000+600000
+ 39765 multiletter control sequences out of 15000+600000
  527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,16n,79p,679b,1824s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1564,9 +1567,9 @@ public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (22 pages, 1458978 bytes).
+t\main.pdf (22 pages, 1450221 bytes).
 PDF statistics:
- 567 PDF objects out of 1000 (max. 8388607)
+ 546 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

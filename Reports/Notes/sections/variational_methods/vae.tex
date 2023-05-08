@@ -1,6 +1,6 @@
-\section{Variational Auto-Encoders}
+\subsection{Variational Auto-Encoders}
 
-\subsection{Framework and optimization objective}
+\subsubsection{Framework and optimization objective}
 
 We are interested in another kind of latent models, this time based on variational inference
 results to achieve a new kind of deep latent structure: the Variational Auto-Encoder (VAE).
@@ -74,7 +74,7 @@ $$
 Another remarkable fact, is that when maximizing the ELBO, we are actually minimizing the KL divergence between the estimated and the true posterior.
 Hence, one can define the ELBO as a suboptimal objective to our problem that we get to maximize to obtain $(\Phi^*, \theta^*)$, the parameters of our model.
 
-\subsection{Reparameterization trick}
+\subsubsection{Reparameterization trick}
 
 Even though the gradient of the ELBO is well defined for $\theta$, it is not possible to compute the differential relatively to $\Phi$ yet, as it requires samples from the approximation to the posterior $q_{\Phi}(z|x)$ to compute $\mathbb{E}_{q_{\Phi}(z|x)}[\log p_{\theta}(x|z)]$.
 \medskip
@@ -91,7 +91,7 @@ $$
 
 As a result, the samples are not obtained through $q_{\Phi}$ anymore but through $p(\epsilon)$, so that can safely perform derivation of the ELBO relatively to $\Phi$ and backpropagate our gradient through the network.
 
-\subsection{Architecture}
+\subsubsection{Architecture}
 
 The vanilla architecture of the VAE is described by the following illustration:
 
@@ -110,7 +110,7 @@ As we can see more clearly in that illustration, we can see that $\Phi$ and $\th
 
 The training procedure is straightforward: the entry is a sample $x$ and the output objective is the same sample $x$. We aim at train the VAE for learning the data space and its latent representation by learning how to reconstruct the samples through it.
 
-\subsection{Limits for our problem}
+\subsubsection{Limits for our problem}
 
 As we have seen through the reparameterization trick, training a VAE architecture requires to be able to backpropagate
 the gradient of the ELBO at each step.

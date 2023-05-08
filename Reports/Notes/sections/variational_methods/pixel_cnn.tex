@@ -1,6 +1,6 @@
-\section{PixelCNN}
+\subsection{PixelCNN}
 
-\subsection{Overview}
+\subsubsection{Overview}
 
 Introducing the VQ-VAE, we have seen that an under-table tool that was being used is the Pixel CNN,
 first introduced in \cite{pixel_cnn_paper}.
@@ -38,7 +38,7 @@ leading to a discrete prior rather than a continuous one, which is required for 
 As a result, the distribution of a pixel conditionally to the ones in its receptive field is given by a multinomial in $\{0, \dots, 256\}$.
 \medskip
 
-\subsection{Usage in the VQ-VAE}
+\subsubsection{Usage in the VQ-VAE}
 
 Once we have trained the VQ-VAE, the original paper states that we can replace the uniform prior on $p(z)$ by a PixelCNN to model the prior.
 To perform the training of the PixelCNN, we turn the samples $x$ in their latent representations $z$, and train the PixelCNN over the latent representations $z$.

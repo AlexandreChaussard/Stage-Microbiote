@@ -1,6 +1,6 @@
-\section{VQ-VAE}
+\subsection{VQ-VAE}
 
-\subsection{Quick overview}
+\subsubsection{Quick overview}
 
 Introduced in \cite{vq_vae_paper}, VQ-VAE architecture provides a framework to compute
 discrete posterior distributions $q_{\Phi}(z|x)$.
@@ -33,7 +33,7 @@ For further visual representation of the vector quantization layer, an illustrat
 Looking at the previous figures, we can grasp the challenge of backpropagation in such model with discrete prior and posterior.
 In the next section, we enter in the mathematical definition of the objective and how to train this architecture.
 
-\subsection{Framework and optimization objective}
+\subsubsection{Framework and optimization objective}
 
 Contrary to the vanilla VAE, we have the following categorical distributions assumption:
 \begin{itemize}
@@ -110,7 +110,7 @@ $$
 \mathcal{L}(\theta, \Phi) = \log p_{\theta}(x|z_q(x)) + \Vert sg[z_e(x)] - e \Vert_2^2 + \beta \Vert z_e(x) - sg[e] \Vert_2^2
 $$
 
-\subsection{Discussion over some limiting aspects}
+\subsubsection{Discussion over some limiting aspects}
 
 Even though the previous objective seems natural, we only rigorously justified the first term thanks to the ELBO.
 Indeed, the dictionary update loss as well as the commitment loss keep dropping out from nowhere, while they seem necessary to ensure the training of our model.

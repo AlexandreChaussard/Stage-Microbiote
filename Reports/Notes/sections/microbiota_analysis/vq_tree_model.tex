@@ -1,6 +1,6 @@
-\section{Variational Tree Walk}
+\subsection{Variational Tree Walk}
 
-\subsection{Microbiota dataset}
+\subsubsection{Microbiota dataset}
 
 As we look into the microbiota data, one must a major phylogenetic architecture to describe various levels of precision in the microbiota composition.
 Indeed, such phylogenetic structure can be represented as a tree as on the following figure:
@@ -29,7 +29,7 @@ as on the PixelCNN approach.
 Such approach, in addition to use the adjacency of the tree graph, would then learn an interesting trajectory to compute the correlation between the abundance data.
 The next section offers the mathematical framework of the proposed idea.
 
-\subsection{Framework and optimization objectives}
+\subsubsection{Framework and optimization objectives}
 
 \subsubsection{EM approach}
 
@@ -73,7 +73,7 @@ $$
 Q(\widehat{\theta}, \theta) = \sum_{i=1}^n (\log p(T_i) + \log p_{\gamma}(Z_i | T_i) + \log p_{\omega}(X_i | Z_i)) \tau_{ik}
 $$
 
-\subsection{Variational approach}
+\subsubsection{Variational approach}
 
 In this second approach, we aim at giving variational algorithm to compute a lower bound to the true objective.
 To that end, since it can not be computed directly, we propose an estimate of $\p_{\theta}(Z|X,T) = q_{\Phi}(Z|X,T)$.
