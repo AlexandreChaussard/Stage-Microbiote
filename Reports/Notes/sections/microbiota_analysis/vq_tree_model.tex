@@ -2,7 +2,7 @@
 
 \subsubsection{Microbiota dataset}
 
-As we look into the microbiota data, one must a major phylogenetic architecture to describe various levels of precision in the microbiota composition.
+As we look into the microbiota data, we notice a major phylogenetic architecture to describe various levels of precision in the microbiota composition.
 Indeed, such phylogenetic structure can be represented as a tree as on the following figure:
 \begin{figure}[H]
     \center
@@ -24,8 +24,8 @@ Hence, we first suggest to transform the tree in a matrix to image structure as 
 \end{figure}
 
 Sadly this image representation does not convey the link between the species abundance given by the edges of the tree.
-As a result, we suggest to find a hidden variable $Z$ that uses the adjacent matrix of the tree, to find a way to go through the image
-as on the PixelCNN approach.
+As a result, we suggest to find a hidden variable $Z$ that uses the adjacent matrix of the tree $T$, to find a way to go through the image
+as for the PixelCNN approach.
 Such approach, in addition to use the adjacency of the tree graph, would then learn an interesting trajectory to compute the correlation between the abundance data.
 The next section offers the mathematical framework of the proposed idea.
 
@@ -35,23 +35,17 @@ The next section offers the mathematical framework of the proposed idea.
 
 In first approximation, we would like to use the EM algorithm to try to compute the following latent model:
 \begin{itemize}
-    \item We assume that we have $n$ individuals
-    \item The maximum size of a phylogenetic tree is $S$, and the maximum amount of unique species at a given level is $U$.
-    \item $X_i$ is the abundance matrix of the individual $i$ (image of size $S \times U$) , which is observed.
-    \item $T_i$ is the adjacent matrix of the phylogenetic tree of individual $i$, of size $S \times S$, which is observed.
-    \item $Z_i$ is a hidden random walk over the tree $T_i$ (discrete vector, permutation of $(1, \dots, S)$).
-          For a given random walk process over the tree, we denote by $N_{Z}$ the amount of possible generations ($N_Z \leq S!$).
+    \item We assume that we have $n$ individuals observed through $(X_i, T_i)_{1 \leq i \leq n}$.
+    \item The maximum depth of a phylogenetic tree is $D$, the maximum number of nodes $N_{nodes}$, and the maximum amount of unique species at any level is $U$.
+    \item $X_i$ is the abundance matrix of the individual $i$ (image of size $N_{nodes} \times U$) , which is observed.
+    \item $T_i$ is the adjacent matrix of the phylogenetic tree of individual $i$, of size $N_{nodes} \times N_{nodes}$, which is observed.
+          We could use any other encoding of a tree (contour function, depth function, ...).
+    \item $Z_i$ is a hidden random walk over the tree $T_i$ (discrete vector, permutation of $(1, \dots, N_{nodes})$).
+          For a given random walk process over the tree, we denote by $N_{Z}$ the amount of possible generations ($N_Z \leq N_{nodes}!$).
           Hence, $p_{\gamma}(Z_i = z | T_i)$ is a known distribution defined by the random walk process.
     \item Taking inspiration from the PixelCNN, our model should learn the distribution $p_{\omega}(X_i | Z_i, T_i)$ as a CNN/RNN that is masked following $Z_i$.
           We also assume that conditionally to $Z_i$, this distribution is independent from the adjacent matrix: $p_{\omega}(X_i | Z_i, T_i) = p_{\omega}(X_i | Z_i)$.
 \end{itemize}
-
-Since we observe $\{T_i\}_{1 \leq i \leq n}$ phylogenetic trees, one can compute the empirical distribution of the edges of the graph denoted by $p_{T}$.
-The computation of the empirical distribution is done by summing all the adjacent matrices $\{T_i\}_{1 \leq i \leq n}$ and dividing it by $n$:
-$$
-\bar{T} = \frac{1}{n} \sum_{i=1}^n T_i
-$$
-Then for any observed tree $t_i$, one can sum the edges probability in $\bar{T}$ and divide it by the amount of edges of the tree to obtain $\mathbb{P}(T = t_i)$. \\
 
 Recall from the EM context that we aim at maximizing
 $$
@@ -60,8 +54,7 @@ $$
 Hence, we start with the \textbf{expectation} step and try to evaluate $p_{\widehat{\theta}(Z|X,T)}$:
 $$
 \begin{align}
-    p_{\widehat{\theta}}(Z_i|X_i,T_i) = \tau_{ik} &= \log p_{\widehat{\theta}}(Z_i | T_i, X_i) \\
-                                &= \log \frac{p(T_i) p_{\widehat{\theta}}(Z_i | T_i) p_{\widehat{\theta}}(X_i | Z_i, T_i)}{\sum_{j=1}^{N_Z} p(T_i) p_{\widehat{\theta}}(Z_i=z_j | T_i) p_{\widehat{\theta}}(X_i | Z_i=z_j, T_i)} \\
+    \log p_{\widehat{\theta}}(Z_i|X_i,T_i) = \tau_{ik} &= \log \frac{p(T_i) p_{\widehat{\theta}}(Z_i | T_i) p_{\widehat{\theta}}(X_i | Z_i, T_i)}{\sum_{j=1}^{N_Z} p(T_i) p_{\widehat{\theta}}(Z_i=z_j | T_i) p_{\widehat{\theta}}(X_i | Z_i=z_j, T_i)} \\
                                 &= \log \frac{p_{\widehat{\theta}}(Z_i | T_i) p_{\widehat{\theta}}(X_i | Z_i)}{\sum_{j=1}^{N_Z} p_{\widehat{\theta}}(Z_i=z_j | T_i) p_{\widehat{\theta}}(X_i | Z_i=z_j)}
 \end{align}
 $$
@@ -75,8 +68,8 @@ $$
 
 \subsubsection{Variational approach}
 
-In this second approach, we aim at giving variational algorithm to compute a lower bound to the true objective.
-To that end, since it can not be computed directly, we propose an estimate of $\p_{\theta}(Z|X,T) = q_{\Phi}(Z|X,T)$.
+In this second approach, we aim at giving a variational algorithm to compute a lower bound to the true objective.
+To that end, since it can not be computed directly, we propose an estimate of $p_{\theta}(Z|X,T) = q_{\Phi}(Z|X,T)$.
 Recall then the ELBO explicited in the VAE general framework:
 $$
 \log p_{\theta}(X) = \underbrace{\mathbb{E}_{q_{\Phi}(Z|X,T)}\left[ \log \frac{p_{\theta}(X,Z,T)}{q_{\Phi}(Z|X,T)} \right]}_{ELBO(\Phi, \theta)} + D_{KL}[q_{\Phi}(Z|X,T) \Vert p_{\theta}(Z|X,T)]
@@ -90,12 +83,99 @@ $$
 \end{align}
 $$
 
-Taking inspiration from the VQ-VAE architecture, one might introduce a continuous primary variable $Z_i^e(T_i)$ following a gaussian distribution for instance,
-and project it onto a finite space of random walks to obtain $Z_i^q(T_i)$.
-As a result, $q_{\Phi}(Z_i|X_i,T_i) = \delta_{\{Z_i = Z_i^q\}}$, leading to the following objective:
+Designing the prior $p_{\gamma}(Z_i | T_i)$ is no easy task though, as it is completely free-form.
+Indeed, using a too free-form prior will end up in not using the tree structure at all by recreating a completely different markov chain
+(if any leap can be made in the tree, then the obtained random walk will not necessarily exploit the tree structure).
+If the the prior is too restrictive, we might be over-exploiting the phylogenetic structure and obtain an average walk over the tree that is not relevant to each unique case.
+Hence, we try to design a prior that takes into account the tree structure while still having some entropy so any random walk is still possible (with low probability).\\
+
+For notation purposes, we introduce the random variable $\eta_k$ that represents the chosen node index at step $k$ of the random walk.
+Whatever prior we decide to pick, it feels as most relevant to pick the seed of the markov chain using a learnable distribution,
+so that we have $\eta_{1} \sim p(\pi)$ where $\pi = (\pi_1, \dots, \pi_{N_{nodes}})$ .
+We also introduce a norm over the tree $\Vert . \Vert_T$ that will enable us to measure the distance between nodes:
+\begin{itemize}
+    \item Norm of a given node is given by:
+        $$
+        \Vert \eta_k \Vert_T = \text{distance to root node of the tree}
+        $$
+    \item Distance computation is given by:
+          $$
+            \Vert \eta_k - \eta_j \Vert_T = \left\{
+            \begin{array}{ll}
+                0 & \mbox{if } i = j \\
+                \text{number of edges between node $k$ and $j$} & \mbox{otherwise}
+            \end{array}
+            \right.
+          $$
+\end{itemize}
+
+The first prior that we propose is a variation of the dirichlet prior, parameterized by $\lambda = (\lambda_1, \dots, \lambda_{N_{nodes}})$.
+If we denote by $u_k$ a given node indexed by $k$, let $\alpha_j = (\Vert u_k - \eta_j \Vert_T)_{1 \leq k \leq N_{nodes}}$:
+$$
+\begin{align}
+    d_{k+1} | \eta_{k} &\sim \mathcal{D}(\lambda \odot \alpha_k) \\
+    \eta_{k+1} &\sim p(d_{k+1})
+\end{align}
+$$
+Hence, computing $Z_i | T_i$ is given by $Z_i = (\eta_k)_{k \in \{1, \dots, N_{nodes}\}}$ following the previously introduced process:
+\begin{algorithm}[H]
+    \caption{Tree random walk without replacement}
+    \begin{algorithmic}
+        \REQUIRE $T_i$ a given tree, $(\pi, \lambda)$ distribution parameters
+        \STATE Draw $\eta_{1} \sim p(\pi)$
+        \STATE Define $Z_i = (\eta_{1})$
+        \For{ $k \in \{2, \dots, N_{nodes}\}$ }
+            \STATE \quad Draw a distribution $d_{k} | \eta_{k-1} \sim \mathcal{D}(\lambda \odot \alpha_{k-1})$
+            \STATE \quad Mask in $d_{k}$ the already seen nodes in $Z_i$ to obtain $\tilde{d}_{k}$
+            \STATE \quad Draw $\eta_{k} \sim p(\tilde{d}_{k})$
+            \STATE \quad Update $Z_i = (Z_i, \eta_k)$
+        \EndFor:
+    \end{algorithmic}
+
+    \textbf{Output:} $Z_i = (\eta_1, \dots, \eta_{N_{nodes}})$
+
+    \label{alg:tree_walk_no_replacement}
+\end{algorithm}
+
+Computing $q_{\Phi}(Z_i | X_i, T_i)$ is rather simple at this stage, and it has an explicit formula:
+$$
+q_{\Phi}(Z_i = (z_1, \dots, z_{N_{nodes}}) | X_i, T_i) = p_{\pi}(z_1) p_{\tilde{d}_1}(z_2) \dots p_{\tilde{d}_{N_{dots}}}(z_{N_{dots}})
+$$
+
+Taking inspiration from the VQ-VAE architecture, one might modify the previous algorithm as simple prior sampling denoted by $Z_i^e(T_i)$,
+and then a quantization step by taking the $arg\max$ over the output probabilities sampled:
+$$
+\begin{align}
+    d_{k+1} | \eta_{k} &\sim \mathcal{D}(\lambda \odot \alpha_k) \\
+    \eta_{k+1} &= arg\max_{j} [d_{k+1}]_j
+\end{align}
+$$
+
+\begin{algorithm}[H]
+    \caption{Tree quantized random walk}
+    \begin{algorithmic}
+        \REQUIRE $T_i$ a given tree, $(\pi, \lambda)$ distribution parameters
+        \STATE Draw $\eta_{1} \sim p(\pi)$
+        \STATE Define $Z_i^q = (\eta_{1})$
+        \For{ $k \in \{2, \dots, N_{nodes}\}$ }
+            \STATE \quad Draw a distribution $d_{k} | \eta_{k-1} \sim \mathcal{D}(\lambda \odot \alpha_{k-1})$
+            \STATE \quad Mask in $d_{k}$ the already seen nodes in $Z_i^q$ to obtain $\tilde{d}_{k}$
+            \STATE \quad Set $\eta_{k} = arg\max_{j} [\tilde{d}_{k}]_j$
+            \STATE \quad Update $Z_i^q = (Z_i^q, \eta_k)$
+        \EndFor:
+    \end{algorithmic}
+
+    \textbf{Output:} $Z_i^q = (\eta_1, \dots, \eta_{N_{nodes}})$
+
+    \label{alg:tree_quantized_walk}
+\end{algorithm}
+
+Sadly, $q_{\Phi}(Z_i|X_i,T_i) \neq \delta_{\{Z_i = Z_i^q\}}$, so we do not fall back on that objective yet:
 $$
 \begin{align}
     ELBO(\Phi, \theta) &= \sum_{i=1}^n \log p_{\omega}(X_i | Z_i^q(T_i)) - \log \frac{q_{\Phi}(Z_i^q(T_i) | X_i)}{p_{\gamma}(Z_i^q (T_i) | T_i)} \\
-                        &= \sum_{i=1}^n \log p_{\omega}(X_i | Z_i^q(T_i)) + \log p_{\gamma}(Z_i^q (T_i) | T_i)
+    &= \sum_{i=1}^n \log p_{\omega}(X_i | Z_i^q(T_i)) + \log p_{\gamma}(Z_i^q (T_i) | T_i)
 \end{align}
 $$
+
+Being a random process, the density of a moving random process is yet to be defined.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  8 MAY 2023 19:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  9 MAY 2023 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1571,19 +1571,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
-Overfull \hbox (7.71257pt too wide) in paragraph at lines 45--47
+Overfull \hbox (4.04997pt too wide) in paragraph at lines 43--46
+[]$\OML/cmm/m/it/12 Z[]$ \T1/cmr/m/n/12 is a hid-den ran-dom walk over the tree
+ $\OML/cmm/m/it/12 T[]$ \T1/cmr/m/n/12 (dis-crete vec-tor, per-mu-ta-tion of $\
+OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; [] ; N[]\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 ).
+
+ []
+
+
+Overfull \hbox (7.71257pt too wide) in paragraph at lines 46--48
 []\T1/cmr/m/n/12 Taking in-spi-ra-tion from the Pix-el-CNN, our model should le
 arn the dis-tri-bu-tion $\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
 X[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 Z[]; T[]\OT1/cmr/m/n/12 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
-
- []
-
-
-sections/microbiota_analysis/vq_tree_model.tex:66: Package amsmath Error: Erron
+sections/microbiota_analysis/vq_tree_model.tex:59: Package amsmath Error: Erron
 eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1591,13 +1594,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.66 \end{align}
+l.59 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--70
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
 
  []
 
@@ -1610,19 +1613,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
-sections/microbiota_analysis/vq_tree_model.tex:79: Undefined control sequence.
-<recently read> \p 
-                   
-l.79 ...ed directly, we propose an estimate of $\p
-                                                  _{\theta}(Z|X,T) = q_{\Phi...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-sections/microbiota_analysis/vq_tree_model.tex:90: Package amsmath Error: Erron
+sections/microbiota_analysis/vq_tree_model.tex:83: Package amsmath Error: Erron
 eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1630,13 +1622,18 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 \end{align}
+l.83 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/microbiota_analysis/vq_tree_model.tex:100: Package amsmath Error: Erro
+Underfull \hbox (badness 10000) in paragraph at lines 86--91
+
+ []
+
+
+sections/microbiota_analysis/vq_tree_model.tex:118: Package amsmath Error: Erro
 neous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1644,7 +1641,132 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.100 \end{align}
+l.118 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/vq_tree_model.tex:127: Missing \endcsname inserted
+.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.127         \For
+                  { $k \in \{2, \dots, N_{nodes}\}$ }
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+sections/microbiota_analysis/vq_tree_model.tex:127: Extra \endcsname.
+\ALG@makebeginrepeat ...\ALG@thisblock \endcsname 
+                                                  \relax \def \ALG@thisblock...
+l.127         \For
+                  { $k \in \{2, \dots, N_{nodes}\}$ }
+I'm ignoring this, since I wasn't doing a \csname.
+
+sections/microbiota_analysis/vq_tree_model.tex:133: Missing number, treated as 
+zero.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.133     \end{algorithmic}
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+sections/microbiota_analysis/vq_tree_model.tex:133: Missing = inserted for \ifn
+um.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.133     \end{algorithmic}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+sections/microbiota_analysis/vq_tree_model.tex:133: Missing number, treated as 
+zero.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.133     \end{algorithmic}
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+
+sections/microbiota_analysis/vq_tree_model.tex:151: Package amsmath Error: Erro
+neous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.151 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/vq_tree_model.tex:160: Missing \endcsname inserted
+.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.160         \For
+                  { $k \in \{2, \dots, N_{nodes}\}$ }
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+sections/microbiota_analysis/vq_tree_model.tex:160: Extra \endcsname.
+\ALG@makebeginrepeat ...\ALG@thisblock \endcsname 
+                                                  \relax \def \ALG@thisblock...
+l.160         \For
+                  { $k \in \{2, \dots, N_{nodes}\}$ }
+I'm ignoring this, since I wasn't doing a \csname.
+
+sections/microbiota_analysis/vq_tree_model.tex:166: Missing number, treated as 
+zero.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.166     \end{algorithmic}
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+sections/microbiota_analysis/vq_tree_model.tex:166: Missing = inserted for \ifn
+um.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.166     \end{algorithmic}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+sections/microbiota_analysis/vq_tree_model.tex:166: Missing number, treated as 
+zero.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.166     \end{algorithmic}
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+sections/microbiota_analysis/vq_tree_model.tex:178: Package amsmath Error: Erro
+neous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178 \end{align}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1658,7 +1780,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20] (sections/general/bibpage.tex)
+[21] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -1673,7 +1795,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[22] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 64DDBDDF81C53808DCDD108A37793EB0;4911.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1681,11 +1803,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26767 strings out of 476315
- 525715 string characters out of 5787197
+ 26799 strings out of 476315
+ 526124 string characters out of 5787197
  1869068 words of memory out of 5000000
- 46773 multiletter control sequences out of 15000+600000
- 527143 words of font info for 68 fonts, out of 8000000 for 9000
+ 46786 multiletter control sequences out of 15000+600000
+ 529414 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
@@ -1719,9 +1841,9 @@ public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (22 pages, 1485504 bytes).
+t\main.pdf (23 pages, 1494897 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
+ 828 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
  283 words of extra memory for PDF output out of 10000 (max. 10000000)
 
