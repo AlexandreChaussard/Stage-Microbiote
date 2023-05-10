@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  9 MAY 2023 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  10 MAY 2023 17:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -285,25 +285,25 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic.
+sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count292
+\c@ALC@line=\count293
+\c@ALC@rem=\count294
+\c@ALC@depth=\count295
+\ALC@tlm=\skip63
+\algorithmicindent=\skip64
+)
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.st
 y
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
- (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
 \@float@every@algorithm=\toks30
-\c@algorithm=\count292
-)
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic.
-sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count293
-\c@ALC@line=\count294
-\c@ALC@rem=\count295
-\c@ALC@depth=\count296
-\ALC@tlm=\skip63
-\algorithmicindent=\skip64
+\c@algorithm=\count296
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-04-22 v7.00x Hypertext links for LaTeX
@@ -1062,7 +1062,7 @@ Package biblatex Info: Reference section=0 on input line 84.
 Package biblatex Info: Reference segment=0 on input line 84.
 
 (sections/general/titlepage.tex
-<images/logo_ipp.png, id=119, 270.51062pt x 270.00874pt>
+<images/logo_ipp.png, id=115, 270.51062pt x 270.00874pt>
 File: images/logo_ipp.png Graphic file (type png)
 <use images/logo_ipp.png>
 Package pdftex.def Info: images/logo_ipp.png  used on input line 9.
@@ -1128,26 +1128,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 21.
 
-sections/EM/EM.tex:27: Missing number, treated as zero.
+sections/EM/EM.tex:29: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.27     \end{algorithmic}
+l.29     \end{algorithmic}
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-sections/EM/EM.tex:27: Missing = inserted for \ifnum.
+sections/EM/EM.tex:29: Missing = inserted for \ifnum.
 <to be read again> 
                    \ALG@currentblock@0 
-l.27     \end{algorithmic}
+l.29     \end{algorithmic}
                           
 I was expecting to see `<', `=', or `>'. Didn't.
 
-sections/EM/EM.tex:27: Missing number, treated as zero.
+sections/EM/EM.tex:29: Missing number, treated as zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.27     \end{algorithmic}
+l.29     \end{algorithmic}
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1241,7 +1241,7 @@ sam-ple as $\OML/cmm/m/it/12 Y[] \OMS/cmsy/m/n/12 ^^X B\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W[]e[] \OT1/cmr/m/n/12 +
  []
 
-<images/samples_gmm_lc.png, id=230, 419.5675pt x 343.78438pt>
+<images/samples_gmm_lc.png, id=225, 419.5675pt x 343.78438pt>
 File: images/samples_gmm_lc.png Graphic file (type png)
 <use images/samples_gmm_lc.png>
 Package pdftex.def Info: images/samples_gmm_lc.png  used on input line 83.
@@ -1255,7 +1255,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
-<images/samples_gmm_lc_badconditioning.png, id=236, 420.57124pt x 341.275pt>
+<images/samples_gmm_lc_badconditioning.png, id=231, 420.57124pt x 341.275pt>
 File: images/samples_gmm_lc_badconditioning.png Graphic file (type png)
 <use images/samples_gmm_lc_badconditioning.png>
 Package pdftex.def Info: images/samples_gmm_lc_badconditioning.png  used on inp
@@ -1346,7 +1346,7 @@ l.64         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/samples_dirichlet_lc.png, id=255, 411.5375pt x 320.19624pt>
+<images/samples_dirichlet_lc.png, id=250, 411.5375pt x 320.19624pt>
 File: images/samples_dirichlet_lc.png Graphic file (type png)
 <use images/samples_dirichlet_lc.png>
 Package pdftex.def Info: images/samples_dirichlet_lc.png  used on input line 75
@@ -1409,7 +1409,7 @@ l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/Reparameterized_Variational_Autoencoder.png, id=274, 803.0pt x 333.245p
+<images/Reparameterized_Variational_Autoencoder.png, id=269, 803.0pt x 333.245p
 t>
 File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
 )
@@ -1436,13 +1436,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12 <./images/Reparameterized_Variational_Autoencoder.png>]
 (sections/variational_methods/vq_vae.tex
-<images/vq_vae_architecture.png, id=287, 839.63687pt x 178.16562pt>
+<images/vq_vae_architecture.png, id=282, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
 Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
 
 (pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
-<images/vq_vae_quantization.png, id=289, 815.54688pt x 330.73563pt>
+<images/vq_vae_quantization.png, id=284, 815.54688pt x 330.73563pt>
 File: images/vq_vae_quantization.png Graphic file (type png)
 <use images/vq_vae_quantization.png>
 Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
@@ -1524,7 +1524,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15] (sections/variational_methods/pixel_cnn.tex
-<images/masked_convolution_pixel_cnn.png, id=312, 214.8025pt x 176.66pt>
+<images/masked_convolution_pixel_cnn.png, id=307, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
 Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
@@ -1549,19 +1549,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
-(sections/microbiota_analysis/vq_tree_model.tex
-<images/abundance_tree_phylogenetic.png, id=323, 95.85812pt x 134.00063pt>
+(sections/microbiota_analysis/microbiota_dataset.tex
+<images/abundance_tree_phylogenetic.png, id=318, 95.85812pt x 134.00063pt>
 File: images/abundance_tree_phylogenetic.png Graphic file (type png)
 <use images/abundance_tree_phylogenetic.png>
 Package pdftex.def Info: images/abundance_tree_phylogenetic.png  used on input 
-line 9.
+line 7.
 (pdftex.def)             Requested size: 95.85788pt x 134.00027pt.
-<images/tree_to_image.png, id=326, 310.66063pt x 137.51375pt>
+<images/tree_to_image.png, id=321, 310.66063pt x 137.51375pt>
 File: images/tree_to_image.png Graphic file (type png)
 <use images/tree_to_image.png>
-Package pdftex.def Info: images/tree_to_image.png  used on input line 19.
+Package pdftex.def Info: images/tree_to_image.png  used on input line 17.
 (pdftex.def)             Requested size: 310.65987pt x 137.51341pt.
-
+)
+(sections/microbiota_analysis/vq_tree_model.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1571,22 +1572,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
-Overfull \hbox (4.04997pt too wide) in paragraph at lines 43--46
-[]$\OML/cmm/m/it/12 Z[]$ \T1/cmr/m/n/12 is a hid-den ran-dom walk over the tree
- $\OML/cmm/m/it/12 T[]$ \T1/cmr/m/n/12 (dis-crete vec-tor, per-mu-ta-tion of $\
-OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; [] ; N[]\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 ).
-
- []
-
-
-Overfull \hbox (7.71257pt too wide) in paragraph at lines 46--48
+Overfull \hbox (7.71257pt too wide) in paragraph at lines 15--17
 []\T1/cmr/m/n/12 Taking in-spi-ra-tion from the Pix-el-CNN, our model should le
 arn the dis-tri-bu-tion $\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
 X[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 Z[]; T[]\OT1/cmr/m/n/12 )$
  []
 
 
-sections/microbiota_analysis/vq_tree_model.tex:59: Package amsmath Error: Erron
+sections/microbiota_analysis/vq_tree_model.tex:28: Package amsmath Error: Erron
 eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1594,13 +1587,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 \end{align}
+l.28 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
 
  []
 
@@ -1614,7 +1607,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [19]
 
-sections/microbiota_analysis/vq_tree_model.tex:83: Package amsmath Error: Erron
+sections/microbiota_analysis/vq_tree_model.tex:52: Package amsmath Error: Erron
 eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1622,69 +1615,74 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 \end{align}
+l.52 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--91
+Underfull \hbox (badness 10000) in paragraph at lines 55--60
 
  []
 
 
-sections/microbiota_analysis/vq_tree_model.tex:118: Package amsmath Error: Erro
-neous nesting of equation structures;
+Overfull \hbox (47.43922pt too wide) detected at line 79
+\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 z[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 z[
+]\OMS/cmsy/m/n/12 k[] \OT1/cmr/m/n/12 = []
+ []
+
+
+sections/microbiota_analysis/vq_tree_model.tex:88: Package amsmath Error: Erron
+eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.118 \end{align}
-                 
+l.88 \end{align}
+                
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-sections/microbiota_analysis/vq_tree_model.tex:127: Missing \endcsname inserted
-.
+sections/microbiota_analysis/vq_tree_model.tex:97: Missing \endcsname inserted.
 <to be read again> 
                    \ALG@currentblock@0 
-l.127         \For
-                  { $k \in \{2, \dots, N_{nodes}\}$ }
+l.97         \For
+                 { $k \in \{2, \dots, N_T\}$ }
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-sections/microbiota_analysis/vq_tree_model.tex:127: Extra \endcsname.
+sections/microbiota_analysis/vq_tree_model.tex:97: Extra \endcsname.
 \ALG@makebeginrepeat ...\ALG@thisblock \endcsname 
                                                   \relax \def \ALG@thisblock...
-l.127         \For
-                  { $k \in \{2, \dots, N_{nodes}\}$ }
+l.97         \For
+                 { $k \in \{2, \dots, N_T\}$ }
 I'm ignoring this, since I wasn't doing a \csname.
 
-sections/microbiota_analysis/vq_tree_model.tex:133: Missing number, treated as 
+sections/microbiota_analysis/vq_tree_model.tex:105: Missing number, treated as 
 zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.133     \end{algorithmic}
+l.105     \end{algorithmic}
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-sections/microbiota_analysis/vq_tree_model.tex:133: Missing = inserted for \ifn
+sections/microbiota_analysis/vq_tree_model.tex:105: Missing = inserted for \ifn
 um.
 <to be read again> 
                    \ALG@currentblock@0 
-l.133     \end{algorithmic}
+l.105     \end{algorithmic}
                            
 I was expecting to see `<', `=', or `>'. Didn't.
 
-sections/microbiota_analysis/vq_tree_model.tex:133: Missing number, treated as 
+sections/microbiota_analysis/vq_tree_model.tex:105: Missing number, treated as 
 zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.133     \end{algorithmic}
+l.105     \end{algorithmic}
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1700,7 +1698,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 
-sections/microbiota_analysis/vq_tree_model.tex:151: Package amsmath Error: Erro
+sections/microbiota_analysis/vq_tree_model.tex:119: Package amsmath Error: Erro
 neous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1708,57 +1706,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 \end{align}
+l.119 \end{align}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-sections/microbiota_analysis/vq_tree_model.tex:160: Missing \endcsname inserted
-.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.160         \For
-                  { $k \in \{2, \dots, N_{nodes}\}$ }
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
 
-sections/microbiota_analysis/vq_tree_model.tex:160: Extra \endcsname.
-\ALG@makebeginrepeat ...\ALG@thisblock \endcsname 
-                                                  \relax \def \ALG@thisblock...
-l.160         \For
-                  { $k \in \{2, \dots, N_{nodes}\}$ }
-I'm ignoring this, since I wasn't doing a \csname.
-
-sections/microbiota_analysis/vq_tree_model.tex:166: Missing number, treated as 
-zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.166     \end{algorithmic}
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-sections/microbiota_analysis/vq_tree_model.tex:166: Missing = inserted for \ifn
-um.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.166     \end{algorithmic}
-                           
-I was expecting to see `<', `=', or `>'. Didn't.
-
-sections/microbiota_analysis/vq_tree_model.tex:166: Missing number, treated as 
-zero.
-<to be read again> 
-                   \ALG@currentblock@0 
-l.166     \end{algorithmic}
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-sections/microbiota_analysis/vq_tree_model.tex:178: Package amsmath Error: Erro
+sections/microbiota_analysis/vq_tree_model.tex:128: Package amsmath Error: Erro
 neous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1766,7 +1720,237 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178 \end{align}
+l.128 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ...( z | X_i, T_i) &= \int _{\mathbold 
+                                                  {\Pi }} q_{\Phi }((z_1, \d...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ...i, T_i) d\pi \\ &= \int _{\mathbold 
+                                                  {\Pi }} p(z_1 | \pi _1) \p...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ... d\pi _{N_T} \\ &= \int _{\mathbold 
+                                                  {\Pi }_1} \pi _1^{(z_1)} \...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ..._1} \pi _1^{(z_1)} \int _{\mathbold 
+                                                  {\Pi }_2} p_{\lambda }(\pi...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ...lambda }(\pi _2;\alpha _1) \mathbbm 
+                                                  {1}_{z_2 \notin \{z_1\}} \...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ..._{2}^{(z_2)} \dots \int _{\mathbold 
+                                                  {\Pi }_{N_T}} p_{\lambda }...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ... _{N_T};\alpha _{N_T - 1}) \mathbbm 
+                                                  {1}_{z_{N_T} \notin \{z_1,...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ...} \\ &= \prod _{k=2}^{N_T} \mathbbm 
+                                                  {1}_{z_{k} \notin \{z_{1},...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ...\dots , z_{k-1}\}} \int _{\mathbold 
+                                                  {\Pi }_2} p_{\lambda }(\pi...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:128: Undefined control sequence.
+<argument> ..._{2}^{(z_2)} \dots \int _{\mathbold 
+                                                  {\Pi }_{N_T}} p_{\lambda }...
+l.128 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (28.96434pt too wide) detected at line 129
+[][]
+ []
+
+
+Overfull \hbox (11.99019pt too wide) in paragraph at lines 129--132
+\T1/cmr/m/n/12 Since we are us-ing the dirich-let dis-tri-bu-tion, its com-po-n
+ents are in-de-pen-dent so that $\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 ^^Y[]\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) =
+ []
+
+sections/microbiota_analysis/vq_tree_model.tex:133: Undefined control sequence.
+l.133 \int_{\mathbold
+                     {\Pi}_k} p_{\lambda}(\pi_k;\alpha_{k-1}) \pi_{k}^{(z_k)...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:133: Undefined control sequence.
+l.133 ...pi_{k}^{(z_k)} d\pi_{k} = \int_{\mathbold
+                                                  {\Pi}_k^{(z_k)}} p_{\lambd...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+sections/microbiota_analysis/vq_tree_model.tex:139: Undefined control sequence.
+l.139 ... | X_i, T_i) = \prod_{k=2}^{N_T} \mathbbm
+                                                  {1}_{z_{k} \notin \{z_{1},...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+sections/microbiota_analysis/vq_tree_model.tex:148: Package amsmath Error: Erro
+neous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/vq_tree_model.tex:157: Missing \endcsname inserted
+.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.157         \For
+                  { $k \in \{2, \dots, N_T\}$ }
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+sections/microbiota_analysis/vq_tree_model.tex:157: Extra \endcsname.
+\ALG@makebeginrepeat ...\ALG@thisblock \endcsname 
+                                                  \relax \def \ALG@thisblock...
+l.157         \For
+                  { $k \in \{2, \dots, N_T\}$ }
+I'm ignoring this, since I wasn't doing a \csname.
+
+sections/microbiota_analysis/vq_tree_model.tex:165: Missing number, treated as 
+zero.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.165     \end{algorithmic}
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+sections/microbiota_analysis/vq_tree_model.tex:165: Missing = inserted for \ifn
+um.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.165     \end{algorithmic}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+sections/microbiota_analysis/vq_tree_model.tex:165: Missing number, treated as 
+zero.
+<to be read again> 
+                   \ALG@currentblock@0 
+l.165     \end{algorithmic}
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+sections/microbiota_analysis/vq_tree_model.tex:175: Package amsmath Error: Erro
+neous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.175 \end{align}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1780,7 +1964,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21] (sections/general/bibpage.tex)
+[22] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -1795,55 +1979,56 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[23] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 64DDBDDF81C53808DCDD108A37793EB0;4911.
+(rerunfilecheck)             Checksum: C330E2C39695D76E0428A2D5A8C2E3B3;4639.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26799 strings out of 476315
- 526124 string characters out of 5787197
- 1869068 words of memory out of 5000000
- 46786 multiletter control sequences out of 15000+600000
- 529414 words of font info for 74 fonts, out of 8000000 for 9000
+ 26810 strings out of 476315
+ 526449 string characters out of 5787197
+ 1871068 words of memory out of 5000000
+ 46790 multiletter control sequences out of 15000+600000
+ 530177 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
 1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\frigi\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\frigi\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\
-frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk> <C:\
-Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk
-><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mex10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cmextra/cmex7.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/frigi/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/frigi/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/frigi/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
-frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
-/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
-s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+/dpi600\ecrm1000.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\frigi\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\
+frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\
+Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk
+> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1
+200.pk><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cmextra/cmex7.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/frigi/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/frigi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/frigi/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/fr
+igi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.p
+fb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (23 pages, 1494897 bytes).
+t\main.pdf (24 pages, 1501934 bytes).
 PDF statistics:
- 828 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 283 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 843 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 275 words of extra memory for PDF output out of 10000 (max. 10000000)
 

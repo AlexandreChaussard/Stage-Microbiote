@@ -24,9 +24,9 @@ Indeed, consider the following algorithm:
         \STATE Repeat until convergence
             \STATE \quad \textbf{Expectation}: compute $p_{\widehat{\theta}}(Z|X)$ to compute $Q(\widehat{\theta}, .)$
             \STATE \quad \textbf{Maximization}: $\widehat{\theta} = arg\max_{\theta} Q(\widehat{\theta}, \theta)$
-    \end{algorithmic}
 
-    \textbf{Output:} $\widehat{\theta}$
+        \RETURN{} $\widehat{\theta}$
+    \end{algorithmic}
 
     \label{alg:em_algo}
 \end{algorithm}
