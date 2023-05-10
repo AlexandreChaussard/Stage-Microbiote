@@ -128,15 +128,18 @@ $$
 \end{align}
 $$
 Since we are using the dirichlet distribution, its components are independent so that $p_{\lambda}(\pi_k;\alpha_{k-1}) = \frac{1}{B(\alpha_{k-1})} \prod_{i=1}^{N_T} \left(\pi_k^{(i)}\right)^{\alpha_{k-1}^{(i)} - 1}$.
-Hence, using Fubini-Tonelli theorem and the first order moment of the dirichlet distribution (WARNING: this is incorrect, we can actually compute the integrales directly), we get for all $k \geq 2$:
+Hence, using Fubini-Tonelli theorem and the first order moment of the dirichlet distribution, we get for all $k \geq 2$:
 $$
-\int_{\mathbold{\Pi}_k} p_{\lambda}(\pi_k;\alpha_{k-1}) \pi_{k}^{(z_k)} d\pi_{k} = \int_{\mathbold{\Pi}_k^{(z_k)}} p_{\lambda}(\pi_k^{(z_k)};\alpha_{k-1}^{(z_k)}) \pi_{k}^{(z_k)} d\pi_{k} \\
-= \mathbb{E}\left[\pi_k^{(z_k)} \right] \\
-= \frac{\alpha_{k-1}^{(z_k)}}{\sum_{i=1}^{N_T} \alpha_{k-1}^{(i)}}
+\begin{align}
+    \int_{\mathbold{\Pi}_k} p_{\lambda}(\pi_k;\alpha_{k-1}) \pi_{k}^{(z_k)} d\pi_{k} &= \int_{\mathbold{\Pi}_k} \frac{1}{B(\alpha_{k-1})} \prod_{i=1}^{N_T} \left(\pi_k^{(i)}\right)^{\alpha_{k-1}^{(i)} - 1} \pi_{k}^{(z_k)} d\pi_{k}^{(1:N_T)} \\
+                                                                                     &= \frac{1}{B(\alpha_{k-1})} \int_{\mathbold{\Pi}_k^{(z_k)}} \left(\pi_k^{(z_k)}\right)^{\alpha_{k-1}^{(z_k)}-1} \pi_k^{(z_k)} d\pi_k^{(z_k)} \prod_{i=0, i \neq z_k}^{N_T} \int_{\mathbold{\Pi}_k^{(i)}} \left(\pi_k^{(i)}\right)^{\alpha_{k-1}^{(i)}-1} d\pi_{k}^{(i)} \\
+                                                                                     &= \frac{1}{B(\alpha_{k-1})} \int_{\mathbold{\Pi}_k^{(z_k)}} \left(\pi_k^{(z_k)}\right)^{\alpha_{k-1}^{(z_k)}} d\pi_k^{(z_k)} \prod_{i=0, i \neq z_k}^{N_T} \frac{1}{\alpha_{k-1}^{(i)}} \\
+                                                                                     &= \frac{1}{B(\alpha_{k-1})} \frac{1}{\alpha_{k-1}^{(z_k)} + 1} \prod_{i=0, i \neq z_k}^{N_T} \frac{1}{\alpha_{k-1}^{(i)}}
+\end{align}
 $$
 Consequently, $q_{\Phi}( z | X_i, T_i)$ can be written as:
 $$
-q_{\Phi}(Z_i = (z_1, \dots, z_{N_T}) | X_i, T_i) = \prod_{k=2}^{N_T} \mathbbm{1}_{z_{k} \notin \{z_{1}, \dots, z_{k-1}\}} \prod_{k=2}^{N_T} \frac{\alpha_{k-1}^{(z_k)}}{\sum_{i=1}^{N_T} \alpha_{k-1}^{(i)}}
+q_{\Phi}(Z_i = (z_1, \dots, z_{N_T}) | X_i, T_i) = \prod_{k=2}^{N_T} \mathbbm{1}_{z_{k} \notin \{z_{1}, \dots, z_{k-1}\}} \prod_{k=2}^{N_T} \left[  \frac{1}{B(\alpha_{k-1})} \frac{1}{\alpha_{k-1}^{(z_k)} + 1} \prod_{i=0, i \neq z_k}^{N_T} \frac{1}{\alpha_{k-1}^{(i)}} \right]
 $$
 
 Taking inspiration from the VQ-VAE architecture, one might modify the previous algorithm as simple prior sampling denoted by $Z_i^e(T_i)$,

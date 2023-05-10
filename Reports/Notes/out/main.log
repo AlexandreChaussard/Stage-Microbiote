@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  10 MAY 2023 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  10 MAY 2023 23:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1847,23 +1847,79 @@ ents are in-de-pen-dent so that $\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/
 m/it/12 ^^Y[]\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 ) =
  []
 
-sections/microbiota_analysis/vq_tree_model.tex:133: Undefined control sequence.
-l.133 \int_{\mathbold
-                     {\Pi}_k} p_{\lambda}(\pi_k;\alpha_{k-1}) \pi_{k}^{(z_k)...
+
+sections/microbiota_analysis/vq_tree_model.tex:138: Package amsmath Error: Erro
+neous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.138 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
+<argument>  \int _{\mathbold 
+                             {\Pi }_k} p_{\lambda }(\pi _k;\alpha _{k-1}) \p...
+l.138 \end{align}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-sections/microbiota_analysis/vq_tree_model.tex:133: Undefined control sequence.
-l.133 ...pi_{k}^{(z_k)} d\pi_{k} = \int_{\mathbold
-                                                  {\Pi}_k^{(z_k)}} p_{\lambd...
+sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
+<argument> ...z_k)} d\pi _{k} &= \int _{\mathbold 
+                                                  {\Pi }_k} \frac {1}{B(\alp...
+l.138 \end{align}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
+<argument> ...{B(\alpha _{k-1})} \int _{\mathbold 
+                                                  {\Pi }_k^{(z_k)}} \left (\...
+l.138 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
+<argument> ... i \neq z_k}^{N_T} \int _{\mathbold 
+                                                  {\Pi }_k^{(i)}} \left (\pi...
+l.138 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
+<argument> ...{B(\alpha _{k-1})} \int _{\mathbold 
+                                                  {\Pi }_k^{(z_k)}} \left (\...
+l.138 \end{align}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (2.5538pt too wide) detected at line 139
+[][]
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1874,8 +1930,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-sections/microbiota_analysis/vq_tree_model.tex:139: Undefined control sequence.
-l.139 ... | X_i, T_i) = \prod_{k=2}^{N_T} \mathbbm
+sections/microbiota_analysis/vq_tree_model.tex:142: Undefined control sequence.
+l.142 ... | X_i, T_i) = \prod_{k=2}^{N_T} \mathbbm
                                                   {1}_{z_{k} \notin \{z_{1},...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1884,7 +1940,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-sections/microbiota_analysis/vq_tree_model.tex:148: Package amsmath Error: Erro
+sections/microbiota_analysis/vq_tree_model.tex:151: Package amsmath Error: Erro
 neous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1892,57 +1948,57 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148 \end{align}
+l.151 \end{align}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-sections/microbiota_analysis/vq_tree_model.tex:157: Missing \endcsname inserted
+sections/microbiota_analysis/vq_tree_model.tex:160: Missing \endcsname inserted
 .
 <to be read again> 
                    \ALG@currentblock@0 
-l.157         \For
+l.160         \For
                   { $k \in \{2, \dots, N_T\}$ }
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-sections/microbiota_analysis/vq_tree_model.tex:157: Extra \endcsname.
+sections/microbiota_analysis/vq_tree_model.tex:160: Extra \endcsname.
 \ALG@makebeginrepeat ...\ALG@thisblock \endcsname 
                                                   \relax \def \ALG@thisblock...
-l.157         \For
+l.160         \For
                   { $k \in \{2, \dots, N_T\}$ }
 I'm ignoring this, since I wasn't doing a \csname.
 
-sections/microbiota_analysis/vq_tree_model.tex:165: Missing number, treated as 
+sections/microbiota_analysis/vq_tree_model.tex:168: Missing number, treated as 
 zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.165     \end{algorithmic}
+l.168     \end{algorithmic}
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-sections/microbiota_analysis/vq_tree_model.tex:165: Missing = inserted for \ifn
+sections/microbiota_analysis/vq_tree_model.tex:168: Missing = inserted for \ifn
 um.
 <to be read again> 
                    \ALG@currentblock@0 
-l.165     \end{algorithmic}
+l.168     \end{algorithmic}
                            
 I was expecting to see `<', `=', or `>'. Didn't.
 
-sections/microbiota_analysis/vq_tree_model.tex:165: Missing number, treated as 
+sections/microbiota_analysis/vq_tree_model.tex:168: Missing number, treated as 
 zero.
 <to be read again> 
                    \ALG@currentblock@0 
-l.165     \end{algorithmic}
+l.168     \end{algorithmic}
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-sections/microbiota_analysis/vq_tree_model.tex:175: Package amsmath Error: Erro
+sections/microbiota_analysis/vq_tree_model.tex:178: Package amsmath Error: Erro
 neous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1950,7 +2006,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.175 \end{align}
+l.178 \end{align}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1989,7 +2045,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  26810 strings out of 476315
  526449 string characters out of 5787197
- 1871068 words of memory out of 5000000
+ 1873068 words of memory out of 5000000
  46790 multiletter control sequences out of 15000+600000
  530177 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2026,7 +2082,7 @@ type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (24 pages, 1501934 bytes).
+t\main.pdf (24 pages, 1502610 bytes).
 PDF statistics:
  843 PDF objects out of 1000 (max. 8388607)
  91 named destinations out of 1000 (max. 500000)
