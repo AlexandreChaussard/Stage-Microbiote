@@ -23,7 +23,8 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Usage in the VQ-VAE}{17}{subsubsection.3.3.2}%
 \contentsline {section}{\numberline {4}Microbiota analysis}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Microbiota dataset}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Variational Tree Walk}{19}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}EM approach}{19}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Variational approach}{20}{subsubsection.4.2.2}%
-\contentsline {section}{\numberline {5}Bibliography}{23}{section.5}%
+\contentsline {subsection}{\numberline {4.2}Simple generative model: no latent variable}{19}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Context and objective}{19}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Design of the prior}{19}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Design of the posterior}{21}{subsubsection.4.2.3}%
+\contentsline {section}{\numberline {5}Bibliography}{22}{section.5}%

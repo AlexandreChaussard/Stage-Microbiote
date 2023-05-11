@@ -1,0 +1,100 @@
+\subsection{Simple generative model: no latent variable}
+
+\subsubsection{Context and objective}
+
+In first approximation, we would like to define a generative model that does not exploit any latent structure.
+Such model, parameterized by $\theta$, aims at finding an optimal distribution in the sense of the maximum of likelihood,
+within a family of distributions yet to be defined.
+The maximum likelihood objective is given below as:
+$$
+\theta^* = arg\max_{\theta} p_{\theta}(X, T)
+$$
+One can rewrite the joint distribution as follow:
+$$
+\begin{align}
+    p_{\theta}(X, T) &= \sum_{i=1}^n p_{\theta}(X_i, T_i) \\
+                    &= \sum_{i=1}^n p_{\theta}(T_i) p_{\theta}(X_i | T_i)
+\end{align}
+$$
+
+As a result, to compute this objective, we need to define a prior $p_{\theta}(T_i)$ that generates trees,
+and a posterior distribution $p_{\theta}(X_i | T_i)$ that generates abundance data from a sampled tree.
+
+\subsubsection{Design of the prior}
+
+We aim at defining a parameterized distribution $p_{\theta}(T)$ from which one can sample trees.
+We would also like this distribution to model the trees of the microbiota dataset, meaning that
+the generated trees should look like the ones from the dataset as well, and respect the phylogenetic constraints. \\
+
+Consequently, we introduce this first simple generative process to characterize $p_{\theta}(T)$:
+\begin{algorithm}[H]
+    \caption{Independent Branches Tree (IBT) sampling}
+    \begin{algorithmic}
+        \STATE Define the tree $T$
+        \STATE Sample $K \sim \mathcal{B}(D, \pi)$ the number of leaf entities in the tree
+        \For{$i \in \{1, \dots, K\}$}
+            \STATE \quad Define the branch $b_i$
+            \STATE \quad Set the root of the tree to the lowest precision level entity as $u_0^{(i)}$
+            \STATE \quad Define $j = 0$
+            \While{$u_{j}^{(i)}$ is not the empty node index}
+                \STATE \quad \quad Append the node $u_{j}^{(i)}$ to the branch $b_i$
+                \STATE \quad \quad Gather the possible children of the node $u_{j}^{(i)}$ as $V_{j}^{(i)}$
+                \STATE \quad \quad Append the empty node index in $V_{j}^{(i)}$
+                \STATE \quad \quad Sample $u_{j+1}^{(i)}$ following $g_{\pi_{u_{j}^{(i)}}}$ a discrete distribution over $V_{j}^{(i)}$ with weights $\pi_{u_{j}^{(i)}}$
+                \STATE \quad \quad $j \leftarrow j + 1$
+            \EndWhile
+            \STATE \quad Add the branch $b_i$ to the tree $T$.
+        \EndFor
+        \RETURN{$T$}
+    \end{algorithmic}
+    \label{alg:algorithm}
+\end{algorithm}
+
+The IBT generates trees with independent branches, so that each node in a branch is dependent from the previous ones,
+while each branch starts from the same root and are i.i.d.
+Hence, such structure is one the most simple one could think of when generating trees. \\
+Another step would be to add dependency between branches, for instance looking at each generation level what other entities
+have been selected in all the branches at the same level before.
+Though that would require a supplementary modelization step that we leave on the side for now. \\
+
+Following the IBT modelization, we can compute the prior as:
+$$
+\begin{align}
+    p_{\theta}(T) &= p_{\theta}(b_1, \dots, b_{|T|}) \\
+                &= \prod_{i=1}^{|T|} p_{\theta}(b_i) \\
+                &= \prod_{i=1}^{|T|} p_{\theta}(u_1^{(i)}, \dots, u_{|b_i|}^{(i)}) \\
+                &= \prod_{i=1}^{|T|} \underbrace{p(u_1^{(i)})}_{1} p_{\pi_{u_1^{(i)}}}(u_2^{(i)} | u_1^{(i)}) \dots p_{\pi_{u_{|b_i|-1}^{(i)}}}(u_{|b_i|}^{(i)} | u_{|b_i|-1}^{(i)}) \\
+                &= \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} p_{\pi_{u_j^{(i)}}}(u_{j+1}^{(i)} | u_{j}^{(i)}) \\
+                &= \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} \pi_{u_j^{(i)} \rightarrow u_{j+1}^{(i)}} \right
+\end{align}
+$$
+
+\subsubsection{Design of the posterior}
+
+Now that we have a way to generate trees, we need to define an explicit stochastic relationship between the abundance
+data and the structure of the tree.
+Such inevitably exists, as when observing $T$, the abundance of an entity that isn't present in $T$ is necessarily 0.
+Similarly, it is highly likely that when observing the presence of certain entities in $T$ that induces a high abundance of
+another neighbour entity (interaction between bacteria). \\
+
+Hence, since we would like an explicit model here, we will design a posterior $p_{\theta}(X|T)$ at each precision level
+using a parametric distributions like the Dirichlet distribution. We assume the following framework:
+\begin{itemize}
+    \item We denote $X^{(l)} = (x_l^{(1)}, \dots, x_{l}^{(U_l)})$ the abundance vector at layer $l$.
+    \item $X^{(1)} = (1)$ since it's the root of the tree.
+    \item $X^{(2)} \sim \mathcal{D}(\alpha_2)$
+    \item $\forall l \geq 3, X^{(l)} \sim \mathcal{D}(\alpha_l)$ if there's more than one node in the layer.
+        Each value in $X^{(l)}$ is constrained by the following set of constraint $\mathcal{C}$:
+        \begin{itemize}
+              \item If node $k$ at layer $l-1$ has one child, then its abundance value is the same for the child node.
+              \item If node $k$ at layer $l-1$ has at least two children, the children abundance sums to the parent's abundance value.
+        \end{itemize}
+        Hence, we obtain the following conditional distribution:
+        $$
+        \begin{align}
+            p_{\gamma}(X^{(l+1)} | X^{(l)}) &= \frac{p_{\gamma}(X^{(l+1)}, X^{(l)})}{p_{\alpha_l}(X^{(l)})} \\
+                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)})}{p_{\alpha_{l}}(X^{(l)})} p(X^{(l)} | X^{(l+1)}) \\
+                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)})}{p_{\alpha_{l}}(X^{(l)})} \mathbbm{1}_{\mathcal{C}}
+        \end{align}
+        $$
+\end{itemize}
