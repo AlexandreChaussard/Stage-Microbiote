@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  10 MAY 2023 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  11 MAY 2023 10:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1874,7 +1874,7 @@ and I'll forget about whatever was undefined.
 
 sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
 <argument> ...z_k)} d\pi _{k} &= \int _{\mathbold 
-                                                  {\Pi }_k} \frac {1}{B(\alp...
+                                                  {\Pi }_k} \frac {1}{B(\lam...
 l.138 \end{align}
                  
 The control sequence at the end of the top line
@@ -1884,7 +1884,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
-<argument> ...{B(\alpha _{k-1})} \int _{\mathbold 
+<argument> ...ot \alpha _{k-1})} \int _{\mathbold 
                                                   {\Pi }_k^{(z_k)}} \left (\...
 l.138 \end{align}
                  
@@ -1906,7 +1906,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 sections/microbiota_analysis/vq_tree_model.tex:138: Undefined control sequence.
-<argument> ...{B(\alpha _{k-1})} \int _{\mathbold 
+<argument> ...ot \alpha _{k-1})} \int _{\mathbold 
                                                   {\Pi }_k^{(z_k)}} \left (\...
 l.138 \end{align}
                  
@@ -1917,7 +1917,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (2.5538pt too wide) detected at line 139
+Overfull \hbox (45.83156pt too wide) detected at line 139
 [][]
  []
 
@@ -1938,6 +1938,13 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (12.99619pt too wide) detected at line 143
+\OML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Z[] \OT1/cmr/m/n/12 = (\O
+ML/cmm/m/it/12 z[]; [] ; z[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12
+ X[]; T[]\OT1/cmr/m/n/12 ) = [] 1[] [] []
+ []
 
 
 sections/microbiota_analysis/vq_tree_model.tex:151: Package amsmath Error: Erro
@@ -2082,7 +2089,7 @@ type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (24 pages, 1502610 bytes).
+t\main.pdf (24 pages, 1502847 bytes).
 PDF statistics:
  843 PDF objects out of 1000 (max. 8388607)
  91 named destinations out of 1000 (max. 500000)
