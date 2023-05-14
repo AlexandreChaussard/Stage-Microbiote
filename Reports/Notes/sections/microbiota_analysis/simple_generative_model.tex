@@ -77,24 +77,28 @@ Such inevitably exists, as when observing $T$, the abundance of an entity that i
 Similarly, it is highly likely that when observing the presence of certain entities in $T$ that induces a high abundance of
 another neighbour entity (interaction between bacteria). \\
 
-Hence, since we would like an explicit model here, we will design a posterior $p_{\theta}(X|T)$ at each precision level
-using a parametric distributions like the Dirichlet distribution. We assume the following framework:
+Hence, since we would like an explicit model here, we will design a posterior $p_{\theta}(X|T)$ which is markovian relatively to the layers of the tree:
+$$
+p_{\theta}(X^{(l)} | X^{(1:l-1)}, T) = p_{\theta}(X^{(l)} | X^{(l-1)}, T)
+$$
+We assume the following framework:
 \begin{itemize}
     \item We denote $X^{(l)} = (x_l^{(1)}, \dots, x_{l}^{(U_l)})$ the abundance vector at layer $l$.
     \item $X^{(1)} = (1)$ since it's the root of the tree.
     \item $X^{(2)} \sim \mathcal{D}(\alpha_2)$
-    \item $\forall l \geq 3, X^{(l)} \sim \mathcal{D}(\alpha_l)$ if there's more than one node in the layer.
-        Each value in $X^{(l)}$ is constrained by the following set of constraint $\mathcal{C}$:
+    \item $\forall l \geq 3, X^{(l)} \sim \mathcal{D}(\alpha_l)$ if there's more than one node in the layer $l$, otherwise it's deterministic.
+        Each value in $X^{(l)}$ is constrained by the following set of constraints:
         \begin{itemize}
               \item If node $k$ at layer $l-1$ has one child, then its abundance value is the same for the child node.
               \item If node $k$ at layer $l-1$ has at least two children, the children abundance sums to the parent's abundance value.
         \end{itemize}
+        We denote by $\mathcal{C}_T(l-1, l)$ the set of vectors that verify the previous constraints for the tree $T$ between layers $l-1$ to $l$.
         Hence, we obtain the following conditional distribution:
         $$
         \begin{align}
-            p_{\gamma}(X^{(l+1)} | X^{(l)}) &= \frac{p_{\gamma}(X^{(l+1)}, X^{(l)})}{p_{\alpha_l}(X^{(l)})} \\
-                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)})}{p_{\alpha_{l}}(X^{(l)})} p(X^{(l)} | X^{(l+1)}) \\
-                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)})}{p_{\alpha_{l}}(X^{(l)})} \mathbbm{1}_{\mathcal{C}}
+            p_{\gamma}(X^{(l+1)} | X^{(l)}, T) &= \frac{p_{\gamma}(X^{(l+1)}, X^{(l)}, T)}{p_{\alpha_l}(X^{(l)}, T)} \\
+                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} p(X^{(l)} | X^{(l+1)}, T) \\
+                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} \mathds{1}_{\mathcal{C}_T(l, l+1)}\left(X^{(l)}, X^{(l+1)}\right)
         \end{align}
         $$
 \end{itemize}

@@ -23,9 +23,10 @@ Hence, we first suggest to transform the tree in a matrix to image structure as 
 
 To give some notations, we introduce the following framework:
 \begin{itemize}
-    \item The maximum depth of a phylogenetic tree is $D$, the maximum number of nodes $N_T$, and the maximum amount of unique species at any level is $U$.
+    \item The maximum depth of a phylogenetic tree is $D$, the maximum number of nodes $N_T$, the maximum amount of unique species at any level is $U$.
     \item $X_i$ is the abundance matrix of the individual $i$ (image of size $D \times U$) , which is observed.
     \item $T_i$ is the adjacent matrix of the phylogenetic tree of individual $i$, of size $N_T \times N_T$, which is observed.
     We could use any other encoding of a tree (contour function, depth function, $\dots$).
+    \item For a given tree, we will denote by $U_{l}$ the number of species at a given precision layer $l$ of the tree.
     \item We assume that we have $n$ individuals observed through $(X_i, T_i)_{1 \leq i \leq n}$ i.i.d samples.
 \end{itemize}

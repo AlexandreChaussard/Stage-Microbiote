@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  11 MAY 2023 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  12 MAY 2023 12:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1719,30 +1719,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 
-sections/microbiota_analysis/simple_generative_model.tex:98: Package amsmath Er
-ror: Erroneous nesting of equation structures;
+sections/microbiota_analysis/simple_generative_model.tex:102: Package amsmath E
+rror: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98         \end{align}
-                        
+l.102         \end{align}
+                         
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
-
-sections/microbiota_analysis/simple_generative_model.tex:98: Undefined control 
-sequence.
-<argument> ...{p_{\alpha _{l}}(X^{(l)})} \mathbbm 
-                                                  {1}_{\mathcal {C}} 
-l.98         \end{align}
-                        
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 )
 
@@ -1776,10 +1764,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26799 strings out of 476315
- 526408 string characters out of 5787197
+ 26798 strings out of 476315
+ 526401 string characters out of 5787197
  1869068 words of memory out of 5000000
- 46787 multiletter control sequences out of 15000+600000
+ 46786 multiletter control sequences out of 15000+600000
  527143 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1814,7 +1802,7 @@ public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (23 pages, 1491264 bytes).
+t\main.pdf (23 pages, 1492783 bytes).
 PDF statistics:
  833 PDF objects out of 1000 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)
