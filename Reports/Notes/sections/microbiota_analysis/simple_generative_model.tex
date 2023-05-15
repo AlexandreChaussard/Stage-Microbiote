@@ -12,8 +12,8 @@ $$
 One can rewrite the joint distribution as follow:
 $$
 \begin{align}
-    p_{\theta}(X, T) &= \sum_{i=1}^n p_{\theta}(X_i, T_i) \\
-                    &= \sum_{i=1}^n p_{\theta}(T_i) p_{\theta}(X_i | T_i)
+    p_{\theta}(X, T) &= \prod_{i=1}^n p_{\theta}(X_i, T_i) \\
+                    &= \prod_{i=1}^n p_{\theta}(T_i) p_{\theta}(X_i | T_i)
 \end{align}
 $$
 
@@ -77,6 +77,9 @@ Such inevitably exists, as when observing $T$, the abundance of an entity that i
 Similarly, it is highly likely that when observing the presence of certain entities in $T$ that induces a high abundance of
 another neighbour entity (interaction between bacteria). \\
 
+For context, we recall that $X$ is a matrix of shape $(D, U)$.
+We denote by $X^{(l)}$ the $l$-th line of the abundance matrix.
+
 Hence, since we would like an explicit model here, we will design a posterior $p_{\theta}(X|T)$ which is markovian relatively to the layers of the tree:
 $$
 p_{\theta}(X^{(l)} | X^{(1:l-1)}, T) = p_{\theta}(X^{(l)} | X^{(l-1)}, T)
@@ -84,21 +87,131 @@ $$
 We assume the following framework:
 \begin{itemize}
     \item We denote $X^{(l)} = (x_l^{(1)}, \dots, x_{l}^{(U_l)})$ the abundance vector at layer $l$.
-    \item $X^{(1)} = (1)$ since it's the root of the tree.
-    \item $X^{(2)} \sim \mathcal{D}(\alpha_2)$
-    \item $\forall l \geq 3, X^{(l)} \sim \mathcal{D}(\alpha_l)$ if there's more than one node in the layer $l$, otherwise it's deterministic.
-        Each value in $X^{(l)}$ is constrained by the following set of constraints:
+    \item $X^{(1)} = [1, 0, \dots, 0]$, since it's the root of the tree, only one entity gets the whole weight.
+    \item We assume that for all $l \geq 2, X^{(l)} | T \sim \mathcal{D}(\alpha_l)$.
+    \item Each value in $X^{(l)}$ is restricted by the following set of constraints:
         \begin{itemize}
+              \item If node $k$ at layer $l-1$ has no child, then we create a ghost child for which the abundance value is the same as the parent.
+                    This node should be removed at the end of the procedure.
+                    This is an artificial way of keeping the Dirichlet modelisation, so that al rows sum to 1 while generating X.
               \item If node $k$ at layer $l-1$ has one child, then its abundance value is the same for the child node.
               \item If node $k$ at layer $l-1$ has at least two children, the children abundance sums to the parent's abundance value.
         \end{itemize}
-        We denote by $\mathcal{C}_T(l-1, l)$ the set of vectors that verify the previous constraints for the tree $T$ between layers $l-1$ to $l$.
+        We denote by $\mathcal{C}_T$ the set of vectors that verify the previous constraints for the tree $T$.
         Hence, we obtain the following conditional distribution:
         $$
         \begin{align}
-            p_{\gamma}(X^{(l+1)} | X^{(l)}, T) &= \frac{p_{\gamma}(X^{(l+1)}, X^{(l)}, T)}{p_{\alpha_l}(X^{(l)}, T)} \\
+            p_{\gamma_l}(X^{(l+1)} | X^{(l)}, T) &= \frac{p_{\gamma_l}(X^{(l+1)}, X^{(l)}, T)}{p_{\alpha_l}(X^{(l)}, T)} \\
                                             &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} p(X^{(l)} | X^{(l+1)}, T) \\
-                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} \mathds{1}_{\mathcal{C}_T(l, l+1)}\left(X^{(l)}, X^{(l+1)}\right)
+                                            &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} \mathds{1}_{\mathcal{C}_T}\left(X^{(l)}, X^{(l+1)}\right)
         \end{align}
         $$
 \end{itemize}
+
+The whole posterior is then given by:
+$$
+\begin{align}
+    p_{\theta}(X | T) &= \prod_{i=1}^n p_{\theta}(X_i | T_i) \\
+                    &= \prod_{i=1}^n p_{\theta}(X_i^{(1)}, \dots, X_i^{(D)} | T_i) \\
+                    &= \prod_{i=1}^n p(X_i^{(1)} | T_i) \prod_{l=1}^{D-1} p_{\gamma_j}(X_i^{(l+1)} | X_i^{(l)}, T_i) \\
+                    &= \prod_{i=1}^n \mathds{1}_{X_i^{(1)} = e_1} \prod_{l=1}^{D-1} \frac{p_{\alpha_{l+1}}(X_i^{(l+1)} | T_i)}{p_{\alpha_{l}}(X_i^{(l)} | T_i)} \mathds{1}_{\mathcal{C}_{T_i}}\left(X_i^{(l)}, X_i^{(l+1)}\right) \\
+                    &= \prod_{i=1}^n p_{\alpha_{D}}(X_i^{(D)} | T_i) \mathds{1}_{X_i^{(1)} = e_1} \prod_{l=1}^{D-1} \mathds{1}_{C_{T_i}}(X_i^{(l)} X_i^{(l+1)})
+\end{align}
+$$
+
+Hence, to generate an abundance matrix $X$ out of a tree $T$, we just need to sample the highest precision layer of the tree
+and roll it up to the top thanks to the tree structure that we observe.
+As a result, this posterior is only characterized by one parameter $\alpha_D$ that is the dirichlet parameter of the ultimate layer of the tree.
+
+\subsubsection{Optimization of the objective}
+
+Recall the optimization objective, written under the maximum of the log-likelihood:
+$$
+\begin{align}
+    \theta^* &= arg \max_{\theta} \log p_{\theta}(X,T) \\
+            &= arg \max_{\theta} \sum_{i=1}^n \log p_{\theta}(X_i, T_i) \\
+            &= arg \max_{\theta} \sum_{i=1}^n \log p_{\theta}(T_i) + \log p_{\theta}(X_i | T_i)
+\end{align}
+$$
+
+Notice that the first term of the loss is made only of the prior, while the second one is made only of the posterior.
+Since these two distributions do not share common parameters in $\theta$, we can proceed to optimize the parameters of each distribution
+without taking care of the other term. \\
+
+\newcommand{\transitionproba}{\pi_{a \rightarrow b}}
+\newcommand{\transitionprobasum}{\pi_{u_j^{(k)} \rightarrow u_{j+1}^{(k)}}}
+\newcommand{\transitionbranch}{b_{a \rightarrow b}^{(i)}}
+\newcommand{\children}{\mathcal{C}}
+\newcommand{\lagrangian}{\mathcal{L}}
+
+Starting with the prior term, it only depends on the transition probabilities denoted as $(\transitionproba)_{(a,b) \in T}$
+where $(a,b) \in T$ denotes a parent-to-child path.
+To compute $\transitionproba^*$, we introduce the set of branches that contain the path $a \rightarrow b$ for given tree $T_i$:
+$$
+\transitionbranch = \{b \in T_i | (a,b) \in b\}
+$$
+For a given node $a$ we also denote by $\children(a)$ the set of possible children from $a$.
+Note that $\children(a)$ is never empty, as every node can lead to stopping the branch, which means it contains the ghost empty node.
+
+The optimization objective for $\transitionproba$ is given by:
+$$
+\begin{equation}
+    \begin{aligned}
+        \transitionproba^* = arg \max_{\transitionproba} \quad & \sum_{i=1}^n \sum_{k=1}^{|T_i|} \sum_{j=1}^{|b_i| - 1} \log \transitionprobasum \\
+        \textrm{s.t.} \quad & \sum_{l \in \children(a)} \pi_{a \rightarrow l} = 1\\
+        & \transitionproba \geq 0    \\
+    \end{aligned}
+    \label{eq:prior_objective}
+\end{equation}
+$$
+
+Such optimization objective is convex, with convex constraints that are solvable through Lagrange duality.
+Computing the lagrangian we obtain:
+$$
+\lagrangian(\transitionproba, \lambda) = \sum_{i=1}^n \sum_{k=1}^{|T_i|} \sum_{j=1}^{|b_i| - 1} \log \transitionprobasum - \lambda_1 \transitionproba + \lambda_2 \left(\sum_{l \in \children(a)} \pi_{a \rightarrow l} - 1\right) + \iota_{\mathbb{R}^{+}}(\lambda_1, \lambda_2)
+$$
+
+The KKT conditions are then written as:
+$$
+\begin{align}
+    0 &\in \partial_{\transitionproba} \lagrangian(\transitionproba, \lambda) \\
+    \lambda_2 \left(\sum_{l \in \children(a)} \pi_{a \rightarrow l} - 1\right) &= 0 \\
+    \lambda_1 &\geq 0 \\
+    -\lambda_1 \transitionproba &\leq 0 \\
+    -\lambda_1 \transitionproba &= 0 \\
+\end{align}
+$$
+
+Using the first equality, we obtain:
+$$
+\transitionproba = \frac{1}{\lambda_1 - \lambda_2} \sum_{i=1}^{n} |\transitionbranch|
+$$
+
+Using the sum over all $l \in \children(a)$ on the previous result, assuming $\lambda_2 = 0$, the second KKT identity gives us:
+$$
+\sum_{l \in \children(a)} \pi_{a \rightarrow l} = \sum_{l \in \children(a)} \frac{\sum_{i=1}^n |\transitionbranch|}{\lambda_1} = 1
+$$
+
+Hence, we obtain that $\lambda_1 = \sum_{l \in \children(a)} \sum_{i=1}^n |\transitionbranch| = n_a$, the number of branches that goes through $a$.
+Finally, we obtain the optimal transition probability:
+$$
+\fbox{
+    \displaystyle\transitionproba^* = \frac{1}{n_a} \sum_{i=1}^n |\transitionbranch|
+}
+$$
+One can verify that the KKT conditions are then satisfied as well. \\
+
+Now, we compute the optimal parameter for the posterior that is given by $\alpha_D^* = (\alpha_D^{(1)}, \dots, \alpha_D^{(U)})$.
+The optimization objective for each component is the following:
+$$
+(\alpha_D^{(j)})^* = arg \max_{\alpha_D^{(k)}} \sum_{i=1}^n \log p_{\alpha_D}(X_i^{(D)}|T_i) + \log \mathds{1}_{X_i^{(1)} = e_1} + \sum_{k=1}^{D-1} \log \mathds{1}_{C_{T_i}}(X_i^{(l)}, X_i^{(l+1)})
+$$
+Since the indicator functions do not depend on the parameter, we end up on a known problem of maximum of likelihood for Dirichlet distribution \cite{dirichlet_digamma_trick}.
+As we have done the maths in another context for the dirichlet mixture, we get a similar result that ends up on the following fixed point algorithm:
+$$
+\fbox{
+    \displaystyle\left(\alpha_D^{(j)}\right)^{(m+1)} = \psi^{-1}\left(\frac{1}{n} \sum_{i=1}^n \log \left[X_i^{(D)}\right]_j + \psi \left(\sum_{r=1}^U \left(\alpha_{D}^{(r)}\right)^{(m)}\right) \right)
+}
+$$
+
+We now have a way to compute $\theta^*$ as a MLE of the parameter of the joint distribution.

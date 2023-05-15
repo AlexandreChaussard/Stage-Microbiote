@@ -2372,7 +2372,8 @@
     <bcf:citekey order="9" intorder="1">microbiome_deeplearning_research</bcf:citekey>
     <bcf:citekey order="10" intorder="1">microbiome_deeplearning_research</bcf:citekey>
     <bcf:citekey order="11" intorder="1">microbiome_deeplearning_research</bcf:citekey>
-    <bcf:citekey order="12" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">dirichlet_digamma_trick</bcf:citekey>
+    <bcf:citekey order="13" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
