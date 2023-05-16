@@ -31,7 +31,7 @@ Consequently, we introduce this first simple generative process to characterize 
     \caption{Independent Branches Tree (IBT) sampling}
     \begin{algorithmic}
         \STATE Define the tree $T$
-        \STATE Sample $K \sim \mathcal{B}(D, \pi)$ the number of leaf entities in the tree
+        \STATE Sample $K \sim \beta$ the number of leaf entities in the tree
         \For{$i \in \{1, \dots, K\}$}
             \STATE \quad Define the branch $b_i$
             \STATE \quad Set the root of the tree to the lowest precision level entity as $u_0^{(i)}$
@@ -60,12 +60,12 @@ Though that would require a supplementary modelization step that we leave on the
 Following the IBT modelization, we can compute the prior as:
 $$
 \begin{align}
-    p_{\theta}(T) &= p_{\theta}(b_1, \dots, b_{|T|}) \\
-                &= \prod_{i=1}^{|T|} p_{\theta}(b_i) \\
-                &= \prod_{i=1}^{|T|} p_{\theta}(u_1^{(i)}, \dots, u_{|b_i|}^{(i)}) \\
-                &= \prod_{i=1}^{|T|} \underbrace{p(u_1^{(i)})}_{1} p_{\pi_{u_1^{(i)}}}(u_2^{(i)} | u_1^{(i)}) \dots p_{\pi_{u_{|b_i|-1}^{(i)}}}(u_{|b_i|}^{(i)} | u_{|b_i|-1}^{(i)}) \\
-                &= \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} p_{\pi_{u_j^{(i)}}}(u_{j+1}^{(i)} | u_{j}^{(i)}) \\
-                &= \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} \pi_{u_j^{(i)} \rightarrow u_{j+1}^{(i)}} \right
+    p_{\theta}(T) &= p_{\theta}(K = |T|, b_1, \dots, b_{K}) \\
+                &= p_{\beta}(K=|T|) \prod_{i=1}^{|T|} p_{\theta}(b_i) \\
+                &= \beta_{|T|} \prod_{i=1}^{|T|} p_{\theta}(u_1^{(i)}, \dots, u_{|b_i|}^{(i)}) \\
+                &= \beta_{|T|} \prod_{i=1}^{|T|} \underbrace{p(u_1^{(i)})}_{1} p_{\pi_{u_1^{(i)}}}(u_2^{(i)} | u_1^{(i)}) \dots p_{\pi_{u_{|b_i|-1}^{(i)}}}(u_{|b_i|}^{(i)} | u_{|b_i|-1}^{(i)}) \\
+                &= \beta_{|T|} \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} p_{\pi_{u_j^{(i)}}}(u_{j+1}^{(i)} | u_{j}^{(i)}) \\
+                &= \beta_{|T|} \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} \pi_{u_j^{(i)} \rightarrow u_{j+1}^{(i)}} \right
 \end{align}
 $$
 
@@ -78,22 +78,22 @@ Similarly, it is highly likely that when observing the presence of certain entit
 another neighbour entity (interaction between bacteria). \\
 
 For context, we recall that $X$ is a matrix of shape $(D, U)$.
-We denote by $X^{(l)}$ the $l$-th line of the abundance matrix.
+We denote by $X^{(l)}$ the $l$-th line of the abundance matrix, for which up to $U_l$ elements should be non-zero. \\
 
-Hence, since we would like an explicit model here, we will design a posterior $p_{\theta}(X|T)$ which is markovian relatively to the layers of the tree:
+Since we would like an explicit model here, we design a posterior $p_{\theta}(X|T)$ which is markovian relatively to the layers of the tree:
 $$
 p_{\theta}(X^{(l)} | X^{(1:l-1)}, T) = p_{\theta}(X^{(l)} | X^{(l-1)}, T)
 $$
 We assume the following framework:
 \begin{itemize}
-    \item We denote $X^{(l)} = (x_l^{(1)}, \dots, x_{l}^{(U_l)})$ the abundance vector at layer $l$.
+    \item We denote $X^{(l)} = (x_l^{(1)}, \dots, x_{l}^{(U)})$ the abundance vector at layer $l$.
     \item $X^{(1)} = [1, 0, \dots, 0]$, since it's the root of the tree, only one entity gets the whole weight.
     \item We assume that for all $l \geq 2, X^{(l)} | T \sim \mathcal{D}(\alpha_l)$.
     \item Each value in $X^{(l)}$ is restricted by the following set of constraints:
         \begin{itemize}
               \item If node $k$ at layer $l-1$ has no child, then we create a ghost child for which the abundance value is the same as the parent.
                     This node should be removed at the end of the procedure.
-                    This is an artificial way of keeping the Dirichlet modelisation, so that al rows sum to 1 while generating X.
+                    This is an artificial way of keeping the Dirichlet modelisation, so that all rows sum to 1 while generating X.
               \item If node $k$ at layer $l-1$ has one child, then its abundance value is the same for the child node.
               \item If node $k$ at layer $l-1$ has at least two children, the children abundance sums to the parent's abundance value.
         \end{itemize}
@@ -101,7 +101,7 @@ We assume the following framework:
         Hence, we obtain the following conditional distribution:
         $$
         \begin{align}
-            p_{\gamma_l}(X^{(l+1)} | X^{(l)}, T) &= \frac{p_{\gamma_l}(X^{(l+1)}, X^{(l)}, T)}{p_{\alpha_l}(X^{(l)}, T)} \\
+            p_{\gamma_l}(X^{(l+1)} | X^{(l)}, T) &= \frac{p_{\gamma'_l}(X^{(l+1)}, X^{(l)}, T)}{p_{\alpha_l}(X^{(l)}, T)} \\
                                             &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} p(X^{(l)} | X^{(l+1)}, T) \\
                                             &= \frac{p_{\alpha_{l+1}}(X^{(l+1)} | T)}{p_{\alpha_{l}}(X^{(l)} | T)} \mathds{1}_{\mathcal{C}_T}\left(X^{(l)}, X^{(l+1)}\right)
         \end{align}
@@ -121,7 +121,31 @@ $$
 
 Hence, to generate an abundance matrix $X$ out of a tree $T$, we just need to sample the highest precision layer of the tree
 and roll it up to the top thanks to the tree structure that we observe.
-As a result, this posterior is only characterized by one parameter $\alpha_D$ that is the dirichlet parameter of the ultimate layer of the tree.
+As a result, this posterior is only characterized by one parameter $\alpha_D$ that is the dirichlet parameter of the ultimate layer of the tree. Sampling from the last layer $D$ has to be made explicit though.
+We assume that the abundance at the last layer only depends on the last layer of the tree, so that:
+$$
+p_{\alpha_D}(X_i^{(D)} | T_i) = p_{\alpha_D}(X_i^{(D)} | T_i^{(D)})
+$$
+\newcommand{\nodeindexset}{\mathcal{L}^{(D)}_{T_i}}
+Knowing the last layer structure $T_i^{(D)}$ enables us to tell for sure where some $0$ abundances are going to be.
+Let's denote by $\nodeindexset$ the set of indexes so that the node associated to that index belongs to any branch at the level set $T_i^{(D)}$ in $T_i$:
+$$
+\nodeindexset = \left\{k \in \{1, \dots, U\} | u_k^{(D)} \in T_i^{(D)}\right\}
+$$
+We can now describe the last layer's abundance conditionally to the tree:
+$$
+\begin{align}
+    p(X_i^{(D)} | T_i) &= p(X_i^{(D)} | T_i^{(D)}) \\
+                                &= p\left(\left[X_i^{(D)}\right]_1, \dots, \left[X_i^{(D)}\right]_U | \bigcap_{k' \notin \nodeindexset} \left[X_i^{(D)}\right]_{k'} = 0\right) \\
+                                &= \frac{p_{\alpha_D}\left( \bigcap_{k \in \nodeindexset} \left[X_i^{(D)}\right]_{k}, \bigcap_{k' \notin \nodeindexset} \left[X_i^{(D)}\right]_{k'} = 0 \right)}{\int p_{\alpha_D}\left( \bigcap_{k \in \nodeindexset} \left[\tilde{X}_i^{(D)}\right]_{k}, \bigcap_{k' \notin \nodeindexset} \left[X_i^{(D)}\right]_{k'} = 0 \right) d\tilde{X}} \\
+                                &= \frac{\frac{1}{B(\alpha_D)} \prod_{k \in \nodeindexset} \left[X_i^{(D)}\right]_{k}^{\alpha_D^{(k)} - 1} \prod_{k' \notin \nodeindexset} \left[X_i^{(D)}\right]_{k'}^{\alpha_D^{(k')} - 1}}{\frac{1}{B(\alpha_D)} \prod_{k' \notin \nodeindexset} \left[X_i^{(D)}\right]_{k'}^{\alpha_D^{(k')} - 1} \prod_{k \in \nodeindexset} \int_{0}^{1} \left[\tilde{X}_i^{(D)}\right]_k^{\alpha_D^{(k)} - 1} d\left[\tilde{X}_i^{(D)}\right]_k} \\
+                                &= \prod_{k \in \nodeindexset} \alpha_D^{(k)} \left[X_i^{(D)}\right]_k^{\alpha_D^{(k)} - 1}
+\end{align}
+$$
+Plugin that result into the whole distribution, we obtain that final formulation of the posterior distribution:
+$$
+    p_{\theta}(X | T) = \prod_{i=1}^n \prod_{k \in \nodeindexset} \alpha_D^{(k)} \left[\tilde{X}_i^{(D)}\right]_k^{\alpha_D^{(k)} - 1} \mathds{1}_{X_i^{(1)} = e_1} \prod_{l=1}^{D-1} \mathds{1}_{C_{T_i}}(X_i^{(l)} X_i^{(l+1)})
+$$
 
 \subsubsection{Optimization of the objective}
 
@@ -144,9 +168,29 @@ without taking care of the other term. \\
 \newcommand{\children}{\mathcal{C}}
 \newcommand{\lagrangian}{\mathcal{L}}
 
-Starting with the prior term, it only depends on the transition probabilities denoted as $(\transitionproba)_{(a,b) \in T}$
-where $(a,b) \in T$ denotes a parent-to-child path.
-To compute $\transitionproba^*$, we introduce the set of branches that contain the path $a \rightarrow b$ for given tree $T_i$:
+Starting with the prior term, it is defined by the discrete distribution $\beta$ and the transition probabilities denoted as $(\transitionproba)_{(a,b) \in T}$
+where $(a,b) \in T$ denotes a parent-to-child path. \\
+
+The maximum likelihood objective for $\beta^*$ is given by:
+$$
+\begin{equation}
+    \begin{aligned}
+        \beta^*_k = arg \max_{\beta_k} \quad & \sum_{i=1}^n \log \beta_{|T_i|} \\
+        \textrm{s.t.} \quad & \forall i, \beta \geq 0 \\
+                      \quad & \sum_{i=1}^D \beta_i = 1
+    \end{aligned}
+    \label{eq:prior_beta_objective}
+\end{equation}
+$$
+
+The previous optimization problem is rapidly solved through Lagrange duality, so that we obtain a straight-forward estimator:
+$$
+\fbox{
+    \displaystyle \beta_k^* = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{|T_i| = k}
+}
+$$
+
+To compute $\transitionproba^*$, we introduce the set of branches that contain the path $a \rightarrow b$ for a given tree $T_i$:
 $$
 \transitionbranch = \{b \in T_i | (a,b) \in b\}
 $$
@@ -161,7 +205,7 @@ $$
         \textrm{s.t.} \quad & \sum_{l \in \children(a)} \pi_{a \rightarrow l} = 1\\
         & \transitionproba \geq 0    \\
     \end{aligned}
-    \label{eq:prior_objective}
+    \label{eq:prior_transition_objective}
 \end{equation}
 $$
 
@@ -206,12 +250,45 @@ The optimization objective for each component is the following:
 $$
 (\alpha_D^{(j)})^* = arg \max_{\alpha_D^{(k)}} \sum_{i=1}^n \log p_{\alpha_D}(X_i^{(D)}|T_i) + \log \mathds{1}_{X_i^{(1)} = e_1} + \sum_{k=1}^{D-1} \log \mathds{1}_{C_{T_i}}(X_i^{(l)}, X_i^{(l+1)})
 $$
-Since the indicator functions do not depend on the parameter, we end up on a known problem of maximum of likelihood for Dirichlet distribution \cite{dirichlet_digamma_trick}.
-As we have done the maths in another context for the dirichlet mixture, we get a similar result that ends up on the following fixed point algorithm:
+
+Since the indicator function do not depend on the parameter, we only have to solve the following problem:
+$$
+(\alpha_D^{(j)})^* = arg \max_{\alpha_D^{(k)}} \sum_{i=1}^n \sum_{k \in \nodeindexset} \log \alpha_D^{(k)} + \left(\alpha_D^{(k)} - 1\right) \log \left[X_i^{(D)} \right]_k
+$$
+Deriving with respect to $\alpha_D^{(j)}$, if any tree has the node $j$, we get:
 $$
 \fbox{
-    \displaystyle\left(\alpha_D^{(j)}\right)^{(m+1)} = \psi^{-1}\left(\frac{1}{n} \sum_{i=1}^n \log \left[X_i^{(D)}\right]_j + \psi \left(\sum_{r=1}^U \left(\alpha_{D}^{(r)}\right)^{(m)}\right) \right)
+
+    (\alpha_D^{(j)})^* = \left(\sum_{i=1}^n \mathds{1}_{j \in \nodeindexset} \log \frac{1}{\left[X_i^{(D)} \right]_j}\right)^{-1}
+
 }
 $$
 
-We now have a way to compute $\theta^*$ as a MLE of the parameter of the joint distribution.
+%Since the indicator functions do not depend on the parameter, we end up on a known problem of maximum of likelihood for Dirichlet distribution \cite{dirichlet_digamma_trick}.
+%As we have done the maths in another context for the dirichlet mixture, we get a similar result that ends up on the following fixed point algorithm:
+%$$
+%\fbox{
+%    \displaystyle\left(\alpha_D^{(j)}\right)^{(m+1)} = \psi^{-1}\left(\frac{1}{n} \sum_{i=1}^n \log \left[X_i^{(D)}\right]_j + \psi \left(\sum_{r=1}^U \left(\alpha_{D}^{(r)}\right)^{(m)}\right) \right)
+%}
+%$$
+
+We now have a way to compute $\theta^*$ as a MLE of the parameters of the joint distribution $p_{\theta}(X, T)$.
+
+\subsubsection{Experiments}
+
+We have implemented the previous modelization and tested it on a large microbiota dataset.
+
+\subsubsection{Conclusions}
+
+This first model is interesting as it provides a benchmark baseline for our upcoming tree-structured models.
+However, it clearly lacks of complexity:
+\begin{itemize}
+    \item The branches are modeled as independent, which prevents any modelisation of correlation between entities.
+          As for many ecosystems, we would expect some bacteria to have symbiotic relationship, or domination roles,
+          especially when we come in critical systems like disease detection in which some bacteria may proliferate over others.
+    \item The abundance data generation takes the tree constraints into account, yet it is poorly flexible as we sample from a unique Dirichlet
+          parameterized by $\alpha_D$ and masked according to $T^{(D)}$, which completely omits the tree's global structure.
+          It would be highly interesting to try to group the trees through a latent variable for instance, and adapt the parameter
+          to that specific group to enhance the modelization.
+          We will explore that situation in the next section.
+\end{itemize}
