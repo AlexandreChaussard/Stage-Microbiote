@@ -1,0 +1,136 @@
+\subsubsection{Design of the prior and maximum likelihood estimator}
+
+% Design
+
+We aim at defining a parameterized distribution $p_{\theta}(T)$ from which one can sample trees.
+We would also like this distribution to model the trees of the microbiota dataset, meaning that
+the generated trees should look like the ones from the dataset as well, and respect the phylogenetic constraints. \\
+
+Consequently, we introduce this first simple generative process to characterize $p_{\theta}(T)$:
+\begin{algorithm}[H]
+    \caption{Independent Branches Tree (IBT) sampling}
+    \begin{algorithmic}
+        \STATE Define the tree $T$
+        \STATE Sample $K \sim \beta$ the number of leaf entities in the tree
+        \For{$i \in \{1, \dots, K\}$}
+            \STATE \quad Define the branch $b_i$
+            \STATE \quad Set the root of the tree to the lowest precision level entity as $u_0^{(i)}$
+            \STATE \quad Define $j = 0$
+            \While{$u_{j}^{(i)}$ is not the empty node index}
+                \STATE \quad \quad Append the node $u_{j}^{(i)}$ to the branch $b_i$
+                \STATE \quad \quad Gather the possible children of the node $u_{j}^{(i)}$ as $V_{j}^{(i)}$
+                \STATE \quad \quad Append the empty node index in $V_{j}^{(i)}$
+                \STATE \quad \quad Sample $u_{j+1}^{(i)}$ following $g_{\pi_{u_{j}^{(i)}}}$ a discrete distribution over $V_{j}^{(i)}$ with weights $\pi_{u_{j}^{(i)}}$
+                \STATE \quad \quad $j \leftarrow j + 1$
+            \EndWhile
+            \STATE \quad Add the branch $b_i$ to the tree $T$.
+        \EndFor
+        \RETURN{$T$}
+    \end{algorithmic}
+    \label{alg:algorithm}
+\end{algorithm}
+
+The IBT generates trees with independent branches, so that each node in a branch is dependent from the previous ones,
+while each branch starts from the same root and are i.i.d.
+Hence, such structure is one the most simple one could think of when generating trees. \\
+Another step would be to add dependency between branches, for instance looking at each generation level what other entities
+have been selected in all the branches at the same level before.
+Though that would require a supplementary modelization step that we leave on the side for now. \\
+
+Following the IBT modelization, we can compute the prior as:
+$$
+\begin{align}
+    p_{\theta}(T) &= p_{\theta}(K = |T|, b_1, \dots, b_{K}) \\
+    &= p_{\beta}(K=|T|) \prod_{i=1}^{|T|} p_{\theta}(b_i) \\
+    &= \beta_{|T|} \prod_{i=1}^{|T|} p_{\theta}(u_1^{(i)}, \dots, u_{|b_i|}^{(i)}) \\
+    &= \beta_{|T|} \prod_{i=1}^{|T|} \underbrace{p(u_1^{(i)})}_{1} p_{\pi_{u_1^{(i)}}}(u_2^{(i)} | u_1^{(i)}) \dots p_{\pi_{u_{|b_i|-1}^{(i)}}}(u_{|b_i|}^{(i)} | u_{|b_i|-1}^{(i)}) \\
+    &= \beta_{|T|} \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} p_{\pi_{u_j^{(i)}}}(u_{j+1}^{(i)} | u_{j}^{(i)}) \\
+    &= \beta_{|T|} \prod_{i=1}^{|T|} \prod_{j=1}^{|b_i|-1} \pi_{u_j^{(i)} \rightarrow u_{j+1}^{(i)}} \right
+\end{align}
+$$
+
+% Optimization
+
+\newcommand{\transitionproba}{\pi_{a \rightarrow b}}
+\newcommand{\transitionprobasum}{\pi_{u_j^{(k)} \rightarrow u_{j+1}^{(k)}}}
+\newcommand{\transitionbranch}{b_{a \rightarrow b}^{(i)}}
+\newcommand{\children}{\mathcal{C}}
+\newcommand{\lagrangian}{\mathcal{L}}
+
+Now that the likelihood of the prior is well defined, let's try to compute a maximum likelihood estimator of such distribution.
+Recall that the prior is defined by the discrete distribution $\beta$ and the transition probabilities denoted as $(\transitionproba)_{(a,b) \in T}$
+where $(a,b) \in T$ denotes a parent-to-child path. \\
+
+The maximum log-likelihood objective for $\beta^*$ is given by:
+$$
+\begin{equation}
+    \begin{aligned}
+        \beta^*_k = arg \max_{\beta_k} \quad & \sum_{i=1}^n \log \beta_{|T_i|} \\
+        \textrm{s.t.} \quad & \forall i, \beta \geq 0 \\
+        \quad & \sum_{i=1}^D \beta_i = 1
+    \end{aligned}
+    \label{eq:prior_beta_objective}
+\end{equation}
+$$
+
+The previous optimization problem is rapidly solved through Lagrange duality, so that we obtain a straight-forward estimator:
+$$
+\fbox{
+    \displaystyle \beta_k^* = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{|T_i| = k}
+}
+$$
+
+To compute $\transitionproba^*$, we introduce the set of branches that contain the path $a \rightarrow b$ for a given tree $T_i$:
+$$
+\transitionbranch = \{b \in T_i | (a,b) \in b\}
+$$
+For a given node $a$ we also denote by $\children(a)$ the set of possible children from $a$.
+Note that $\children(a)$ is never empty, as every node can lead to stopping the branch, which means it contains the ghost empty node.
+
+The optimization objective for $\transitionproba$ is given by:
+$$
+\begin{equation}
+    \begin{aligned}
+        \transitionproba^* = arg \max_{\transitionproba} \quad & \sum_{i=1}^n \sum_{k=1}^{|T_i|} \sum_{j=1}^{|b_i| - 1} \log \transitionprobasum \\
+        \textrm{s.t.} \quad & \sum_{l \in \children(a)} \pi_{a \rightarrow l} = 1\\
+        & \transitionproba \geq 0    \\
+    \end{aligned}
+    \label{eq:prior_transition_objective}
+\end{equation}
+$$
+
+Such optimization objective is convex, with convex constraints that are solvable through Lagrange duality.
+Computing the lagrangian we obtain:
+$$
+\lagrangian(\transitionproba, \lambda) = \sum_{i=1}^n \sum_{k=1}^{|T_i|} \sum_{j=1}^{|b_i| - 1} \log \transitionprobasum - \lambda_1 \transitionproba + \lambda_2 \left(\sum_{l \in \children(a)} \pi_{a \rightarrow l} - 1\right) + \iota_{\mathbb{R}^{+}}(\lambda_1, \lambda_2)
+$$
+
+The KKT conditions are then written as:
+$$
+\begin{align}
+    0 &\in \partial_{\transitionproba} \lagrangian(\transitionproba, \lambda) \\
+    \lambda_2 \left(\sum_{l \in \children(a)} \pi_{a \rightarrow l} - 1\right) &= 0 \\
+    \lambda_1 &\geq 0 \\
+    -\lambda_1 \transitionproba &\leq 0 \\
+    -\lambda_1 \transitionproba &= 0 \\
+\end{align}
+$$
+
+Using the first equality, we obtain:
+$$
+\transitionproba = \frac{1}{\lambda_1 - \lambda_2} \sum_{i=1}^{n} |\transitionbranch|
+$$
+
+Using the sum over all $l \in \children(a)$ on the previous result, assuming $\lambda_2 = 0$, the second KKT identity gives us:
+$$
+\sum_{l \in \children(a)} \pi_{a \rightarrow l} = \sum_{l \in \children(a)} \frac{\sum_{i=1}^n |\transitionbranch|}{\lambda_1} = 1
+$$
+
+Hence, we obtain that $\lambda_1 = \sum_{l \in \children(a)} \sum_{i=1}^n |\transitionbranch| = n_a$, the number of branches that goes through $a$.
+Finally, we obtain the optimal transition probability:
+$$
+\fbox{
+    \displaystyle\transitionproba^* = \frac{1}{n_a} \sum_{i=1}^n |\transitionbranch|
+}
+$$
+One can verify that the KKT conditions are then satisfied as well.

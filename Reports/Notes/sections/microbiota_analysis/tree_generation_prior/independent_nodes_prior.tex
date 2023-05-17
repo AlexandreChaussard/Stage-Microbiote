@@ -1,0 +1,79 @@
+\subsubsection{Design of the prior}
+
+% Design
+
+We aim at defining a parameterized distribution $p_{\theta}(T)$ from which one can sample trees.
+We would also like this distribution to model the trees of the microbiota dataset, meaning that
+the generated trees should look like the ones from the dataset as well, and respect the phylogenetic constraints. \\
+
+\newcommand{\nodeindexsetgeneric}{\mathcal{A}_T^{(L)}}
+\newcommand{\treeconstrainedindicator}{\mathds{1}_T(T^{(l)} \leftarrow T^{(l+1)})}
+
+Consequently, we introduce a first simple generative process to characterize $p_{\theta}(T)$ that we would call the independent nodes tree generator.
+Before describing the generation method, let us introduce the framework of it:
+\begin{itemize}
+    \item Describe $T$ as a succession of $L$ layers: $T = (T^{(1)}, \dots, T^{(L)})$.
+          We assume that we have no missing data, so to say, all the leaves the tree are reaching the precision layer $L$.
+    \item Describe a given layer $l$ as a discrete vector in $\{0, 1\}^{U}$.
+          To each possible node at layer $l$ we can associate an index $k$ so that we denote the nodes by $u_k^{(l)}$.
+          A node $u_k^{(l)}$ is activated if it is valued as $1$ in $T^{(l)}$, otherwise it is not.
+    \item Denote by $\mathcal{A}_T^{(l)}$ the set of indexes $k \in \{1, \dots, U\}$ so that
+          the node $u_k^{(l)}$ is activated in the tree $T$ at layer $l$, i.e., $u_k^{(l)} = 1$.
+    \item Denote by $\treeconstrainedindicator$ the constrained indicator function of the tree $T$ between layers $l$ and $l+1$.
+          This constrained indicator function ensures each node in $T^{(l+1)}$ has an activated parent in $T^{(l)}$, so the graph of the tree $T$ is respected.
+\end{itemize}
+
+Now that the framework is clear and defined, we describe the Independent Nodes Tree generative process:
+\begin{itemize}
+    \item The root node of the tree is deterministic, since all trees begin to the same root ancestor.
+          Hence, we have:
+          $$
+            p(T^{(1)}) = \mathds{1}_{T^{(1)} = e_1}
+          $$
+    \item For all $l \geq 2$, $k \in \{1, \dots, U\}$, $u_k^{(l)} \sim \mathcal{B}(\pi_{k}^{(l)})$ a Bernoulli parameterized by $\pi_{k}^{(l)} \in [0,1]$.
+          For now, we make the major assumption that all nodes are independent within a given layer.
+    \item The dependency between the layers is markovian:
+         $$
+            p_{\theta}(T^{(l+1)} | T^{(1:l)}) = p_{\theta}(T^{(l+1)} | T^{(l)})
+         $$
+\end{itemize}
+
+Noting these framework properties, we can describe the distribution of such prior model on the trees:
+$$
+\begin{align}
+    p_{\theta}(T) &= p_{\theta}\left(T^{(1)}, \dots, T^{(L)}\right) \\
+                    &= p\left(T^{(1)}\right) \prod_{l=1}^{L-1} p_{\theta}\left(T^{(l+1)}|T^{(l)}\right) \\
+                    &= \mathds{1}_{T^{(1)} = e_1} \prod_{l=1}^{L-1} \frac{p_{\theta}\left(T^{(l+1)}\right) p_{\theta}\left(T^{(l)}|T^{(l+1)}\right)}{p_{\theta}\left(T^{(l)}\right)} \\
+                    &= \mathds{1}_{T^{(1)} = e_1} p_{\theta}\left(T^{(L)}\right) \prod_{l=1}^{L-1} \treeconstrainedindicator \\
+                    &= \mathds{1}_{T^{(1)} = e_1} p_{\theta}\left(\bigcap_{k \in \nodeindexsetgeneric} \{u_k^{(L)} = 1\}, \bigcap_{k' \notin \nodeindexsetgeneric} \{u_{k'}^{(L)} = 0\}\right) \prod_{l=1}^{L-1} \treeconstrainedindicator \\
+                    &= \mathds{1}_{T^{(1)} = e_1} \prod_{k \in \nodeindexsetgeneric} \pi_k^{(L)} \prod_{k' \notin \nodeindexsetgeneric}(1 - \pi_{k'}^{(L)}) \prod_{l=1}^{L-1} \treeconstrainedindicator
+\end{align}
+$$
+
+Looking at the formula we obtain, we notice that generating a tree can be done by sampling nodes at the highest precision layer $L$
+using independent Bernoulli distribution for each node.
+Then, using the trees constraints that we know, we can roll up the tree and activate the parent nodes of the generated children, and so on until we reach the root.
+Hence, the only parameters of the prior are the Bernoulli parameters of each node, denoted $\pi_k^{(L)}$ for the node indexed by $k$. \\
+
+% Optimization
+Now that the prior of the trees is well defined, we would like to compute an optimal value of
+$\pi^{(L)} = \left(\pi_1^{(L)}, \dots, \pi_{U}^{(L)}\right)$ in the sense of the maximum of likelihood. \\
+The maximum log-likelihood objective for $\pi_k^{(L)}$ over our microbiota dataset can then be written as:
+$$
+\begin{equation}
+    \begin{aligned}
+        \left(\pi_j^{(L)}\right)^* = arg \max_{\pi_j^{(L)}} \quad & \sum_{i=1}^n \sum_{k \in \mathcal{A}^{(L)}_{T_i}} \log \pi_k^{(L)} + \sum_{k' \notin \mathcal{A}^{L}_{T_i}}\log (1 - \pi_{k'}^{(L)}) \\
+        \textrm{s.t.} \quad & \forall k, \pi_{k}^{(L)} \in [0, 1] \\
+    \end{aligned}
+    \label{eq:prior_transition_objective}
+\end{equation}
+$$
+
+This objective corresponds to the maximum log-likelihood estimator of a Bernoulli distribution,
+which can be solved to obtain the following estimator:
+$$
+\fbox{
+    \displaystyle
+    \left(\pi_j^{(L)}\right)^* = \frac{1}{n} \sum_{i=1}^n \mathds{1}_{j \in \mathcal{A}^{(L)}_{T_i}}
+}
+$$
