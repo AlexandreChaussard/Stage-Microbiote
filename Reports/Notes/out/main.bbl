@@ -186,6 +186,38 @@
       \field{title}{Estimating a Dirichlet distribution}
       \field{year}{2012}
     \endentry
+    \entry{momal_tree}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f89e6ce974b62193ecf8baaac081c672}{%
+           family={Momal},
+           familyi={M\bibinitperiod},
+           given={Raphaëlle},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e22d672f977a5f60d8f27c4715adba98}{%
+           family={Robin},
+           familyi={R\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod}}}%
+        {{hash=19389a924fd1c6b38f98e05cb4427ef8}{%
+           family={Ambroise},
+           familyi={A\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{349f8ab92e058166da132236626e9f16}
+      \strng{fullhash}{349f8ab92e058166da132236626e9f16}
+      \strng{bibnamehash}{349f8ab92e058166da132236626e9f16}
+      \strng{authorbibnamehash}{349f8ab92e058166da132236626e9f16}
+      \strng{authornamehash}{349f8ab92e058166da132236626e9f16}
+      \strng{authorfullhash}{349f8ab92e058166da132236626e9f16}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1905.02452}
+      \field{title}{Tree-based Inference of Species Interaction Network from Abundance Data}
+      \field{year}{2019}
+    \endentry
     \entry{pixel_cnn_paper}{article}{}
       \name{author}{3}{}{%
         {{hash=eb4d5c66a32d8ff3f8cb56e4544c1876}{%

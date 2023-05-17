@@ -158,12 +158,15 @@ We have implemented the previous modelization and tested it on a large microbiot
 This first model is interesting as it provides a benchmark baseline for our upcoming tree-structured models.
 However, it clearly lacks of complexity:
 \begin{itemize}
-    \item The branches are modeled as independent, which prevents any modelisation of correlation between entities.
+    \item The nodes are modeled as independent, which prevents any modelisation of correlation between entities.
           As for many ecosystems, we would expect some bacteria to have symbiotic relationship, or domination roles,
           especially when we come in critical systems like disease detection in which some bacteria may proliferate over others.
+          One idea could be to model an interaction graph (see \cite{momal_tree}) and use it as a correlation restriction between our bacteria.
     \item The abundance data generation takes the tree constraints into account, yet it is poorly flexible as we sample from a unique Dirichlet
           parameterized by $\alpha_D$ and masked according to $T^{(D)}$, which completely omits the tree's global structure.
           It would be highly interesting to try to group the trees through a latent variable for instance, and adapt the parameter
           to that specific group to enhance the modelization.
           We will explore that situation in the next section.
+    \item So far we have only considered trees without any missing entries at precision level $L$, which is not what we observe for microbiota datasets.
+          Inference for missing data implementation could be interesting in the future.
 \end{itemize}
