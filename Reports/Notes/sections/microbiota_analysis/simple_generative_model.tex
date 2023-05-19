@@ -21,10 +21,10 @@ As a result, to compute this objective, we need to define a prior $p_{\theta}(T_
 and a posterior distribution $p_{\theta}(X_i | T_i)$ that generates abundance data from a sampled tree. \\
 
 Note that in this section we assume that the trees do not have missing entries, meaning all the branches of
-reach the maximum precision layer of the tree, so that the abundance data sum to $1$ at each level.
+reach the maximum precision layer of the tree, so that the abundance data sum to $1$ at each level. \\
 
 % Design of the prior and optimization
-\input{sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex}
+\input{sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_prior.tex}
 
 \subsubsection{Design of the posterior and maximum likelihood estimator}
 

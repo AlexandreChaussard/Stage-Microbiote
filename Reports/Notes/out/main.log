@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  17 MAY 2023 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  19 MAY 2023 15:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1592,8 +1592,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--22
  []
 
 
-(sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
 
+ []
+
+
+(sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_p
+rior.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--8
 
  []
@@ -1608,21 +1613,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [19]
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-50: Package amsmath Error: Erroneous nesting of equation structures;
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:50: Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50 \end{align}
+l.50     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:67: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
 
  []
 
@@ -1636,24 +1655,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [20]
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-63: LaTeX Error: Bad math environment delimiter.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:79: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 \begin{equation}
+l.79 \begin{equation}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-69: Missing \endgroup inserted.
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:83: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.83     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:85: Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.69 \end{equation}
+l.85 \end{equation}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1662,81 +1695,132 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-69: LaTeX Error: \begin{document} ended by \end{equation}.
+Overfull \hbox (6.12175pt too wide) detected at line 85
+[][][][][][]
+ []
+
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:85: LaTeX Error: \begin{document} ended by \end{equation}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.69 \end{equation}
+l.85 \end{equation}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-69: Extra \endgroup.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:85: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.69 \end{equation}
+l.85 \end{equation}
                    
 Things are pretty mixed up, but I think the worst is over.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-71: Missing $ inserted.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:87: Missing $ inserted.
 <inserted text> 
                 $
-l.71 
+l.87 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-71: Display math should end with $$.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:87: Display math should end with $$.
 <to be read again> 
                    \tex_par:D 
-l.71 
+l.87 
      
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-78: Missing $ inserted.
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:93: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:102: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.102 \end{align}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (22.32045pt too wide) detected at line 103
+[][]
+ []
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:111: Missing $ inserted.
 <inserted text> 
                 $
-l.78 }
-      
+l.111 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-78: Extra }, or forgotten $.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:111: Misplaced alignment tab character &.
+<argument> ...tyle \left (\pi _k^{(l)}\right )^* &
+                                                  = \frac {\sum _{i=1}^n \ma...
+l.111 }
+       
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:111: Extra }, or forgotten $.
 \fbox  ...x {\color@begingroup \kern \fboxsep {#1}
                                                   \kern \fboxsep \color@endg...
-l.78 }
-      
+l.111 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-78: Missing $ inserted.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:111: Missing $ inserted.
 <inserted text> 
                 $
-l.78 }
-      
+l.111 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-sections/microbiota_analysis/tree_generation_prior/independent_nodes_prior.tex:
-78: Missing } inserted.
+sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
+ior.tex:111: Missing } inserted.
 <inserted text> 
                 }
-l.78 }
-      
+l.111 }
+       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -1749,6 +1833,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--38
  []
 
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 39--41
 
  []
@@ -1768,15 +1860,6 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[21]
-
 sections/microbiota_analysis/simple_generative_model.tex:75: Package amsmath Er
 ror: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
@@ -1790,6 +1873,15 @@ l.75 \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
 
 sections/microbiota_analysis/simple_generative_model.tex:99: Package amsmath Er
 ror: Erroneous nesting of equation structures;
@@ -1812,7 +1904,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
+[23]
 sections/microbiota_analysis/simple_generative_model.tex:124: Missing $ inserte
 d.
 <inserted text> 
@@ -1915,7 +2007,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
@@ -1929,7 +2021,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24] (sections/general/bibpage.tex)
+[25] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -1944,7 +2036,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[26] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A489F7BECBEBECB062986FA171226854;5649.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1952,47 +2044,48 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26805 strings out of 476315
- 527079 string characters out of 5787197
+ 26811 strings out of 476315
+ 527152 string characters out of 5787197
  1872068 words of memory out of 5000000
- 46791 multiletter control sequences out of 15000+600000
- 528673 words of font info for 70 fonts, out of 8000000 for 9000
+ 46794 multiletter control sequences out of 15000+600000
+ 529414 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
 1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\frigi\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\frigi\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\
-frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk> <C:\
-Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk
-><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mex10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cmextra/cmex7.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/frigi/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/frigi/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/frigi/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
-frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
-/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
-s/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+/dpi600\ecrm0800.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\frigi\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\
+frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\
+Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk
+> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1
+200.pk><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmex10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cmextra/cmex7.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/frigi/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/frigi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/frigi/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/fr
+igi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.p
+fb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (26 pages, 1515265 bytes).
+t\main.pdf (27 pages, 1522740 bytes).
 PDF statistics:
- 867 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
+ 889 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
  307 words of extra memory for PDF output out of 10000 (max. 10000000)
 

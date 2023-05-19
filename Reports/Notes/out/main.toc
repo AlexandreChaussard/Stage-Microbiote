@@ -26,8 +26,8 @@
 \contentsline {subsection}{\numberline {4.2}Simple generative model: no latent variable}{19}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Context and objective}{19}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}Design of the prior}{19}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Design of the posterior and maximum likelihood estimator}{21}{subsubsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.4}Optimization of the objective}{24}{subsubsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.5}Experiments}{24}{subsubsection.4.2.5}%
-\contentsline {subsubsection}{\numberline {4.2.6}Conclusions}{24}{subsubsection.4.2.6}%
-\contentsline {section}{\numberline {5}Bibliography}{25}{section.5}%
+\contentsline {subsubsection}{\numberline {4.2.3}Design of the posterior and maximum likelihood estimator}{22}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Optimization of the objective}{25}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Experiments}{25}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6}Conclusions}{25}{subsubsection.4.2.6}%
+\contentsline {section}{\numberline {5}Bibliography}{26}{section.5}%
