@@ -36,8 +36,8 @@ Now that the framework is clear and defined, we describe the generative process:
     p(T^{(1)}) = \mathds{1}_{T^{(1)} = e_1}
     $$
 
-    \item For all $l \geq 2, k \in \{1, \dots, U\}$, we assume that the activation of the node
-        is distributed as Bernoulli conditionally to its parent activation, parameterized by $\pi_k^{(l)}$:
+    \item For all $l \geq 2, k \in \{1, \dots, U\}$, we assume that the activation of the node $u_k^{(l)}$
+        is distributed as a Bernoulli conditionally to its parent activation, parameterized by $\pi_k^{(l)}$:
         $$
         u_k^{(l)} | \left \{\nodeparent(u_k^{(l)}) = 1 \right\} \sim \mathcal{B}(\pi_{k}^{(l)})
         $$

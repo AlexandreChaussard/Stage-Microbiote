@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  19 MAY 2023 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  19 MAY 2023 17:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1828,7 +1828,9 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
+(sections/microbiota_analysis/abundance_generation/markovian_parenting_abundanc
+e.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
 
  []
 
@@ -1841,34 +1843,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
 
 
-sections/microbiota_analysis/simple_generative_model.tex:63: Package amsmath Er
-ror: Erroneous nesting of equation structures;
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:48: Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63         \end{align}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-sections/microbiota_analysis/simple_generative_model.tex:75: Package amsmath Er
-ror: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.75 \end{align}
+l.48 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1883,7 +1871,144 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [22]
 
-sections/microbiota_analysis/simple_generative_model.tex:99: Package amsmath Er
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:56: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 \begin{equation*}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:59: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:61: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.61 \end{equation*}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:61: LaTeX Error: \begin{document} ended by \end{equation*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \end{equation*}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:61: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.61 \end{equation*}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:63: Missing $ inserted.
+<inserted text> 
+                $
+l.63 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:63: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.63 
+     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:73: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 \end{align}
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:88: Missing $ inserted.
+<inserted text> 
+                $
+l.88 }
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:88: Extra }, or forgotten $.
+\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
+                                                  \kern \fboxsep \color@endg...
+l.88 }
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:88: Missing $ inserted.
+<inserted text> 
+                $
+l.88 }
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:88: Missing } inserted.
+<inserted text> 
+                }
+l.88 }
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+)
+
+sections/microbiota_analysis/simple_generative_model.tex:40: Package amsmath Er
 ror: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1891,7 +2016,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.99 \end{align}
+l.40 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1905,110 +2030,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-sections/microbiota_analysis/simple_generative_model.tex:124: Missing $ inserte
-d.
-<inserted text> 
-                $
-l.124 }
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/simple_generative_model.tex:124: Missing } inserte
-d.
-<inserted text> 
-                }
-l.124 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-sections/microbiota_analysis/simple_generative_model.tex:124: Missing delimiter
- (. inserted).
-<to be read again> 
-                   }
-l.124 }
-       
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-sections/microbiota_analysis/simple_generative_model.tex:124: Extra \right.
-<to be read again> 
-                   }
-l.124 }
-       
-I'm ignoring a \right that had no matching \left.
-
-sections/microbiota_analysis/simple_generative_model.tex:124: Extra }, or forgo
-tten $.
-<recently read> }
-                 
-l.124 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-sections/microbiota_analysis/simple_generative_model.tex:124: Missing $ inserte
-d.
-<inserted text> 
-                $
-l.124 }
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/simple_generative_model.tex:125: Missing $ inserte
-d.
-<inserted text> 
-                $
-l.125 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/simple_generative_model.tex:125: Display math shou
-ld end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.125 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-sections/microbiota_analysis/simple_generative_model.tex:134: Package amsmath E
-rror: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.134 \end{align}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
  []
 
@@ -2021,7 +2043,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25] (sections/general/bibpage.tex)
+[24] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -2036,7 +2058,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[25] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A489F7BECBEBECB062986FA171226854;5649.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -2044,10 +2066,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26811 strings out of 476315
- 527152 string characters out of 5787197
+ 26818 strings out of 476315
+ 527770 string characters out of 5787197
  1872068 words of memory out of 5000000
- 46794 multiletter control sequences out of 15000+600000
+ 46797 multiletter control sequences out of 15000+600000
  529414 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2083,9 +2105,9 @@ type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (27 pages, 1522740 bytes).
+t\main.pdf (26 pages, 1518222 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
+ 886 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
  307 words of extra memory for PDF output out of 10000 (max. 10000000)
 

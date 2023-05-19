@@ -1,0 +1,89 @@
+\subsubsection{Design of the posterior and maximum likelihood estimator}
+
+\newcommand{\childrennode}{\mathcal{C}}
+
+% Design of the posterior
+
+Now that we have a way to generate trees, we need to define an explicit stochastic relationship between the abundance
+data and the structure of the tree.
+Such inevitably exists, as when observing $T$, the abundance of an entity that isn't present in $T$ is necessarily 0.
+Similarly, it is highly likely that when observing the presence of certain entities in $T$ that induces a high abundance of
+another neighbour entity (interaction between bacteria). \\
+
+For context, we recall that $X$ is a matrix of shape $(L, U)$,
+where $L$ is the maximum precision level of the trees (assumed to be the same for all trees for now) and $U$ the maximum number of entities at each depth of the trees.
+We denote by $X^{(l)}$ the $l$-th line of the abundance matrix, for which up to $U_l$ elements should be non-zero. \\
+
+We assume the following framework:
+\begin{itemize}
+    \item We denote $X^{(l)} = (x_1^{(l)}, \dots, x_U^{(l)})$ the abundance vector at layer $l$.
+    \item For an abundance node $x_k^{(l)}$, we denote by $\childrennode(x_k^{(l)})$ the set of abundance children associated to that node.
+    \item $X^{(1)} = [1, 0, \dots, 0]$, since it's the root of the tree, only one entity gets the whole weight.
+    \item Since we would like a simple explicit model at first, we design a posterior $p_{\theta}(X|T)$ which is markovian relatively to the layers of the tree,
+            so that the abundance at the next layer are only impacted by the previous layers abundance for now:
+            $$
+            p_{\theta}(X^{(l)} | X^{(1:l-1)}, T) = p_{\theta}(X^{(l)} | X^{(l-1)}, T)
+            $$
+    \item Each value in $X^{(l)}$ is restricted by the following set of constraints:
+            \begin{itemize}
+                \item If node $k$ at layer $l-1$ has one child, then its abundance value is the same for the child node.
+                \item If node $k$ at layer $l-1$ has at least two children, the children abundance sums to the parent's abundance value.
+            \end{itemize}
+    \item Since we deal with proportions in abundance vectors, it seems natural to use the Dirichlet distribution in first assumption.
+          Hence, we assume that for all $l \geq 2$, if $|\childrennode(x_k^{(l)})| > 1$,
+            $$\childrennode(x_k^{(l)}) | x_k^{(l)}, T \sim \mathcal{D}(\alpha_k^{(l)})$$
+          We denote by $f_{\alpha_k^{(l)}}$ the density of this distribution, parameterized by $\alpha_k^{(l)}$.
+          Notice that setting this distribution framework enables us to verify the constraints given above.
+          Naturally, if $|\childrennode(x_k^{(l)})| = 1$, we have $\childrennode(x_k^{(l)}) \sim \delta_{x_k^{(l)}}$.
+\end{itemize}
+
+Noting the previous framework, the whole abundance distribution conditionally to the trees is then given by:
+$$
+\begin{align}
+    p_{\theta}(X | T) &= \prod_{i=1}^n p_{\theta}(X_i | T_i) \\
+    &= \prod_{i=1}^n p_{\theta}(X_i^{(1)}, \dots, X_i^{(L)} | T_i) \\
+    &= \prod_{i=1}^n p(X_i^{(1)} | T_i) \prod_{l=1}^{L-1} p_{\alpha_l}(X_i^{(l+1)} | X_i^{(l)}, T_i) \\
+    &= \prod_{i=1}^n \mathds{1}_{X_i^{(1)} = e_1} \prod_{l=1}^{L-1} \prod_{k=1}^U p(\childrennode(x_{k,i}^{(l)}) | x_{k,i}^{(l)}) \\
+    &= \prod_{i=1}^n \mathds{1}_{X_i^{(1)} = e_1} \prod_{l=1}^{L-1} \prod_{k=1}^U \left[\mathds{1}_{|\childrennode(x_{i,k}^{(l)})| = 1} \mathds{1}\left(\childrennode(x_{k,i}^{(l)}) = x_{k,i}^{(l)}\right) + \mathds{1}_{|\childrennode(x_{i,k}^{(l)})| > 1} f_{\alpha_k^{(l)}}\left(\childrennode(x_{k,i}^{(l)})\right)\right]
+\end{align}
+$$
+
+% Optimization
+
+This distribution is parameterized at each layer $l$ by $\alpha^{(l)} = (\alpha_1^{(l)}, \dots, \alpha_U^{(l)})$, the various Dirichlet parameters of the layers of the tree.
+Hence, the optimization objective can be written as:
+$$
+\begin{equation*}
+    \begin{align}
+        \left(\alpha_{j,v}^{(m)}\right)^* = arg \max_{\alpha_{j,v}^{(m)}} \quad & \sum_{i=1}^n \mathds{1}_{X_i^{(1)} = e_1} \sum_{l=1}^{L-1} \sum_{k=1}^U \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \log f_{\alpha_k^{(l)}}\left(\childrennode(x_{k,i}^{(l)})\right) \\
+    \end{align}
+    \label{eq:posterior_abundance_objective}
+\end{equation*}
+$$
+
+Recall the Dirichlet distribution evaluation, written for our log-likelihood as:
+$$
+\log f_{\alpha_k^{(l)}}\left(\childrennode(x_{k,i}^{(l)})\right) = \log \Gamma \left(\sum_{v=1}^{|\childrennode(x_{k,i}^{(l)})|} \alpha_{k,v}^{(l)} \right) - \sum_{v=1}^{|\childrennode(x_{k,i}^{(l)})|} \log \Gamma(\alpha_{k,v}^{(l)}) + \sum_{v=1}^{|\childrennode(x_{k,i}^{(l)})|} \left(\alpha_{k,v}^{(l)} - 1\right) \log x_{v,i}^{(l+1)}
+$$
+
+Deriving the log-likelihood relatively to $\alpha_{j,v}^{(m)}$, we then obtain:
+$$
+\begin{align}
+    \partial_{\alpha_{j,v}^{(m)}} \log p(X | T) = \sum_{i=1}^n \mathds{1}_{X_i^{(1)} = e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)})| > 1} \left(\log x_{v,i}^{(m+1)} - \psi \left(\sum_{v=1}^{|\childrennode(x_{j,i}^{(m)})|} \alpha_{j,v}^{(m)}\right) + \psi\left(\alpha_{j,v}^{(m)}\right) \right)
+\end{align}
+$$
+
+Now, we look for $0$ valued gradient of the log-likelihood to find an optimal parameter, leading to:
+$$
+\displaystyle
+\psi \left(\alpha_{j,v}^{(m)}\right) - \psi \left(\sum_{v=1}^{|\childrennode(x_{j,i}^{(m)}|} \alpha_{j,v}^{(m)} \right) = \frac{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)}| > 1} \log x_{v,i}^{(m+1)}}{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)})| > 1}}
+$$
+
+Recall from the analysis of the Dirichlet mixtures that this is solvable through a fix point algorithm, as detailed in \cite{dirichlet_digamma_trick}.
+Hence, we obtain the following fix point algorithm to provide an optimal value of $\alpha_{j,v}^{(m)}$:
+$$
+\fbox{
+    \displaystyle
+    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1}\left(\frac{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{k,i}^{(l)}| > 1} \log x_{v,i}^{(l+1)}}{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1}} + \psi \left(\sum_{v=1}^{|\childrennode(x_{k,i}^{(l)}|} \alpha_{k,v}^{(l)} \right)\right)
+}
+$$
