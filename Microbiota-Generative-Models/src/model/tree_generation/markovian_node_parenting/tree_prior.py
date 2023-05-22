@@ -24,10 +24,22 @@ class ActivableNode(Node):
             self.value = 0
         return self.activated
 
+    def hasActiveChildren(self):
+        # If the node has no children, then none is activated
+        if not self.hasChildren():
+            return False
+        # If the node has one active children, then it has an activated one!
+        for child in self.children:
+            if child.activated:
+                return True
+        # The node didn't have any activated child
+        return False
 
 class BernoulliTree(Tree):
-    def __init__(self, adjancent_matrix, activation_probabilities):
+    def __init__(self, adjancent_matrix, activation_probabilities, seed=None):
         super().__init__(adjancent_matrix)
+        random.seed(seed)
+        # Turn the tree nodes into activable nodes
         nodes = []
         for node in self.nodes:
             nodes.append(
@@ -71,8 +83,7 @@ class BernoulliTree(Tree):
 
         def recursive_sample(node):
             # We sample the node
-            activated = node.bernoulli_activation()
-            print(activated, node.value)
+            node.bernoulli_activation()
             # And if it worked out, we do it for the children as well
             if node.hasChildren() and node.activated:
                 for child in node.children:
@@ -82,8 +93,8 @@ class BernoulliTree(Tree):
         recursive_sample(self.root)
 
 
-def generate_bernoulli_tree(global_adjacency_matrix, activation_probabilities):
-    tree = BernoulliTree(global_adjacency_matrix, activation_probabilities)
+def generate_bernoulli_tree(global_adjacency_matrix, activation_probabilities, seed=None):
+    tree = BernoulliTree(global_adjacency_matrix, activation_probabilities, seed)
     tree.sample_tree_nodes()
     return tree
 
@@ -115,5 +126,3 @@ def example_generation():
     tree.plot()
     plt.show()
 
-
-example_generation()
