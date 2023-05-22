@@ -33,7 +33,7 @@ We assume the following framework:
           Hence, we assume that for all $l \geq 2$, if $|\childrennode(x_k^{(l)})| > 1$,
             $$\childrennode(x_k^{(l)}) | x_k^{(l)}, T \sim \mathcal{D}(\alpha_k^{(l)})$$
           We denote by $f_{\alpha_k^{(l)}}$ the density of this distribution, parameterized by $\alpha_k^{(l)}$.
-          Notice that setting this distribution framework enables us to verify the constraints given above.
+          Notice that setting this distribution framework enables us to verify the constraints given above by renormalizing the layer with the obtained weights.
           Naturally, if $|\childrennode(x_k^{(l)})| = 1$, we have $\childrennode(x_k^{(l)}) \sim \delta_{x_k^{(l)}}$.
 \end{itemize}
 
@@ -76,7 +76,7 @@ $$
 Now, we look for $0$ valued gradient of the log-likelihood to find an optimal parameter, leading to:
 $$
 \displaystyle
-\psi \left(\alpha_{j,v}^{(m)}\right) - \psi \left(\sum_{v=1}^{|\childrennode(x_{j,i}^{(m)}|} \alpha_{j,v}^{(m)} \right) = \frac{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)}| > 1} \log x_{v,i}^{(m+1)}}{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)})| > 1}}
+\psi \left(\alpha_{j,v}^{(m)}\right) - \psi \left(\sum_{v=1}^{|\childrennode(x_{j,i}^{(m)}|} \alpha_{j,v}^{(m)} \right) = \frac{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)})| > 1} \log x_{v,i}^{(m+1)}}{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{j,i}^{(m)})| > 1}}
 $$
 
 Recall from the analysis of the Dirichlet mixtures that this is solvable through a fix point algorithm, as detailed in \cite{dirichlet_digamma_trick}.
@@ -84,6 +84,6 @@ Hence, we obtain the following fix point algorithm to provide an optimal value o
 $$
 \fbox{
     \displaystyle
-    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1}\left(\frac{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{k,i}^{(l)}| > 1} \log x_{v,i}^{(l+1)}}{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1}} + \psi \left(\sum_{v=1}^{|\childrennode(x_{k,i}^{(l)}|} \alpha_{k,v}^{(l)} \right)\right)
+    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1}\left(\frac{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \log x_{v,i}^{(l+1)}}{\sum_{i=1}^n \mathds{1}_{X_i^{(1)}=e_1} \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1}} + \psi \left(\sum_{v=1}^{|\childrennode(x_{k,i}^{(l)}|} \alpha_{k,v}^{(l)} \right)\right)
 }
 $$
