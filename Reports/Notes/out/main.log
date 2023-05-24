@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  22 MAY 2023 10:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  24 MAY 2023 16:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -304,7 +304,21 @@ Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 \@float@every@algorithm=\toks30
 \c@algorithm=\count296
+) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks31
+\thm@bodyfont=\toks32
+\thm@headfont=\toks33
+\thm@notefont=\toks34
+\thm@headpunct=\toks35
+\thm@preskip=\skip65
+\thm@postskip=\skip66
+\thm@headsep=\skip67
+\dth@everypar=\toks36
 )
+\c@theorem=\count297
+\c@corollary=\count298
+
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-04-22 v7.00x Hypertext links for LaTeX
 
@@ -360,15 +374,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count297
+\c@section@level=\count299
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count298
+\etb@tempcnta=\count300
 )
 \@linkdim=\dimen175
-\Hy@linkcounter=\count299
-\Hy@pagecounter=\count300
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2023-04-22 v7.00x Hyperref: PDFDocEncoding definition (HO)
@@ -378,7 +392,7 @@ Now handling font encoding PD1 ...
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count301
+\Hy@SavedSpaceFactor=\count303
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2023-04-22 v7.00x Hyperref: PDF Unicode definition (HO)
@@ -392,7 +406,7 @@ Package hyperref Info: Plain pages OFF on input line 4197.
 Package hyperref Info: Backreferencing OFF on input line 4202.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4449.
-\c@Hy@tempcnt=\count302
+\c@Hy@tempcnt=\count304
 LaTeX Info: Redefining \url on input line 4787.
 \XeTeXLinkMargin=\dimen176
 
@@ -404,7 +418,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count303
+\Fld@menulength=\count305
 \Field@Width=\dimen177
 \Fld@charsize=\dimen178
 Package hyperref Info: Hyper figures OFF on input line 6066.
@@ -419,9 +433,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6096.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count304
-\c@Item=\count305
-\c@Hfootnote=\count306
+\Hy@abspage=\count306
+\c@Item=\count307
+\c@Hfootnote=\count308
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -432,8 +446,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count307
-\c@bookmark@seq@number=\count308
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -446,44 +460,44 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip65
+\Hy@SectionHShift=\skip68
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/fncychap\fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip66
-\mylen=\skip67
-\myhi=\skip68
-\px=\skip69
-\py=\skip70
-\pyy=\skip71
-\pxx=\skip72
-\backskip=\skip73
+\RW=\skip69
+\mylen=\skip70
+\myhi=\skip71
+\px=\skip72
+\py=\skip73
+\pyy=\skip74
+\pxx=\skip75
+\backskip=\skip76
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip74
+\labelindent=\skip77
 \enit@outerparindent=\dimen179
-\enit@toks=\toks31
+\enit@toks=\toks37
 \enit@inbox=\box58
-\enit@count@id=\count309
-\enitdp@description=\count310
+\enit@count@id=\count311
+\enitdp@description=\count312
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
-\c@tracingmulticols=\count311
+\c@tracingmulticols=\count313
 \mult@box=\box59
 \multicol@leftmargin=\dimen180
-\c@unbalance=\count312
-\c@collectmore=\count313
-\doublecol@number=\count314
-\multicoltolerance=\count315
-\multicolpretolerance=\count316
+\c@unbalance=\count314
+\c@collectmore=\count315
+\doublecol@number=\count316
+\multicoltolerance=\count317
+\multicolpretolerance=\count318
 \full@width=\dimen181
 \page@free=\dimen182
 \premulticols=\dimen183
 \postmulticols=\dimen184
-\multicolsep=\skip75
-\multicolbaselineskip=\skip76
+\multicolsep=\skip78
+\multicolbaselineskip=\skip79
 \partial@page=\box60
 \last@line=\box61
 \maxbalancingoverflow=\dimen185
@@ -527,15 +541,15 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \@tempa=\box99
 \@tempa=\box100
 \@tempa=\box101
-\c@minrows=\count317
-\c@columnbadness=\count318
-\c@finalcolumnbadness=\count319
+\c@minrows=\count319
+\c@columnbadness=\count320
+\c@finalcolumnbadness=\count321
 \last@try=\dimen186
 \multicolovershoot=\dimen187
 \multicolundershoot=\dimen188
 \mult@nat@firstbox=\box102
 \colbreak@box=\box103
-\mc@col@check@num=\count320
+\mc@col@check@num=\count322
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -555,45 +569,45 @@ Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
 \caption@hangindent=\dimen196
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count321
-\c@continuedfloat=\count322
+\c@caption@flags=\count323
+\c@continuedfloat=\count324
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
-\c@KVtest=\count323
-\sf@farskip=\skip77
+\c@KVtest=\count325
+\sf@farskip=\skip80
 \sf@captopadj=\dimen197
-\sf@capskip=\skip78
-\sf@nearskip=\skip79
-\c@subfigure=\count324
-\c@subfigure@save=\count325
-\c@lofdepth=\count326
-\c@subtable=\count327
-\c@subtable@save=\count328
-\c@lotdepth=\count329
-\sf@top=\skip80
-\sf@bottom=\skip81
+\sf@capskip=\skip81
+\sf@nearskip=\skip82
+\c@subfigure=\count326
+\c@subfigure@save=\count327
+\c@lofdepth=\count328
+\c@subtable=\count329
+\c@subtable@save=\count330
+\c@lotdepth=\count331
+\sf@top=\skip83
+\sf@bottom=\skip84
 ) (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
 Package: siunitx 2023-04-13 v3.2.5 A comprehensive (SI) units package
 \l__siunitx_angle_tmp_dim=\dimen198
 \l__siunitx_angle_marker_box=\box104
 \l__siunitx_angle_unit_box=\box105
-\l__siunitx_compound_count_int=\count330
+\l__siunitx_compound_count_int=\count332
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/translations\translatio
 ns.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
  (CN)
 )
-\l__siunitx_number_exponent_fixed_int=\count331
-\l__siunitx_number_min_decimal_int=\count332
-\l__siunitx_number_min_integer_int=\count333
-\l__siunitx_number_round_precision_int=\count334
-\l__siunitx_number_lower_threshold_int=\count335
-\l__siunitx_number_upper_threshold_int=\count336
-\l__siunitx_number_group_first_int=\count337
-\l__siunitx_number_group_size_int=\count338
-\l__siunitx_number_group_minimum_int=\count339
+\l__siunitx_number_exponent_fixed_int=\count333
+\l__siunitx_number_min_decimal_int=\count334
+\l__siunitx_number_min_integer_int=\count335
+\l__siunitx_number_round_precision_int=\count336
+\l__siunitx_number_lower_threshold_int=\count337
+\l__siunitx_number_upper_threshold_int=\count338
+\l__siunitx_number_group_first_int=\count339
+\l__siunitx_number_group_size_int=\count340
+\l__siunitx_number_group_minimum_int=\count341
 \l__siunitx_table_tmp_box=\box106
 \l__siunitx_table_tmp_dim=\dimen199
 \l__siunitx_table_column_width_dim=\dimen256
@@ -604,9 +618,9 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
 \l__siunitx_table_after_box=\box111
 \l__siunitx_table_before_dim=\dimen257
 \l__siunitx_table_carry_dim=\dimen258
-\l__siunitx_unit_tmp_int=\count340
-\l__siunitx_unit_position_int=\count341
-\l__siunitx_unit_total_int=\count342
+\l__siunitx_unit_tmp_int=\count342
+\l__siunitx_unit_position_int=\count343
+\l__siunitx_unit_total_int=\count344
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -614,9 +628,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count343
-\Gm@cntv=\count344
-\c@Gm@tempcnt=\count345
+\Gm@cnth=\count345
+\Gm@cntv=\count346
+\c@Gm@tempcnt=\count347
 \Gm@bindingoffset=\dimen259
 \Gm@wd@mp=\dimen260
 \Gm@odd@mp=\dimen261
@@ -625,89 +639,89 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen264
 \Gm@layouthoffset=\dimen265
 \Gm@layoutvoffset=\dimen266
-\Gm@dimlist=\toks32
+\Gm@dimlist=\toks38
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip82
-\f@nch@O@elh=\skip83
-\f@nch@O@erh=\skip84
-\f@nch@O@olh=\skip85
-\f@nch@O@orh=\skip86
-\f@nch@O@elf=\skip87
-\f@nch@O@erf=\skip88
-\f@nch@O@olf=\skip89
-\f@nch@O@orf=\skip90
+\f@nch@headwidth=\skip85
+\f@nch@O@elh=\skip86
+\f@nch@O@erh=\skip87
+\f@nch@O@olh=\skip88
+\f@nch@O@orh=\skip89
+\f@nch@O@elf=\skip90
+\f@nch@O@erf=\skip91
+\f@nch@O@olf=\skip92
+\f@nch@O@orf=\skip93
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count346
+\lrq@indent=\count348
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count347
-\c@listtotal=\count348
-\c@listcount=\count349
-\c@liststart=\count350
-\c@liststop=\count351
-\c@citecount=\count352
-\c@citetotal=\count353
-\c@multicitecount=\count354
-\c@multicitetotal=\count355
-\c@instcount=\count356
-\c@maxnames=\count357
-\c@minnames=\count358
-\c@maxitems=\count359
-\c@minitems=\count360
-\c@citecounter=\count361
-\c@maxcitecounter=\count362
-\c@savedcitecounter=\count363
-\c@uniquelist=\count364
-\c@uniquename=\count365
-\c@refsection=\count366
-\c@refsegment=\count367
-\c@maxextratitle=\count368
-\c@maxextratitleyear=\count369
-\c@maxextraname=\count370
-\c@maxextradate=\count371
-\c@maxextraalpha=\count372
-\c@abbrvpenalty=\count373
-\c@highnamepenalty=\count374
-\c@lownamepenalty=\count375
-\c@maxparens=\count376
-\c@parenlevel=\count377
-\blx@tempcnta=\count378
-\blx@tempcntb=\count379
-\blx@tempcntc=\count380
-\c@blx@maxsection=\count381
-\blx@maxsegment@0=\count382
-\blx@notetype=\count383
-\blx@parenlevel@text=\count384
-\blx@parenlevel@foot=\count385
-\blx@sectionciteorder@0=\count386
-\blx@sectionciteorderinternal@0=\count387
-\blx@entrysetcounter=\count388
-\blx@biblioinstance=\count389
-\labelnumberwidth=\skip91
-\labelalphawidth=\skip92
-\biblabelsep=\skip93
-\bibitemsep=\skip94
-\bibnamesep=\skip95
-\bibinitsep=\skip96
-\bibparsep=\skip97
-\bibhang=\skip98
+\c@tabx@nest=\count349
+\c@listtotal=\count350
+\c@listcount=\count351
+\c@liststart=\count352
+\c@liststop=\count353
+\c@citecount=\count354
+\c@citetotal=\count355
+\c@multicitecount=\count356
+\c@multicitetotal=\count357
+\c@instcount=\count358
+\c@maxnames=\count359
+\c@minnames=\count360
+\c@maxitems=\count361
+\c@minitems=\count362
+\c@citecounter=\count363
+\c@maxcitecounter=\count364
+\c@savedcitecounter=\count365
+\c@uniquelist=\count366
+\c@uniquename=\count367
+\c@refsection=\count368
+\c@refsegment=\count369
+\c@maxextratitle=\count370
+\c@maxextratitleyear=\count371
+\c@maxextraname=\count372
+\c@maxextradate=\count373
+\c@maxextraalpha=\count374
+\c@abbrvpenalty=\count375
+\c@highnamepenalty=\count376
+\c@lownamepenalty=\count377
+\c@maxparens=\count378
+\c@parenlevel=\count379
+\blx@tempcnta=\count380
+\blx@tempcntb=\count381
+\blx@tempcntc=\count382
+\c@blx@maxsection=\count383
+\blx@maxsegment@0=\count384
+\blx@notetype=\count385
+\blx@parenlevel@text=\count386
+\blx@parenlevel@foot=\count387
+\blx@sectionciteorder@0=\count388
+\blx@sectionciteorderinternal@0=\count389
+\blx@entrysetcounter=\count390
+\blx@biblioinstance=\count391
+\labelnumberwidth=\skip94
+\labelalphawidth=\skip95
+\biblabelsep=\skip96
+\bibitemsep=\skip97
+\bibnamesep=\skip98
+\bibinitsep=\skip99
+\bibparsep=\skip100
+\bibhang=\skip101
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language80
-\c@mincomprange=\count390
-\c@maxcomprange=\count391
-\c@mincompwidth=\count392
+\c@mincomprange=\count392
+\c@maxcomprange=\count393
+\c@mincompwidth=\count394
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -716,88 +730,88 @@ File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count393
-\c@savedafterword=\count394
-\c@annotator=\count395
-\c@savedannotator=\count396
-\c@author=\count397
-\c@savedauthor=\count398
-\c@bookauthor=\count399
-\c@savedbookauthor=\count400
-\c@commentator=\count401
-\c@savedcommentator=\count402
-\c@editor=\count403
-\c@savededitor=\count404
-\c@editora=\count405
-\c@savededitora=\count406
-\c@editorb=\count407
-\c@savededitorb=\count408
-\c@editorc=\count409
-\c@savededitorc=\count410
-\c@foreword=\count411
-\c@savedforeword=\count412
-\c@holder=\count413
-\c@savedholder=\count414
-\c@introduction=\count415
-\c@savedintroduction=\count416
-\c@namea=\count417
-\c@savednamea=\count418
-\c@nameb=\count419
-\c@savednameb=\count420
-\c@namec=\count421
-\c@savednamec=\count422
-\c@translator=\count423
-\c@savedtranslator=\count424
-\c@shortauthor=\count425
-\c@savedshortauthor=\count426
-\c@shorteditor=\count427
-\c@savedshorteditor=\count428
-\c@labelname=\count429
-\c@savedlabelname=\count430
-\c@institution=\count431
-\c@savedinstitution=\count432
-\c@lista=\count433
-\c@savedlista=\count434
-\c@listb=\count435
-\c@savedlistb=\count436
-\c@listc=\count437
-\c@savedlistc=\count438
-\c@listd=\count439
-\c@savedlistd=\count440
-\c@liste=\count441
-\c@savedliste=\count442
-\c@listf=\count443
-\c@savedlistf=\count444
-\c@location=\count445
-\c@savedlocation=\count446
-\c@organization=\count447
-\c@savedorganization=\count448
-\c@origlocation=\count449
-\c@savedoriglocation=\count450
-\c@origpublisher=\count451
-\c@savedorigpublisher=\count452
-\c@publisher=\count453
-\c@savedpublisher=\count454
-\c@language=\count455
-\c@savedlanguage=\count456
-\c@origlanguage=\count457
-\c@savedoriglanguage=\count458
-\c@pageref=\count459
-\c@savedpageref=\count460
-\shorthandwidth=\skip99
-\shortjournalwidth=\skip100
-\shortserieswidth=\skip101
-\shorttitlewidth=\skip102
-\shortauthorwidth=\skip103
-\shorteditorwidth=\skip104
-\locallabelnumberwidth=\skip105
-\locallabelalphawidth=\skip106
-\localshorthandwidth=\skip107
-\localshortjournalwidth=\skip108
-\localshortserieswidth=\skip109
-\localshorttitlewidth=\skip110
-\localshortauthorwidth=\skip111
-\localshorteditorwidth=\skip112
+\c@afterword=\count395
+\c@savedafterword=\count396
+\c@annotator=\count397
+\c@savedannotator=\count398
+\c@author=\count399
+\c@savedauthor=\count400
+\c@bookauthor=\count401
+\c@savedbookauthor=\count402
+\c@commentator=\count403
+\c@savedcommentator=\count404
+\c@editor=\count405
+\c@savededitor=\count406
+\c@editora=\count407
+\c@savededitora=\count408
+\c@editorb=\count409
+\c@savededitorb=\count410
+\c@editorc=\count411
+\c@savededitorc=\count412
+\c@foreword=\count413
+\c@savedforeword=\count414
+\c@holder=\count415
+\c@savedholder=\count416
+\c@introduction=\count417
+\c@savedintroduction=\count418
+\c@namea=\count419
+\c@savednamea=\count420
+\c@nameb=\count421
+\c@savednameb=\count422
+\c@namec=\count423
+\c@savednamec=\count424
+\c@translator=\count425
+\c@savedtranslator=\count426
+\c@shortauthor=\count427
+\c@savedshortauthor=\count428
+\c@shorteditor=\count429
+\c@savedshorteditor=\count430
+\c@labelname=\count431
+\c@savedlabelname=\count432
+\c@institution=\count433
+\c@savedinstitution=\count434
+\c@lista=\count435
+\c@savedlista=\count436
+\c@listb=\count437
+\c@savedlistb=\count438
+\c@listc=\count439
+\c@savedlistc=\count440
+\c@listd=\count441
+\c@savedlistd=\count442
+\c@liste=\count443
+\c@savedliste=\count444
+\c@listf=\count445
+\c@savedlistf=\count446
+\c@location=\count447
+\c@savedlocation=\count448
+\c@organization=\count449
+\c@savedorganization=\count450
+\c@origlocation=\count451
+\c@savedoriglocation=\count452
+\c@origpublisher=\count453
+\c@savedorigpublisher=\count454
+\c@publisher=\count455
+\c@savedpublisher=\count456
+\c@language=\count457
+\c@savedlanguage=\count458
+\c@origlanguage=\count459
+\c@savedoriglanguage=\count460
+\c@pageref=\count461
+\c@savedpageref=\count462
+\shorthandwidth=\skip102
+\shortjournalwidth=\skip103
+\shortserieswidth=\skip104
+\shorttitlewidth=\skip105
+\shortauthorwidth=\skip106
+\shorteditorwidth=\skip107
+\locallabelnumberwidth=\skip108
+\locallabelalphawidth=\skip109
+\localshorthandwidth=\skip110
+\localshortjournalwidth=\skip111
+\localshortserieswidth=\skip112
+\localshorttitlewidth=\skip113
+\localshortauthorwidth=\skip114
+\localshorteditorwidth=\skip115
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -808,19 +822,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count461
-\c@textcitetotal=\count462
-\c@textcitemaxnames=\count463
-\c@biburlbigbreakpenalty=\count464
-\c@biburlbreakpenalty=\count465
-\c@biburlnumpenalty=\count466
-\c@biburlucpenalty=\count467
-\c@biburllcpenalty=\count468
+\c@textcitecount=\count463
+\c@textcitetotal=\count464
+\c@textcitemaxnames=\count465
+\c@biburlbigbreakpenalty=\count466
+\c@biburlbreakpenalty=\count467
+\c@biburlnumpenalty=\count468
+\c@biburlucpenalty=\count469
+\c@biburllcpenalty=\count470
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count469
+\c@smartand=\count471
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -834,8 +848,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count470
-\c@bbx:relatedtotal=\count471
+\c@bbx:relatedcount=\count472
+\c@bbx:relatedtotal=\count473
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -870,7 +884,7 @@ Package: expl3 2023-04-20 L3 programming layer (loader)
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count472
+\l__color_backend_stack_int=\count474
 \l__pdf_internal_box=\box112
 ))
 Package biblatex Info: ... and expl3
@@ -895,16 +909,16 @@ cx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count473
-\c@ALG@rem=\count474
-\c@ALG@nested=\count475
-\ALG@tlm=\skip113
-\ALG@thistlm=\skip114
-\c@ALG@Lnr=\count476
-\c@ALG@blocknr=\count477
-\c@ALG@storecount=\count478
-\c@ALG@tmpcounter=\count479
-\ALG@tmplength=\skip115
+\c@ALG@line=\count475
+\c@ALG@rem=\count476
+\c@ALG@nested=\count477
+\ALG@tlm=\skip116
+\ALG@thistlm=\skip117
+\c@ALG@Lnr=\count478
+\c@ALG@blocknr=\count479
+\c@ALG@storecount=\count480
+\c@ALG@tmpcounter=\count481
+\ALG@tmplength=\skip118
 
 C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmic
 x.sty:112: LaTeX Error: Command \algorithmic already defined.
@@ -926,14 +940,14 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 
-main.tex:66: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
+main.tex:71: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
 '.
 
 See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.66 \bibliographystyle{ieeetr}
+l.71 \bibliographystyle{ieeetr}
                                
 Use the package option 'style' instead.
 I'm ignoring this command.
@@ -942,44 +956,44 @@ I'm ignoring this command.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count480
-\@quotereset=\count481
+\@quotelevel=\count482
+\@quotereset=\count483
 (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count482
+\scratchcounter=\count484
 \scratchdimen=\dimen267
 \scratchbox=\box113
-\nofMPsegments=\count483
-\nofMParguments=\count484
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count485
+\nofMPsegments=\count485
+\nofMParguments=\count486
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count487
 \MPscratchDim=\dimen268
-\MPnumerator=\count486
-\makeMPintoPDFobject=\count487
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count488
+\makeMPintoPDFobject=\count489
+\everyMPtoPDFconversion=\toks40
 )
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -991,7 +1005,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 84.
+Package hyperref Info: Link coloring OFF on input line 89.
  (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.out)
 (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.out)
 \@outlinefile=\write4
@@ -1007,7 +1021,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 84.
+or `english'. on input line 89.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1058,11 +1072,11 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.bbl)
-Package biblatex Info: Reference section=0 on input line 84.
-Package biblatex Info: Reference segment=0 on input line 84.
+Package biblatex Info: Reference section=0 on input line 89.
+Package biblatex Info: Reference segment=0 on input line 89.
 
 (sections/general/titlepage.tex
-<images/logo_ipp.png, id=131, 270.51062pt x 270.00874pt>
+<images/logo_ipp.png, id=139, 270.51062pt x 270.00874pt>
 File: images/logo_ipp.png Graphic file (type png)
 <use images/logo_ipp.png>
 Package pdftex.def Info: images/logo_ipp.png  used on input line 9.
@@ -1241,7 +1255,7 @@ sam-ple as $\OML/cmm/m/it/12 Y[] \OMS/cmsy/m/n/12 ^^X B\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W[]e[] \OT1/cmr/m/n/12 +
  []
 
-<images/samples_gmm_lc.png, id=249, 419.5675pt x 343.78438pt>
+<images/samples_gmm_lc.png, id=261, 419.5675pt x 343.78438pt>
 File: images/samples_gmm_lc.png Graphic file (type png)
 <use images/samples_gmm_lc.png>
 Package pdftex.def Info: images/samples_gmm_lc.png  used on input line 83.
@@ -1255,7 +1269,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
-<images/samples_gmm_lc_badconditioning.png, id=255, 420.57124pt x 341.275pt>
+<images/samples_gmm_lc_badconditioning.png, id=267, 420.57124pt x 341.275pt>
 File: images/samples_gmm_lc_badconditioning.png Graphic file (type png)
 <use images/samples_gmm_lc_badconditioning.png>
 Package pdftex.def Info: images/samples_gmm_lc_badconditioning.png  used on inp
@@ -1346,7 +1360,7 @@ l.64         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/samples_dirichlet_lc.png, id=274, 411.5375pt x 320.19624pt>
+<images/samples_dirichlet_lc.png, id=286, 411.5375pt x 320.19624pt>
 File: images/samples_dirichlet_lc.png Graphic file (type png)
 <use images/samples_dirichlet_lc.png>
 Package pdftex.def Info: images/samples_dirichlet_lc.png  used on input line 75
@@ -1409,7 +1423,7 @@ l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/Reparameterized_Variational_Autoencoder.png, id=293, 803.0pt x 333.245p
+<images/Reparameterized_Variational_Autoencoder.png, id=305, 803.0pt x 333.245p
 t>
 File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
 )
@@ -1436,13 +1450,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12 <./images/Reparameterized_Variational_Autoencoder.png>]
 (sections/variational_methods/vq_vae.tex
-<images/vq_vae_architecture.png, id=306, 839.63687pt x 178.16562pt>
+<images/vq_vae_architecture.png, id=318, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
 Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
 
 (pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
-<images/vq_vae_quantization.png, id=308, 815.54688pt x 330.73563pt>
+<images/vq_vae_quantization.png, id=320, 815.54688pt x 330.73563pt>
 File: images/vq_vae_quantization.png Graphic file (type png)
 <use images/vq_vae_quantization.png>
 Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
@@ -1524,7 +1538,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15] (sections/variational_methods/pixel_cnn.tex
-<images/masked_convolution_pixel_cnn.png, id=331, 214.8025pt x 176.66pt>
+<images/masked_convolution_pixel_cnn.png, id=343, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
 Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
@@ -1550,13 +1564,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [17] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
 (sections/microbiota_analysis/microbiota_dataset.tex
-<images/abundance_tree_phylogenetic.png, id=342, 95.85812pt x 134.00063pt>
+<images/abundance_tree_phylogenetic.png, id=354, 95.85812pt x 134.00063pt>
 File: images/abundance_tree_phylogenetic.png Graphic file (type png)
 <use images/abundance_tree_phylogenetic.png>
 Package pdftex.def Info: images/abundance_tree_phylogenetic.png  used on input 
 line 7.
 (pdftex.def)             Requested size: 95.85788pt x 134.00027pt.
-<images/tree_to_image.png, id=345, 310.66063pt x 137.51375pt>
+<images/tree_to_image.png, id=357, 310.66063pt x 137.51375pt>
 File: images/tree_to_image.png Graphic file (type png)
 <use images/tree_to_image.png>
 Package pdftex.def Info: images/tree_to_image.png  used on input line 17.
@@ -1614,179 +1628,52 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [19]
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:50: Package amsmath Error: Erroneous nesting of equation structures;
+ior.tex:51: Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.50     \end{align}
+l.51     \end{align}
                     
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:67: Package amsmath Error: Erroneous nesting of equation structures;
+ior.tex:64: Package amsmath Error: Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.67 \end{align}
+l.64 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[20]
-
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:79: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.79 \begin{equation}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:83: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83     \end{align}
-                    
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:85: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.85 \end{equation}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (6.12175pt too wide) detected at line 85
-[][][][][][]
- []
-
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:85: LaTeX Error: \begin{document} ended by \end{equation}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.85 \end{equation}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:85: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.85 \end{equation}
-                   
-Things are pretty mixed up, but I think the worst is over.
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:87: Missing $ inserted.
+ior.tex:79: Missing $ inserted.
 <inserted text> 
                 $
-l.87 
-     
+l.79 }
+      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:87: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.87 
-     
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:93: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.93 \end{align}
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:102: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.102 \end{align}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (22.32045pt too wide) detected at line 103
-[][]
- []
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:111: Missing $ inserted.
-<inserted text> 
-                $
-l.111 }
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:111: Misplaced alignment tab character &.
+ior.tex:79: Misplaced alignment tab character &.
 <argument> ...tyle \left (\pi _k^{(l)}\right )^* &
-                                                  = \frac {\sum _{i=1}^n \ma...
-l.111 }
-       
+                                                  = \frac {\sum _{i=1}^n \no...
+l.79 }
+      
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1795,11 +1682,11 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:111: Extra }, or forgotten $.
+ior.tex:79: Extra }, or forgotten $.
 \fbox  ...x {\color@begingroup \kern \fboxsep {#1}
                                                   \kern \fboxsep \color@endg...
-l.111 }
-       
+l.79 }
+      
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -1807,27 +1694,35 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:111: Missing $ inserted.
+ior.tex:79: Missing $ inserted.
 <inserted text> 
                 $
-l.111 }
-       
+l.79 }
+      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
-ior.tex:111: Missing } inserted.
+ior.tex:79: Missing } inserted.
 <inserted text> 
                 }
-l.111 }
-       
+l.79 }
+      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20])
 (sections/microbiota_analysis/abundance_generation/markovian_parenting_abundanc
 e.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--12
@@ -1835,33 +1730,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--12
  []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[21]
 Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
 
 
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:48: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.48 \end{align}
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1869,144 +1742,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:56: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.56 \begin{equation*}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:59: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.59     \end{align}
-                    
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:61: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.61 \end{equation*}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:61: LaTeX Error: \begin{document} ended by \end{equation*}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.61 \end{equation*}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:61: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.61 \end{equation*}
-                    
-Things are pretty mixed up, but I think the worst is over.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:63: Missing $ inserted.
-<inserted text> 
-                $
-l.63 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:63: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.63 
-     
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:73: Package amsmath Error: Erroneous nesting of equation structures;
-(amsmath)                trying to recover with `aligned'.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.73 \end{align}
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:88: Missing $ inserted.
-<inserted text> 
-                $
-l.88 }
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:88: Extra }, or forgotten $.
-\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
-                                                  \kern \fboxsep \color@endg...
-l.88 }
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:88: Missing $ inserted.
-<inserted text> 
-                $
-l.88 }
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:88: Missing } inserted.
-<inserted text> 
-                }
-l.88 }
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-)
+[21])
 
 sections/microbiota_analysis/simple_generative_model.tex:40: Package amsmath Er
 ror: Erroneous nesting of equation structures;
@@ -2022,6 +1758,11 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
+
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -2029,10 +1770,341 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 43--46
+[22])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23] (sections/maths/propositions_and_proofs.tex
+sections/maths/propositions_and_proofs.tex:16: Missing delimiter (. inserted).
+<to be read again> 
+                   $
+l.16 ...ht\} \sim \mathcal{B}(\pi_k^{(l)}) \right$
+                                                  
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+sections/maths/propositions_and_proofs.tex:16: Extra \right.
+<to be read again> 
+                   $
+l.16 ...ht\} \sim \mathcal{B}(\pi_k^{(l)}) \right$
+                                                  
+I'm ignoring a \right that had no matching \left.
+
+
+sections/maths/propositions_and_proofs.tex:35: Package amsmath Error: Erroneous
+ nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/propositions_and_proofs.tex:42: LaTeX Error: There's no line her
+e to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42     R
+          ecall the context of \ref{lemma:bernoulli_tree_prior}. \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+sections/maths/propositions_and_proofs.tex:46: LaTeX Error: Bad math environmen
+t delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46     \begin{equation}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+sections/maths/propositions_and_proofs.tex:50: Package amsmath Error: Erroneous
+ nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50         \end{align}
+                        
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/maths/propositions_and_proofs.tex:52: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.52     \end{equation}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+
+sections/maths/propositions_and_proofs.tex:52: LaTeX Error: \begin{lemma} on in
+put line 39 ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52     \end{equation}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+sections/maths/propositions_and_proofs.tex:54: Missing $ inserted.
+<inserted text> 
+                $
+l.54 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/maths/propositions_and_proofs.tex:54: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.54 
+     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+sections/maths/propositions_and_proofs.tex:59: LaTeX Error: \begin{document} en
+ded by \end{lemma}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 \end{lemma}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+sections/maths/propositions_and_proofs.tex:59: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.59 \end{lemma}
+                
+Things are pretty mixed up, but I think the worst is over.
+
+
+sections/maths/propositions_and_proofs.tex:67: Package amsmath Error: Erroneous
+ nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/propositions_and_proofs.tex:76: Package amsmath Error: Erroneous
+ nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/propositions_and_proofs.tex:85: LaTeX Error: There's no line her
+e to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85     L
+          et $X \sim f(x)$ a random variable with density $f$. \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+sections/maths/propositions_and_proofs.tex:98: Package amsmath Error: Erroneous
+ nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     \end{align}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/propositions_and_proofs.tex:106: LaTeX Error: There's no line he
+re to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106     L
+           et $X = (X^{(1)}, \dots, X^{(L)})$ the abundance matrix of a tree...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+
+sections/maths/propositions_and_proofs.tex:141: Package amsmath Error: Erroneou
+s nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/propositions_and_proofs.tex:148: LaTeX Error: There's no line he
+re to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148     C
+           onsider the context of lemma \ref{lemma:abundance_posterior_berno...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--154
 
  []
+
+sections/maths/propositions_and_proofs.tex:160: Missing delimiter (. inserted).
+<to be read again> 
+                   \leftarrow 
+l.160     \alpha_{k,v}^{(l)}\right \leftarrow
+                                             
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+sections/maths/propositions_and_proofs.tex:160: Extra \right.
+<to be read again> 
+                   \leftarrow 
+l.160     \alpha_{k,v}^{(l)}\right \leftarrow
+                                             
+I'm ignoring a \right that had no matching \left.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+sections/maths/propositions_and_proofs.tex:169: Package amsmath Error: Erroneou
+s nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169     \end{align*}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/propositions_and_proofs.tex:178: Package amsmath Error: Erroneou
+s nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (50.04999pt too wide) detected at line 179
+[][]
+ []
+
+sections/maths/propositions_and_proofs.tex:190: Extra \right.
+l.190 ...mathcal{V}(\alpha_k^{(l)}, T_i)}} \right)
+                                                  
+I'm ignoring a \right that had no matching \left.
 
 )
 
@@ -2043,7 +2115,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24] (sections/general/bibpage.tex)
+[27] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -2058,21 +2130,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[28] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A489F7BECBEBECB062986FA171226854;5649.
+(rerunfilecheck)             Checksum: A227E0EFF0D5DA92335C6BE18E5CE587;5889.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26818 strings out of 476315
- 527770 string characters out of 5787197
- 1872068 words of memory out of 5000000
- 46797 multiletter control sequences out of 15000+600000
- 529414 words of font info for 74 fonts, out of 8000000 for 9000
+ 26955 strings out of 476315
+ 530045 string characters out of 5787197
+ 1871068 words of memory out of 5000000
+ 46911 multiletter control sequences out of 15000+600000
+ 533200 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,16n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,18n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
 1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -2092,22 +2164,26 @@ Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk
 s/cm/cmex10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cmextra/cmex7.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/font
 s/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/frigi/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/frigi/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/frigi/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/fr
-igi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.p
-fb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/frigi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/frigi/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/f
+rigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
+/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr6.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/frigi/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/frigi/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/frigi/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Us
+ers/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (26 pages, 1518272 bytes).
+t\main.pdf (29 pages, 1562773 bytes).
 PDF statistics:
- 886 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
- 307 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 945 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 323 words of extra memory for PDF output out of 10000 (max. 10000000)
 

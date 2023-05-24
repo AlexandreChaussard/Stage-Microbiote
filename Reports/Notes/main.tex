@@ -15,6 +15,11 @@
 \usepackage{dirtree}
 \usepackage{algorithmic}
 \usepackage{algorithm}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
     linktoc=all,     %set to all if you want both sections and subsections linked
@@ -109,6 +114,9 @@
 \input{sections/microbiota_analysis/microbiota_dataset.tex}
 \input{sections/microbiota_analysis/simple_generative_model.tex}
 % \input{sections/microbiota_analysis/vq_tree_model.tex}
+
+\newpage
+\input{sections/maths/propositions_and_proofs.tex}
 
 \newpage
 \input{sections/general/bibpage.tex}

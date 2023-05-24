@@ -15,6 +15,7 @@ Before describing the generation method, let us introduce the framework of it:
     We assume that we have no missing data, so to say, all the leaves the tree are reaching the precision layer $L$.
     \item Describe a given layer $l$ as a discrete vector in $\{0, 1\}^{U}$.
     To each possible node at layer $l$ we can associate an index $k$ so that we denote the nodes by $u_k^{(l)} \in \{0, 1\}$.
+    $$T^{(l)} = (u_1^{(l)}, \dots, u_{K_l}^{(l)})$$
     A node $u_k^{(l)}$ is activated if it is valued as $1$ in $T^{(l)}$, otherwise it is not.
     \item We introduce the function $\nodeparent$ that takes a node $u_k^{(l)}$ as input, and output the parent of the node if it is well defined in $T$,
           otherwise it outputs $0$ as if the parent was not activated:
@@ -33,7 +34,7 @@ Now that the framework is clear and defined, we describe the generative process:
     \item The root node of the tree is deterministic, since all trees begin to the same root ancestor.
     Hence, we have:
     $$
-    p(T^{(1)}) = \mathds{1}_{T^{(1)} = e_1}
+    p(T^{(1)}) = \delta_{e_1}(T^{(1)})
     $$
 
     \item For all $l \geq 2, k \in \{1, \dots, U\}$, we assume that the activation of the node $u_k^{(l)}$
@@ -46,7 +47,7 @@ Now that the framework is clear and defined, we describe the generative process:
     \item For now, we make the major assumption that all nodes are independent within a given layer conditionally to their parents, and they only depend on their respective parent, so that:
     $$
     \begin{align}
-        p\left(u_1^{(l)}, \dots, u_K^{(l)} | \nodeparent(u_1^{(l)}), \dots, \nodeparent(u_K^{(l)}) \right) &= \prod_{k=1}^{K} p\left(u_k^{(l)} | \nodeparent(u_k^{(l)})\right)
+        p\left(u_1^{(l)}, \dots, u_{K_l}^{(l)} | \nodeparent(u_1^{(l)}), \dots, \nodeparent(u_{K_l}^{(l)}) \right) &= \prod_{k=1}^{K_l} p\left(u_k^{(l)} | \nodeparent(u_k^{(l)})\right)
     \end{align}
     $$
 
@@ -56,14 +57,10 @@ Now that the framework is clear and defined, we describe the generative process:
     $$
 \end{itemize}
 
-Noting these framework properties, we can describe the distribution of such prior model on the trees:
+Noting these framework properties, we can describe the log-likehood of such prior model on the trees using lemma \ref{lemma:bernoulli_tree_prior}:
 $$
 \begin{align}
-    p_{\theta}(T) &= p_{\theta}\left(T^{(1)}, \dots, T^{(L)}\right) \\
-    &= p\left(T^{(1)}\right) \prod_{l=1}^{L-1} p_{\theta}\left(T^{(l+1)}|T^{(l)}\right) \\
-    &= \mathds{1}_{T^{(1)} = e_1} \prod_{l=1}^{L-1} p\left(u_1^{(l+1)}, \dots, u_K^{(l+1)} | \nodeparent(u_1^{(l+1)}), \dots, \nodeparent(u_K^{(l+1)})\right) \\
-    &= \mathds{1}_{T^{(1)} = e_1} \prod_{l=1}^{L-1} \prod_{k=1}^K p\left(u_k^{(l+1)} | \nodeparent(u_k^{(l+1)}) \right) \\
-    &= \mathds{1}_{T^{(1)} = e_1} \prod_{l=1}^{L-1} \prod_{k=1}^K \underbrace{\nodeparent(u_k^{(l+1)})}_{\text{$1$ if node has parent}} \left(\underbrace{u_k^{(l+1)}}_{\text{$1$ if activated}} \pi_k^{(l+1)} + (1-u_k^{(l+1)}) (1-\pi_k^{(l+1)}) \right)
+    p_{\theta}(T_1, \dots, T_n) = \sum_{i=1}^n \sum_{i=1}^{L-1} \sum_{k=1}^{K_l} \nodeparent(u_k^{(l+1)}) \left[u_k^{(l+1)} \log \pi_k^{(l+1)} + (1 - u_k^{(l+1)}) \log (1 - \pi_k^{(l+1)})  \right]
 \end{align}
 $$
 
@@ -73,41 +70,12 @@ will only be impacted by the trees which have the node $u_k^{(l)}$ in any branch
 
 % Optimization
 Now that the prior of the trees is well defined, we would like to compute an optimal value of
-$\pi^{(l)} = \left(\pi_1^{(l)}, \dots, \pi_{U}^{(l)}\right)$ in the sense of the maximum of likelihood. \\
-The maximum log-likelihood objective for $\pi_k^{(l)}$ over our microbiota dataset can then be written as:
-$$
-\begin{equation}
-    \begin{align}
-        \left(\pi_j^{(m)}\right)^* = arg \max_{\pi_j^{(m)}} \quad & \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \sum_{l=1}^{L-1} \sum_{k=1}^K \nodeparent(u_{k,i}^{(l+1)}) \left[u_{k,i}^{(l+1)} \log \pi_{k}^{(l+1)} + (1 - u_{k,i}^{(l+1)}) \log (1 - \pi_k^{(l+1)}) \right] \\
-        \textrm{s.t.} \quad & \forall k, \pi_{k}^{(L)} \in [0, 1] \\
-    \end{align}
-    \label{eq:prior_transition_objective}
-\end{equation}
-$$
-
-Then, simply by deriving the log-likelihood we obtain:
-$$
-\begin{align}
-    \partial_{\pi_j^{(m)}} \log p(T_1, \dots, T_n) &= \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) \left[ u_{j,i}^{(m)} \frac{1}{\pi_j^{(m)}} + (1 - u_{j,i}^{(m)}) \frac{-1}{1-\pi_j^{(m)}}\right] \\
-                                                    &= \frac{1}{\pi_j^{(m)}} \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) u_{j,i}^{(m)} - \frac{1}{1 - \pi_j^{(m)}} \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) (1 - u_{j,i}^{(m)})
-\end{align}
-$$
-
-Looking for $0$ valued gradient, we end up with:
-$$
-\begin{align}
-    (1 - \pi_j^{(m)}) \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) u_{j,i}^{(m)} - \pi_j^{(m)} \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) (1 - u_{j,i}^{(m)}) &= 0 \\
-    \pi_j^{(m)} \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) &= \sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) u_{j,i}^{(m)} \\
-    \pi_j^{(m)} &= \frac{\sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)}) u_{j,i}^{(m)}}{\sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{j,i}^{(m)})}
-\end{align}
-$$
-
-Since the previous quantity respects the constraint to be in $[0,1]$,
-we obtain the optimal activation probability for every bacteria as:
+$\pi^{(l)} = \left(\pi_1^{(l)}, \dots, \pi_{U}^{(l)}\right)$ in the sense of the maximum of likelihood.
+Using lemma \ref{lemma:mle_bernoulli_tree_prior}, we obtain
 $$
 \fbox{
     \displaystyle
-    \left(\pi_k^{(l)}\right)^* &= \frac{\sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{k,i}^{(l)}) u_{k,i}^{(l)}}{\sum_{i=1}^n \mathds{1}_{T_i^{(1)} = e_1} \nodeparent(u_{k,i}^{(l)})}
+    \left(\pi_k^{(l)}\right)^* &= \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(l)}) u_{k,i}^{(l)}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(l)})}
 }
 $$
 
