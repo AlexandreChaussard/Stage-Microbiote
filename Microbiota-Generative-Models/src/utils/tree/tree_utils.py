@@ -63,7 +63,7 @@ class Tree:
                 nodes.append(node)
         return nodes
 
-    def plot(self, axs=None):
+    def plot(self, shrinking_param_depth=1, shrinking_param_children=1, axs=None):
         if axs is None:
             fig, axs = plt.subplots()
             axs.set_yticks([])
@@ -81,7 +81,9 @@ class Tree:
 
                 width = len(node.children)
                 if width > 1:
-                    pos = np.linspace(-0.3 + node.depth / 10, 0.3 - node.depth / 10, width)
+                    pos = np.linspace(
+                        node.depth / shrinking_param_depth + len(node.children) / shrinking_param_children,
+                        -node.depth / shrinking_param_depth - len(node.children) / shrinking_param_children, width)
                     pos = node.graph_position[0] - pos
                 else:
                     pos = [node.graph_position[0]]
@@ -136,13 +138,13 @@ def abundance_example_usage():
             [0, 0, 0, 0, 0, 0, 0],  # node 6
         ],
         node_values=[
-            1,      # root value is always 1
-            0.6,    # node 1 is 0.6
-            0.4,    # node 2 is 0.4
-            0.6,    # node 3 must be 0.6 since it's the only child of 1
-            0.2,    # node 4 is a child of 2, and is valued to 0.2
-            0.1,    # node 5 is a child of 2, and is valued to 0.1
-            0.1,    # node 6 is a child of 2, and is valued to 0.1
+            1,  # root value is always 1
+            0.6,  # node 1 is 0.6
+            0.4,  # node 2 is 0.4
+            0.6,  # node 3 must be 0.6 since it's the only child of 1
+            0.2,  # node 4 is a child of 2, and is valued to 0.2
+            0.1,  # node 5 is a child of 2, and is valued to 0.1
+            0.1,  # node 6 is a child of 2, and is valued to 0.1
         ]
     )
 

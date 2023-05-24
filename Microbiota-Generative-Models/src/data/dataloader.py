@@ -4,6 +4,9 @@ import numpy as np
 import os
 import pandas as pd
 
+import matplotlib.pyplot as plt
+from src.utils import AbundanceTree, Tree
+
 warnings.filterwarnings("ignore")
 
 
@@ -86,3 +89,81 @@ def microbiota_features_to_image(precision_max=6, path='./'):
             df = get_NIPICOL(precision, path)
 
     return df_imgs
+
+
+def microbiota_abundance_trees(precision_max=6, path='.'):
+    # First, we fetch the individuals id
+    df = get_NIPICOL(0, path)
+    individuals = df.columns
+
+    # This maps an index to a bacteria name
+    mapping_index = {}
+    # This maps a bacteria to its parent
+    mapping_parent = {}
+    # For each individual, we store the value of the nodes
+    node_abundance = {}
+    # Current index being explored while building the tree
+    current_index = 0
+    # List the current possible parents of the bacteria
+    current_parents = []
+
+    # We loop over the precisions, building up the general tree from the root to the leaves
+    for precision in range(0, precision_max + 1):
+        # We fetch the list of the bacteria at the precision layer
+        df = get_NIPICOL(precision, path)
+        # We create a list of future parents to replace the current ones
+        future_parents = []
+        for bacteria_name in df.index:
+            # We prepare the future prents list by adding the current layer
+            future_parents.append(bacteria_name)
+            # We register the bacteria in both maps of index and parents
+            if bacteria_name not in mapping_index.values():
+                mapping_index[bacteria_name] = current_index
+                # We fetch the parent of the node
+                for parent in current_parents:
+                    if parent in bacteria_name:
+                        mapping_parent[current_index] = mapping_index[parent]
+                        break
+                # We update the index
+                current_index += 1
+
+            # We fetch the bacteria index
+            bacteria_index = mapping_index[bacteria_name]
+            # We store the bacteria abundance for every individual
+            node_abundance[bacteria_index] = df.loc[bacteria_name]
+
+        # We update the current parents for the next layer
+        current_parents = future_parents
+
+    # We look for the size of the adjacent matrix
+    size = len(mapping_index)
+
+    # Using the mapping, we can now build the tree
+    adjacent_matrix = np.zeros((size, size))
+    # We run through the parents to find the children and build the adjacent matrix row after row
+    for parent_index in mapping_parent.values():
+        # For each parent, we gather the children indexes to build the adjacent vector of that node
+        children_index = []
+        for node_index in mapping_parent.keys():
+            if mapping_parent[node_index] == parent_index:
+                children_index.append(node_index)
+        # This is not yet the adjacent row, since it's something like [1, 6, 12] instead of [0, 1, 0, 0, ...] vector
+        # But we need to gather these to create the full matrix after that
+        adjacent_matrix[parent_index][children_index] = 1
+
+    # Now we can build the global tree architecture
+    global_tree = Tree(adjancent_matrix=adjacent_matrix)
+
+    # Then, for each individual, we build a corresponding abundance tree
+    abundance_trees = {}
+    for i, individual in enumerate(individuals):
+        # We roam through each column of the abundance which corresponds to a given individual
+        # This is the vector of abundance for a given individual for each bacteria, identified by their index
+        abundance_values = np.zeros(len(node_abundance))
+        for abundance_index, abundance_values_per_indiv in node_abundance.items():
+            abundance_values[abundance_index] = abundance_values_per_indiv[i]
+
+        # Now we can build the abundance tree
+        abundance_trees[individual] = AbundanceTree(adjacent_matrix, abundance_values)
+
+    return global_tree, abundance_trees
