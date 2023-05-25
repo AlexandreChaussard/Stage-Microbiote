@@ -1,1 +1,2 @@
 from src.model.tree_generation import BernoulliTreePrior, ActivableNode, generate_bernoulli_tree
+from src.model.abundance_generation import DirichletAbundanceTreePosterior

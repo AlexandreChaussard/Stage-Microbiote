@@ -157,7 +157,8 @@
     $,
 
     $$
-    \alpha_{k,v}^{(l)}\right \leftarrow
+    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right) \right)
     $$
 \end{lemma}
 
@@ -188,5 +189,12 @@
     $$
     \psi\left(\alpha_{k,v}^{(l)}\right) = \frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
                                                 {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right)
+    $$
+
+    Using the reference trick from \cite{dirichlet_digamma_trick}, one can compute an iterative fixed point algorithm to solve the previous equation,
+    leading to:
+    $$
+    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right) \right)
     $$
 \end{proof}

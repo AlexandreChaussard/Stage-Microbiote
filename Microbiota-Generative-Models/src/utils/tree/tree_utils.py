@@ -28,6 +28,12 @@ class Node:
     def countChildren(self):
         return len(self.children)
 
+    def countNonZeroChilren(self):
+        count = 0
+        for child in self.children:
+            count += (child.value > 0) * 1
+        return count
+
 
 class Tree:
 
@@ -135,12 +141,13 @@ class Tree:
 
 class AbundanceTree(Tree):
 
-    def __init__(self, adjancent_matrix, node_values):
+    def __init__(self, adjancent_matrix, abundance_values):
         super().__init__(adjancent_matrix)
+        self.abundance_values = abundance_values
         for node in self.nodes:
             value = (node.index == 0) * 1
-            if node.index in node_values:
-                value = node_values[node.index]
+            if node.index in abundance_values:
+                value = abundance_values[node.index]
             node.value = value
 
 
@@ -170,7 +177,7 @@ def abundance_example_usage():
             [0, 0, 0, 0, 0, 0, 0],  # node 5
             [0, 0, 0, 0, 0, 0, 0],  # node 6
         ],
-        node_values={
+        abundance_values={
             0: 1,  # root value is always 1
             1: 0.6,  # node 1 is 0.6
             2: 0.4,  # node 2 is 0.4

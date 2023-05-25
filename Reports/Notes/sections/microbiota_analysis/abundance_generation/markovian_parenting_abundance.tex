@@ -50,3 +50,12 @@ p(X|T) = \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} \left(
 $$
 
 % Optimization
+One can then compute a maximum likelihood estimator of each $\alpha_k^{(l)}$ using a fixed point iterative algorithm that is described
+in the appendix as lemma \ref{MLE_abundance_bernoulli_tree}:
+$$
+\fbox{
+    \displaystyle
+    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right) \right)
+}
+$$

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  24 MAY 2023 16:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  25 MAY 2023 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1742,7 +1742,58 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21])
+[21]
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:60: Missing $ inserted.
+<inserted text> 
+                $
+l.60 }
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:60: Extra \right.
+<argument> ...a _k^{(l)}, T_i)}} \right ) \right )
+                                                   
+l.60 }
+      
+I'm ignoring a \right that had no matching \left.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:60: Extra }, or forgotten $.
+\fbox  ...x {\color@begingroup \kern \fboxsep {#1}
+                                                  \kern \fboxsep \color@endg...
+l.60 }
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:60: Missing $ inserted.
+<inserted text> 
+                $
+l.60 }
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
+.tex:60: Missing } inserted.
+<inserted text> 
+                }
+l.60 }
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+)
 
 sections/microbiota_analysis/simple_generative_model.tex:40: Package amsmath Er
 ror: Erroneous nesting of equation structures;
@@ -2040,23 +2091,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--154
 
  []
 
-sections/maths/propositions_and_proofs.tex:160: Missing delimiter (. inserted).
-<to be read again> 
-                   \leftarrow 
-l.160     \alpha_{k,v}^{(l)}\right \leftarrow
-                                             
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-sections/maths/propositions_and_proofs.tex:160: Extra \right.
-<to be read again> 
-                   \leftarrow 
-l.160     \alpha_{k,v}^{(l)}\right \leftarrow
-                                             
+sections/maths/propositions_and_proofs.tex:161: Extra \right.
+l.161 ...V}(\alpha_k^{(l)}, T_i)}} \right) \right)
+                                                  
 I'm ignoring a \right that had no matching \left.
 
 
@@ -2069,7 +2106,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26]
 
-sections/maths/propositions_and_proofs.tex:169: Package amsmath Error: Erroneou
+sections/maths/propositions_and_proofs.tex:170: Package amsmath Error: Erroneou
 s nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -2077,13 +2114,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.169     \end{align*}
+l.170     \end{align*}
                       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/maths/propositions_and_proofs.tex:178: Package amsmath Error: Erroneou
+sections/maths/propositions_and_proofs.tex:179: Package amsmath Error: Erroneou
 s nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -2091,18 +2128,23 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178     \end{align}
+l.179     \end{align}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (50.04999pt too wide) detected at line 179
+Overfull \hbox (50.04999pt too wide) detected at line 180
 [][]
  []
 
-sections/maths/propositions_and_proofs.tex:190: Extra \right.
-l.190 ...mathcal{V}(\alpha_k^{(l)}, T_i)}} \right)
+sections/maths/propositions_and_proofs.tex:191: Extra \right.
+l.191 ...mathcal{V}(\alpha_k^{(l)}, T_i)}} \right)
+                                                  
+I'm ignoring a \right that had no matching \left.
+
+sections/maths/propositions_and_proofs.tex:198: Extra \right.
+l.198 ...V}(\alpha_k^{(l)}, T_i)}} \right) \right)
                                                   
 I'm ignoring a \right that had no matching \left.
 
@@ -2181,9 +2223,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Us
 ers/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (29 pages, 1562773 bytes).
+t\main.pdf (29 pages, 1564517 bytes).
 PDF statistics:
- 945 PDF objects out of 1000 (max. 8388607)
+ 947 PDF objects out of 1000 (max. 8388607)
  93 named destinations out of 1000 (max. 500000)
  323 words of extra memory for PDF output out of 10000 (max. 10000000)
 
