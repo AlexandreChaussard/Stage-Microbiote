@@ -152,14 +152,14 @@ def microbiota_abundance_trees(precision_max=6, path='.'):
         adjacent_matrix[parent_index][children_index] = 1
 
     # Now we can build the global tree architecture
-    global_tree = Tree(adjancent_matrix=adjacent_matrix)
+    global_tree = Tree(adjacent_matrix=adjacent_matrix)
 
     # Then, for each individual, we build a corresponding abundance tree
     abundance_trees = {}
     for i, individual in enumerate(individuals):
         # We roam through each column of the abundance which corresponds to a given individual
         # This is the vector of abundance for a given individual for each bacteria, identified by their index
-        abundance_values = np.zeros(len(node_abundance))
+        abundance_values = {}
         for abundance_index, abundance_values_per_indiv in node_abundance.items():
             abundance_values[abundance_index] = abundance_values_per_indiv[i]
 

@@ -1,1 +1,1 @@
-from src.model.tree_generation import BernoulliTree, ActivableNode, generate_bernoulli_tree
+from src.model.tree_generation import BernoulliTreePrior, ActivableNode, generate_bernoulli_tree
