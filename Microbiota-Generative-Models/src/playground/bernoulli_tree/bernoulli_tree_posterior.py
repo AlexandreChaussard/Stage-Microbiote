@@ -2,7 +2,7 @@ from src.data import microbiota_abundance_trees
 from src.model import DirichletAbundanceTreePosterior, BernoulliTreePrior
 import matplotlib.pyplot as plt
 
-global_tree, abundance_trees = microbiota_abundance_trees(precision_max=3, path='../data')
+global_tree, abundance_trees = microbiota_abundance_trees(precision_max=3, path='../../data')
 trees = abundance_trees.values()
 
 prior = BernoulliTreePrior(global_tree.adjacent_matrix, activation_probabilities={})

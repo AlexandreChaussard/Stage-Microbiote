@@ -140,10 +140,6 @@ class BernoulliTreePrior(Tree):
                     parent_presence = True
                     if u_k_i_l.parent is not None:
                         parent_presence = u_k_i_l.parent.value > 0
-                    if not parent_presence:
-                        if u_k_i_l.value != 0:
-                            print(u_k_i_l.index, u_k_i_l.parent.index)
-                        assert(u_k_i_l.value == 0)
 
                     # We add that up to pi_k_l before normalizing by the amount of trees that possess the node u_k_l
                     pi_k_l += (u_k_i_l.value > 0) * parent_presence * 1

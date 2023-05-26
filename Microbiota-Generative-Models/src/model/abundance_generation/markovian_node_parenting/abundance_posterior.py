@@ -11,12 +11,14 @@ class DirichletAbundanceTreePosterior:
         self.global_tree = global_tree
         self.dirichlet_params = dirichlet_parameters
         self.seed = seed
+        np.random.seed(seed)
 
         for node in self.global_tree.nodes:
             n_children = len(node.children)
             if node.index not in dirichlet_parameters or len(dirichlet_parameters[node.index]) != n_children:
-                alpha_k_l = np.abs(np.random.random(n_children))
-                dirichlet_parameters[node.index] = alpha_k_l
+                if n_children > 1:
+                    alpha_k_l = np.abs(np.random.random(n_children))
+                    dirichlet_parameters[node.index] = alpha_k_l
 
     def sample_abundance_tree(self, tree):
 
@@ -61,6 +63,11 @@ class DirichletAbundanceTreePosterior:
 
                         recursive_abundance_sampling(child)
 
+            elif node.hasChildren() and node.value == 0:
+                for child in node.children:
+                    child.value = 0
+                    recursive_abundance_sampling(child)
+
         recursive_abundance_sampling(tree.root)
 
         return tree
@@ -69,6 +76,9 @@ class DirichletAbundanceTreePosterior:
         ll = 0
         for T_i in trees:
             for node in T_i.nodes:
+
+                if node.value == 0:
+                    continue
 
                 countActive = node.countNonZeroChilren()
 
@@ -83,7 +93,12 @@ class DirichletAbundanceTreePosterior:
                             values.append(child.value / x_k_i_l)
                             mask.append(i)
 
-                    ll += dirichlet.pdf(values, alpha_k_l[mask])
+                    if (np.abs(np.sum(values, 0) - 1.0) > 10e-10).any():
+                        print("Issue at node", node.index)
+                        T_i.plot()
+                        plt.show()
+
+                    ll += np.log(dirichlet.pdf(values, alpha_k_l[mask])) / len(trees)
 
         return ll
 
@@ -118,7 +133,7 @@ class DirichletAbundanceTreePosterior:
                                 node_k_i_l = n
                                 break
                         # filter out the trees that don't contain the node
-                        if node_k_i_l is None:
+                        if node_k_i_l is None or node_k_i_l.value == 0:
                             continue
 
                         # fetching the current value of that sample
@@ -179,8 +194,8 @@ def example_generation():
         1: [5, 8],
         2: [3, 8, 20]
     }
-    dirichlet_tree = DirichletAbundanceTree(abundance_tree, dirichlet_parameters=alpha_list)
-    tree = dirichlet_tree.sample_abundance_tree()
+    dirichlet_tree = DirichletAbundanceTreePosterior(abundance_tree, dirichlet_parameters=alpha_list)
+    tree = dirichlet_tree.sample_abundance_tree(abundance_tree)
 
     tree.plot()
     plt.show()
