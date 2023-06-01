@@ -2,51 +2,51 @@
 
 \subsection{Microbiota analysis}
 
-\begin{lemma}(Bernoulli tree prior)
-    \label{lemma:bernoulli_tree_prior}
+\begin{proposition}(Bernoulli tree prior)
+    \label{proposition:bernoulli_tree_prior}
     \\
     Let $T = (T^{(1)}, \dots, T^{(L)})$ a random tree of depth $L$. \\
-    For all $l \in \{1, \dots, L\}$, denote $T^{(l)} = (u_1^{(l)}, \dots, u_{K_l}^{(l)})$ the nodes at layer $l$,
-    such that $u_k^{(l)} \in \{0, 1\}$ denotes whether or not the node is activated (1 if activated). \\
-    Denote $\mathcal{P}(u_k^{(l)})$ the parent of the node $u_k^{(l)}$ that outputs $1$ if the parent exists and is activated, $0$ otherwise. \\
+    For all $\ell \in \{1, \dots, L\}$, denote $T^{(\ell)} = (u_1^{(\ell)}, \dots, u_{K_{\ell}}^{(\ell)})$ the nodes at layer $\ell$,
+    such that $u_k^{(\ell)} \in \{0, 1\}$ denotes whether or not the node is activated (1 if activated). \\
+    Denote $\mathcal{P}(u_k^{(\ell)})$ the parent of the node $u_k^{(\ell)}$ that outputs $1$ if the parent exists and is activated, $0$ otherwise. \\
     Assume that:
     \begin{itemize}
         \item $p(T^{(1)}) = \delta_{e_1}(T^{(1)})$
-        \item $\forall l \geq 2, p(T^{(l+1)} | T^{(1:l)}) = p(T^{(l+1)} | T^{(l)})$
-        \item $\forall l \geq 2, k \in \{1, \dots, K_l\}, u_k^{(l)} | \left\{\mathcal{P}(u_k^{(l)}) = 1 \right\} \sim \mathcal{B}(\pi_k^{(l)}) \right$
-        \item $\displaystyle p\left(u_1^{(l)}, \dots, u_{K_l}^{(l)} | \mathcal{P}(u_1^{(l)}), \mathcal{P}(u_{K_l}^{(l)})\right) = \prod_{k=1}^{K_l} p\left(u_k^{(l)} | \mathcal{P}(u_k^{(l)})\right)$
+        \item $\forall l \geq 2, p(T^{(\ell+1)} | T^{(1:\ell)}) = p(T^{(\ell+1)} | T^{(\ell)})$
+        \item $\forall l \geq 2, k \in \{1, \dots, K_{\ell}\}, u_k^{(\ell)} | \left\{\mathcal{P}(u_k^{(\ell)}) = 1 \right\} \sim \mathcal{B}(\pi_k^{(\ell)}) \right$
+        \item $\displaystyle p\left(u_1^{(\ell)}, \dots, u_{K_{\ell}}^{(\ell)} | \mathcal{P}(u_1^{(\ell)}), \mathcal{P}(u_{K_{\ell}}^{(\ell)})\right) = \prod_{k=1}^{K_{\ell}} p\left(u_k^{(\ell)} | \mathcal{P}(u_k^{(\ell)})\right)$
     \end{itemize}
 
     Then, the distribution of $T$ can be written as:
     $$
-    p(T) = \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} \left(\left(\pi_k^{(l+1)}\right)^{u_k^{(l+1)}} \left(1-\pi_k^{(l+1)}\right)^{1 - u_k^{(l+1)}} \right)^{\mathcal{P}(u_k^{l+1})}
+    p(T) = \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left(\left(\pi_k^{(\ell+1)}\right)^{u_k^{(\ell+1)}} \left(1-\pi_k^{(\ell+1)}\right)^{1 - u_k^{(\ell+1)}} \right)^{\mathcal{P}(u_k^{(\ell+1)})}
     $$
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
     $$
     \begin{align}
         p(T) &= p\left(T^{(1)}, \dots, T^{(L)}\right) \\
-        &= p\left(T^{(1)}\right) \prod_{l=1}^{L-1} p\left(T^{(l+1)}|T^{(l)}\right) \\
-        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} p\left(u_1^{(l+1)}, \dots, u_{K_l}^{(l+1)} | \nodeparent(u_1^{(l+1)}), \dots, \nodeparent(u_{K_l}^{(l+1)})\right) \\
-        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} p\left(u_k^{(l+1)} | \nodeparent(u_k^{(l+1)}) \right) \\
-        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} \left( \pi_k^{(l+1)} u_k^{(l+1)} + \left(1 - \pi_k^{(l+1)} \right)(1 - u_k^{(l+1)}) \right)^{\nodeparent(u_k^{(l+1)})} \\
-        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} \left( \left(\pi_k^{(l+1)}\right)^{u_k^{(l+1)}} \left(1 - \pi_k^{(l+1)} \right)^{1 - u_k^{(l+1)}} \right)^{\nodeparent(u_k^{(l+1)})}
+        &= p\left(T^{(1)}\right) \prod_{l=1}^{L-1} p\left(T^{(\ell+1)}|T^{(\ell)}\right) \\
+        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} p\left(u_1^{(\ell+1)}, \dots, u_{K_{\ell}}^{(\ell+1)} | \nodeparent(u_1^{(\ell+1)}), \dots, \nodeparent(u_{K_{\ell}}^{(\ell+1)})\right) \\
+        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} p\left(u_k^{(\ell+1)} | \nodeparent(u_k^{(\ell+1)}) \right) \\
+        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left( \pi_k^{(\ell+1)} u_k^{(\ell+1)} + \left(1 - \pi_k^{(\ell+1)} \right)(1 - u_k^{(\ell+1)}) \right)^{\nodeparent(u_k^{(\ell+1)})} \\
+        &= \delta_{e_1}(T^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left( \left(\pi_k^{(\ell+1)}\right)^{u_k^{(\ell+1)}} \left(1 - \pi_k^{(\ell+1)} \right)^{1 - u_k^{(\ell+1)}} \right)^{\nodeparent(u_k^{(\ell+1)})}
     \end{align}
     $$
 \end{proof}
 
-\begin{lemma}[MLE of the Bernoulli tree prior]
-    \label{lemma:mle_bernoulli_tree_prior}
+\begin{proposition}[MLE of the Bernoulli tree prior]
+    \label{proposition:mle_bernoulli_tree_prior}
     \\
-    Recall the context of \ref{lemma:bernoulli_tree_prior}. \\
+    Recall the context of \ref{proposition:bernoulli_tree_prior}. \\
     Let $(T_1, \dots, T_n)$ $n$ trees i.i.d following the bernoulli tree prior.
     Denote the maximum likelihood objective by
     $$
     \begin{equation}
         \begin{align}
-            arg \max_{\pi_j^{(m)}} \quad & \sum_{i=1}^n \sum_{l=1}^{L-1} \sum_{k=1}^{K_l} \nodeparent(u_{k,i}^{(l+1)}) \left[u_{k,i}^{(l+1)} \log \pi_{k}^{(l+1)} + (1 - u_{k,i}^{(l+1)}) \log (1 - \pi_k^{(l+1)}) \right] \\
-            \textrm{s.t.} \quad & \forall k,l, \pi_{k}^{(l)} \in [0, 1] \\
+            arg \max_{\pi_j^{(m)}} \quad & \sum_{i=1}^n \sum_{l=1}^{L-1} \sum_{k=1}^{K_{\ell}} \nodeparent(u_{k,i}^{(\ell+1)}) \left[u_{k,i}^{(\ell+1)} \log \pi_{k}^{(\ell+1)} + (1 - u_{k,i}^{(\ell+1)}) \log (1 - \pi_k^{(\ell+1)}) \right] \\
+            \textrm{s.t.} \quad & \forall k,l, \pi_{k}^{(\ell)} \in [0, 1] \\
         \end{align}
         \label{eq:prior_transition_objective}
     \end{equation}
@@ -54,9 +54,9 @@
 
     Then the maximum likelihood estimator is given by
     $$
-    \left(\pi_k^{(l)}\right)^* = \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(l)}) u_{k,i}^{(l)}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(l)})}
+    \left(\pi_k^{(\ell)}\right)^* = \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell)}) u_{k,i}^{(\ell)}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell)})}
     $$
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
     Simply by deriving the objective we obtain:
@@ -79,14 +79,14 @@
     Since the obtained value respects the constraint, that concludes the proof.
 \end{proof}
 
-\begin{lemma}[Law of $aX$]
-    \label{lemma:law_of_aX}
+\begin{proposition}[Law of $aX$]
+    \label{proposition:law_of_aX}
     \\
     Let $X \sim f(x)$ a random variable with density $f$. \\
     Let $a \in (0, 1)$. \\
     The distribution of $aX$ is given by:
     $$p_{aX}(u) = \frac{1}{a} f\left(\frac{u}{a}\right)$$
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
     We use the transfer theorem.
@@ -100,101 +100,101 @@
     Hence, one can identify the distribution of $aX$ as $p_{aX}(u) = \frac{1}{a} f\left(\frac{u}{a}\right)$
 \end{proof}
 
-\begin{lemma}[Abundance distribution conditionally to the trees]
-    \label{lemma:abundance_posterior_bernoulli_tree}
+\begin{proposition}[Abundance distribution conditionally to the trees]
+    \label{proposition:abundance_posterior_bernoulli_tree}
     \\
     Let $X = (X^{(1)}, \dots, X^{(L)})$ the abundance matrix of a tree $T$ with depth $L$. \\
-    For all $l \in \{1, \dots, L\}$, denote $X^{(l)} = (x_1^{(l)}, \dots, x_{K_l}^{(l)})$ the abundance value of each node of the tree.
-    Denote $\childrennode(x_k^{(l)})$ the vector of children abundances related to $x_k^{(l)}$, which is empty if it has no children.
+    For all $\ell \in \{1, \dots, L\}$, denote $X^{(\ell)} = (x_1^{(\ell)}, \dots, x_{K_{\ell}}^{(\ell)})$ the abundance value of each node of the tree.
+    Denote $\childrennode(x_k^{(\ell)})$ the vector of children abundances related to $x_k^{(\ell)}$, which is empty if it has no children.
     Assume that:
     \begin{itemize}
         \item $p(X^{(1)}) = \delta_{e_1}(X^{(1)})$
-        \item $p(X^{(l+1)} | X^{(1:l)}, T) = p(X^{(l+1)} | X^{(l)}, T^{(l+1)})$
-        \item $p(X^{(l+1)} | X^{(l)}, T^{(l+1)}) = \displaystyle\prod_{k=1}^{K_l} p(\childrennode(x_k^{(l)}) | x_k^{(l)}, T^{(l+1)})$
-        \item For all $l \in \{2, \dots, L\}, k \in \{1, \dots, K_l\}$,
+        \item $p(X^{(\ell+1)} | X^{(1:\ell)}, T) = p(X^{(\ell+1)} | X^{(\ell)}, T^{(\ell+1)})$
+        \item $p(X^{(\ell+1)} | X^{(\ell)}, T^{(\ell+1)}) = \displaystyle\prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, T^{(\ell+1)})$
+        \item For all $l \in \{2, \dots, L\}, k \in \{1, \dots, K_{\ell}\}$,
               \begin{itemize}
-                  \item If $|\childrennode(x_k^{(l)})| > 1$: $\childrennode(x_k^{(l)}) | x_k^{(l)}, T^{(l+1)} \sim x_k^{(l)} D(\alpha_k^{(l)} \odot T^{(l+1)})$
-                  \item If $|\childrennode(x_k^{(l)})| = 1$, $\childrennode(x_k^{(l)}) |  x_k^{(l)}, T^{(l+1)} \sim \delta_{x_k^{(l)}}\left(\childrennode(x_k^{(l)})\right)$
+                  \item If $|\childrennode(x_k^{(\ell)})| > 1$: $\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, T^{(\ell+1)} \sim x_k^{(\ell)} D(\alpha_k^{(\ell)} \odot T^{(\ell+1)})$
+                  \item If $|\childrennode(x_k^{(\ell)})| = 1$, $\childrennode(x_k^{(\ell)}) |  x_k^{(\ell)}, T^{(\ell+1)} \sim \delta_{x_k^{(\ell)}}\left(\childrennode(x_k^{(\ell)})\right)$
               \end{itemize}
     \end{itemize}
 
     Then, the distribution of $X$ conditionally to $T$ is given by:
     $$
-        p(X|T) = \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} \left(
-    \delta_{x_k^{(l)}}\left(\childrennode(x_k^{(l)})\right)^{\mathds{1}_{|\childrennode(x_k^{(l)})| = 1}}
-    \frac{1}{x_k^{(l)}} f_{\alpha_k^{(l)} \odot T^{(l+1)}} \left(\frac{\childrennode(x_k^{(l)})}{x_k^{(l)}}\right)^{\mathds{1}_{|\childrennode(x_k^{(l)})| > 1}}
+        p(X|T) = \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left(
+    \delta_{x_k^{(\ell)}}\left(\childrennode(x_k^{(\ell)})\right)^{\mathds{1}_{|\childrennode(x_k^{(\ell)})| = 1}}
+    \frac{1}{x_k^{(\ell)}} f_{\alpha_k^{(\ell)} \odot T^{(\ell+1)}} \left(\frac{\childrennode(x_k^{(\ell)})}{x_k^{(\ell)}}\right)^{\mathds{1}_{|\childrennode(x_k^{(\ell)})| > 1}}
                 \right)
     $$
     
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
     $$
     \begin{align}
         p(X | T) &= p(X^{(1)}, \dots, X^{(L)} | T) \\
-                &= p(X^{(1)} | T^{(1)}) \prod_{l=1}^{L-1} p(X^{(l+1)} | X^{(l)}, T^{(l+1)}) \\
-                &= \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} p(\childrennode(x_k^{(l)}) | x_k^{(l)}, T^{(l+1)}) \\
-                &= \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_l} \left(
-                                                                                \delta_{x_k^{(l)}}\left(\childrennode(x_k^{(l)})\right)^{\mathds{1}_{|\childrennode(x_k^{(l)})| = 1}}
-                                                                                \left[\underbrace{\frac{1}{x_k^{(l)}} f_{\alpha_k^{(l)} \odot T^{(l+1)}} \left(\frac{\childrennode(x_k^{(l)})}{x_k^{(l)}}\right)}_{\text{lemma \ref{lemma:law_of_aX}}}\right]^{\mathds{1}_{|\childrennode(x_k^{(l)})| > 1}}
+                &= p(X^{(1)} | T^{(1)}) \prod_{l=1}^{L-1} p(X^{(\ell+1)} | X^{(\ell)}, T^{({\ell}+1)}) \\
+                &= \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, T^{(\ell+1)}) \\
+                &= \delta_{e_1}(X^{(1)}) \prod_{l=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left(
+                                                                                \delta_{x_k^{(\ell)}}\left(\childrennode(x_k^{(\ell)})\right)^{\mathds{1}_{|\childrennode(x_k^{(\ell)})| = 1}}
+                                                                                \left[\underbrace{\frac{1}{x_k^{(\ell)}} f_{\alpha_k^{(\ell)} \odot T^{(\ell+1)}} \left(\frac{\childrennode(x_k^{(\ell)})}{x_k^{(\ell)}}\right)}_{\text{proposition \ref{proposition:law_of_aX}}}\right]^{\mathds{1}_{|\childrennode(x_k^{(\ell)})| > 1}}
                                                                             \right)
     \end{align}
     $$
 \end{proof}
 
-\begin{lemma}[MLE of the abundance distribution a posteriori]
+\begin{proposition}[MLE of the abundance distribution a posteriori]
     \label{MLE_abundance_bernoulli_tree}
     \\
-    Consider the context of lemma \ref{lemma:abundance_posterior_bernoulli_tree}. \\
+    Consider the context of proposition \ref{proposition:abundance_posterior_bernoulli_tree}. \\
     We consider a data set $(X_i, T_i)_{1 \geq i \geq n}$ of abundance matrix and trees. \\
-    Denote by $\mathcal{V}(\alpha_k^{(l)}, T) = \left\{v \in \mathbb{N} | \alpha_{k,v}^{(l)} \in \alpha_k^{(l)} \odot T^{(l+1)}\right\}$
-    the set of indexes so that the coordinate of $\alpha_k^{(l)}$ is not masked by $T^{(l+1)}$. \\
+    Denote by $\mathcal{V}(\alpha_k^{(\ell)}, T) = \left\{v \in \mathbb{N} | \alpha_{k,v}^{(\ell)} \in \alpha_k^{(\ell)} \odot T^{(\ell+1)}\right\}$
+    the set of indexes so that the coordinate of $\alpha_k^{(\ell)}$ is not masked by $T^{(\ell+1)}$. \\
     The maximum likelihood estimator of the distribution characterising the abundance conditionally to the tree is then
     given by the following fixed point algorithm: \\
 
     $
-    \forall l \in \{1, \dots, L\}, k \in \{1, \dots, K_l\}, v \in \{1, \dots, |\alpha_k^{(l)}|\}
+    \forall l \in \{1, \dots, L\}, k \in \{1, \dots, K_{\ell}\}, v \in \{1, \dots, |\alpha_k^{(\ell)}|\}
     $,
 
     $$
-    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
-    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right) \right)
+    \alpha_{k,v}^{(\ell)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)}} \right) \right)
     $$
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
     The maximum likelihood objective can be written as:
     $$
     \begin{align*}
-        arg \max_{\alpha_{j,v}^{(m)}} \quad & \sum_{i=1}^n \sum_{l=1}^{L-1} \sum_{k=1}^{K_l} \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \log f_{\alpha_k^{(l)} \odot T_i^{(l+1)}} \left(\frac{C(x_{k,i}^{(l)})}{x_{k,i}^{(l)}} \right) \\
+        arg \max_{\alpha_{j,v}^{(m)}} \quad & \sum_{i=1}^n \sum_{l=1}^{L-1} \sum_{k=1}^{K_{\ell}} \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \log f_{\alpha_k^{(\ell)} \odot T_i^{(\ell+1)}} \left(\frac{C(x_{k,i}^{(\ell)})}{x_{k,i}^{(\ell)}} \right) \\
     \end{align*}
     $$
     Using the Dirichlet distribution expression, we can write the following:
     \small
     $$
     \begin{align}
-        \log f_{\alpha_k^{(l)} \odot T_i^{(l+1)}}\left(\frac{C(x_{k,i}^{(l)})}{x_{k,i}^{(l)}} \right) = \log \Gamma \left(\sum_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,v}^{(l)}\right)
-        - \sum_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \Gamma \left( \alpha_{k,v}^{(l)} \right)
-        + \sum_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left(\alpha_{k,v}^{(l)} - 1\right) \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}}
+        \log f_{\alpha_k^{(\ell)} \odot T_i^{(\ell+1)}}\left(\frac{C(x_{k,i}^{(\ell)})}{x_{k,i}^{(\ell)}} \right) = \log \Gamma \left(\sum_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,v}^{(\ell)}\right)
+        - \sum_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \Gamma \left( \alpha_{k,v}^{(\ell)} \right)
+        + \sum_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left(\alpha_{k,v}^{(\ell)} - 1\right) \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}}
     \end{align}
     $$
     \normalsize
 
-    Writing $\psi$ the digamma function, the derivative of the objective relatively to a fixed $\alpha_{k,v}^{(l)}$ is given by:
+    Writing $\psi$ the digamma function, the derivative of the objective relatively to a fixed $\alpha_{k,v}^{(\ell)}$ is given by:
     $$
-    \partial_{\alpha_{k,v}^{(l)}} \log p(X|T) = \sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[\psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)} \right) - \psi\left(\alpha_{k,v}^{(l)} \right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}}\right]
+    \partial_{\alpha_{k,v}^{(\ell)}} \log p(X|T) = \sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[\psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)} \right) - \psi\left(\alpha_{k,v}^{(\ell)} \right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}}\right]
     $$
 
     Looking for $0$ valued gradient, we obtain the following equation:
     $$
-    \psi\left(\alpha_{k,v}^{(l)}\right) = \frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
-                                                {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right)
+    \psi\left(\alpha_{k,v}^{(\ell)}\right) = \frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]}
+                                                {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)}} \right)
     $$
 
     Using the reference trick from \cite{dirichlet_digamma_trick}, one can compute an iterative fixed point algorithm to solve the previous equation,
     leading to:
     $$
-    \alpha_{k,v}^{(l)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(l)}, T_i)} \alpha_{k,u}^{(l)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(l)})\right]_v}{x_{k,i}^{(l)}} \right]}
-    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(l)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(l)}, T_i)}} \right) \right)
+    \alpha_{k,v}^{(\ell)} \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)}} \right) \right)
     $$
 \end{proof}

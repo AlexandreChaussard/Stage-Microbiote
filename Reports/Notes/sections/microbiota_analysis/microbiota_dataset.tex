@@ -27,6 +27,27 @@ To give some notations, we introduce the following framework:
     \item $X_i$ is the abundance matrix of the individual $i$ (image of size $D \times U$) , which is observed.
     \item $T_i$ is the adjacent matrix of the phylogenetic tree of individual $i$, of size $N_T \times N_T$, which is observed.
     We could use any other encoding of a tree (contour function, depth function, $\dots$).
-    \item For a given tree, we will denote by $U_{l}$ the number of species at a given precision layer $l$ of the tree.
+    \item For a given tree, we will denote by $U_{l}$ the number of species at a given precision layer $\ell$ of the tree.
     \item We assume that we have $n$ individuals observed through $(X_i, T_i)_{1 \leq i \leq n}$ i.i.d samples.
 \end{itemize}
+
+\subsection{Mathematical context and objective without latent variables}
+
+In first approximation, we would like to define a generative model that does not exploit any latent structure.
+Such model, parameterized by $\theta$, aims at finding an optimal distribution in the sense of the maximum of likelihood,
+within a family of distributions yet to be defined.
+The maximum likelihood objective is given below as:
+$$
+\theta^* = arg\max_{\theta} p_{\theta}(X, T)
+$$
+One can rewrite the joint distribution as follow:
+$$
+\begin{align}
+    p_{\theta}(X, T) &= \prod_{i=1}^n p_{\theta}(X_i, T_i) \\
+    &= \prod_{i=1}^n p_{\theta}(T_i) p_{\theta}(X_i | T_i)
+\end{align}
+$$
+
+As a result, to compute this objective, we need to define a prior $p_{\theta}(T_i)$ that generates trees,
+and a posterior distribution $p_{\theta}(X_i | T_i)$ that generates abundance data from a sampled tree. \\
+

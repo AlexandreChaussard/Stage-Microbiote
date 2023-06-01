@@ -13,16 +13,16 @@ Before describing the generation method, let us introduce the framework of it:
 \begin{itemize}
     \item Describe $T$ as a succession of $L$ layers: $T = (T^{(1)}, \dots, T^{(L)})$.
     We assume that we have no missing data, so to say, all the leaves the tree are reaching the precision layer $L$.
-    \item Describe a given layer $l$ as a discrete vector in $\{0, 1\}^{U}$.
-    To each possible node at layer $l$ we can associate an index $k$ so that we denote the nodes by $u_k^{(l)} \in \{0, 1\}$.
-    $$T^{(l)} = (u_1^{(l)}, \dots, u_{K_l}^{(l)})$$
-    A node $u_k^{(l)}$ is activated if it is valued as $1$ in $T^{(l)}$, otherwise it is not.
-    \item We introduce the function $\nodeparent$ that takes a node $u_k^{(l)}$ as input, and output the parent of the node if it is well defined in $T$,
+    \item Describe a given layer $\ell$ as a discrete vector in $\{0, 1\}^{U}$.
+    To each possible node at layer $\ell$ we can associate an index $k$ so that we denote the nodes by $u_k^{(\ell)} \in \{0, 1\}$.
+    $$T^{(\ell)} = (u_1^{(\ell)}, \dots, u_{K_{\ell}}^{(\ell)})$$
+    A node $u_k^{(\ell)}$ is activated if it is valued as $1$ in $T^{(\ell)}$, otherwise it is not.
+    \item We introduce the function $\nodeparent$ that takes a node $u_k^{(\ell)}$ as input, and output the parent of the node if it is well defined in $T$,
           otherwise it outputs $0$ as if the parent was not activated:
             $$
-            \nodeparent(u_k^{(l)}) = \left\{
+            \nodeparent(u_k^{(\ell)}) = \left\{
             \begin{array}{ll}
-                1 & \mbox{if } \text{parent of $u_k^{(l)}$ exists and is activated}\\
+                1 & \mbox{if } \text{parent of $u_k^{(\ell)}$ exists and is activated}\\
                 0 & \mbox{otherwise}
             \end{array}
             \right.
@@ -37,48 +37,48 @@ Now that the framework is clear and defined, we describe the generative process:
     p(T^{(1)}) = \delta_{e_1}(T^{(1)})
     $$
 
-    \item For all $l \geq 2, k \in \{1, \dots, U\}$, we assume that the activation of the node $u_k^{(l)}$
-        is distributed as a Bernoulli conditionally to its parent activation, parameterized by $\pi_k^{(l)}$:
+    \item For all $l \geq 2, k \in \{1, \dots, U\}$, we assume that the activation of the node $u_k^{(\ell)}$
+        is distributed as a Bernoulli conditionally to its parent activation, parameterized by $\pi_k^{(\ell)}$:
         $$
-        u_k^{(l)} | \left \{\nodeparent(u_k^{(l)}) = 1 \right\} \sim \mathcal{B}(\pi_{k}^{(l)})
+        u_k^{(\ell)} | \left \{\nodeparent(u_k^{(\ell)}) = 1 \right\} \sim \mathcal{B}(\pi_{k}^{(\ell)})
         $$
-        To respect the tree architecture, we assume that if $\nodeparent(u_k^{(l)}) = 0$ then the probability for the children
+        To respect the tree architecture, we assume that if $\nodeparent(u_k^{(\ell)}) = 0$ then the probability for the children
         to be activated is deterministic and set to $0$, as a child can not exist without his parent.
     \item For now, we make the major assumption that all nodes are independent within a given layer conditionally to their parents, and they only depend on their respective parent, so that:
     $$
     \begin{align}
-        p\left(u_1^{(l)}, \dots, u_{K_l}^{(l)} | \nodeparent(u_1^{(l)}), \dots, \nodeparent(u_{K_l}^{(l)}) \right) &= \prod_{k=1}^{K_l} p\left(u_k^{(l)} | \nodeparent(u_k^{(l)})\right)
+        p\left(u_1^{(\ell)}, \dots, u_{K_{\ell}}^{(\ell)} | \nodeparent(u_1^{(\ell)}), \dots, \nodeparent(u_{K_{\ell}}^{(\ell)}) \right) &= \prod_{k=1}^{K_{\ell}} p\left(u_k^{(\ell)} | \nodeparent(u_k^{(\ell)})\right)
     \end{align}
     $$
 
     \item The dependency between the layers of the tree is markovian:
     $$
-    p_{\theta}(T^{(l+1)} | T^{(1:l)}) = p_{\theta}(T^{(l+1)} | T^{(l)})
+    p_{\theta}(T^{(\ell+1)} | T^{(1:\ell)}) = p_{\theta}(T^{(\ell+1)} | T^{(\ell)})
     $$
 \end{itemize}
 
-Noting these framework properties, we can describe the log-likehood of such prior model on the trees using lemma \ref{lemma:bernoulli_tree_prior}:
+Noting these framework properties, we can describe the log-likehood of such prior model on the trees using proposition \ref{proposition:bernoulli_tree_prior}:
 $$
 \begin{align}
-    p_{\theta}(T_1, \dots, T_n) = \sum_{i=1}^n \sum_{i=1}^{L-1} \sum_{k=1}^{K_l} \nodeparent(u_k^{(l+1)}) \left[u_k^{(l+1)} \log \pi_k^{(l+1)} + (1 - u_k^{(l+1)}) \log (1 - \pi_k^{(l+1)})  \right]
+    p_{\theta}(T_1, \dots, T_n) = \sum_{i=1}^n \sum_{i=1}^{L-1} \sum_{k=1}^{K_{\ell}} \nodeparent(u_k^{(\ell+1)}) \left[u_k^{(\ell+1)} \log \pi_k^{(\ell+1)} + (1 - u_k^{(\ell+1)}) \log (1 - \pi_k^{(\ell+1)})  \right]
 \end{align}
 $$
 
-Looking at the previous formula, we obtain that such prior is parameterized by the activation probabilities $\pi_k^{(l)}$ of each node $u_k^{(l)}$.
-Furthermore, due to the indicator function expressed through $\nodeparent(u_k^{(l+1)})$, the update of a given activation probability
-will only be impacted by the trees which have the node $u_k^{(l)}$ in any branch. \\
+Looking at the previous formula, we obtain that such prior is parameterized by the activation probabilities $\pi_k^{(\ell)}$ of each node $u_k^{(\ell)}$.
+Furthermore, due to the indicator function expressed through $\nodeparent(u_k^{(\ell+1)})$, the update of a given activation probability
+will only be impacted by the trees which have the node $u_k^{(\ell)}$ in any branch. \\
 
 % Optimization
 Now that the prior of the trees is well defined, we would like to compute an optimal value of
-$\pi^{(l)} = \left(\pi_1^{(l)}, \dots, \pi_{U}^{(l)}\right)$ in the sense of the maximum of likelihood.
-Using lemma \ref{lemma:mle_bernoulli_tree_prior}, we obtain
+$\pi^{(\ell)} = \left(\pi_1^{(\ell)}, \dots, \pi_{U}^{(\ell)}\right)$ in the sense of the maximum of likelihood.
+Using proposition \ref{proposition:mle_bernoulli_tree_prior}, we obtain
 $$
 \fbox{
     \displaystyle
-    \left(\pi_k^{(l)}\right)^* &= \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(l)}) u_{k,i}^{(l)}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(l)})}
+    \left(\pi_k^{(\ell)}\right)^* &= \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell)}) u_{k,i}^{(\ell)}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell)})}
 }
 $$
 
 This estimator is actually the common MLE for a Bernoulli parameter estimation, except that it limits
-the computation of the estimation to all trees that respect the root constraint, and that could possess the node $u_k^{(l)}$
-since they must have the parent node $\nodeparent(u_k^{(l)})$.
+the computation of the estimation to all trees that respect the root constraint, and that could possess the node $u_k^{(\ell)}$
+since they must have the parent node $\nodeparent(u_k^{(\ell)})$.

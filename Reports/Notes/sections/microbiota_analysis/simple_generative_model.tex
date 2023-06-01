@@ -1,27 +1,4 @@
-\subsection{Simple generative model: no latent variable}
-
-\subsubsection{Context and objective}
-
-In first approximation, we would like to define a generative model that does not exploit any latent structure.
-Such model, parameterized by $\theta$, aims at finding an optimal distribution in the sense of the maximum of likelihood,
-within a family of distributions yet to be defined.
-The maximum likelihood objective is given below as:
-$$
-\theta^* = arg\max_{\theta} p_{\theta}(X, T)
-$$
-One can rewrite the joint distribution as follow:
-$$
-\begin{align}
-    p_{\theta}(X, T) &= \prod_{i=1}^n p_{\theta}(X_i, T_i) \\
-                    &= \prod_{i=1}^n p_{\theta}(T_i) p_{\theta}(X_i | T_i)
-\end{align}
-$$
-
-As a result, to compute this objective, we need to define a prior $p_{\theta}(T_i)$ that generates trees,
-and a posterior distribution $p_{\theta}(X_i | T_i)$ that generates abundance data from a sampled tree. \\
-
-Note that in this section we assume that the trees do not have missing entries, meaning all the branches of the tree
-reach the maximum precision layer of the tree, so that the abundance data sum to $1$ at each level. \\
+\subsection{Markovian model without latent variables}
 
 % Design of the prior and optimization
 \input{sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_prior.tex}
@@ -40,20 +17,9 @@ $$
 \end{align}
 $$
 
-Notice that the first term of the loss is made only of the prior, while the second one is made only of the posterior.
-Since these two distributions do not share common parameters in $\theta$, we can proceed to optimize the parameters of each distribution
-without taking care of the other term. \\
-
+Notice that, in our context, this objective is separable since the prior and posterior do not share any common parameter in $\theta$.
 Hence, the optimal $\theta^*$ is given by the concatenation of the MLE from the prior on the trees and the posterior of the abundance knowning the trees,
 which we both have computed in the previous sections.
-
-%Since the indicator functions do not depend on the parameter, we end up on a known problem of maximum of likelihood for Dirichlet distribution \cite{dirichlet_digamma_trick}.
-%As we have done the maths in another context for the dirichlet mixture, we get a similar result that ends up on the following fixed point algorithm:
-%$$
-%\fbox{
-%    \displaystyle\left(\alpha_D^{(j)}\right)^{(m+1)} = \psi^{-1}\left(\frac{1}{n} \sum_{i=1}^n \log \left[X_i^{(D)}\right]_j + \psi \left(\sum_{r=1}^U \left(\alpha_{D}^{(r)}\right)^{(m)}\right) \right)
-%}
-%$$
 
 \subsubsection{Experiments}
 
@@ -66,13 +32,10 @@ However, it clearly lacks of complexity:
 \begin{itemize}
     \item The nodes are modeled as independent, which prevents any modelisation of correlation between entities.
           As for many ecosystems, we would expect some bacteria to have symbiotic relationship, or domination roles,
-          especially when we come in critical systems like disease detection in which some bacteria may proliferate over others.
+          especially when it comes to critical systems like disease detection in which some bacteria may proliferate over others.
           One idea could be to model an interaction graph (see \cite{momal_tree}) and use it as a correlation restriction between our bacteria.
-    \item The abundance data generation takes the tree constraints into account, yet it is poorly flexible as we sample from a unique Dirichlet
-          parameterized by $\alpha_D$ and masked according to $T^{(D)}$, which completely omits the tree's global structure.
-          It would be highly interesting to try to group the trees through a latent variable for instance, and adapt the parameter
-          to that specific group to enhance the modelization.
-          We will explore that situation in the next section.
+    \item The abundance data generation takes the tree constraints into account, but the Dirichlet distribution is not quite expressive.
+          Mixture models could enable us to provide more expressive priors and model multiple modes rather than one at the moment, to the cost of more parameters though.
     \item So far we have only considered trees without any missing entries at precision level $L$, which is not what we observe for microbiota datasets.
           Inference for missing data implementation could be interesting in the future.
 \end{itemize}

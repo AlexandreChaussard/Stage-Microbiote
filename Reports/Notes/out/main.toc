@@ -23,13 +23,13 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Usage in the VQ-VAE}{17}{subsubsection.3.3.2}%
 \contentsline {section}{\numberline {4}Microbiota analysis}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Microbiota dataset}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Simple generative model: no latent variable}{19}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Context and objective}{19}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Design of the prior}{19}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Design of the posterior and maximum likelihood estimator}{21}{subsubsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.4}Optimization of the objective}{22}{subsubsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.5}Experiments}{23}{subsubsection.4.2.5}%
-\contentsline {subsubsection}{\numberline {4.2.6}Conclusions}{23}{subsubsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2}Mathematical context and objective without latent variables}{19}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Markovian model without latent variables}{19}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Design of the prior}{19}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Design of the posterior and maximum likelihood estimator}{21}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Optimization of the objective}{22}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Experiments}{22}{subsubsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}Conclusions}{22}{subsubsection.4.3.5}%
 \contentsline {section}{\numberline {5}Appendix}{24}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Microbiota analysis}{24}{subsection.5.1}%
 \contentsline {section}{\numberline {6}Bibliography}{28}{section.6}%
