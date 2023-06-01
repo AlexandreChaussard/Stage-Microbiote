@@ -85,27 +85,43 @@
 \newlabel{fig:phylogenetic_tree}{{8}{18}{Phylogenetic tree example with abundance data (in the nodes) at each layer of the tree. Each node represents a bacterium specie at a given precision layer in the tree. From \cite {microbiome_deeplearning_research}.\relax }{figure.caption.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Phylogenetic tree to image representation: opacity of the pixel relates to the abundance of the species at the given level of precision (normalized between 0 and 1). From \blx@tocontentsinit {0}\cite {microbiome_deeplearning_research}.\relax }}{18}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:phylogenetic_tree_to_img}{{9}{18}{Phylogenetic tree to image representation: opacity of the pixel relates to the abundance of the species at the given level of precision (normalized between 0 and 1). From \cite {microbiome_deeplearning_research}.\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Taxonomy of the microbiota dataset (precision $4$)\relax }}{19}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:taxonomy_microbiota_p4}{{10}{19}{Taxonomy of the microbiota dataset (precision $4$)\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Taxa-abundance sample from the dataset (opacity relates the abundance value)\relax }}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:taxa_abundance_sample_p4}{{11}{19}{Taxa-abundance sample from the dataset (opacity relates the abundance value)\relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Mathematical context and objective without latent variables}{19}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Markovian model without latent variables}{19}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Design of the prior}{19}{subsubsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Design of the posterior and maximum likelihood estimator}{21}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Markovian model without latent variables}{20}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Design of the prior}{20}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Design of the posterior and maximum likelihood estimator}{22}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Optimization of the objective}{23}{subsubsection.4.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4}Experiments}{23}{subsubsection.4.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Global artificial tree structure\relax }}{24}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:tree_artificial_architecture}{{12}{24}{Global artificial tree structure\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Artificial taxa-abundance data following the global structure of figure \ref {fig:tree_artificial_architecture}. Opacity accounts for the value of the abundance.\relax }}{24}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:tree_artificial_sample}{{13}{24}{Artificial taxa-abundance data following the global structure of figure \ref {fig:tree_artificial_architecture}. Opacity accounts for the value of the abundance.\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Log-likelihood per iteration of the optimization algorithm for $10$ models being trained with random initializations.\relax }}{25}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:markovian_tree_model_loglikelihood_convergence}{{14}{25}{Log-likelihood per iteration of the optimization algorithm for $10$ models being trained with random initializations.\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Average log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.\relax }}{25}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:markovian_tree_model_error_convergence}{{15}{25}{Average log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Coordinate-wise log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.\relax }}{26}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:markovian_tree_model_error_estimations}{{16}{26}{Coordinate-wise log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.\relax }{figure.caption.18}{}}
 \abx@aux@cite{0}{momal_tree}
 \abx@aux@segm{0}{0}{momal_tree}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Optimization of the objective}{22}{subsubsection.4.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4}Experiments}{22}{subsubsection.4.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5}Conclusions}{22}{subsubsection.4.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Appendix}{24}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Microbiota analysis}{24}{subsection.5.1}\protected@file@percent }
-\newlabel{proposition:bernoulli_tree_prior}{{5.1}{24}{}{theorem.5.1}{}}
-\newlabel{proposition:mle_bernoulli_tree_prior}{{5.2}{25}{MLE of the Bernoulli tree prior}{theorem.5.2}{}}
-\newlabel{eq:prior_transition_objective}{{1}{25}{MLE of the Bernoulli tree prior}{equation.5.1}{}}
-\newlabel{proposition:law_of_aX}{{5.3}{25}{Law of $aX$}{theorem.5.3}{}}
-\newlabel{proposition:abundance_posterior_bernoulli_tree}{{5.4}{26}{Abundance distribution conditionally to the trees}{theorem.5.4}{}}
-\newlabel{MLE_abundance_bernoulli_tree}{{5.5}{26}{MLE of the abundance distribution a posteriori}{theorem.5.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Average log optimization error to the real parameters for $10$ models initialized with random parameters, per samples in the dataset.\relax }}{27}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:markovian_tree_model_error_mean_sample}{{17}{27}{Average log optimization error to the real parameters for $10$ models initialized with random parameters, per samples in the dataset.\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5}Conclusions}{27}{subsubsection.4.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Appendix}{28}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Microbiota analysis}{28}{subsection.5.1}\protected@file@percent }
+\newlabel{proposition:bernoulli_tree_prior}{{5.1}{28}{}{theorem.5.1}{}}
+\newlabel{proposition:mle_bernoulli_tree_prior}{{5.2}{29}{MLE of the Bernoulli tree prior}{theorem.5.2}{}}
+\newlabel{eq:prior_transition_objective}{{1}{29}{MLE of the Bernoulli tree prior}{equation.5.1}{}}
+\newlabel{proposition:law_of_aX}{{5.3}{29}{Law of $aX$}{theorem.5.3}{}}
+\newlabel{proposition:abundance_posterior_bernoulli_tree}{{5.4}{30}{Abundance distribution conditionally to the trees}{theorem.5.4}{}}
+\newlabel{MLE_abundance_bernoulli_tree}{{5.5}{30}{MLE of the abundance distribution a posteriori}{theorem.5.5}{}}
 \abx@aux@cite{0}{dirichlet_digamma_trick}
 \abx@aux@segm{0}{0}{dirichlet_digamma_trick}
 \abx@aux@nociteall
-\@writefile{toc}{\contentsline {section}{\numberline {6}Bibliography}{28}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Bibliography}{32}{section.6}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{065E4C84D50E20897ECA71C3645DFBE4}
 \abx@aux@defaultrefcontext{0}{expectation_maximization_source}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{microbiome_deeplearning_research}{nty/global//global/global}
@@ -114,4 +130,4 @@
 \abx@aux@defaultrefcontext{0}{momal_tree}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{pixel_cnn_paper}{nty/global//global/global}
 \abx@aux@defaultrefcontext{0}{vq_vae_paper}{nty/global//global/global}
-\gdef \@abspage@last{29}
+\gdef \@abspage@last{33}

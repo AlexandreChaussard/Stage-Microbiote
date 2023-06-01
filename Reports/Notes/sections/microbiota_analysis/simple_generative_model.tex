@@ -23,7 +23,86 @@ which we both have computed in the previous sections.
 
 \subsubsection{Experiments}
 
-We have implemented the previous modelization and tested it on a large microbiota dataset.
+We implement the previous model to form a baseline to which we can compare the upcoming latent models to.
+Before we work with real data, we generate an artificial dataset based on the following structure.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{images/artificial_tree_global_structure}
+    \caption{Global artificial tree structure}
+    \label{fig:tree_artificial_architecture}
+\end{figure}
+
+We define the true parameters of the model:
+\begin{itemize}[H]
+    \item The activation probabilities for each node: $\pi_k^{(\ell)}$
+    \item The abundance parameters for each parent node: $\alpha_k^{(\ell)}$
+\end{itemize}
+
+Using the true parameters, we define the prior and posterior of the previous model to generate a dataset.
+The following figure illustrates a sample of that dataset.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{images/artificial_tree_sample}
+    \caption{Artificial taxa-abundance data following the global structure of figure \ref{fig:tree_artificial_architecture}.
+    Opacity accounts for the value of the abundance.}
+    \label{fig:tree_artificial_sample}
+\end{figure}
+
+Now that we have a dataset, we train another set of $10$ priors and posteriors onto the artifical data study the convergence of the model
+and the absolute error to the parameters.
+The following figure illustrates the convergence of the $10$ models for the maximum likelihood objective, relatively to the the number
+of iterations done for the fixed point algorithm to compute the abundance parameters.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{images/markovian_tree_model_loglikelihood_multiple_convergences}
+    \caption{Log-likelihood per iteration of the optimization algorithm for $10$ models being trained with random initializations.}
+    \label{fig:markovian_tree_model_loglikelihood_convergence}
+\end{figure}
+
+Looking at figure \ref{fig:markovian_tree_model_loglikelihood_convergence}, it seems that the optimization algorithm is converging to a given $\widehat{\theta}^*$.
+We would then like to compare such $\widehat{\theta}^*$ to the true set of parameters $\theta^*$.
+The following figure illustrates the mean distance of the parameters to the original one: $\Vert \theta^* - \widehat{\theta}^* \Vert_2$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{images/markovian_tree_model_convergence_error_estimators_iteration}
+    \caption{Average log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.}
+    \label{fig:markovian_tree_model_error_convergence}
+\end{figure}
+
+Since the optimal value of $\pi_k^{(\ell)}$ is explicit, the error does not change over the iterations of the fixed point algorithm.
+On the other hand, the dirichlet parameters $\alpha_k^{(\ell)}$ are optimized coordinate per coordinate in the fixed point algorithm,
+leading to the convergence profile of figure \ref{fig:markovian_tree_model_error_convergence}, which shows that there is a convergence to
+a given $\widehat{\theta}^*$ that is close to $\theta^*$ with mean error rate of approximately $10^{-2}$. \\
+
+The next graph illustrates the error per coordinate of the estimated parameter and the true one for the $10$ trained models.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/markovian_tree_model_error_estimators}
+    \caption{Coordinate-wise log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.}
+    \label{fig:markovian_tree_model_error_estimations}
+\end{figure}
+
+As it seems, some coordinates are much more accurately determined than others, which highly relates to the structure of the tree (markovian)
+and the general presence of each node in the dataset.
+Indeed, the less likely a node is activated, the less samples we have to compute its activation probability.
+Likewise, the deeper a node is in the tree, the less likely it is to be present in a tree due to the conditional probability to the parent.
+That can then explain why deeper nodes are harder to grasp, and for which the parameter estimation is less good than the one of higher entities in the hierarchy of the tree. \\
+
+Furthermore, note that we used an initialization of the $\pi_k^{(\ell)}$ to $0$, which artificially boosts the estimation quality of some node like the $16$-th one, which has a probability of activation of $0.1$
+in our artificial model.
+Hence, while the estimation seems to be great for that node, this is just biased by the fact that this node rarely is present and that the initialization is quite close to the truth already. \\
+
+Finally, we look into the average optimization error as we vary the amount of samples in figure \ref{fig:markovian_tree_model_error_mean_sample}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/markovian_tree_model_mean_error_samples}
+    \caption{Average log optimization error to the real parameters for $10$ models initialized with random parameters, per samples in the dataset.}
+    \label{fig:markovian_tree_model_error_mean_sample}
+\end{figure}
+
+As it seems, the number of samples is not impacting much the convergence towards the parameters of the models, which seems unnatural.
+We would like to observe that with more samples, the variance is reducing and the estimation getting better.
 
 \subsubsection{Conclusions}
 

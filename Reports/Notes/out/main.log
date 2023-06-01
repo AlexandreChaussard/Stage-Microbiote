@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  1 JUN 2023 10:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  1 JUN 2023 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1585,8 +1585,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
+<images/microbiota_tree_global_structure.png, id=370, 367.87437pt x 277.53688pt
+>
+File: images/microbiota_tree_global_structure.png Graphic file (type png)
+<use images/microbiota_tree_global_structure.png>
+Package pdftex.def Info: images/microbiota_tree_global_structure.png  used on i
+nput line 38.
+(pdftex.def)             Requested size: 220.72632pt x 166.5234pt.
+<images/sample_taxaabundance_microbiota.png, id=371, 340.27126pt x 276.53313pt>
 
-sections/microbiota_analysis/microbiota_dataset.tex:48: Package amsmath Error: 
+File: images/sample_taxaabundance_microbiota.png Graphic file (type png)
+<use images/sample_taxaabundance_microbiota.png>
+Package pdftex.def Info: images/sample_taxaabundance_microbiota.png  used on in
+put line 47.
+(pdftex.def)             Requested size: 204.16432pt x 165.92114pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19 <./images/microbiota_tree_global_structure.png> <./images/sample_taxaabunda
+nce_microbiota.png>]
+
+sections/microbiota_analysis/microbiota_dataset.tex:66: Package amsmath Error: 
 Erroneous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -1594,13 +1619,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.48 \end{align}
+l.66 \end{align}
                 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--53
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
 
@@ -1619,7 +1644,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19]
+[20]
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
 ior.tex:51: Package amsmath Error: Erroneous nesting of equation structures;
@@ -1723,7 +1748,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
@@ -1736,29 +1761,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
+[22]
 sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:60: Missing $ inserted.
+.tex:61: Missing $ inserted.
 <inserted text> 
                 $
-l.60 }
+l.61 }
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:60: Extra \right.
+.tex:61: Extra \right.
 <argument> ...^{(\ell )}, T_i)}} \right ) \right )
                                                    
-l.60 }
+l.61 }
       
 I'm ignoring a \right that had no matching \left.
 
 sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:60: Extra }, or forgotten $.
+.tex:61: Extra }, or forgotten $.
 \fbox  ...x {\color@begingroup \kern \fboxsep {#1}
                                                   \kern \fboxsep \color@endg...
-l.60 }
+l.61 }
       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1767,19 +1792,19 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:60: Missing $ inserted.
+.tex:61: Missing $ inserted.
 <inserted text> 
                 $
-l.60 }
+l.61 }
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
-.tex:60: Missing } inserted.
+.tex:61: Missing } inserted.
 <inserted text> 
                 }
-l.60 }
+l.61 }
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1802,6 +1827,25 @@ l.17 \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+<images/artificial_tree_global_structure.png, id=398, 372.39125pt x 281.05pt>
+File: images/artificial_tree_global_structure.png Graphic file (type png)
+<use images/artificial_tree_global_structure.png>
+Package pdftex.def Info: images/artificial_tree_global_structure.png  used on i
+nput line 31.
+(pdftex.def)             Requested size: 260.67209pt x 196.73364pt.
+
+sections/microbiota_analysis/simple_generative_model.tex:37: Package enumitem E
+rror: H undefined.
+
+See the enumitem package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 \begin{itemize}[H]
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1810,7 +1854,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22])
+[23]
+<images/artificial_tree_sample.png, id=406, 372.89313pt x 284.06125pt>
+File: images/artificial_tree_sample.png Graphic file (type png)
+<use images/artificial_tree_sample.png>
+Package pdftex.def Info: images/artificial_tree_sample.png  used on input line 
+46.
+(pdftex.def)             Requested size: 261.0234pt x 198.84149pt.
+<images/markovian_tree_model_loglikelihood_multiple_convergences.png, id=409, 4
+01.8212pt x 333.1647pt>
+File: images/markovian_tree_model_loglikelihood_multiple_convergences.png Graph
+ic file (type png)
+<use images/markovian_tree_model_loglikelihood_multiple_convergences.png>
+Package pdftex.def Info: images/markovian_tree_model_loglikelihood_multiple_con
+vergences.png  used on input line 58.
+(pdftex.def)             Requested size: 281.2729pt x 233.21368pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1819,7 +1878,74 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23] (sections/maths/propositions_and_proofs.tex
+[24 <./images/artificial_tree_global_structure.png> <./images/artificial_tree_s
+ample.png>]
+<images/markovian_tree_model_convergence_error_estimators_iteration.png, id=420
+, 941.6781pt x 534.0753pt>
+File: images/markovian_tree_model_convergence_error_estimators_iteration.png Gr
+aphic file (type png)
+<use images/markovian_tree_model_convergence_error_estimators_iteration.png>
+Package pdftex.def Info: images/markovian_tree_model_convergence_error_estimato
+rs_iteration.png  used on input line 68.
+(pdftex.def)             Requested size: 329.59227pt x 186.92915pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--77
+
+ []
+
+<images/markovian_tree_model_error_estimators.png, id=422, 493.6041pt x 282.575
+7pt>
+File: images/markovian_tree_model_error_estimators.png Graphic file (type png)
+<use images/markovian_tree_model_error_estimators.png>
+Package pdftex.def Info: images/markovian_tree_model_error_estimators.png  used
+ on input line 81.
+(pdftex.def)             Requested size: 296.16473pt x 169.54672pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25 <./images/markovian_tree_model_loglikelihood_multiple_convergences.png> <./
+images/markovian_tree_model_convergence_error_estimators_iteration.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 86--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--95
+
+ []
+
+<images/markovian_tree_model_mean_error_samples.png, id=432, 958.3002pt x 534.0
+753pt>
+File: images/markovian_tree_model_mean_error_samples.png Graphic file (type png
+)
+<use images/markovian_tree_model_mean_error_samples.png>
+Package pdftex.def Info: images/markovian_tree_model_mean_error_samples.png  us
+ed on input line 99.
+(pdftex.def)             Requested size: 383.3133pt x 213.62633pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26 <./images/markovian_tree_model_error_estimators.png>])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27 <./images/markovian_tree_model_mean_error_samples.png>]
+(sections/maths/propositions_and_proofs.tex
 sections/maths/propositions_and_proofs.tex:16: Missing delimiter (. inserted).
 <to be read again> 
                    $
@@ -1914,7 +2040,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24]
+[28]
 
 sections/maths/propositions_and_proofs.tex:52: LaTeX Error: \begin{proposition}
  on input line 39 ended by \end{equation}.
@@ -2030,9 +2156,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.106     L
-           et $X = (X^{(1)}, \dots, X^{(L)})$ the abundance matrix of a tree...
-
+l.106     \newline
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -2045,9 +2170,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
+[29]
 
-sections/maths/propositions_and_proofs.tex:141: Package amsmath Error: Erroneou
+sections/maths/propositions_and_proofs.tex:144: Package amsmath Error: Erroneou
 s nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -2055,20 +2180,20 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.141     \end{align}
+l.144     \end{align}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/maths/propositions_and_proofs.tex:148: LaTeX Error: There's no line he
+sections/maths/propositions_and_proofs.tex:151: LaTeX Error: There's no line he
 re to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148     C
+l.151     C
            onsider the context of proposition \ref{proposition:abundance_pos...
 
 Your command was ignored.
@@ -2076,14 +2201,9 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--154
+Underfull \hbox (badness 10000) in paragraph at lines 151--157
 
  []
-
-sections/maths/propositions_and_proofs.tex:161: Extra \right.
-l.161 ...\alpha_k^{(\ell)}, T_i)}} \right) \right)
-                                                  
-I'm ignoring a \right that had no matching \left.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2093,9 +2213,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26]
+[30]
+sections/maths/propositions_and_proofs.tex:164: Extra \right.
+l.164 ...\alpha_k^{(\ell)}, T_i)}} \right) \right)
+                                                  
+I'm ignoring a \right that had no matching \left.
 
-sections/maths/propositions_and_proofs.tex:170: Package amsmath Error: Erroneou
+
+sections/maths/propositions_and_proofs.tex:173: Package amsmath Error: Erroneou
 s nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -2103,13 +2228,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170     \end{align*}
+l.173     \end{align*}
                       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-sections/maths/propositions_and_proofs.tex:179: Package amsmath Error: Erroneou
+sections/maths/propositions_and_proofs.tex:182: Package amsmath Error: Erroneou
 s nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -2117,23 +2242,23 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.179     \end{align}
+l.182     \end{align}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (53.93576pt too wide) detected at line 180
+Overfull \hbox (53.93576pt too wide) detected at line 183
 [][]
  []
 
-sections/maths/propositions_and_proofs.tex:191: Extra \right.
-l.191 ...hcal{V}(\alpha_k^{(\ell)}, T_i)}} \right)
+sections/maths/propositions_and_proofs.tex:194: Extra \right.
+l.194 ...hcal{V}(\alpha_k^{(\ell)}, T_i)}} \right)
                                                   
 I'm ignoring a \right that had no matching \left.
 
-sections/maths/propositions_and_proofs.tex:198: Extra \right.
-l.198 ...\alpha_k^{(\ell)}, T_i)}} \right) \right)
+sections/maths/propositions_and_proofs.tex:201: Extra \right.
+l.201 ...\alpha_k^{(\ell)}, T_i)}} \right) \right)
                                                   
 I'm ignoring a \right that had no matching \left.
 
@@ -2146,7 +2271,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27] (sections/general/bibpage.tex)
+[31] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -2161,7 +2286,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[32] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 97AB51582C070448CC02312D58FEC9E6;6063.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -2169,10 +2294,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26955 strings out of 476315
- 530059 string characters out of 5787197
+ 27065 strings out of 476315
+ 535244 string characters out of 5787197
  1871068 words of memory out of 5000000
- 46911 multiletter control sequences out of 15000+600000
+ 47001 multiletter control sequences out of 15000+600000
  533200 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,18n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2212,9 +2337,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Us
 ers/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (29 pages, 1564435 bytes).
+t\main.pdf (33 pages, 2101575 bytes).
 PDF statistics:
- 948 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 323 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 996 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
+ 363 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,11 +19,12 @@ We assume the following framework:
     \item Let $X = (X^{1}, \dots, X^{(L)})$ a given abundance matrix associated to a tree $T$.
     \item We denote $X^{(\ell)} = (x_1^{(\ell)}, \dots, x_{K_{\ell}}^{(\ell)})$ the abundance vector at layer $\ell$.
     \item For an abundance node $x_k^{(\ell)}$, we denote by $\childrennode(x_k^{(\ell)})$ the set of abundance children associated to that node.
+          Also, we introduce the notation $T^{(\ell + 1)}_k$, the vector of activation states $(u_j^{(\ell+1)})_j$ of the children of the node $u_k^{(l)}$ in $T$ (restriction of $T^{(\ell)}$ to the children of the node $u_k^{(\ell)}$).
     \item $X^{(1)} = [1, 0, \dots, 0]$, since it's the root of the tree, only one entity gets the whole weight.
     \item Since we would like a simple explicit model at first, we design a posterior $p_{\theta}(X|T)$ which is markovian relatively to the layers of the tree,
             so that the abundance at the next layer are only impacted by the previous layers abundance for now:
             $$
-            p_{\theta}(X^{(\ell)} | X^{(1:l-1)}, T) = p_{\theta}(X^{(\ell)} | X^{(l-1)}, T^{(\ell)})
+            p_{\theta}(X^{(\ell)} | X^{(1:\ell-1)}, T) = p_{\theta}(X^{(\ell)} | X^{(\ell-1)}, T^{(\ell)})
             $$
     \item In addition to the markovianity, we assume that at a given layer, the abundance only depends of their respective parent and their siblings:
     $$p(X^{(\ell+1)} | X^{(\ell)}, T^{(\ell+1)}) = \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, T^{(\ell+1)})$$

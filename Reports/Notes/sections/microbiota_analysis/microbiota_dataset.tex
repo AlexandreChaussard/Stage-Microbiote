@@ -31,6 +31,24 @@ To give some notations, we introduce the following framework:
     \item We assume that we have $n$ individuals observed through $(X_i, T_i)_{1 \leq i \leq n}$ i.i.d samples.
 \end{itemize}
 
+Note that all tree follow the same global architecture, with branches and nodes not always being activated.
+The following figure illustrates the global architecture at precision layer $4$:
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{images/microbiota_tree_global_structure}
+    \caption{Taxonomy of the microbiota dataset (precision $4$)}
+    \label{fig:taxonomy_microbiota_p4}
+\end{figure}
+
+Notice that at this precision layer, we don't have any missing entries, which facilitates the current modelisation.
+The next figure illustrates a sample from the dataset as well, as taxa-abundance data represented through opacity.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{images/sample_taxaabundance_microbiota}
+    \caption{Taxa-abundance sample from the dataset (opacity relates the abundance value)}
+    \label{fig:taxa_abundance_sample_p4}
+\end{figure}
+
 \subsection{Mathematical context and objective without latent variables}
 
 In first approximation, we would like to define a generative model that does not exploit any latent structure.
