@@ -1,0 +1,37 @@
+\subsection{Taxonomy clustering: mixture model}
+
+\subsubsection{Context}
+
+A first natural extension to improve the model introduced in \ref{simple_generative_model} would be to take into account
+a latent clustering of the microbiota.
+Indeed, before looking at functional areas, it is highly likely that some people may share a similar taxonomic architecture. \\
+
+Introducing that latent clustering can be done by modelizing a hidden variable that we will generally denote as $Z$.
+We then define the following framework, which stands as a mixture of the previously introduced model \ref{simple_generative_model} over the latent clusters:
+\begin{itemize}
+    \item Denote $Z \in \{1, \dots, C\}$ the latent taxonomic clustering variable.
+    \item Denote $p(Z = c) = \gamma_c$ the probability of cluster $c$.
+    \item Assume that $T$ and $X$ distributions parameters are now conditioned by the value of $Z$:
+          $$
+          \begin{align}
+                p(Z = c) &= \gamma_c \\
+                p\left(u_k^{(\ell)} = 1 | \nodeparent(u_k^{(\ell)}) = 1, Z = c\right) &= \pi_{c,k}^{(l)} \\
+                p\left(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, T^{(\ell+1)}, Z = c\right) &\sim x_k^{(\ell)} \mathcal{D}(\alpha_{c,k}^{(l)} \odot T^{(\ell+1)}_k) \quad \text{if } |\childrennode(x_k^{(\ell)})| > 1
+          \end{align}
+          $$
+\end{itemize}
+
+\subsubsection{Optimization}
+
+The usual optimization objective for this model would be the maximum likelihood regarding the observations, such that:
+$$
+\theta^* = arg\max_{\theta} p_{\theta}(T, X)
+$$
+
+However, this does not implement the latent structure that we are aiming for, as we do not observe $Z$.
+Hence, using the Expectation-Maximization algorithm presented in \ref{section:EM}, we introduce a suboptimal objective on the
+complete joint distribution:
+$$
+\theta^* = arg\max_{\theta} \underbrace{\mathbb{E}_{p_{\widehat{\theta}}(Z|T,X)}\left[ \log p_{\theta}(T, X, Z) | T, X \right]}_{Q(\widehat{\theta}, \theta)}
+$$
+

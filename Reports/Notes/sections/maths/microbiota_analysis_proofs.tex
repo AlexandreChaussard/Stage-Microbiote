@@ -201,3 +201,72 @@
     {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)}} \right) \right)
     $$
 \end{proof}
+
+
+\begin{proposition}[Expectation-Maximization for Taxonomy Clustering model]
+    \label{proposition:EM_taxonomy_clustering}
+    \newline
+    We use the same context as for proposition \ref{proposition:abundance_posterior_bernoulli_tree} of this section.
+    Assume the following framework changes:
+    \begin{itemize}
+        \item $(X_i, T_i)_{1 \le i \le n}$ samples of taxa-abundance data ($X_i$ abundance, $T_i$ associated taxonomy)
+        \item Let $Z_i$ a latent variable taking values in $\{1, \dots, C\}$.
+        \item We model the distributions as follow:
+            $$
+            \begin{align}
+                p(Z_i = c) &= \gamma_c \\
+                p\left(u_{k,i}^{(\ell)} = 1 | \nodeparent(u_{k,i}^{(\ell)}) = 1, Z_i = c\right) &= \pi_{c,k}^{(\ell)} \\
+                p\left(\childrennode(x_{k,i}^{(\ell)}) | x_{k,i}^{(\ell)}, T^{(\ell+1)}, Z_i = c \right) &\sim x_k^{(\ell)} \mathcal{D}(\alpha_{c,k}^{(\ell)} \odot T_k^{(\ell+1)}) \quad \text{if } |\childrennode(x_k^{(\ell)})| > 1
+            \end{align}
+            $$
+    \end{itemize}
+
+    Consider the optimization problem:
+    $$
+    \theta^* = arg\max_{\theta} \mathbb{E}_{p_{\widehat{\theta}}}[\log p_{\theta}(X, T, Z) | X, T]
+    $$
+
+    Then, the Expectation-Maximization algorithm solving that problem is given by (for each sample $i$ and cluster index $c$): \\
+
+    \textbf{Expectation step}:
+
+        $$
+        p_{\widehat{\theta}}(Z_i = c | X_i, T_i) = \tau_{ic} =
+                        \frac{\gamma_c p_{\widehat{\theta}}(T_i | Z_i = c) p_{\widehat{\theta}}(X_i | T_i, Z_i = c)
+                             }
+                             {
+                                \sum_{c'=1}^C
+                                \gamma_{c'} p_{\widehat{\theta}}(T_i | Z_i = c') p_{\widehat{\theta}}(X_i | T_i, Z_i = c')
+                             }
+        $$
+
+        where:
+        $$
+        \begin{align}
+            p_{\widehat{\theta}}(T_i | Z_i = c) &= \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left[\left(\pi_{c,k}^{(\ell)}\right)^{u_{k,i}^{(\ell)}} \left(1 - \pi_{c,k}^{(\ell)}\right)^{(1 - u_{k,i}^{(\ell)})}\right]^{\nodeparent(u_{k,i}^{(\ell)})} \\
+            p_{\widehat{\theta}}(X_i | T_i, Z_i = c) &= \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}} \delta_{x_k^{(\ell)}}\left(\childrennode(x_{k,i}^{(\ell)})\right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})|}=1} \left(\frac{1}{x_{k,i}^{(\ell)}} f_{\alpha_{c,k}^{(\ell)} \odot T_k^{(\ell+1)}}\left(\frac{\childrennode(x_{k,i}^{(\ell)})}{x_{k,i}^{(\ell)}}\right) \right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})|} > 1}
+        \end{align}
+        $$
+
+    \medskip
+    \textbf{Maximization step}:
+
+    \medskip
+
+    $\displaystyle
+    \gamma_c^*  = \frac{1}{n} \sum_{i=1}^n \tau_{ic}
+    $
+
+    $\displaystyle
+        \left(\pi_{c,k}^{(\ell)}\right)^* &= \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell)}) u_{k,i}^{(\ell)} \tau_{ic}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell)}) \tau_{ic}} \\
+    $
+
+    $\displaystyle
+    \alpha_{k,v}^{(\ell)} &\leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]\tau_{ic}}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \tau_{ic}} \right) \right)
+    $
+\end{proposition}
+
+\begin{proof}
+    Type the proof tomorrow
+\end{proof}

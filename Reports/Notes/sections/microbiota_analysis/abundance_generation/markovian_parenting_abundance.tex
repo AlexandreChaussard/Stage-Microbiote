@@ -35,7 +35,7 @@ We assume the following framework:
             \end{itemize}
     \item Since we deal with proportions in abundance vectors, it seems natural to use the Dirichlet distribution in first assumption.
           Hence, we assume that for all $l \geq 2$, if $|\childrennode(x_k^{(\ell)})| > 1$,
-            $$\childrennode(x_k^{(\ell+1)}) | x_k^{(\ell)}, T \sim x_k^{(\ell)} \mathcal{D}(\alpha_k^{(\ell)} \odot T^{(\ell+1)})$$
+            $$\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, T \sim x_k^{(\ell)} \mathcal{D}(\alpha_k^{(\ell)} \odot T^{(\ell+1)}_k)$$
           We denote by $f_{\alpha_k^{(\ell)} \odot T^{(\ell+1)}}$ the density of this distribution, parameterized by $\alpha_k^{(\ell)} \odot T^{(\ell+1)}$ which denotes
           a masked version of $\alpha_k^{(\ell)}$ relatively to the activated nodes of the tree at $T^{(\ell)}$.
           Notice that setting this distribution framework enables us to verify the constraints given above by renormalizing the layer with the obtained weights.
