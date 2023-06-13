@@ -35,3 +35,8 @@ $$
 \theta^* = arg\max_{\theta} \underbrace{\mathbb{E}_{p_{\widehat{\theta}}(Z|T,X)}\left[ \log p_{\theta}(T, X, Z) | T, X \right]}_{Q(\widehat{\theta}, \theta)}
 $$
 
+Such optimal $\theta^*$ can be computed through a mix of explicit estimators and a fixed point algorithm detailled in proposition \ref{proposition:EM_taxonomy_clustering}.
+Notice that the computed estimator of $\theta^*$ is quite close to the one presented in section \ref{simple_generative_model}, as we simply introduced a global architecture
+clustering based on a mixture of the simple generative model.
+
+\subsubsection{Experiments}

@@ -232,19 +232,19 @@
 
         $$
         p_{\widehat{\theta}}(Z_i = c | X_i, T_i) = \tau_{ic} =
-                        \frac{\gamma_c p_{\widehat{\theta}}(T_i | Z_i = c) p_{\widehat{\theta}}(X_i | T_i, Z_i = c)
+                        \frac{\widehat{\gamma}_c p_{\widehat{\theta}}(T_i | Z_i = c) p_{\widehat{\theta}}(X_i | T_i, Z_i = c)
                              }
                              {
                                 \sum_{c'=1}^C
-                                \gamma_{c'} p_{\widehat{\theta}}(T_i | Z_i = c') p_{\widehat{\theta}}(X_i | T_i, Z_i = c')
+                                \widehat{\gamma}_{c'} p_{\widehat{\theta}}(T_i | Z_i = c') p_{\widehat{\theta}}(X_i | T_i, Z_i = c')
                              }
         $$
 
         where:
         $$
         \begin{align}
-            p_{\widehat{\theta}}(T_i | Z_i = c) &= \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}} \left[\left(\pi_{c,k}^{(\ell)}\right)^{u_{k,i}^{(\ell)}} \left(1 - \pi_{c,k}^{(\ell)}\right)^{(1 - u_{k,i}^{(\ell)})}\right]^{\nodeparent(u_{k,i}^{(\ell)})} \\
-            p_{\widehat{\theta}}(X_i | T_i, Z_i = c) &= \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}} \delta_{x_k^{(\ell)}}\left(\childrennode(x_{k,i}^{(\ell)})\right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})|}=1} \left(\frac{1}{x_{k,i}^{(\ell)}} f_{\alpha_{c,k}^{(\ell)} \odot T_k^{(\ell+1)}}\left(\frac{\childrennode(x_{k,i}^{(\ell)})}{x_{k,i}^{(\ell)}}\right) \right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})|} > 1}
+            &p_{\widehat{\theta}}(T_i | Z_i = c) = \delta_{e_1}(T_i^{(1)}) \prod_{\ell = 1}^{L-1} \prod_{k=1}^{K_{\ell}} \left[\left(\widehat{\pi}_{c,k}^{(\ell+1)}\right)^{u_{k,i}^{(\ell+1)}} \left(1 - \widehat{\pi}_{c,k}^{(\ell+1)}\right)^{1 - u_{k,i}^{(\ell + 1)}}\right]^{\nodeparent(u_{k,i}^{(\ell+1)})} \\
+            &p_{\widehat{\theta}}(X_i | T_i, Z_i = c) = \delta_{e_1}(X_i^{(1)}) \prod_{\ell = 1}^{L-1} \prod_{k=1}^{K_{\ell}} \delta_{x_{k,i}^{(\ell)}}\left(\childrennode(x_{k,i}^{(\ell)})\right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| = 1}} \left(\frac{1}{x_{k,i}^{(\ell)}} f_{\widehat{\alpha}_{c,k}^{(\ell)} \odot T_{i,k}^{(\ell+1)}}\left(\frac{\childrennode(x_{k,i}^{(\ell)})}{x_{k,i}^{(\ell)}} \right) \right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1}}
         \end{align}
         $$
 
@@ -268,5 +268,130 @@
 \end{proposition}
 
 \begin{proof}
-    Type the proof tomorrow
+
+    We study the two parts of the EM algorithm, starting with the expectation step.
+
+    \medskip
+
+    \textbf{Expectation step}:
+
+    \medskip
+
+    Applying Bayes formula, we obtain:
+    $$
+    \begin{align}
+        p_{\widehat{\theta}}(Z_i = c | X_i, T_i) &= \tau_{ic} \\
+                              &= \frac{p_{\widehat{\theta}}(Z_i = c, X_i, T_i)}{\sum_{c'=1}^C p_{\widehat{\theta}}(Z_i = c', X_i, T_i)} \\
+                              &= \frac{\widehat{\gamma}_c p_{\widehat{\theta}}(T_i | Z_i = c) p_{\widehat{\theta}}(X_i | T_i, Z_i = c)}{\sum_{c'=1}^C \widehat{\gamma}_{c'} p_{\widehat{\theta}}(T_i = Z_i = c') p_{\widehat{\theta}}(X_i | T_i, Z_i = c')}
+    \end{align}
+    $$
+
+    Exploiting the model framework, we obtain the following expression for the conditional distribution of the taxonomy:
+    $$
+    \begin{align}
+        p_{\theta}(T_i | Z_i = c) &= p_{\theta}(T_i^{(1)}, \dots, T_i^{(L)} | Z_i = c) \\
+                        &= \delta_{e_1}(T_i^{(1)}) \prod_{\ell = 1}^{L-1} p_{\theta}(T_i^{(\ell + 1)} | T_i^{(\ell)}, Z_i = c) \\
+                        &= \delta_{e_1}(T_i^{(1)}) \prod_{\ell = 1}^{L-1} \prod_{k=1}^{K_{\ell}} p_{\theta}(u_{k,i}^{(\ell+1)} | \nodeparent(u_{k,i}^{(\ell+1)}), Z_i = c) \\
+                        &= \delta_{e_1}(T_i^{(1)}) \prod_{\ell = 1}^{L-1} \prod_{k=1}^{K_{\ell}} \left[\left(\pi_{c,k}^{(\ell+1)}\right)^{u_{k,i}^{(\ell+1)}} \left(1 - \pi_{c,k}^{(\ell+1)}\right)^{1 - u_{k,i}^{(\ell + 1)}}\right]^{\nodeparent(u_{k,i}^{(\ell+1)})}
+    \end{align}
+    $$
+
+    Similarly, the conditional abundance distribution is given by:
+
+    $$
+    \begin{align}
+        p_{\theta}(X_i | T_i, Z_i = c) &= p_{\theta}(X_i^{(1)}, \dots, X_i^{(L)} | T_i, Z_i = c) \\
+                                        &= \delta_{e_1}(X_i^{(1)}) \prod_{\ell = 1}^{L-1} p_{\theta}(X_i^{(\ell+1)} | X_i^{(\ell)}, T_i^{(\ell+1)}, Z_i = c) \\
+                                        &= \delta_{e_1}(X_i^{(1)}) \prod_{\ell = 1}^{L-1} \prod_{k=1}^{K_{\ell}} p_{\theta}(\childrennode(x_{k,i}^{(\ell)}) | x_{k,i}^{(\ell)}, T_i^{(\ell+1)}, Z_i=c) \\
+                                        &= \delta_{e_1}(X_i^{(1)}) \prod_{\ell = 1}^{L-1} \prod_{k=1}^{K_{\ell}} \delta_{x_{k,i}^{(\ell)}}\left(\childrennode(x_{k,i}^{(\ell)})\right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| = 1}} \left(\frac{1}{x_{k,i}^{(\ell)}} f_{\alpha_{c,k}^{(\ell)} \odot T_{i,k}^{(\ell+1)}}\left(\frac{\childrennode(x_{k,i}^{(\ell)})}{x_{k,i}^{(\ell)}} \right) \right)^{\mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1}}\\
+    \end{align}
+    $$
+
+    \medskip
+
+    \textbf{Maximization step}
+
+    \medskip
+
+    Recall the general objective:
+    $$
+    \begin{align}
+        \theta^* &= arg\max_{\theta} Q(\widehat{\theta}, \theta) \\
+                 &= arg\max_{\theta} \frac{1}{n} \sum_{i=1}^n \sum_{c=1}^C \left(\log \gamma_c + \log p(T_i | Z_i = c) + \log p(X_i | T_i, Z_i = c)\right) \tau_{ic}
+    \end{align}
+    $$
+
+    We start by optimizing $\gamma$.
+    The objective can be written as:
+    $$
+    \begin{equation}
+        \begin{align}
+            arg \max_{\gamma_j} \quad & \sum_{i=1}^n \sum_{c=1}^{C} \tau_{ic} \log \gamma_c  \\
+            \textrm{s.t.} \quad & \sum_{c=1}^{C} \gamma_c = 1 \\
+                                & \forall c, \gamma_c \geq 0
+        \end{align}
+        \label{eq:objective_latent_gamma_c_microbiota_clustering}
+    \end{equation}
+    $$
+
+    This optimization problem can be solved using Lagrange duality.
+    KKT conditions are then written as (optimizing relatively to any $\gamma_c$):
+    $$
+    \begin{align}
+        &\frac{1}{\gamma_c} \sum_{i=1}^n \tau_{ic} + \phi - \psi = 0 \\
+        &\sum_{c=1}^C \gamma_c = 1 \\
+        &\psi \geq 0 \\
+        &\forall c, \gamma_c \geq 0 \\
+        &\psi \gamma_c = 0
+    \end{align}
+    $$
+
+    Using the first identity, we get:
+    $$
+    \gamma_c = \frac{1}{\psi - \phi} \sum_{i=1}^n \tau_{ic}
+    $$
+
+    Let's set $\phi = 0$, which enables use to ensure the last identity.
+    Using the second identity, we then have:
+    $$
+    \begin{align}
+        \sum_{c=1}^C \gamma_c = 1 &= \sum_{c=1}^C \frac{1}{\psi} \sum_{i=1}^n \tau_{ic} \\
+                                    &= \frac{1}{\psi} \sum_{i=1}^n \sum_{c=1}^C \tau_{ic} \\
+                                    &= \frac{1}{\psi} \sum_{i=1}^n 1 \\
+                                    &= \frac{n}{\psi}
+    \end{align}
+    $$
+
+    Hence, we get $\psi = n$, which leads us to the optimal $\gamma_c$ that verifies the KKT constraints:
+    $$
+    \gamma_c^* = \frac{1}{n} \sum_{i=1}^n \tau_{ic}
+    $$
+
+    Looking at $\pi_c$ now, the optimization objective can be written as:
+    $$
+    \begin{equation}
+        \begin{align}
+            arg \max_{\pi_{c,k}^{(\ell)}} \quad & \sum_{i=1}^n \sum_{c=1}^{C} \tau_{ic} \log p_{\pi_c}(T_i | Z_i = c)  \\
+            \textrm{s.t.} \quad & \pi_{c,k}^{(\ell)} \in [0, 1]
+        \end{align}
+    \end{equation}
+    $$
+
+    This objective is very similar to the MLE computed for proposition \ref{proposition:mle_bernoulli_tree_prior}, up to
+    a multiplication by $\tau_{ic}$.
+    Hence, we refer to the proposition \ref{proposition:mle_bernoulli_tree_prior} for the computation, which leads to the following
+    optimal $\pi_c$:
+    $$
+    \left(\pi_{c,k}^{(\ell)}\right)^* = \frac{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell))}) u_{k,i}^{(\ell)} \tau_{ic}}{\sum_{i=1}^n \nodeparent(u_{k,i}^{(\ell))}) \tau_{ic}}
+    $$
+
+    Similarly, the optimization objective of $\alpha_c$ is close to the one of proposition \ref{MLE_abundance_bernoulli_tree},
+    up to a multiplication by $\tau_{ic}$.
+    Therefore, we refer to \ref{MLE_abundance_bernoulli_tree} for the original computation, that just requires a multiplication by
+    $\tau_{ic}$ to obtain the following result:
+    $$
+    \alpha_{k,v}^{(\ell)} &\leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]\tau_{ic}}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \tau_{ic}} \right) \right)
+    $$
+
 \end{proof}

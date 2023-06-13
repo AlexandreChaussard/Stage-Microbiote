@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  5 JUN 2023 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  13 JUN 2023 11:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2347,6 +2347,11 @@ l.248         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+
+Overfull \hbox (7.8788pt too wide) detected at line 249
+[][]
+ []
+
 sections/maths/microbiota_analysis_proofs.tex:261: Misplaced alignment tab char
 acter &.
 l.261         \left(\pi_{c,k}^{(\ell)}\right)^* &
@@ -2379,6 +2384,306 @@ l.266 ...(\ell)}, T_i)} \tau_{ic}} \right) \right)
                                                   
 I'm ignoring a \right that had no matching \left.
 
+
+sections/maths/microbiota_analysis_proofs.tex:286: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.286     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33]
+
+sections/maths/microbiota_analysis_proofs.tex:296: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.296     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:307: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.307     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (7.8788pt too wide) detected at line 308
+[][]
+ []
+
+
+sections/maths/microbiota_analysis_proofs.tex:321: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.321     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:327: LaTeX Error: Bad math enviro
+nment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327     \begin{equation}
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+sections/maths/microbiota_analysis_proofs.tex:332: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.332         \end{align}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/maths/microbiota_analysis_proofs.tex:334: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.334     \end{equation}
+                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34]
+
+sections/maths/microbiota_analysis_proofs.tex:334: LaTeX Error: \begin{proof} o
+n input line 270 ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.334     \end{equation}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+sections/maths/microbiota_analysis_proofs.tex:336: Missing $ inserted.
+<inserted text> 
+                $
+l.336 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/maths/microbiota_analysis_proofs.tex:336: Display math should end with
+ $$.
+<to be read again> 
+                   \tex_par:D 
+l.336 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+sections/maths/microbiota_analysis_proofs.tex:346: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.346     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:362: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.362     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:372: LaTeX Error: Bad math enviro
+nment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372     \begin{equation}
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+sections/maths/microbiota_analysis_proofs.tex:376: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.376         \end{align}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/maths/microbiota_analysis_proofs.tex:377: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.377     \end{equation}
+                        
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+sections/maths/microbiota_analysis_proofs.tex:377: LaTeX Error: \begin{document
+} ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.377     \end{equation}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+sections/maths/microbiota_analysis_proofs.tex:377: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.377     \end{equation}
+                        
+Things are pretty mixed up, but I think the worst is over.
+
+sections/maths/microbiota_analysis_proofs.tex:379: Missing $ inserted.
+<inserted text> 
+                $
+l.379 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+sections/maths/microbiota_analysis_proofs.tex:379: Display math should end with
+ $$.
+<to be read again> 
+                   \tex_par:D 
+l.379 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[35]
+sections/maths/microbiota_analysis_proofs.tex:393: Misplaced alignment tab char
+acter &.
+l.393     \alpha_{k,v}^{(\ell)} &
+                                 \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+sections/maths/microbiota_analysis_proofs.tex:394: Extra \right.
+l.394 ...(\ell)}, T_i)} \tau_{ic}} \right) \right)
+                                                  
+I'm ignoring a \right that had no matching \left.
+
+
+sections/maths/microbiota_analysis_proofs.tex:397: LaTeX Error: \begin{document
+} ended by \end{proof}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.397 \end{proof}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+sections/maths/microbiota_analysis_proofs.tex:397: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.397 \end{proof}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2388,7 +2693,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33] (sections/general/bibpage.tex)
+[36] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -2403,18 +2708,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D9C12DD6F969D1E96C4BEFC7930E8B22;6531.
+[37] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: D9C12DD6F969D1E96C4BEFC7930E8B22;6531
+(rerunfilecheck)             After:  8883EB67756898F8AD2CBE4552752B10;6654.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27084 strings out of 476315
- 535873 string characters out of 5787197
+ 27091 strings out of 476315
+ 535988 string characters out of 5787197
  1872068 words of memory out of 5000000
- 47010 multiletter control sequences out of 15000+600000
+ 47011 multiletter control sequences out of 15000+600000
  533899 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,18n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2455,9 +2766,9 @@ frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb>
 <C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (35 pages, 2121162 bytes).
+t\main.pdf (38 pages, 2132281 bytes).
 PDF statistics:
- 1052 PDF objects out of 1200 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
+ 1078 PDF objects out of 1200 (max. 8388607)
+ 117 named destinations out of 1000 (max. 500000)
  387 words of extra memory for PDF output out of 10000 (max. 10000000)
 
