@@ -59,6 +59,13 @@ class Tree:
                 current_node.addChild(child)
             current_index += 1
 
+    def getMaxDepth(self):
+        max_depth = 0
+        for node in self.nodes:
+            if node.depth > max_depth:
+                max_depth = node.depth
+        return max_depth
+
     def getLeaves(self):
         return self.getNodesAtDepth(self.depth)
 

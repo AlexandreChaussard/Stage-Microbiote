@@ -9,7 +9,6 @@ class DirichletAbundanceTreePosterior:
 
     def __init__(self, global_tree, dirichlet_parameters, seed=None):
         self.global_tree = global_tree
-        self.dirichlet_params = dirichlet_parameters
         self.seed = seed
         np.random.seed(seed)
 
@@ -19,6 +18,8 @@ class DirichletAbundanceTreePosterior:
                 if n_children > 1:
                     alpha_k_l = np.abs(np.random.random(n_children))
                     dirichlet_parameters[node.index] = alpha_k_l
+
+        self.dirichlet_params = dirichlet_parameters
 
     def sample_abundance_tree(self, tree):
 
@@ -72,33 +73,40 @@ class DirichletAbundanceTreePosterior:
 
         return tree
 
-    def log_likelihood(self, trees):
+    def compute_log_likelihood(self, tree):
+        ll = 0
+
+        for node in tree.nodes:
+
+            if node.value == 0:
+                continue
+
+            countActive = node.countNonZeroChilren()
+
+            if countActive > 1:
+
+                alpha_k_l = self.dirichlet_params[node.index]
+                x_k_i_l = node.value
+                values = []
+                mask = []
+                for i, child in enumerate(node.children):
+                    if child.value > 0:
+                        values.append(child.value / x_k_i_l)
+                        mask.append(i)
+
+                if (np.abs(np.sum(values, 0) - 1.0) > 10e-10).any():
+                    print("Issue at node", node.index)
+                    tree.plot()
+                    plt.show()
+
+                ll += np.log(dirichlet.pdf(values, alpha_k_l[mask]))
+
+        return ll
+
+    def compute_dataset_log_likelihood(self, trees):
         ll = 0
         for T_i in trees:
-            for node in T_i.nodes:
-
-                if node.value == 0:
-                    continue
-
-                countActive = node.countNonZeroChilren()
-
-                if countActive > 1:
-
-                    alpha_k_l = self.dirichlet_params[node.index]
-                    x_k_i_l = node.value
-                    values = []
-                    mask = []
-                    for i, child in enumerate(node.children):
-                        if child.value > 0:
-                            values.append(child.value / x_k_i_l)
-                            mask.append(i)
-
-                    if (np.abs(np.sum(values, 0) - 1.0) > 10e-10).any():
-                        print("Issue at node", node.index)
-                        T_i.plot()
-                        plt.show()
-
-                    ll += np.log(dirichlet.pdf(values, alpha_k_l[mask])) / len(trees)
+            ll += self.compute_log_likelihood(T_i)
 
         return ll
 
@@ -158,7 +166,7 @@ class DirichletAbundanceTreePosterior:
                     alpha_k_l[v] = invdigamma(alpha_k_v_l / count)
                     self.dirichlet_params[node_index] = alpha_k_l
 
-            ll = self.log_likelihood(trees)
+            ll = self.compute_dataset_log_likelihood(trees)
             print("Fitting DirichletAbundanceTree - Likelihood:", ll)
             ll_list.append(ll)
 

@@ -1,6 +1,7 @@
 from src.utils import Tree, AbundanceTree, Node
 import random
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 class ActivableNode(Node):
@@ -37,18 +38,19 @@ class ActivableNode(Node):
 
 
 class BernoulliTreePrior(Tree):
-    def __init__(self, adjancent_matrix, activation_probabilities, seed=None):
+    def __init__(self, global_tree, activation_probabilities, seed=None):
+        adjancent_matrix = global_tree.adjacent_matrix
         super().__init__(adjancent_matrix)
         random.seed(seed)
         # Turn the tree nodes into activable nodes
         new_root = ActivableNode(
-                    self.root.parent,
-                    self.root.children,
-                    1,
-                    self.root.value,
-                    self.root.index,
-                    self.root.depth
-                )
+            self.root.parent,
+            self.root.children,
+            1,
+            self.root.value,
+            self.root.index,
+            self.root.depth
+        )
         for child in self.root.children:
             child.parent = new_root
         self.root = new_root
@@ -150,7 +152,7 @@ class BernoulliTreePrior(Tree):
                 pi_k_l = 0
             else:
                 pi_k_l /= count
-            assert(1 >= pi_k_l >= 0)
+            assert (1 >= pi_k_l >= 0)
             # Update the activation of that node with the new one
             u_k_l.activationProba = pi_k_l
 
@@ -163,6 +165,31 @@ class BernoulliTreePrior(Tree):
             probabilities[node.index] = node.activationProba
         proba_tree = AbundanceTree(self.adjacent_matrix, probabilities)
         return proba_tree
+
+    def compute_log_likelihood(self, tree):
+
+        ll = 0
+
+        # Skip the root
+        for l in range(1, tree.getMaxDepth()+1):
+
+            for node in tree.getNodesAtDepth(l):
+
+                # Fetch the activation probability of the node
+                pi = self.nodes[node.index].activationProba
+                # Check if the node is activated
+                u = (node.value > 0) * 1
+                # Check if the parent of the node is activated
+                P = (node.parent.value > 0) * 1
+
+                # Compute the log likelihood
+                if P == 1:
+                    if u == 1:
+                        ll += np.log(pi)
+                    else:
+                        ll += np.log(1 - pi)
+
+        return ll
 
 
 def generate_bernoulli_tree(global_adjacency_matrix, activation_probabilities, seed=None):

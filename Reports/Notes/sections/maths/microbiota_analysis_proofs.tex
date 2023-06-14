@@ -262,8 +262,8 @@
     $
 
     $\displaystyle
-    \alpha_{k,v}^{(\ell)} &\leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]\tau_{ic}}
-    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \tau_{ic}} \right) \right)
+    \left[\alpha_{c,k}^{(\ell)}\right]_v &\leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_{c,k}^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_{c,k}^{(\ell)}, T_i)} \left[\alpha_{c,k}^{(\ell)}\right]_u\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]\tau_{ic}}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_{c,k}^{(\ell)}, T_i)} \tau_{ic}} \right) \right)
     $
 \end{proposition}
 
@@ -390,8 +390,8 @@
     Therefore, we refer to \ref{MLE_abundance_bernoulli_tree} for the original computation, that just requires a multiplication by
     $\tau_{ic}$ to obtain the following result:
     $$
-    \alpha_{k,v}^{(\ell)} &\leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \alpha_{k,u}^{(\ell)}\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]\tau_{ic}}
-    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_k^{(\ell)}, T_i)} \tau_{ic}} \right) \right)
+    \left[\alpha_{c,k}^{(\ell)}\right]_v &\leftarrow \psi^{-1} \left(\frac{\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_{c,k}^{(\ell)}, T_i)} \left[ \psi\left(\sum_{u \in \mathcal{V}(\alpha_{c,k}^{(\ell)}, T_i)} \left[\alpha_{c,k}^{(\ell)}\right]_u\right) + \log \frac{\left[\childrennode(x_{k,i}^{(\ell)})\right]_v}{x_{k,i}^{(\ell)}} \right]\tau_{ic}}
+    {\sum_{i=1}^n \mathds{1}_{|\childrennode(x_{k,i}^{(\ell)})| > 1} \mathds{1}_{v \in \mathcal{V}(\alpha_{c,k}^{(\ell)}, T_i)} \tau_{ic}} \right) \right)
     $$
 
 \end{proof}

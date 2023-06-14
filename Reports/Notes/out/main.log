@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  13 JUN 2023 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  14 JUN 2023 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1076,7 +1076,7 @@ Package biblatex Info: Reference section=0 on input line 89.
 Package biblatex Info: Reference segment=0 on input line 89.
 
 (sections/general/titlepage.tex
-<images/logo_ipp.png, id=151, 270.51062pt x 270.00874pt>
+<images/logo_ipp.png, id=155, 270.51062pt x 270.00874pt>
 File: images/logo_ipp.png Graphic file (type png)
 <use images/logo_ipp.png>
 Package pdftex.def Info: images/logo_ipp.png  used on input line 9.
@@ -1255,7 +1255,7 @@ sam-ple as $\OML/cmm/m/it/12 Y[] \OMS/cmsy/m/n/12 ^^X B\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W[]e[] \OT1/cmr/m/n/12 +
  []
 
-<images/samples_gmm_lc.png, id=279, 419.5675pt x 343.78438pt>
+<images/samples_gmm_lc.png, id=285, 419.5675pt x 343.78438pt>
 File: images/samples_gmm_lc.png Graphic file (type png)
 <use images/samples_gmm_lc.png>
 Package pdftex.def Info: images/samples_gmm_lc.png  used on input line 83.
@@ -1269,7 +1269,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
-<images/samples_gmm_lc_badconditioning.png, id=285, 420.57124pt x 341.275pt>
+<images/samples_gmm_lc_badconditioning.png, id=291, 420.57124pt x 341.275pt>
 File: images/samples_gmm_lc_badconditioning.png Graphic file (type png)
 <use images/samples_gmm_lc_badconditioning.png>
 Package pdftex.def Info: images/samples_gmm_lc_badconditioning.png  used on inp
@@ -1360,7 +1360,7 @@ l.64         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/samples_dirichlet_lc.png, id=304, 411.5375pt x 320.19624pt>
+<images/samples_dirichlet_lc.png, id=310, 411.5375pt x 320.19624pt>
 File: images/samples_dirichlet_lc.png Graphic file (type png)
 <use images/samples_dirichlet_lc.png>
 Package pdftex.def Info: images/samples_dirichlet_lc.png  used on input line 75
@@ -1423,7 +1423,7 @@ l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/Reparameterized_Variational_Autoencoder.png, id=323, 803.0pt x 333.245p
+<images/Reparameterized_Variational_Autoencoder.png, id=329, 803.0pt x 333.245p
 t>
 File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
 )
@@ -1450,13 +1450,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12 <./images/Reparameterized_Variational_Autoencoder.png>]
 (sections/variational_methods/vq_vae.tex
-<images/vq_vae_architecture.png, id=336, 839.63687pt x 178.16562pt>
+<images/vq_vae_architecture.png, id=342, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
 Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
 
 (pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
-<images/vq_vae_quantization.png, id=338, 815.54688pt x 330.73563pt>
+<images/vq_vae_quantization.png, id=344, 815.54688pt x 330.73563pt>
 File: images/vq_vae_quantization.png Graphic file (type png)
 <use images/vq_vae_quantization.png>
 Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
@@ -1538,7 +1538,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15] (sections/variational_methods/pixel_cnn.tex
-<images/masked_convolution_pixel_cnn.png, id=361, 214.8025pt x 176.66pt>
+<images/masked_convolution_pixel_cnn.png, id=367, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
 Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
@@ -1564,13 +1564,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [17] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
 (sections/microbiota_analysis/microbiota_dataset.tex
-<images/abundance_tree_phylogenetic.png, id=372, 95.85812pt x 134.00063pt>
+<images/abundance_tree_phylogenetic.png, id=378, 95.85812pt x 134.00063pt>
 File: images/abundance_tree_phylogenetic.png Graphic file (type png)
 <use images/abundance_tree_phylogenetic.png>
 Package pdftex.def Info: images/abundance_tree_phylogenetic.png  used on input 
 line 7.
 (pdftex.def)             Requested size: 95.85788pt x 134.00027pt.
-<images/tree_to_image.png, id=375, 310.66063pt x 137.51375pt>
+<images/tree_to_image.png, id=381, 310.66063pt x 137.51375pt>
 File: images/tree_to_image.png Graphic file (type png)
 <use images/tree_to_image.png>
 Package pdftex.def Info: images/tree_to_image.png  used on input line 17.
@@ -1585,14 +1585,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
-<images/microbiota_tree_global_structure.png, id=388, 367.87437pt x 277.53688pt
+<images/microbiota_tree_global_structure.png, id=394, 367.87437pt x 277.53688pt
 >
 File: images/microbiota_tree_global_structure.png Graphic file (type png)
 <use images/microbiota_tree_global_structure.png>
 Package pdftex.def Info: images/microbiota_tree_global_structure.png  used on i
 nput line 38.
 (pdftex.def)             Requested size: 220.72632pt x 166.5234pt.
-<images/sample_taxaabundance_microbiota.png, id=389, 340.27126pt x 276.53313pt>
+<images/sample_taxaabundance_microbiota.png, id=395, 340.27126pt x 276.53313pt>
 
 File: images/sample_taxaabundance_microbiota.png Graphic file (type png)
 <use images/sample_taxaabundance_microbiota.png>
@@ -1827,7 +1827,7 @@ l.17 \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/artificial_tree_global_structure.png, id=416, 372.39125pt x 281.05pt>
+<images/artificial_tree_global_structure.png, id=422, 372.39125pt x 281.05pt>
 File: images/artificial_tree_global_structure.png Graphic file (type png)
 <use images/artificial_tree_global_structure.png>
 Package pdftex.def Info: images/artificial_tree_global_structure.png  used on i
@@ -1855,13 +1855,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-<images/artificial_tree_sample.png, id=424, 372.89313pt x 284.06125pt>
+<images/artificial_tree_sample.png, id=430, 372.89313pt x 284.06125pt>
 File: images/artificial_tree_sample.png Graphic file (type png)
 <use images/artificial_tree_sample.png>
 Package pdftex.def Info: images/artificial_tree_sample.png  used on input line 
 46.
 (pdftex.def)             Requested size: 261.0234pt x 198.84149pt.
-<images/markovian_tree_model_loglikelihood_multiple_convergences.png, id=427, 4
+<images/markovian_tree_model_loglikelihood_multiple_convergences.png, id=433, 4
 01.8212pt x 333.1647pt>
 File: images/markovian_tree_model_loglikelihood_multiple_convergences.png Graph
 ic file (type png)
@@ -1880,7 +1880,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [24 <./images/artificial_tree_global_structure.png> <./images/artificial_tree_s
 ample.png>]
-<images/markovian_tree_model_convergence_error_estimators_iteration.png, id=438
+<images/markovian_tree_model_convergence_error_estimators_iteration.png, id=444
 , 941.6781pt x 534.0753pt>
 File: images/markovian_tree_model_convergence_error_estimators_iteration.png Gr
 aphic file (type png)
@@ -1893,7 +1893,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--77
 
  []
 
-<images/markovian_tree_model_error_estimators.png, id=440, 493.6041pt x 282.575
+<images/markovian_tree_model_error_estimators.png, id=446, 493.6041pt x 282.575
 7pt>
 File: images/markovian_tree_model_error_estimators.png Graphic file (type png)
 <use images/markovian_tree_model_error_estimators.png>
@@ -1919,7 +1919,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--95
 
  []
 
-<images/markovian_tree_model_mean_error_samples.png, id=450, 958.3002pt x 534.0
+<images/markovian_tree_model_mean_error_samples.png, id=456, 958.3002pt x 534.0
 753pt>
 File: images/markovian_tree_model_mean_error_samples.png Graphic file (type png
 )
@@ -2370,8 +2370,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--263
 
 sections/maths/microbiota_analysis_proofs.tex:265: Misplaced alignment tab char
 acter &.
-l.265     \alpha_{k,v}^{(\ell)} &
-                                 \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}...
+l.265     \left[\alpha_{c,k}^{(\ell)}\right]_v &
+                                                \leftarrow \psi^{-1} \left(\...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2649,8 +2649,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [35]
 sections/maths/microbiota_analysis_proofs.tex:393: Misplaced alignment tab char
 acter &.
-l.393     \alpha_{k,v}^{(\ell)} &
-                                 \leftarrow \psi^{-1} \left(\frac{\sum_{i=1}...
+l.393     \left[\alpha_{c,k}^{(\ell)}\right]_v &
+                                                \leftarrow \psi^{-1} \left(\...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2709,23 +2709,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [37] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: D9C12DD6F969D1E96C4BEFC7930E8B22;6531
-(rerunfilecheck)             After:  8883EB67756898F8AD2CBE4552752B10;6654.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 8883EB67756898F8AD2CBE4552752B10;6654.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27091 strings out of 476315
- 535988 string characters out of 5787197
+ 27092 strings out of 476315
+ 536009 string characters out of 5787197
  1872068 words of memory out of 5000000
- 47011 multiletter control sequences out of 15000+600000
+ 47012 multiletter control sequences out of 15000+600000
  533899 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,18n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2766,9 +2760,9 @@ frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb>
 <C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (38 pages, 2132281 bytes).
+t\main.pdf (38 pages, 2133036 bytes).
 PDF statistics:
- 1078 PDF objects out of 1200 (max. 8388607)
+ 1083 PDF objects out of 1200 (max. 8388607)
  117 named destinations out of 1000 (max. 500000)
- 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 395 words of extra memory for PDF output out of 10000 (max. 10000000)
 

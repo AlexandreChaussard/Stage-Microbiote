@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 global_tree, abundance_trees = microbiota_abundance_trees(precision_max=3, path='../../data')
 
-prior = BernoulliTreePrior(global_tree.adjacent_matrix, activation_probabilities={})
+prior = BernoulliTreePrior(global_tree, activation_probabilities={})
 prior.fit(abundance_trees.values())
 
 proba_tree = prior.get_proba_tree()
