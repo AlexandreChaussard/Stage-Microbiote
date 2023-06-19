@@ -19,6 +19,45 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{bottom_up_superiority_hidden_tree_markov_models}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d3908573ecb0e99b6931248865657610}{%
+           family={Bacciu},
+           familyi={B\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3d75c2b2b25ec2d2cda1b63b5aea2325}{%
+           family={Micheli},
+           familyi={M\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ed57e35adcbd515f86abca65e36f781a}{%
+           family={Sperduti},
+           familyi={S\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{b656cdba1ec77606d8182d436c33833a}
+      \strng{fullhash}{b656cdba1ec77606d8182d436c33833a}
+      \strng{bibnamehash}{b656cdba1ec77606d8182d436c33833a}
+      \strng{authorbibnamehash}{b656cdba1ec77606d8182d436c33833a}
+      \strng{authornamehash}{b656cdba1ec77606d8182d436c33833a}
+      \strng{authorfullhash}{b656cdba1ec77606d8182d436c33833a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on neural networks and learning systems}
+      \field{number}{12}
+      \field{title}{Compositional generative mapping for tree-structured data—Part I: Bottom-up probabilistic modeling of trees}
+      \field{volume}{23}
+      \field{year}{2012}
+      \field{pages}{1987\bibrangedash 2002}
+      \range{pages}{16}
+    \endentry
     \entry{expectation_maximization_source}{article}{}
       \name{author}{3}{}{%
         {{hash=09d592a5388131e31704c9c4464439c9}{%
@@ -69,6 +108,45 @@
       \verb{url}
       \verb http://www.jstor.org/stable/2984875
       \endverb
+    \endentry
+    \entry{hidden_tree_markov_models}{article}{}
+      \name{author}{3}{}{%
+        {{hash=013a7590fcc479658bd789e80b1edc27}{%
+           family={Diligenti},
+           familyi={D\bibinitperiod},
+           given={Michelangelo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f247df2d5de3a9ccb24aa9ee9fdaf277}{%
+           family={Frasconi},
+           familyi={F\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d25d4f83ae540b2b728a5423e9fbe85b}{%
+           family={Gori},
+           familyi={G\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2fefaba1a844da817546e13bd58ac9a6}
+      \strng{fullhash}{2fefaba1a844da817546e13bd58ac9a6}
+      \strng{bibnamehash}{2fefaba1a844da817546e13bd58ac9a6}
+      \strng{authorbibnamehash}{2fefaba1a844da817546e13bd58ac9a6}
+      \strng{authornamehash}{2fefaba1a844da817546e13bd58ac9a6}
+      \strng{authorfullhash}{2fefaba1a844da817546e13bd58ac9a6}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on pattern analysis and machine intelligence}
+      \field{number}{4}
+      \field{title}{Hidden tree Markov models for document image classification}
+      \field{volume}{25}
+      \field{year}{2003}
+      \field{pages}{519\bibrangedash 523}
+      \range{pages}{5}
     \endentry
     \entry{microbiome_deeplearning_research}{article}{}
       \name{author}{7}{}{%

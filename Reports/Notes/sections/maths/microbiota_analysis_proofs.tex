@@ -395,3 +395,64 @@
     $$
 
 \end{proof}
+
+\begin{proposition}[Likelihood of layer-wise hidden markov model tree generator]
+    \label{proposition:likelihood_layer_wise_hmm_tree}
+    Let us assume the following framework:
+    \begin{itemize}
+        \item $Z$ follows a discrete homogeneous Markov Chain, such that for all $c \in \{1, \dots, C\}$:
+        $$
+        \begin{align}
+            &\mathbb{P}(Z^{(1)} = c) = a_c \\
+            &\mathbb{P}(Z^{(\ell+1)} = k | Z^{(\ell)} = c) = t_c^k
+        \end{align}
+        $$
+
+        \item $T$ denotes a tree, for which the layers are denoted by $(T^{(\ell)})_{1 \leq \ell \leq L}$
+                and the internal nodes by $u_k^{(\ell)}$ (Bernoulli variables).
+
+        \item We introduce $\childrennode(T^{(\ell)})$ the set of plausible children in the
+                taxonomy at layer $(\ell+1)$, conditionally to $T^{(\ell)}$.
+        \item The emission probability is then modeled by:
+            $$\mathbb{P}(T^{(\ell+1)} = \omega | Z^{(\ell+1)} = c, T^{(\ell)}) = \frac{\pi_c(\omega) \mathds{1}_{\omega \in \childrennode(T^{(\ell)})}}{\sum_{\nu \in \childrennode(T^{(\ell)})} \pi_c(\omega)}$$
+    \end{itemize}
+
+    Then, the joint likelihood of such model is given by:
+    $$
+    p(T, Z) = p(Z^{(1)}) \delta_{e_1}(T^{(1)}) \prod_{\ell=1}^L p(T^{(\ell+1)} | Z^{(\ell+1)}, T^{(\ell)}) p(Z^{(\ell+1)} | Z^{(\ell)})
+    $$
+
+\end{proposition}
+
+\begin{proof}
+
+    $$
+    \begin{align}
+        p(T, Z) &= p(T^{(1)}, Z^{(1)}, \dots, T^{(L)}, Z^{(L)}) \\
+                &= p(T^{(1)}, Z^{(1)}) \prod_{\ell = 1}^L p(T^{(\ell+1)}, Z^{(\ell+1)} | T^{(\ell)}, Z^{(\ell)}) \\
+                &= p(Z^{(1)}) p(T^{(1)} | Z^{(1)}) \prod_{\ell=1}^L p(T^{(\ell+1)} | Z^{(\ell+1)}, Z^{(\ell)}, T^{(\ell)}) p(Z^{(\ell+1)} | Z^{(\ell)}, T^{(\ell)}) \\
+                &= p(Z^{(1)}) \delta_{e_1}(T^{(1)}) \prod_{\ell=1}^L p(T^{(\ell+1)} | Z^{(\ell+1)}, T^{(\ell)}) p(Z^{(\ell+1)} | Z^{(\ell)})
+    \end{align}
+    $$
+
+\end{proof}
+
+\begin{proposition}[Expectation-Maximization for layer-wise hidden markov model for tree generation]
+    \label{proposition:em_layer_wise_hmm_tree}
+    Consider the framework of proposition \ref{proposition:likelihood_layer_wise_hmm_tree}.
+    \medskip
+    Recall the Expectation-Maximization objective:
+    $$
+    \theta^* = arg\max_{\theta} Q(\widehat{\theta}, \theta)
+    $$
+    where $Q(\widehat{\theta}, \theta) = \mathbb{E}_{p_{\widehat{\theta}}(Z|T)}[\log p(T,Z) | T]$.
+    \medskip
+    The E-M algorithm is then given by:
+    \begin{itemize}
+        \item \textbf{Expectation step}:
+        $$
+        p(Z)
+        $$
+        \item \textbf{Maximization step}:
+    \end{itemize}
+\end{proposition}
