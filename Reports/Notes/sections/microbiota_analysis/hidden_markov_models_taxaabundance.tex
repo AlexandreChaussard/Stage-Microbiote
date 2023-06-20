@@ -123,10 +123,11 @@ Concisely, the mathematical framework can be written as follow:
 
 One may notice that such modelisation on $T$ will require a large number of parameters.
 Indeed, the set of plausible activation vectors at layer $(\ell+1)$ relatively to $T^{(\ell)}$ can be quite big, as for each activate node $u_k^{(\ell)}$ in $T^{(\ell)}$
-we get $2^{|\childrennode(u_k^{(\ell)})|} - 1$ plausible activated vectors of its children ($-1$ comes from the fact that we would like to avoid missing values),
-so that for a given tree $T$, we obtain a total number of parameters of:
+we get $2^{|\childrennode(u_k^{(\ell)})|} - 1$ plausible activated vectors of its children ($-1$ comes from the fact that we would like to avoid missing values).
+We denote by $\mathcal{S}(Z)$ the discrete state space of the hidden markov chain.
+Hence, for a given tree $T$, we obtain a total number of parameters of:
 $$
-n_{\text{params}} = \sum_{l=1}^{L}\sum_{k=1}^{K_{\ell}} u_k^{(\ell)} \left(2^{|\childrennode(u_k^{(\ell)})|} - 1\right)
+n_{\text{params}} = \sum_{\ell=1}^{L}\sum_{k=1}^{K_{\ell}} |\mathcal{S}(Z)| \times \left(2^{|\childrennode(u_k^{(\ell)})|} - 1\right)
 $$
 
 As usual for latent data models, variational methods come in handy for learning the model.
@@ -139,3 +140,36 @@ The E-M algorithm can be summarized as follow:
 \end{itemize}
 
 \subsubsection{Abundance generation: Hidden Tree Markov Model}
+
+In this section, we aim at modeling the distribution of the abundance data $(X_i)_{1 \leq i \leq n}$ conditionally
+to its known corresponding trees $(T_i)_{1 \leq i \leq n}$, using a Hidden Tree Markov Model (HTMM).
+The dependency graph is illustrated by the figure \ref{fig:top_down_htmm_example}, giving us the follow mathematical framework:
+
+\begin{itemize}
+    \item $Z$ is a discrete homogeneous Markov Tree (MT):
+        \begin{itemize}
+            \item We define a prior over the root:
+                $$\mathbb{P}(Z_1^{(1)} = c | T^{(1)}) = a_j$$
+            \item We define the transition probabilities:
+                $$\mathbb{P}(\childrennode(Z_k^{(\ell)}) = \nu | Z_k^{(\ell)} = j, T^{(\ell+1)}) = t_{\nu}^j$$
+        \end{itemize}
+    \item $X$ follows a Markov Tree structure.
+        We define the emission probability of the corresponding abundance relatively to the hidden states and tree:
+        $$p(\childrennode(x_k^{(\ell)}) | \childrennode(Z_k^{(\ell)}) = \nu, x_k^{(\ell)}, T^{(\ell+1)}) \sim x_k^{(\ell)} \mathcal{D}(\alpha_{\nu,k}^{(\ell)} \odot T^{(\ell+1)}_k)$$
+\end{itemize}
+
+The number of parameters of that model is quite large, as it depends on the size of the latent space state and the number of child node
+of each parent node in the tree structure.
+Indeed, for each node, the corresponding dirichlet parameter is of the size of the number of children (if it has more than 1 child).
+Then, we have as many dirichlet parameters as the possible amount of vector $\nu$, for which each coordinate has $|\mathcal{S}(Z)|$ plausible value.
+That leads us to the following number of parameters:
+$$
+n_{\text{params}} = \sum_{\ell=1}^L \sum_{k=1}^{K_{\ell}} |\mathcal{S}(Z)|^{|\childrennode(u_k^{(\ell)})|} \times |\childrennode(u_k^{(\ell)})| \times \mathds{1}_{|\childrennode(u_k^{(\ell)})| > 1}
+$$
+
+As previously for the tree generation, we propose an Expectation-Maximization algorithm to compute the optimal parameters of
+that HTMM, detailed in proposition ???. The E-M sums up as follows:
+\begin{itemize}
+    \item \textbf{Expectation step}:
+    \item \textbf{Maximization step}:
+\end{itemize}

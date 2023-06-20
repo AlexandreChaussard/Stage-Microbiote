@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  19 JUN 2023 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  20 JUN 2023 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2036,7 +2036,6 @@ l.115         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2045,8 +2044,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32 <./images/layer_wise_hidden_markov_model_tree.png>]
-(sections/maths/microbiota_analysis_proofs.tex
+[32 <./images/layer_wise_hidden_markov_model_tree.png>])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33] (sections/maths/microbiota_analysis_proofs.tex
 sections/maths/microbiota_analysis_proofs.tex:16: Missing delimiter (. inserted
 ).
 <to be read again> 
@@ -2142,7 +2149,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33]
+[34]
 
 sections/maths/microbiota_analysis_proofs.tex:52: LaTeX Error: \begin{propositi
 on} on input line 39 ended by \end{equation}.
@@ -2273,7 +2280,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
+[35]
 
 sections/maths/microbiota_analysis_proofs.tex:144: Package amsmath Error: Erron
 eous nesting of equation structures;
@@ -2316,7 +2323,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35]
+[36]
 sections/maths/microbiota_analysis_proofs.tex:164: Extra \right.
 l.164 ...\alpha_k^{(\ell)}, T_i)}} \right) \right)
                                                   
@@ -2401,7 +2408,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
@@ -2479,7 +2486,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37]
+[38]
 
 sections/maths/microbiota_analysis_proofs.tex:296: Package amsmath Error: Erron
 eous nesting of equation structures;
@@ -2574,7 +2581,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38]
+[39]
 
 sections/maths/microbiota_analysis_proofs.tex:334: LaTeX Error: \begin{proof} o
 n input line 270 ended by \end{equation}.
@@ -2719,7 +2726,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39]
+[40]
 sections/maths/microbiota_analysis_proofs.tex:393: Misplaced alignment tab char
 acter &.
 l.393     \left[\alpha_{c,k}^{(\ell)}\right]_v &
@@ -2793,7 +2800,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[40])
+[41])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2802,7 +2809,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41] (sections/general/bibpage.tex)
+[42] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -2817,10 +2824,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+[43] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C64B4492F945B7D93130657DE839085D;7980.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -2828,8 +2832,8 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27161 strings out of 476315
- 538613 string characters out of 5787197
+ 27162 strings out of 476315
+ 538620 string characters out of 5787197
  1872068 words of memory out of 5000000
  47059 multiletter control sequences out of 15000+600000
  533899 words of font info for 85 fonts, out of 8000000 for 9000
@@ -2872,9 +2876,9 @@ frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb>
 <C:/Users/frigi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (43 pages, 2468593 bytes).
+t\main.pdf (44 pages, 2472247 bytes).
 PDF statistics:
- 1157 PDF objects out of 1200 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
+ 1162 PDF objects out of 1200 (max. 8388607)
+ 134 named destinations out of 1000 (max. 500000)
  442 words of extra memory for PDF output out of 10000 (max. 10000000)
 
