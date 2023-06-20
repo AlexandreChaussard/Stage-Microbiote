@@ -24,8 +24,8 @@ Formally, for an observed variable $Y = (Y_1, \dots, Y_n)$, $Z = (Z_1, \dots, Z_
     \item We define a prior on the seed of the MC:
          $$\forall c \in \{1, \dots, C\}, \mathbb{P}(Z_1 = c) = \pi_c$$
 
-    \item We define a transition probability on the states of the MC (homogeneous):
-        $$\forall c,k \in \{1, \dots, C\}^2, \mathbb{P}(Z_{i+1} = c | Z_i = k) = t_c^k$$
+    \item We define a transition probability on the states of the MC:
+        $$\forall c,k \in \{1, \dots, C\}^2, \mathbb{P}(Z_{i+1} = c | Z_i = k) = t_{k,c}^{(i+1)}$$
 
     \item We define an emission probability for $Y$ to be in a given state when observing $Z$:
         $$
@@ -65,7 +65,7 @@ The mathematical framework is then slightly different for top-down HTMM:
         \mathbb{P}\left(Z_1^{(1)} = j | T^{(1)}\right) = a_j
         $$
     \item We define the transition probabilities of the MT, relatively to a given tree $T$:
-        $$\mathbb{P}\left(\childrennode(Z_k^{(\ell)}) = \nu | Z_k^{(\ell)} = j, T^{(\ell+1)}\right) = t_{\nu}^j$$
+        $$\mathbb{P}\left(\childrennode(Z_k^{(\ell)}) = \nu | Z_k^{(\ell)} = j, T^{(\ell+1)}\right) = t_{\nu,j}^{(\ell)}$$
 \end{itemize}
 
 Notice that this model would be tree dependent, as we want to attach existing nodes to a given hidden state, to generate
@@ -107,17 +107,17 @@ the nodes of a given layer, so we do not look into the $u_k^{(\ell)}$ anymore bu
 
 Concisely, the mathematical framework can be written as follow:
 \begin{itemize}
-    \item $Z$ follows a discrete homogeneous MC:
+    \item $Z$ follows a discrete MC:
         $$
         \begin{align}
             &\mathbb{P}\left(Z^{(1)} = c\right) = a_c \\
-            &\mathbb{P}\left(Z^{(\ell+1)} = k | Z^{(\ell)} = c\right) = t_k^c
+            &\mathbb{P}\left(Z^{(\ell+1)} = k | Z^{(\ell)} = c\right) = t_{c,k}^{(\ell+1)}
         \end{align}
         $$
     \item $T$ is markovian and parameterized conditionally to $Z$.
           We denote by $\childrennode(T^{(\ell)})$ the set of plausible activation vectors at layer $(\ell+1)$ in the taxonomy, relatively to
           the parents activation given by $T^{(\ell)}$. We then model the emission probability by:
-        $$\mathbb{P}(T^{(\ell+1)} = \omega | Z^{(\ell+1)} = c, T^{(\ell)}) = \frac{\pi_c(\omega) \mathds{1}_{\omega \in \childrennode(T^{(\ell)})}}{\sum_{\nu \in \childrennode(T^{\ell})} \pi_c(\omega)}$$
+        $$\mathbb{P}(T^{(\ell+1)} = \omega | Z^{(\ell+1)} = c, T^{(\ell)}) = \frac{\pi_c(\omega) \mathds{1}_{\omega \in \childrennode(T^{(\ell)})}}{\sum_{\nu \in \childrennode(T^{\ell})} \pi_c(\nu)}$$
 
 \end{itemize}
 
@@ -146,12 +146,12 @@ to its known corresponding trees $(T_i)_{1 \leq i \leq n}$, using a Hidden Tree 
 The dependency graph is illustrated by the figure \ref{fig:top_down_htmm_example}, giving us the follow mathematical framework:
 
 \begin{itemize}
-    \item $Z$ is a discrete homogeneous Markov Tree (MT):
+    \item $Z$ is a discrete Markov Tree (MT):
         \begin{itemize}
             \item We define a prior over the root:
                 $$\mathbb{P}(Z_1^{(1)} = c | T^{(1)}) = a_j$$
             \item We define the transition probabilities:
-                $$\mathbb{P}(\childrennode(Z_k^{(\ell)}) = \nu | Z_k^{(\ell)} = j, T^{(\ell+1)}) = t_{\nu}^j$$
+                $$\mathbb{P}(\childrennode(Z_k^{(\ell)}) = \nu | Z_k^{(\ell)} = j, T^{(\ell+1)}) = t_{j,\nu}^{(\ell)}$$
         \end{itemize}
     \item $X$ follows a Markov Tree structure.
         We define the emission probability of the corresponding abundance relatively to the hidden states and tree:
