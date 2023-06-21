@@ -468,6 +468,22 @@
             $$
             \normalsize
         \item \textbf{Maximization step}:
+
+            \medskip
+
+            The prior on the markov chain root can be maximized explicitly:
+            $$
+            a_c^* = \frac{1}{n} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \mathds{1}_{c_1 = c} \tau_{i\nu}
+            $$
+
+            The emission probabilities can be computed through an iterative proximal gradient ascent algorithm.
+
+            \medskip
+
+            The transition probabilities can be maximized explicitly:
+            $$
+            t_{c,k}^{(\ell)}^* = \frac{1}{\sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \mathds{1}_{c_{\ell-1}=c}} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \mathds{1}_{c_{\ell-1}=c} \mathds{1}_{c_{\ell}=k}
+            $$
     \end{itemize}
 \end{proposition}
 
@@ -511,7 +527,7 @@
         \item The optimization regarding $a = (a_{1}, \dots, a_{C})$ is given by the following objective:
             $$
             \begin{align}
-                a_c^* = &arg\max_{a_c} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)}^{C} \tau_{i\nu} \log a_{c_1} \\
+                a_c^* = &arg\max_{a_c} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \log a_{c_1} \\
                         &\text{s.t.} \quad \sum_{c=1}^C a_c = 1 \\
                         &\quad \quad \forall c, a_c > 0
             \end{align}
@@ -526,7 +542,7 @@
             the optimization regarding the emission states parameters $\pi_c^{(\ell)}(\omega)$ is given by:
             $$
             \begin{align}
-                \pi_c^{(\ell)}(\omega)^* = &arg\max_{\pi_c^{(\ell)}(\omega)} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)}^{C} \tau_{i\nu} \sum_{\ell=1}^{L-1} \mathds{1}_{T_i^{(\ell+1)} \in \childrennode(T_i^{(\ell)})} \left(\log \pi_{c_{\ell+1}}^{(\ell+1)}(T_i^{(\ell+1)}) - \log \sum_{\mu \in \childrennode(T_i^{(\ell)})} \pi_{c_{\ell+1}}^{(\ell+1)}(\mu)\right) \\
+                \pi_c^{(\ell)}(\omega)^* = &arg\max_{\pi_c^{(\ell)}(\omega)} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \sum_{\ell=1}^{L-1} \mathds{1}_{T_i^{(\ell+1)} \in \childrennode(T_i^{(\ell)})} \left(\log \pi_{c_{\ell+1}}^{(\ell+1)}(T_i^{(\ell+1)}) - \log \sum_{\mu \in \childrennode(T_i^{(\ell)})} \pi_{c_{\ell+1}}^{(\ell+1)}(\mu)\right) \\
                 &\text{s.t.} \quad \sum_{\nu \in \mathcal{T}(\ell)} \pi_c^{(\ell)}(\nu) = 1 \\
                 &\quad \quad \forall \nu \in \mathcal{T}(\ell), \pi_c^{(\ell)}(\nu) > 0
             \end{align}
@@ -536,17 +552,22 @@
             $$
             \frac{\partial Q(\widehat{\theta}, \theta)}{\partial \pi_{c}^{(\ell)}(\omega)} = \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \mathds{1}_{\omega \in \childrennode(T_i^{(\ell-1)})} \mathds{1}_{c_{\ell} = c} \left(\frac{1}{\pi_c^{(\ell)}(\omega)} - \frac{1}{\sum_{\mu \in \childrennode(T_i^{(\ell-1)})} \pi_c^{(\ell)}(\mu)}\right)
             $$
+
+            Since the objective is convex, this leads to a fixed point algorithm to compute the emission states parameters like proximal gradient descent to keep the constraint.
+
         \item The optimization objective regarding the transition probabilities of the markov chain $t_{c,k}^{(\ell)}$ is given by:
             $$
             \begin{align}
-                t_{c,k}^{(\ell)}^* = &arg\max_{t_{c,k}^{(\ell)}} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)}^{C} \tau_{i\nu} \sum_{\ell=1}^{L-1} \mathds{1}_{T_i^{(\ell+1)} \in \childrennode(\T_i^{(\ell)})} \log t_{c_{\ell},c_{\ell+1}}^{(\ell+1)} \\
+                t_{c,k}^{(\ell)}^* = &arg\max_{t_{c,k}^{(\ell)}} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \sum_{\ell=1}^{L-1} \mathds{1}_{T_i^{(\ell+1)} \in \childrennode(T_i^{(\ell)})} \log t_{c_{\ell},c_{\ell+1}}^{(\ell+1)} \\
                 &\text{s.t.} \quad \sum_{j = 1}^C t_{c,j}^{(\ell)} = 1 \\
                 &\quad \quad \forall j, t_{c,j}^{(\ell)} > 0
             \end{align}
             $$
 
             Using Lagrange duality, we can solve the optimization problem to obtain the following optimal parameter:
-
+            $$
+            t_{c,k}^{(\ell)}^* = \frac{1}{\sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \mathds{1}_{c_{\ell-1}=c}} \sum_{i=1}^n \sum_{\nu \in \mathcal{S}(Z)} \tau_{i\nu} \mathds{1}_{c_{\ell-1}=c} \mathds{1}_{c_{\ell}=k}
+            $$
     \end{itemize}
 
 \end{proof}

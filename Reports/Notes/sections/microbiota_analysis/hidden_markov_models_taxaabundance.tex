@@ -77,10 +77,9 @@ state that would turn off the specific nodes in the final representation.
 
 Some recent work on HTMM have been showing that top-down modelling captures
 less discriminent detail and conditional dependencies between the nodes than the bottom-up architecture \cite{bottom_up_superiority_hidden_tree_markov_models}.
-However, taxa-abundance data constraints may not be compatible with a bottom-up approach,
-as fixing the leaf nodes provides the whole information about the tree (structure and abundance).
-Hence, in our specific use case, bottom-up trees are less likely to capture the latent structure of the trees
-as it would only model the last layer.
+In this first study though, we will focus on top-down models as a first try, as it makes the generation more natural (since we can not generate from bottom to up for the abundance).
+Note that bottom-up modeling is still possible, but we can not generate sequentially the abundance with $Z$.
+We would need to generate $Z$ entirely, and then generate $X$ in a top-down fashion.
 
 \subsubsection{Tree generation: layer-wise Hidden Markov Model}
 
@@ -94,7 +93,7 @@ The following figure illustrates the dependency between the latent markov chain 
 \end{figure}
 
 As illustrated on figure \ref{fig:layer_wise_hmm_tree} and by nature of our taxonomic data,
-the layer of the tree follow a Markov process (at least, it could be deeper than markovian).
+the layer of the tree follow at least a Markov process (it could be deeper than markovian).
 Conversely to the previous situations, the latent variable now follows a markov chain as well, which enables to
 group the layers of the tree with a dependence on the parent's layer group.
 
@@ -132,12 +131,7 @@ $$
 
 As usual for latent data models, variational methods come in handy for learning the model.
 Hence, we provide an Expectation-Maximization algorithm to compute the optimal parameters of the prior over the tree
-in proposition ???.
-The E-M algorithm can be summarized as follow:
-\begin{itemize}
-    \item \textbf{Expectation step}:
-    \item \textbf{Minimization step}:
-\end{itemize}
+in proposition \ref{proposition:em_layer_wise_hmm_tree}.
 
 \subsubsection{Abundance generation: Hidden Tree Markov Model}
 
@@ -168,8 +162,4 @@ n_{\text{params}} = \sum_{\ell=1}^L \sum_{k=1}^{K_{\ell}} |\mathcal{S}(Z)|^{|\ch
 $$
 
 As previously for the tree generation, we propose an Expectation-Maximization algorithm to compute the optimal parameters of
-that HTMM, detailed in proposition ???. The E-M sums up as follows:
-\begin{itemize}
-    \item \textbf{Expectation step}:
-    \item \textbf{Maximization step}:
-\end{itemize}
+that HTMM, detailed in proposition ???.
