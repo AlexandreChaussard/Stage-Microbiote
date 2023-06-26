@@ -84,6 +84,12 @@ class BernoulliTreePrior(Tree):
 
         recursive_node_type_change(self.root)
 
+    def getActivationProbabilities(self):
+        activation_probabilities = {}
+        for node in self.nodes.values():
+            activation_probabilities[node.index] = node.activationProba
+        return activation_probabilities
+
     def sample_tree(self):
         """
         Generate a new tree following the current prior
@@ -115,46 +121,38 @@ class BernoulliTreePrior(Tree):
         Learn the activation probabilities from the trees as a dataset
         """
 
-        # We are going to update each pi_k^l for each node of the global tree structure that we have
-        # Hence we start by roaming over the nodes of the global structure
-        for u_k_l in self.nodes.values():
+        # Roam through the nodes
+        for node in self.nodes.values():
 
-            # Activation probability to be computed
+            # The root is always there, no matter what happens
+            if node.index == 0:
+                node.activationProba = 1
+                continue
+
+            # Compute the activation probability pi_k^(l)
             pi_k_l = 0
-            # Count of trees that have the node u_k_l
-            count = 0
+            normalization = 0
 
-            # For each node of the global structure, we go through each tree T_i
+            # Compute the probability over the dataset
             for T_i in trees:
-                # We roam through each node u_k,i^l to evaluate the new pi_k^l activation probability
-                # If the node u_k_l in the tree T_i is not activated, then we do not count it
-                opt_node = None
-                for node in T_i.nodes:
-                    if node.index == u_k_l.index:
-                        opt_node = node
+                u_k_i_l = 0
+                p_k_i_l = 0
+                for node_i in T_i.nodes:
+                    if node_i.index == node.index:
+                        u_k_i_l = (node_i.value > 0) * 1
+                        p_k_i_l = (node_i.parent.value > 0) * 1
                         break
 
-                if opt_node is not None:
-                    # We fetch the node if there was a match
-                    u_k_i_l = opt_node
+                pi_k_l += p_k_i_l * u_k_i_l
+                normalization += p_k_i_l
 
-                    # Check the parents presence for computation, which should be true
-                    parent_presence = True
-                    if u_k_i_l.parent is not None:
-                        parent_presence = u_k_i_l.parent.value > 0
-
-                    # We add that up to pi_k_l before normalizing by the amount of trees that possess the node u_k_l
-                    pi_k_l += (u_k_i_l.value > 0) * parent_presence * 1
-                    count += parent_presence * 1
-
-            # Normalize by the amount of trees that had the node in the end
-            if count == 0:
-                pi_k_l = 0
+            if normalization != 0:
+                node.activationProba = pi_k_l/normalization
+                print("node index:", node.index, " | pi_k_l =", pi_k_l, " | normalization =", normalization)
             else:
-                pi_k_l /= count
-            assert (1 >= pi_k_l >= 0)
-            # Update the activation of that node with the new one
-            u_k_l.activationProba = pi_k_l
+                node.activationProba = 0
+
+            assert (0 <= node.activationProba <= 1)
 
     def get_proba_tree(self):
         """

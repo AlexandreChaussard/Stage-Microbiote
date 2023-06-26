@@ -79,11 +79,18 @@ The next graph illustrates the error per coordinate of the estimated parameter a
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{images/markovian_tree_model_error_estimators}
-    \caption{Coordinate-wise log optimization error to the real parameters for $10$ models initialized with random parameters, per iteration.}
+    \caption{Coordinate-wise log optimization error to the real parameters for $10$ models initialized with random parameters, $100$ samples, for $40$ steps of the fixed point algorithm.}
     \label{fig:markovian_tree_model_error_estimations}
 \end{figure}
 
-As it seems, some coordinates are much more accurately determined than others, which highly relates to the structure of the tree (markovian)
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/markovian_tree_model_error_estimators_dirichlet_boxplot}
+    \caption{Boxplots of the coordinate-wise optimization error to the real parameters of the dirichlet distribution for $10$ runs initialized with random parameters, for $40$ steps of the fixed point algorithm.}
+    \label{fig:markovian_tree_model_error_estimations_dirichlet_boxplot}
+\end{figure}
+
+As it seems, some coordinates are much more accurately determined than others, which highly relates to the structure of the tree (Markovian)
 and the general presence of each node in the dataset.
 Indeed, the less likely a node is activated, the less samples we have to compute its activation probability.
 Likewise, the deeper a node is in the tree, the less likely it is to be present in a tree due to the conditional probability to the parent.
@@ -101,8 +108,15 @@ Finally, we look into the average optimization error as we vary the amount of sa
     \label{fig:markovian_tree_model_error_mean_sample}
 \end{figure}
 
-As it seems, the number of samples is not impacting much the convergence towards the parameters of the models, which seems unnatural.
-We would like to observe that with more samples, the variance is reducing and the estimation getting better.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/markovian_tree_model_mean_error_samples_boxplot}
+    \caption{Average log optimization error as boxplots, for $10$ models initialized randomly, per samples in the dataset.}
+    \label{fig:markovian_tree_model_error_mean_sample_boxplot}
+\end{figure}
+
+As it seems, the more samples we have the better the estimation gets, which seems natural as we look at the estimators.
+Furthermore, we observe that the variance decreases with the amount of samples, which is reassuring.
 
 \subsubsection{Conclusions}
 

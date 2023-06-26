@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  21 JUN 2023 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  26 JUN 2023 18:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -940,14 +940,14 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 
-main.tex:71: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
+main.tex:72: Package biblatex Error: '\bibliographystyle' invalid for 'biblatex
 '.
 
 See the biblatex package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 \bibliographystyle{ieeetr}
+l.72 \bibliographystyle{ieeetr}
                                
 Use the package option 'style' instead.
 I'm ignoring this command.
@@ -961,24 +961,24 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 
 (C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1005,7 +1005,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 89.
+Package hyperref Info: Link coloring OFF on input line 90.
  (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.out)
 (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.out)
 \@outlinefile=\write4
@@ -1021,7 +1021,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 89.
+or `english'. on input line 90.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1072,34 +1072,19 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.bbl)
-Package biblatex Info: Reference section=0 on input line 89.
-Package biblatex Info: Reference segment=0 on input line 89.
+Package biblatex Info: Reference section=0 on input line 90.
+Package biblatex Info: Reference segment=0 on input line 90.
 
 (sections/general/titlepage.tex
-<images/logo_ipp.png, id=171, 270.51062pt x 270.00874pt>
-File: images/logo_ipp.png Graphic file (type png)
-<use images/logo_ipp.png>
-Package pdftex.def Info: images/logo_ipp.png  used on input line 9.
-(pdftex.def)             Requested size: 241.84843pt x 241.40704pt.
+<images/logo_lpsm.png, id=175, 777.40437pt x 421.07312pt>
+File: images/logo_lpsm.png Graphic file (type png)
+<use images/logo_lpsm.png>
+Package pdftex.def Info: images/logo_lpsm.png  used on input line 9.
+(pdftex.def)             Requested size: 310.95624pt x 168.42625pt.
  [1
 
 {C:/Users/frigi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/log
-o_ipp.png>]
-(C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
-
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
-
-(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write5
-\openout5 = `main.toc'.
-
-
+o_lpsm.png>] (sections/general/checks.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1113,8 +1098,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.33 \newpage
+l.34 \newpage
               [1]
+(C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+
+(C:\Users\frigi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1123,7 +1119,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2]) (sections/general/introduction.tex
+[2])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]) (sections/general/introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
@@ -1147,7 +1156,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3] (sections/EM/EM.tex
+[4] (sections/EM/EM.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 21.
 
@@ -1190,7 +1199,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4]
+[5]
 
 sections/EM/GMM.tex:21: Package amsmath Error: Erroneous nesting of equation st
 ructures;
@@ -1241,7 +1250,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5]
+[6]
 
 sections/EM/GMM.tex:53: Package amsmath Error: Erroneous nesting of equation st
 ructures;
@@ -1264,7 +1273,7 @@ sam-ple as $\OML/cmm/m/it/12 Y[] \OMS/cmsy/m/n/12 ^^X B\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 W[]e[] \OT1/cmr/m/n/12 +
  []
 
-<images/samples_gmm_lc.png, id=313, 419.5675pt x 343.78438pt>
+<images/samples_gmm_lc.png, id=326, 419.5675pt x 343.78438pt>
 File: images/samples_gmm_lc.png Graphic file (type png)
 <use images/samples_gmm_lc.png>
 Package pdftex.def Info: images/samples_gmm_lc.png  used on input line 83.
@@ -1277,8 +1286,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6]
-<images/samples_gmm_lc_badconditioning.png, id=320, 420.57124pt x 341.275pt>
+[7]
+<images/samples_gmm_lc_badconditioning.png, id=332, 420.57124pt x 341.275pt>
 File: images/samples_gmm_lc_badconditioning.png Graphic file (type png)
 <use images/samples_gmm_lc_badconditioning.png>
 Package pdftex.def Info: images/samples_gmm_lc_badconditioning.png  used on inp
@@ -1293,7 +1302,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7 <./images/samples_gmm_lc.png> <./images/samples_gmm_lc_badconditioning.png>]
+[8 <./images/samples_gmm_lc.png> <./images/samples_gmm_lc_badconditioning.png>]
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
@@ -1326,7 +1335,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8]
+[9]
 
 sections/EM/dirichlet.tex:45: Package amsmath Error: Erroneous nesting of equat
 ion structures;
@@ -1369,7 +1378,7 @@ l.64         \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/samples_dirichlet_lc.png, id=338, 411.5375pt x 320.19624pt>
+<images/samples_dirichlet_lc.png, id=350, 411.5375pt x 320.19624pt>
 File: images/samples_dirichlet_lc.png Graphic file (type png)
 <use images/samples_dirichlet_lc.png>
 Package pdftex.def Info: images/samples_dirichlet_lc.png  used on input line 75
@@ -1383,7 +1392,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9])
+[10])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1392,7 +1401,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10 <./images/samples_dirichlet_lc.png>]
+[11 <./images/samples_dirichlet_lc.png>]
 (sections/variational_methods/intro_variational_methods.tex)
 (sections/variational_methods/vae.tex
 
@@ -1417,7 +1426,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11]
+[12]
 
 sections/variational_methods/vae.tex:71: Package amsmath Error: Erroneous nesti
 ng of equation structures;
@@ -1432,7 +1441,7 @@ l.71 ...i}(z|x) \Vert p_{\theta}(z)] \\\end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/Reparameterized_Variational_Autoencoder.png, id=357, 803.0pt x 333.245p
+<images/Reparameterized_Variational_Autoencoder.png, id=370, 803.0pt x 333.245p
 t>
 File: images/Reparameterized_Variational_Autoencoder.png Graphic file (type png
 )
@@ -1448,7 +1457,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12])
+[13])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1457,15 +1466,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13 <./images/Reparameterized_Variational_Autoencoder.png>]
+[14 <./images/Reparameterized_Variational_Autoencoder.png>]
 (sections/variational_methods/vq_vae.tex
-<images/vq_vae_architecture.png, id=370, 839.63687pt x 178.16562pt>
+<images/vq_vae_architecture.png, id=382, 839.63687pt x 178.16562pt>
 File: images/vq_vae_architecture.png Graphic file (type png)
 <use images/vq_vae_architecture.png>
 Package pdftex.def Info: images/vq_vae_architecture.png  used on input line 11.
 
 (pdftex.def)             Requested size: 435.32422pt x 92.37207pt.
-<images/vq_vae_quantization.png, id=372, 815.54688pt x 330.73563pt>
+<images/vq_vae_quantization.png, id=384, 815.54688pt x 330.73563pt>
 File: images/vq_vae_quantization.png Graphic file (type png)
 <use images/vq_vae_quantization.png>
 Package pdftex.def Info: images/vq_vae_quantization.png  used on input line 28.
@@ -1480,7 +1489,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14 <./images/vq_vae_architecture.png> <./images/vq_vae_quantization.png>]
+[15 <./images/vq_vae_architecture.png> <./images/vq_vae_quantization.png>]
 LaTeX Font Info:    Trying to load font information for U+dsrom on input line 4
 6.
 
@@ -1537,7 +1546,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15])
+[16])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1546,8 +1555,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16] (sections/variational_methods/pixel_cnn.tex
-<images/masked_convolution_pixel_cnn.png, id=395, 214.8025pt x 176.66pt>
+[17] (sections/variational_methods/pixel_cnn.tex
+<images/masked_convolution_pixel_cnn.png, id=407, 214.8025pt x 176.66pt>
 File: images/masked_convolution_pixel_cnn.png Graphic file (type png)
 <use images/masked_convolution_pixel_cnn.png>
 Package pdftex.def Info: images/masked_convolution_pixel_cnn.png  used on input
@@ -1562,7 +1571,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17 <./images/masked_convolution_pixel_cnn.png>])
+[18 <./images/masked_convolution_pixel_cnn.png>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1571,15 +1580,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
+[19] (sections/microbiota_analysis/intro_microbiota_analysis.tex)
 (sections/microbiota_analysis/microbiota_dataset.tex
-<images/abundance_tree_phylogenetic.png, id=407, 95.85812pt x 134.00063pt>
+<images/abundance_tree_phylogenetic.png, id=419, 95.85812pt x 134.00063pt>
 File: images/abundance_tree_phylogenetic.png Graphic file (type png)
 <use images/abundance_tree_phylogenetic.png>
 Package pdftex.def Info: images/abundance_tree_phylogenetic.png  used on input 
 line 7.
 (pdftex.def)             Requested size: 95.85788pt x 134.00027pt.
-<images/tree_to_image.png, id=410, 310.66063pt x 137.51375pt>
+<images/tree_to_image.png, id=422, 310.66063pt x 137.51375pt>
 File: images/tree_to_image.png Graphic file (type png)
 <use images/tree_to_image.png>
 Package pdftex.def Info: images/tree_to_image.png  used on input line 17.
@@ -1593,15 +1602,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
-<images/microbiota_tree_global_structure.png, id=422, 367.87437pt x 277.53688pt
+[20 <./images/abundance_tree_phylogenetic.png> <./images/tree_to_image.png>]
+<images/microbiota_tree_global_structure.png, id=434, 367.87437pt x 277.53688pt
 >
 File: images/microbiota_tree_global_structure.png Graphic file (type png)
 <use images/microbiota_tree_global_structure.png>
 Package pdftex.def Info: images/microbiota_tree_global_structure.png  used on i
 nput line 38.
 (pdftex.def)             Requested size: 220.72632pt x 166.5234pt.
-<images/sample_taxaabundance_microbiota.png, id=423, 340.27126pt x 276.53313pt>
+<images/sample_taxaabundance_microbiota.png, id=435, 340.27126pt x 276.53313pt>
 
 File: images/sample_taxaabundance_microbiota.png Graphic file (type png)
 <use images/sample_taxaabundance_microbiota.png>
@@ -1617,7 +1626,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20 <./images/microbiota_tree_global_structure.png> <./images/sample_taxaabunda
+[21 <./images/microbiota_tree_global_structure.png> <./images/sample_taxaabunda
 nce_microbiota.png>]
 
 sections/microbiota_analysis/microbiota_dataset.tex:66: Package amsmath Error: 
@@ -1653,7 +1662,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
+[22]
 
 sections/microbiota_analysis/tree_generation_prior/markovian_parenting_nodes_pr
 ior.tex:51: Package amsmath Error: Erroneous nesting of equation structures;
@@ -1757,7 +1766,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
@@ -1770,7 +1779,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23]
+[24]
+
+LaTeX Warning: Reference `MLE_abundance_bernoulli_tree' on page 25 undefined on
+ input line 55.
+
 sections/microbiota_analysis/abundance_generation/markovian_parenting_abundance
 .tex:61: Missing $ inserted.
 <inserted text> 
@@ -1836,7 +1849,7 @@ l.17 \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/artificial_tree_global_structure.png, id=450, 372.39125pt x 281.05pt>
+<images/artificial_tree_global_structure.png, id=462, 372.39125pt x 281.05pt>
 File: images/artificial_tree_global_structure.png Graphic file (type png)
 <use images/artificial_tree_global_structure.png>
 Package pdftex.def Info: images/artificial_tree_global_structure.png  used on i
@@ -1863,14 +1876,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24]
-<images/artificial_tree_sample.png, id=459, 372.89313pt x 284.06125pt>
+[25]
+<images/artificial_tree_sample.png, id=469, 372.89313pt x 284.06125pt>
 File: images/artificial_tree_sample.png Graphic file (type png)
 <use images/artificial_tree_sample.png>
 Package pdftex.def Info: images/artificial_tree_sample.png  used on input line 
 46.
 (pdftex.def)             Requested size: 261.0234pt x 198.84149pt.
-<images/markovian_tree_model_loglikelihood_multiple_convergences.png, id=462, 4
+<images/markovian_tree_model_loglikelihood_multiple_convergences.png, id=472, 4
 01.8212pt x 333.1647pt>
 File: images/markovian_tree_model_loglikelihood_multiple_convergences.png Graph
 ic file (type png)
@@ -1887,9 +1900,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25 <./images/artificial_tree_global_structure.png> <./images/artificial_tree_s
+[26 <./images/artificial_tree_global_structure.png> <./images/artificial_tree_s
 ample.png>]
-<images/markovian_tree_model_convergence_error_estimators_iteration.png, id=472
+<images/markovian_tree_model_convergence_error_estimators_iteration.png, id=482
 , 941.6781pt x 534.0753pt>
 File: images/markovian_tree_model_convergence_error_estimators_iteration.png Gr
 aphic file (type png)
@@ -1902,13 +1915,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--77
 
  []
 
-<images/markovian_tree_model_error_estimators.png, id=474, 493.6041pt x 282.575
+<images/markovian_tree_model_error_estimators.png, id=484, 885.3075pt x 282.575
 7pt>
 File: images/markovian_tree_model_error_estimators.png Graphic file (type png)
 <use images/markovian_tree_model_error_estimators.png>
 Package pdftex.def Info: images/markovian_tree_model_error_estimators.png  used
  on input line 81.
-(pdftex.def)             Requested size: 296.16473pt x 169.54672pt.
+(pdftex.def)             Requested size: 531.1886pt x 169.54672pt.
+
+Overfull \hbox (47.49173pt too wide) in paragraph at lines 81--82
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1917,25 +1935,53 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26 <./images/markovian_tree_model_loglikelihood_multiple_convergences.png> <./
+[27 <./images/markovian_tree_model_loglikelihood_multiple_convergences.png> <./
 images/markovian_tree_model_convergence_error_estimators_iteration.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 86--91
+<images/markovian_tree_model_error_estimators_dirichlet_boxplot.png, id=493, 39
+5.3169pt x 318.7107pt>
+File: images/markovian_tree_model_error_estimators_dirichlet_boxplot.png Graphi
+c file (type png)
+<use images/markovian_tree_model_error_estimators_dirichlet_boxplot.png>
+Package pdftex.def Info: images/markovian_tree_model_error_estimators_dirichlet
+_boxplot.png  used on input line 88.
+(pdftex.def)             Requested size: 237.19196pt x 191.22787pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
+Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
  []
 
-<images/markovian_tree_model_mean_error_samples.png, id=484, 958.3002pt x 534.0
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28 <./images/markovian_tree_model_error_estimators.png> <./images/markovian_tr
+ee_model_error_estimators_dirichlet_boxplot.png>]
+<images/markovian_tree_model_mean_error_samples.png, id=503, 941.6781pt x 534.0
 753pt>
 File: images/markovian_tree_model_mean_error_samples.png Graphic file (type png
 )
 <use images/markovian_tree_model_mean_error_samples.png>
 Package pdftex.def Info: images/markovian_tree_model_mean_error_samples.png  us
-ed on input line 99.
-(pdftex.def)             Requested size: 383.3133pt x 213.62633pt.
+ed on input line 106.
+(pdftex.def)             Requested size: 376.66457pt x 213.62633pt.
+<images/markovian_tree_model_mean_error_samples_boxplot.png, id=504, 1181.6145p
+t x 330.2739pt>
+File: images/markovian_tree_model_mean_error_samples_boxplot.png Graphic file (
+type png)
+<use images/markovian_tree_model_mean_error_samples_boxplot.png>
+Package pdftex.def Info: images/markovian_tree_model_mean_error_samples_boxplot
+.png  used on input line 113.
+(pdftex.def)             Requested size: 472.63742pt x 132.10721pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1944,21 +1990,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27 <./images/markovian_tree_model_error_estimators.png>])
+[29 <./images/markovian_tree_model_mean_error_samples.png> <./images/markovian_
+tree_model_mean_error_samples_boxplot.png>])
 (sections/microbiota_analysis/taxonomy_clustering_generative_model.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--8
 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[28 <./images/markovian_tree_model_mean_error_samples.png>]
 
 sections/microbiota_analysis/taxonomy_clustering_generative_model.tex:20: Packa
 ge amsmath Error: Erroneous nesting of equation structures;
@@ -1973,7 +2011,6 @@ l.20           \end{align}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-) (sections/microbiota_analysis/hidden_markov_models_taxaabundance.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1982,19 +2019,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[29]
-<images/graph_dependency_HMM.png, id=509, 1094.58937pt x 222.8325pt>
+[30]) (sections/microbiota_analysis/hidden_markov_models_taxaabundance.tex
+<images/graph_dependency_HMM.png, id=525, 1094.58937pt x 222.8325pt>
 File: images/graph_dependency_HMM.png Graphic file (type png)
 <use images/graph_dependency_HMM.png>
 Package pdftex.def Info: images/graph_dependency_HMM.png  used on input line 38
 .
 (pdftex.def)             Requested size: 273.64667pt x 55.70798pt.
-<images/top_down_htmm_example.png, id=511, 767.36688pt x 292.09125pt>
-File: images/top_down_htmm_example.png Graphic file (type png)
-<use images/top_down_htmm_example.png>
-Package pdftex.def Info: images/top_down_htmm_example.png  used on input line 5
-3.
-(pdftex.def)             Requested size: 383.68251pt x 146.04526pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2004,8 +2035,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30 <./images/graph_dependency_HMM.png (PNG copy)>]
-<images/layer_wise_hidden_markov_model_tree.png, id=520, 504.88625pt x 221.8287
+[31 <./images/graph_dependency_HMM.png (PNG copy)>]
+<images/top_down_htmm_example.png, id=533, 767.36688pt x 292.09125pt>
+File: images/top_down_htmm_example.png Graphic file (type png)
+<use images/top_down_htmm_example.png>
+Package pdftex.def Info: images/top_down_htmm_example.png  used on input line 5
+3.
+(pdftex.def)             Requested size: 383.68251pt x 146.04526pt.
+<images/layer_wise_hidden_markov_model_tree.png, id=535, 504.88625pt x 221.8287
 5pt>
 File: images/layer_wise_hidden_markov_model_tree.png Graphic file (type png)
 <use images/layer_wise_hidden_markov_model_tree.png>
@@ -2021,7 +2058,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31 <./images/top_down_htmm_example.png>]
+[32 <./images/top_down_htmm_example.png>]
 
 sections/microbiota_analysis/hidden_markov_models_taxaabundance.tex:114: Packag
 e amsmath Error: Erroneous nesting of equation structures;
@@ -2044,7 +2081,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32 <./images/layer_wise_hidden_markov_model_tree.png>])
+[33 <./images/layer_wise_hidden_markov_model_tree.png>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2053,7 +2090,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33] (sections/maths/microbiota_analysis_proofs.tex
+[34] (sections/maths/microbiota_analysis_proofs.tex
 sections/maths/microbiota_analysis_proofs.tex:16: Missing delimiter (. inserted
 ).
 <to be read again> 
@@ -2149,7 +2186,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
+[35]
 
 sections/maths/microbiota_analysis_proofs.tex:52: LaTeX Error: \begin{propositi
 on} on input line 39 ended by \end{equation}.
@@ -2280,7 +2317,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35]
+[36]
 
 sections/maths/microbiota_analysis_proofs.tex:144: Package amsmath Error: Erron
 eous nesting of equation structures;
@@ -2323,7 +2360,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36]
+[37]
 sections/maths/microbiota_analysis_proofs.tex:164: Extra \right.
 l.164 ...\alpha_k^{(\ell)}, T_i)}} \right) \right)
                                                   
@@ -2408,7 +2445,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
@@ -2486,7 +2523,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38]
+[39]
 
 sections/maths/microbiota_analysis_proofs.tex:296: Package amsmath Error: Erron
 eous nesting of equation structures;
@@ -2581,7 +2618,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39]
+[40]
 
 sections/maths/microbiota_analysis_proofs.tex:334: LaTeX Error: \begin{proof} o
 n input line 270 ended by \end{equation}.
@@ -2726,7 +2763,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[40]
+[41]
+
+LaTeX Warning: Reference `MLE_abundance_bernoulli_tree' on page 42 undefined on
+ input line 388.
+
+
+LaTeX Warning: Reference `MLE_abundance_bernoulli_tree' on page 42 undefined on
+ input line 390.
+
 sections/maths/microbiota_analysis_proofs.tex:393: Misplaced alignment tab char
 acter &.
 l.393     \left[\alpha_{c,k}^{(\ell)}\right]_v &
@@ -2800,7 +2845,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41]
+[42]
 
 sections/maths/microbiota_analysis_proofs.tex:467: Package amsmath Error: Erron
 eous nesting of equation structures;
@@ -2852,7 +2897,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42]
+[43]
 
 sections/maths/microbiota_analysis_proofs.tex:521: Package amsmath Error: Erron
 eous nesting of equation structures;
@@ -2934,7 +2979,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43]
+[44]
 sections/maths/microbiota_analysis_proofs.tex:569: Double superscript.
 l.569             t_{c,k}^{(\ell)}^
                                    * = \frac{1}{\sum_{i=1}^n \sum_{\nu \in \...
@@ -2949,7 +2994,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44] (sections/general/bibpage.tex)
+[45] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -2964,31 +3009,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[46] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C64B4492F945B7D93130657DE839085D;7980.
+(rerunfilecheck)             Checksum: 8A1F9AD68A40BD2571C483D58D894E9E;8186.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27175 strings out of 476315
- 538764 string characters out of 5787197
+ 27214 strings out of 476315
+ 540713 string characters out of 5787197
  1875068 words of memory out of 5000000
- 47068 multiletter control sequences out of 15000+600000
+ 47098 multiletter control sequences out of 15000+600000
  536594 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,18n,79p,679b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,18n,79p,679b,2664s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti
 1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
 /dpi600\ecbi1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\ecrm0800.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ecti1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppDat
+ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\frigi\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\frigi\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\frigi\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\frigi\AppDat
 a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\frigi\
 AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\
 frigi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\
@@ -3023,9 +3071,9 @@ eX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Users/frigi/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (46 pages, 2547797 bytes).
+t\main.pdf (47 pages, 2863874 bytes).
 PDF statistics:
- 1207 PDF objects out of 1440 (max. 8388607)
- 136 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1231 PDF objects out of 1440 (max. 8388607)
+ 140 named destinations out of 1000 (max. 500000)
+ 460 words of extra memory for PDF output out of 10000 (max. 10000000)
 
