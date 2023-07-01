@@ -163,3 +163,54 @@ $$
 
 As previously for the tree generation, we propose an Expectation-Maximization algorithm to compute the optimal parameters of
 that HTMM, detailed in proposition ???.
+
+\subsubsection{Bottom-Up Hidden Tree Markov Model: taxa-abundance generation}
+
+The previous approach used a Top-Down HTMM (see figure \ref{fig:top_down_htmm_example}), which is a valid approach to model a parent to child dependency only.
+Medically speaking, the top-down HTMM can be seen as parent dependent functions: a parent's function would determine the function of its child, which would be independently sorted conditionally to the parent.
+In addition to that questionable modelisation, related work from \cite{bottom_up_superiority_hidden_tree_markov_models} as shown that top-down HTMM are capturing
+less conditional depencencies between nodes, modeling less distributions than a bottom-up approach. \\
+
+Hence, we are now interested in a bottom-up HTMM, which is illustrated in figure \ref{fig:bottom_up_htmm_example}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{images/bottom_up_hidden_markov_tree_example}
+    \caption{Bottom-down Hidden Tree Markov Model architecture: $Z$ represents the latent space, $X$ a taxa-abundance sample.
+    The pointed out sections and arrows represent the dependencies.
+    Each node is marked by its layer $(\ell)$ and position within that layer $k$.}
+    \label{fig:bottom_up_htmm_example}
+\end{figure}
+
+\newcommand{\killingstate}{s_{\emptyset}}
+
+The hidden states $Z$ are taking the graph dependency form of a tree that covers the entire taxonomy, and take value in a discrete set $\mathcal{S(Z)}$.
+To take in consideration the sparsity of the taxa-abundance data, we introduce a killing state that we denote as $\killingstate$, which filter out a node and its children when appearing. \\
+
+The general framework is then the following:
+\begin{itemize}
+    \item $Z$ is bottom-up HTMM with killing state $\killingstate$ so that:
+            $$
+            \begin{align}
+                &p(Z^{(\ell)} = \nu) = \pi_{\nu} \\
+                &p(Z_k^{(\ell)} = s | \childrennode(Z_k^{(\ell)}) = \nu) = t_{\nu, s}^{(\ell)}
+            \end{align}
+            $$
+    \item $X$ is a top-down markov tree conditionally to $Z$:
+            $$
+            \begin{align}
+                &p(X^{(1)}) = \delta_{e_1}(X^{(1)}) \\
+                &p(X) = p(X^{(1)}) \prod_{\ell = 1}^{L-1} p(X^{(\ell+1)} | X^{(\ell)}) \\
+                &p(X^{(\ell+1)} | X^{(\ell)}) = \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)})
+            \end{align}
+            $$
+    \item The conditional distribution of $X$ knowing $Z$ is characterised as follows:
+            $$
+            p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(z_k^{(\ell)}) = \nu) = x_k^{(\ell)} \mathcal{D}(\alpha_{k,\nu}^{(\ell)})
+            $$
+          $\alpha_{k,\nu}^{(\ell)}$ are the dirichlet parameters of the distribution, which are vectors of dimension $$\#\{j \in \nu | j \neq \killingstate\}$$ as they
+          only impact the nodes that are still alive according to $Z$.
+\end{itemize}
+
+To compute the optimal parameters of that model given a dataset of taxa-abundance data $(X_i)_{1 \leq i \leq n}$, we propose an Expectation-Maximization algorithm
+in proposition ???.

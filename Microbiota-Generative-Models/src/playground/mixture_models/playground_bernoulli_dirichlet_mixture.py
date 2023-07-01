@@ -16,7 +16,7 @@ fig, axs = plt.subplots()
 fig.suptitle("Log-likelihood / iteration")
 axs.plot(ll)
 
-n_random_trees = 5
+n_random_trees = 20
 for _ in range(n_random_trees):
     sample, cluster = mixture.sample()
     sample.plot(title=f"Generated abundance tree (cluster {cluster})")

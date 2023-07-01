@@ -2375,8 +2375,10 @@
     <bcf:citekey order="12" intorder="1">momal_tree</bcf:citekey>
     <bcf:citekey order="13" intorder="1">hidden_tree_markov_models</bcf:citekey>
     <bcf:citekey order="14" intorder="1">bottom_up_superiority_hidden_tree_markov_models</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">dirichlet_digamma_trick</bcf:citekey>
-    <bcf:citekey order="16" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">bottom_up_superiority_hidden_tree_markov_models</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">dirichlet_digamma_trick</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">dirichlet_digamma_trick</bcf:citekey>
+    <bcf:citekey order="18" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
