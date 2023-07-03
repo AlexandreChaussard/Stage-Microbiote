@@ -162,9 +162,9 @@ n_{\text{params}} = \sum_{\ell=1}^L \sum_{k=1}^{K_{\ell}} |\mathcal{S}(Z)|^{|\ch
 $$
 
 As previously for the tree generation, we propose an Expectation-Maximization algorithm to compute the optimal parameters of
-that HTMM, detailed in proposition ???.
+that HTMM, detailed in proposition \textbf{[TODO]}.
 
-\subsubsection{Bottom-Up Hidden Tree Markov Model: taxa-abundance generation}
+\subsubsection{Bottom-Up Hidden Tree Markov Model: general model}
 
 The previous approach used a Top-Down HTMM (see figure \ref{fig:top_down_htmm_example}), which is a valid approach to model a parent to child dependency only.
 Medically speaking, the top-down HTMM can be seen as parent dependent functions: a parent's function would determine the function of its child, which would be independently sorted conditionally to the parent.
@@ -192,7 +192,7 @@ The general framework is then the following:
     \item $Z$ is bottom-up HTMM with killing state $\killingstate$ so that:
             $$
             \begin{align}
-                &p(Z^{(\ell)} = \nu) = \pi_{\nu} \\
+                &p(Z^{(L)} = \nu) = \pi_{\nu} \\
                 &p(Z_k^{(\ell)} = s | \childrennode(Z_k^{(\ell)}) = \nu) = t_{\nu, s}^{(\ell)}
             \end{align}
             $$
@@ -213,4 +213,43 @@ The general framework is then the following:
 \end{itemize}
 
 To compute the optimal parameters of that model given a dataset of taxa-abundance data $(X_i)_{1 \leq i \leq n}$, we propose an Expectation-Maximization algorithm
-in proposition ???.
+in proposition \ref{proposition:EM_bottom_up_HTMM_dirichlet}.
+However, even if this model is covers all types of problems with its general form, it may not be suited to our special use case with very few samples.
+Hence, the next section provides an under-parameterized alternative model to fit the framework of low samples datasets.
+
+\subsubsection{Bottom-Up Hidden Tree Markov Model: low sample regime}
+
+The previous bottom-up HTMM model is extremely general, as it provides a parameter for each transition configuration through $t^{(\ell)}_{\childrennode(Z_k^{(\ell)}), Z_k^{(\ell)}}$.
+However, training such model onto a small dataset may be difficult and could result in overfitting, as we may highly likely not explore all possible configurations for a node and its children, and that all the configuration do not
+impact each other's transition probabilities in the HTMM. \\
+
+Hence, building on the previous model, we introduce a low parameterized model, which may not capture all the expressiveness of the general HTMM, but that could be trainable on a low sample regime.
+\begin{itemize}
+    \item Let $S \in \mathbb{N}$ the number of possible hidden states, at each layer $(\ell)$ we introduce the parameter $\pi^{(\ell)} \in \mathbb{R}^{S}$, which defines the aggregation parameter $\omega_k^{(\ell)}$:
+            $$
+            \omega_k^{(\ell)} = \sum_{z \in \childrennode(Z_k^{(\ell)})} \sum_{s=1}^{S} \mathds{1}_{z = e_s} \pi^{(\ell)}_s e_s
+            $$
+         where $e_s$ denotes the embedding of the state $s$ into a vector representation (one-hot encoding for instance).
+    \item $Z$ is bottom-up HTMM with killing state $\killingstate$, for which the transition probabilities are defined through $\omega_k^{(\ell)}$:
+    $$
+    \begin{align}
+        &Z_k^{(L)} \sim Cat(\pi^{(L)}) \\
+        &Z_k^{(\ell)} | \childrennode(Z_k^{(\ell)}) \sim Cat(\omega_k^{(\ell)})
+    \end{align}
+    $$
+    \item $X$ is a top-down markov tree conditionally to $Z$:
+    $$
+    \begin{align}
+        &p(X^{(1)}) = \delta_{e_1}(X^{(1)}) \\
+        &p(X) = p(X^{(1)}) \prod_{\ell = 1}^{L-1} p(X^{(\ell+1)} | X^{(\ell)}) \\
+        &p(X^{(\ell+1)} | X^{(\ell)}) = \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)})
+    \end{align}
+    $$
+    \item The conditional distribution of $X$ knowing $Z$ is characterised as follows, for the nodes that have at least $2$ children:
+    $$
+    p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(z_k^{(\ell)}) = \nu) = x_k^{(\ell)} \mathcal{D}(\alpha_{k}^{(\ell)} \odot \nu)
+    $$
+    $\alpha_{k}^{(\ell)}$ are the dirichlet parameters of the distribution, which are vectors of dimension $#\childrennode(Z_k^{(\ell)})$.
+    The hadamard product with $\nu$ denotes that we mask the coordinates of $\alpha_k^{(\ell)}$ according to the states that are still alive i.e. different from $e_{\killingstate}$.
+    If the node has $1$ child or none, the abundance value has to be the same as the parent.
+\end{itemize}

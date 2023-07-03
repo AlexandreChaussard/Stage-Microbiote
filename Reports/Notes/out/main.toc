@@ -39,7 +39,8 @@
 \contentsline {subsubsection}{\numberline {5.5.1}Context of Hidden Markov Models and Hidden Tree Markov Models}{31}{subsubsection.5.5.1}%
 \contentsline {subsubsection}{\numberline {5.5.2}Tree generation: layer-wise Hidden Markov Model}{33}{subsubsection.5.5.2}%
 \contentsline {subsubsection}{\numberline {5.5.3}Abundance generation: Hidden Tree Markov Model}{34}{subsubsection.5.5.3}%
-\contentsline {subsubsection}{\numberline {5.5.4}Bottom-Up Hidden Tree Markov Model: taxa-abundance generation}{34}{subsubsection.5.5.4}%
-\contentsline {section}{\numberline {6}Appendix}{36}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Microbiota analysis}{36}{subsection.6.1}%
-\contentsline {section}{\numberline {7}Bibliography}{50}{section.7}%
+\contentsline {subsubsection}{\numberline {5.5.4}Bottom-Up Hidden Tree Markov Model: general model}{34}{subsubsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.5}Bottom-Up Hidden Tree Markov Model: low sample regime}{36}{subsubsection.5.5.5}%
+\contentsline {section}{\numberline {6}Appendix}{37}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Microbiota analysis}{37}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Bibliography}{51}{section.7}%
