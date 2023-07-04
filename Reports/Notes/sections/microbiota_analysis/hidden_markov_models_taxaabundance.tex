@@ -234,7 +234,7 @@ Hence, building on the previous model, we introduce a low parameterized model, w
     $$
     \begin{align}
         &Z_k^{(L)} \sim Cat(\pi^{(L)}) \\
-        &Z_k^{(\ell)} | \childrennode(Z_k^{(\ell)}) \sim Cat(\omega_k^{(\ell)})
+        &Z_k^{(\ell)} | \childrennode(Z_k^{(\ell)}) \sim Cat(softmax(\omega_k^{(\ell)}))
     \end{align}
     $$
     \item $X$ is a top-down markov tree conditionally to $Z$:
@@ -253,3 +253,13 @@ Hence, building on the previous model, we introduce a low parameterized model, w
     The hadamard product with $\nu$ denotes that we mask the coordinates of $\alpha_k^{(\ell)}$ according to the states that are still alive i.e. different from $e_{\killingstate}$.
     If the node has $1$ child or none, the abundance value has to be the same as the parent.
 \end{itemize}
+
+Note that the hidden states are embedding vectors $e_s$ with $s \in \{1, \dots, S\}$.
+So, for notation simplicity, we will introduce the following subscript notation.
+Given $\theta$ a vector of dimension $S$, $Z$ a random variable taking value in the discrete state set $\mathcal{S}(Z)$ of dimension $S$, the embedding vectors of $\mathcal{S}(Z)$ are denoted by $e_s$:
+$$
+\theta_{Z} = \sum_{s=1}^{S} \mathds{1}_{Z=e_s} \theta_{s}
+$$
+
+Finding the optimal parameters of such model fitting a dataset can be done in the sense of the maximum likelihood, using the proposed Expectation-Maximization algorithm
+of proposition ???.

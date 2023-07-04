@@ -774,3 +774,117 @@
     \end{itemize}
 
 \end{proof}
+
+\begin{proposition}[Likelihood under-parameterized Bottom-Up HTMM]
+    \label{proposition:likelihood_underparameterized_bottomup_htmm}
+    Assume $Z$ is a HTMM over the taxonomy $\taxonomy$, $X$ a taxa-abundance sample over $\taxonomy$.
+    Assume that the following holds:
+    \begin{itemize}
+        \item Let $S \in \mathbb{N}$ the number of possible hidden states, at each layer $(\ell)$ we introduce the parameter $\pi^{(\ell)} \in \mathbb{R}^{S}$, which defines the aggregation parameter $\omega_k^{(\ell)}$:
+        $$
+        \omega_k^{(\ell)} = \sum_{z \in \childrennode(Z_k^{(\ell)})} \sum_{s=1}^{S} \mathds{1}_{z = e_s} \pi^{(\ell)}_s e_s
+        $$
+        where $e_s$ denotes the embedding of the state $s$ into a vector representation (one-hot encoding for instance).
+        \item $Z$ is bottom-up HTMM with killing state $\killingstate$, for which the transition probabilities are defined through $\omega_k^{(\ell)}$:
+        $$
+        \begin{align}
+            &Z_k^{(L)} \sim Cat(\pi^{(L)}) \\
+            &Z_k^{(\ell)} | \childrennode(Z_k^{(\ell)}) \sim Cat(softmax(\omega_k^{(\ell)}))
+        \end{align}
+        $$
+        \item $X$ is a top-down markov tree conditionally to $Z$:
+        $$
+        \begin{align}
+            &p(X^{(1)}) = \delta_{e_1}(X^{(1)}) \\
+            &p(X) = p(X^{(1)}) \prod_{\ell = 1}^{L-1} p(X^{(\ell+1)} | X^{(\ell)}) \\
+            &p(X^{(\ell+1)} | X^{(\ell)}) = \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)})
+        \end{align}
+        $$
+        \item The conditional distribution of $X$ knowing $Z$ is characterised as follows, for the nodes that have at least $2$ children and that are not at hidden state $\killingstate$:
+        $$
+        p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(z_k^{(\ell)}) = \nu) = x_k^{(\ell)} \mathcal{D}(\alpha_{k}^{(\ell)} \odot \nu)
+        $$
+
+        Otherwise if $x_k^{(\ell)}$ has 1 child, its abundance value is transmitted deterministicly to his child if it is not at state $\killingstate$, otherwise the value is 0.
+    \end{itemize}
+
+    Then the likelihood of such model is given by:
+    \footnotesize
+    $$
+    \begin{align}
+        p(X, Z) = \delta_{e_1}(X^{(1)}) \prod_{k=1}^{K_L} \pi_{Z_k^{(\ell)}}^{(L)} \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}}
+                            &\delta_{0}(\childrennode(x_k^{(\ell)}))^{\mathds{1}_{Z_k^{(\ell)} = \killingstate}} \\
+                            &\delta_{x_k^{(\ell)}}(\childrennode(x_k^{(\ell)}))^{\mathds{1}_{\#\childrennode(Z_k^{(\ell)}) = 1} \mathds{1}_{Z_k^{(\ell)} \neq \killingstate}} \\
+                            &\left( \frac{1}{x_k^{(\ell)}} f_{\alpha_k^{(\ell)} \odot \childrennode(Z_k^{(\ell)})}\left(\frac{\childrennode(x_k^{(\ell)})}{x_k^{(\ell)}}\right) \right)^{\mathds{1}_{\#\childrennode(Z_k^{(\ell)}) > 1} \mathds{1}_{Z_k^{(\ell)} \neq \killingstate}} softmax(\omega_k^{(\ell)})_{Z_k^{(\ell)}}
+    \end{align}
+
+    $$
+    \normalsize
+\end{proposition}
+
+\begin{proof}
+
+    $$
+    \begin{align}
+        p(X, Z) &= p(X^{(1)}, Z^{(1)}, \dots, X^{(L)}, Z^{(L)}) \\
+                &= \delta_1(X^{(1)}_1) p(Z^{(L)}) \prod_{\ell=1}^{L-1} p(X^{(\ell+1)}, Z^{(\ell)} | X^{(\ell)}, Z^{(\ell+1)}) \\
+                &= \delta_1(X^{(1)}_1) \prod_{k=1}^{K_L} \pi_{Z_k^{L}}^{(L)} \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(Z_k^{(\ell)})) p(Z_k^{(\ell)} | \childrennode(Z_k^{(\ell)})) \\
+        &= \delta_1(X^{(1)}_1) \prod_{k=1}^{K_L} \pi_{Z_k^{L}}^{(L)} \prod_{\ell=1}^{L-1} \prod_{k=1}^{K_{\ell}} p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(Z_k^{(\ell)})) softmax(w_k^{(\ell)})_{Z_k^{(\ell)}}\\
+    \end{align}
+    $$
+
+    Notice three possible different scenarios:
+    \begin{itemize}
+        \item If the node is being killed by the HTMM through $\killingstate$:
+            $$p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(Z_k^{(\ell)})) = \delta_{0}(\childrennode(x_k^{(\ell)}))$$
+
+        \item If the node has only one child and that it is not killed by the HTMM:
+            $$p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)}, \childrennode(Z_k^{(\ell)})) = \delta_{x_k^{(\ell)}}(\childrennode(x_k^{(\ell)}))$$
+
+        \item Finally, if the children has two children or more and that it is not killed by the HTMM, using the proposition \ref{proposition:law_of_aX}:
+            $$p(\childrennode(x_k^{(\ell)}) | x_k^{(\ell)} = \frac{1}{x_k^{(\ell)}} f_{\alpha_k^{(\ell)} \odot \childrennode(Z_k^{(\ell)})}\left(\frac{\childrennode(x_k^{(\ell)})}{x_k^{(\ell)}}\right)$$
+    \end{itemize}
+
+    Marking these three cases through the corresponding indicator functions we obtain the wanted result.
+
+\end{proof}
+
+\begin{proposition}(Expectation-Maximization for under parameterized Bottom-Up HTMM model)
+    \label{proposition:EM_underparameterized_bottomup_HTMM}
+    We set ourselves in the framework of \ref{proposition:likelihood_underparameterized_bottomup_htmm}. \\
+
+    Let $(X_i, Z_i)_{1 \leq i \leq n}$ a dataset of respectively taxa-abundance data and hidden functional states defined on the taxonomy $\taxonomy$.
+    We denote by $\mathcal{S}(\taxonomy)$ the set of possible HTMM realization over $\taxonomy$. \\
+
+    Assume that we want to find the $\theta^*$ MLE of the under parameterized bottom-up HTMM model over that dataset, then we provide an Expectation-Maximization approach to compute it: \\
+    
+    \textbf{Expectation-step}: \\
+
+    Denote $\tau_{iZ} = p(Z_i | X_i)$, then this quantity is given by:
+    $$
+    \tau_{iZ} = \frac{p(Z_i, X_i)}{\sum_{Z \in \mathcal{S}(\taxonomy)}p(Z, X_i)}
+    $$
+
+    where $p(Z, X)$ is explicitly provided in proposition \ref{proposition:likelihood_underparameterized_bottomup_htmm}
+
+    \textbf{Maximization-step}: \\
+
+    The optimal prior parameter of the HTMM is given by:
+    $$
+    \pi_{s}^{(L)}^* = \dots
+    $$
+
+    The optimal transition parameters ($1 < \ell < L$) of the HTMM are given by:
+    $$
+    \pi_{s}^{(\ell)}^* = \dots
+    $$
+
+    The optimal abundance parameters are obtained through the following fixed point algorithm:
+    $$
+    \alpha_k^{(\ell)} \leftarrow \psi^{(-1)}\left( \dots \right)
+    $$
+    
+\end{proposition}
+
+\begin{proof}
+\end{proof}
