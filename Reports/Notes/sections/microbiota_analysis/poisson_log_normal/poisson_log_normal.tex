@@ -1,0 +1,88 @@
+\subsection{Poisson log-normal models}
+
+\subsubsection{Introduction to PLN}
+
+Abundance data are quite complex to model by nature, as they account both for the presence of a given entity in a
+giving ecosystem and the given amount of the said entity in the studied ecosystem.
+Extensive studies have been conducted on abundance data, among which we decide to focus on a state-of-art approach,
+the Poisson Log-Normal (PLN) model introduced in \cite{PLN_chiquet}.
+
+The PLN model belongs to the family of latent models, as it models the abundance of the entities using a Poisson distribution
+that is parameterized by a latent gaussian.
+Formally speaking, if $X \in \mathbb{R}^{n \times d}$ denotes an abundance matrix of $d$ entities among $n$ individuals, we get the following model:
+\begin{itemize}
+    \item $Z_i \sim \mathcal{N}(0, \Sigma)$ where $\Sigma \in \mathbb{R}^{d \times d}$ is to be learnt.
+    \item $X_{ij} \sim \mathcal{P}(e^{Z_{ij}})$
+    \item The $Z_i$ are independent, and $X_{ij}$ is independent from all other abundance conditionally to $Z_{ij}$.
+\end{itemize}
+
+This modelization turns out to have some great mathematical properties, among which one can highlight the faithful correlation, which means that
+the correlation between $X_{ij}$ and $X_{ik}$ has the same sign as the correlation between $Z_{ij}$ and $Z_{ik}$.
+Hence, if the correlation is $0$ in the latent space between two entities, we can deduce that the abundance of the two species are always independent.
+This faithful correlation property then enables us to determine a latent interaction graph between entities, and therefore unveil hidden functional groups in our study.
+
+\medskip
+
+Furthermore, assuming we have $p$ covariates at our disposal in addition to the abundance for each individual, denoting such covariates by $D \in \mathbb{R}^{n \times p}$,
+we can account for fixed effects such as clinical variables, or environmental variables.
+Implementing it in the model is then done through the mean of the latent layer, assuming that the mean for the sample $i$ is then given by $\mu_i = D_i^\top \theta$, where $\theta$ is to be learnt.
+
+Finally, one can add an offset to the model to model sampling efforts between sites of interest, or individuals (omitted in our specific case by assumption).
+
+\medskip
+
+While the modelization appears interpretable and straight-forward, the training of PLN models requires variational inference due to the latent layer in the problem.
+Indeed, partially observed models generally make a great use of the E-M algorithm to estimate the parameters of the model, yet the E-step requires to compute $p(Z|X)$
+which is not explicit in the general PLN framework.
+
+\medskip
+
+Instead, the authors of \cite{PLN_chiquet} suggest a variational approximation of the E-step.
+Basically, we introduce a gaussian parameterized by $\Phi$, $q_{\Phi}(Z|X) \sim \prod_{k=1}^d \mathcal{N}(m_k, s_k)$, where the $m_k$ and $s_k$ are to be learnt (they compose $\Phi$).
+Before performing the estimation step $h+1$, we then find the optimal variational approximation of the posterior given by
+$$\Phi^{h+1} = arg\max_{\Phi} ELBO(\theta^h, \Phi)$$
+
+As the ELBO turns out to be explicit in the independent gaussian variational approximation (see appendix of \cite{PLN_chiquet}).
+Then, we perform the E-step by replacing the true posterior $p(Z|X)$ by $q_{\Phi^{h+1}}(Z|X)$, then we perform the M-step to compute $\theta^{h+1}$, and so on up until convergence.
+
+\medskip
+
+This model has proven to be very efficient to model independent samples, in very different context like PCA, Mixture Models, Network inference, for which the respective ELBO varies slightly.
+The application of interest for our problem is the Network inference, which would enable us to unveil functional interactions between the bacteria of the gut microbiome.
+The Network inference problem also comes with a sparsity-informed architecture suggested by the authors, by introducing a LASSO penalty on the covariance matrix $\Sigma$ of the latent layer.
+Each connected component then forms a functional group in our interpretation. 
+
+\subsubsection{Layer independent PLN}
+
+Recall our specific microbiota framework, we introduce a taxonomy $\mathcal{T}$, with $N$ nodes, $L$ layers, and $K_{\ell}$ entities at layer $\ell$.
+Let $(X_i)_{1 \leq i \leq n}$ the taxa-abundance samples of $n$ individuals, supported on the taxonomy $\mathcal{T}$.
+We denote by $x_k^{(\ell)} \in \mathbb{N}$ the abundance of the $k$-th entity in a taxa-abundance sample at layer $\ell$.
+
+\medskip
+
+The layer independent PLN model would then consist of building one PLN model for each layer of the taxonomy.
+Note beforehand that this model can create non-physical samples, as it is not informed by the previous layer to perform a normalization.
+The main interest of this model is then to obtain a first functional graph of the entities within the taxonomy without developing external tools, but only using the PLN package.
+Next sections will focus on new models derivated from PLN.
+
+\medskip
+
+For each layer $\ell$, introducing a latent variable $Z^{(\ell)}$, the formal model is such that $(Z^{(\ell)}, X^{(\ell)}) \sim PLN(0, \Sigma^{(\ell)})$  where $\Sigma^{(\ell)} \in \mathbb{R}^{K_{\ell} \times K_{\ell}}$.
+We then have to learn $L$ covariance matrices, which can be seen as solving $L$ PLN problems independently due to the layer independence between the $(Z^{(\ell)}, X^{(\ell)})$.
+
+\subsubsection{Multi-layer covariance PLN}
+
+Assume the same framework as previously.
+This time we introduce dependency between the layers by making some assumptions on the joint distribution of the $Z^{(\ell)}$, so that:
+\begin{itemize}
+    \item $Z = (Z^{(1)}, \dots, Z^{(L)}) \sim \mathcal{N}(0, \Sigma)$, where $\Sigma \in \mathbb{R}^{(K_1 + \dots + K_{L})^2}$
+    \item $Z^{(\ell)} \sim \mathcal{N}(0, \Sigma^{(\ell)})$ where $\Sigma^{(\ell)} \in \mathbb{R}^{K_{\ell}^2}$
+    \item $x_k^{(\ell)} \sim \mathcal{P}(e^{Z_k^{(\ell)}})$
+\end{itemize}
+
+This model differs from the following by the join distribution assumption structure that replaces the independence per layer.
+The consequence is that we are now able to model functional groups between all entities in the taxonomy, leading to inter layer functional group rather than just intra layer.
+
+\medskip
+
+Using a variational approximation, this model turns out to be tractable (see proposition \ref{proposition:VEM_PLN_multilayer_objective}).

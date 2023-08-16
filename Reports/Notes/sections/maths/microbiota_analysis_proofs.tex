@@ -886,5 +886,43 @@
     
 \end{proposition}
 
-\begin{proof}
-\end{proof}
+\begin{proposition}(Variational Expectation-Maximization objective for multi-layer PLN)
+    \label{proposition:VEM_PLN_multilayer_objective}
+    Recall our specific microbiota framework, we introduce a taxonomy $\mathcal{T}$, with $N$ nodes, $L$ layers, and $K_{\ell}$ entities at layer $\ell$.
+    Let $(X_i)_{1 \leq i \leq n}$ the taxa-abundance samples of $n$ individuals, supported on the taxonomy $\mathcal{T}$.
+    We denote by $x_k^{(\ell)} \in \mathbb{N}$ the abundance of the $k$-th entity in a taxa-abundance sample at layer $\ell$.
+
+    The multi-layer PLN model is defined through the following assumptions:
+    \begin{itemize}
+        \item $Z = (Z^{(1)}, \dots, Z^{(L)}) \sim \mathcal{N}(0, \Sigma)$, where $\Sigma \in \mathbb{R}^{(K_1 + \dots + K_{L})^2}$
+        \item $Z^{(\ell)} \sim \mathcal{N}(0, \Sigma^{(\ell)})$ where $\Sigma^{(\ell)} \in \mathbb{R}^{K_{\ell}^2}$
+        \item $x_k^{(\ell)} \sim \mathcal{P}(e^{Z_k^{(\ell)}})$
+    \end{itemize}
+
+    We choose the variational family of independent gaussian kernels:
+    $$
+    q_{\Phi}(Z | X) &= \prod_{l=1}^L q_{\Phi_{\ell}}(Z^{(\ell)} | X^{(\ell)})
+    $$
+    where $q_{\Phi_{\ell}}(Z^{(\ell)} | X^{(\ell)}) \sim \mathcal{N}(m^{(\ell)}, S^{(\ell)})$
+
+    \medskip
+
+    Recall the optimization objective, given by the suboptimal maximum of likelihood of the ELBO:
+    $$
+    arg\max_{\theta, \Phi} ELBO(\theta, \Phi) = \mathbb{E}_{q_{\Phi}}\left[\log p_{\theta}(X,Z) \right] - \mathbb{E}_{q_{\Phi}}\left[\log q_{\Phi}(Z|X) \right]
+    $$
+
+    Under these assumptions, the ELBO can then be written as:
+    $$
+    \begin{align}
+        ELBO(\theta, \Phi) = &-\frac{1}{2} \log \frac{|\Sigma|}{|S|}
+                            - \frac{1}{2} tr\left(\Sigma^{-1} S\right)
+                            - \frac{1}{2} m^\top \Sigma m \\
+                            &+ \frac{d}{2}
+                            + \sum_{l=1}^L \sum_{k=1}^{K_{\ell}} x_k^{(\ell)} m_k^{(\ell)}
+                            - e^{\frac{S_k^{(\ell)}^2}{2}
+                            + m_k^{(\ell)}}
+                            - \log x_k^{(\ell)}!
+    \end{align}
+    $$
+\end{proposition}

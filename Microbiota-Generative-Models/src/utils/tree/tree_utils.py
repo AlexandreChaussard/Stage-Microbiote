@@ -76,8 +76,10 @@ class Tree:
                 nodes.append(node)
         return nodes
 
-    def plot(self, space=10e10, title=None):
-        fig, axs = plt.subplots()
+    def plot(self, space=10e10, title=None, fig=None, axs=None, cmap=plt.cm.get_cmap('Blues'), legend=True,
+             threshold_abundance=10e-2):
+        if fig is None or axs is None:
+            fig, axs = plt.subplots(figsize=(15, 7))
         axs.set_yticks([])
         axs.set_xticks([])
         axs.axis('off')
@@ -86,14 +88,16 @@ class Tree:
         else:
             fig.suptitle(title)
 
-        # Adding the root to the graph first
-        axs.plot([self.root.graph_position[0]], [self.root.graph_position[1]], color="blue", marker="o", markersize=12)
-        axs.text(
-            self.root.graph_position[0],
-            self.root.graph_position[1],
-            f'{self.root.index}',
-            va='center', ha='center',
-            color='white')
+        if legend:
+            # Create a ScalarMappable object with the colormap 'Blues'
+            sm = plt.cm.ScalarMappable(cmap=cmap)
+
+            # Set the limits of the colorbar to match your plot data
+            sm.set_clim(0, 1)
+
+            # Add a colorbar to the plot
+            cbar = fig.colorbar(sm)
+            cbar.set_label('Abundance')
 
         n_nodes_per_layer = []
         depth = 1
@@ -117,19 +121,16 @@ class Tree:
                 index += 1
 
         # Then recursively plot the nodes
-        def recursive_plot(node):
+        def recursive_plot_nodes(node):
             if node.hasChildren():
 
                 for i, child in enumerate(node.children):
-                    child.graph_position = graph_grid[child.index]
-                    axs.plot([child.graph_position[0]],
-                             [child.graph_position[1]], color="blue", marker="o", markersize=12, alpha=child.value)
-                    axs.plot([child.graph_position[0], node.graph_position[0]],
-                             [child.graph_position[1], node.graph_position[1]],
-                             color="blue", linestyle="-", marker="", alpha=child.value)
                     if child.value == 0:
                         continue
-                    if child.value > 0.1:
+                    child.graph_position = graph_grid[child.index]
+                    axs.plot([child.graph_position[0]],
+                             [child.graph_position[1]], color=cmap(child.value - 10e-10), marker="o", markersize=12)
+                    if child.value > threshold_abundance:
                         axs.text(
                             child.graph_position[0],
                             child.graph_position[1],
@@ -141,9 +142,33 @@ class Tree:
                             fontsize='small'
                         )
 
-                    recursive_plot(child)
+                    recursive_plot_nodes(child)
 
-        recursive_plot(self.root)
+        def recursive_plot_lines(node):
+            if node.hasChildren():
+
+                for i, child in enumerate(node.children):
+                    if child.value == 0:
+                        continue
+                    child.graph_position = graph_grid[child.index]
+                    axs.plot([child.graph_position[0], node.graph_position[0]],
+                             [child.graph_position[1], node.graph_position[1]],
+                             color=cmap(child.value - 10e-10), linestyle="-", marker="")
+
+                    recursive_plot_lines(child)
+
+        recursive_plot_lines(self.root)
+        recursive_plot_nodes(self.root)
+
+        # Adding the root to the graph
+        axs.plot([self.root.graph_position[0]], [self.root.graph_position[1]], color=cmap(1 - 10e-10), marker="o",
+                 markersize=12)
+        axs.text(
+            self.root.graph_position[0],
+            self.root.graph_position[1],
+            f'{self.root.index}',
+            va='center', ha='center',
+            color='white')
 
 
 class AbundanceTree(Tree):
