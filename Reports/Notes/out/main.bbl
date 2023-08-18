@@ -430,6 +430,39 @@
       \verb http://arxiv.org/abs/1711.00937
       \endverb
     \endentry
+    \entry{matrixcookbook}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=6fcb1bb06fdf433c79ec15e046e78b11}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Kaare\bibnamedelima Brandt},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=224ae05d982058025ca238efd1a02de3}{%
+           family={Pedersen},
+           familyi={P\bibinitperiod},
+           given={Michael\bibnamedelima Syskind},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{006fd36a9042afda366b86a95dd6f9db}
+      \strng{fullhash}{006fd36a9042afda366b86a95dd6f9db}
+      \strng{bibnamehash}{006fd36a9042afda366b86a95dd6f9db}
+      \strng{authorbibnamehash}{006fd36a9042afda366b86a95dd6f9db}
+      \strng{authornamehash}{006fd36a9042afda366b86a95dd6f9db}
+      \strng{authorfullhash}{006fd36a9042afda366b86a95dd6f9db}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Technical University of Denmark}
+      \field{number}{15}
+      \field{title}{The matrix cookbook}
+      \field{volume}{7}
+      \field{year}{2008}
+      \field{pages}{510}
+      \range{pages}{1}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

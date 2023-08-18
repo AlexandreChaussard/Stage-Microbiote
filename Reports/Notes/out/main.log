@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  16 AUG 2023 21:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.8)  18 AUG 2023 15:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4024,7 +4024,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-sections/maths/microbiota_analysis_proofs.tex:926: Package amsmath Error: Erron
+sections/maths/microbiota_analysis_proofs.tex:920: Package amsmath Error: Erron
 eous nesting of equation structures;
 (amsmath)                trying to recover with `aligned'.
 
@@ -4032,16 +4032,258 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.926     \end{align}
+l.920     \end{align}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-sections/maths/microbiota_analysis_proofs.tex:926: Double superscript.
+sections/maths/microbiota_analysis_proofs.tex:920: Double superscript.
 <argument> S_k^{(\ell )}^
                          2
-l.926     \end{align}
+l.920     \end{align}
                      
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+sections/maths/microbiota_analysis_proofs.tex:936: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.936     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[56]
+
+sections/maths/microbiota_analysis_proofs.tex:945: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.945     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:958: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.958     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:968: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.968     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:980: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.980     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...{Z_k^{(\ell )}} (2\pi S_k^{(\ell )}^
+                                                  2)^{-\frac 12} \exp \left ...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> 2 S_k^{(\ell )}^
+                           2
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...{(\ell )} \\ &= (2\pi S_k^{(\ell )}^
+                                                  2)^{-\frac 12} \int \exp \...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...2} \int \exp \left (-(Z_k^{(\ell )}^
+                                                  2 - 2 Z_k^{(\ell )} m_k^{(...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...ll )} m_k^{(\ell )} + m_k^{(\ell )}^
+                                                  2 - 2 Z_k^{(\ell )} S_k^{(...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...}^2 - 2 Z_k^{(\ell )} S_k^{(\ell )}^
+                                                  2) / 2 S_k^{(\ell )}^2\rig...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ... S_k^{(\ell )}^2) / 2 S_k^{(\ell )}^
+                                                  2\right ) dZ_k^{(\ell )} \...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...{(\ell )} \\ &= (2\pi S_k^{(\ell )}^
+                                                  2)^{-\frac 12} \int \exp \...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...2} \int \exp \left (-(Z_k^{(\ell )}^
+                                                  2 - 2 Z_k^{(\ell )} (m_k^{...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...l )} (m_k^{(\ell )} + S_k^{(\ell )}^
+                                                  2) + m_k^{(\ell )}^2) / 2 ...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ... + S_k^{(\ell )}^2) + m_k^{(\ell )}^
+                                                  2) / 2 S_k^{(\ell )}^2\rig...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ... m_k^{(\ell )}^2) / 2 S_k^{(\ell )}^
+                                                  2\right ) dZ_k^{(\ell )} \...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> ...{(\ell )} \\ &= (2\pi S_k^{(\ell )}^
+                                                  2)^{-\frac 12} \int \exp \...
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> 2 S_k^{(\ell )}^
+                           2
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> S_k^{(\ell )}^
+                         2
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+sections/maths/microbiota_analysis_proofs.tex:980: Double superscript.
+<argument> S_k^{(\ell )}^
+                         2
+l.980     \end{align}
+                     
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[57]
+sections/maths/microbiota_analysis_proofs.tex:985: Double superscript.
+<argument> S_k^{(\ell )}^
+                         2
+l.985 ...k^{(\ell)}! - e^{\frac{S_k^{(\ell)}^2}{2}
+                                                   + m_k^{(\ell)}}
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+sections/maths/microbiota_analysis_proofs.tex:995: Package amsmath Error: Erron
+eous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.995     \end{align}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+sections/maths/microbiota_analysis_proofs.tex:1003: Package amsmath Error: Erro
+neous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1003     \end{align}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+sections/maths/microbiota_analysis_proofs.tex:1003: Double superscript.
+<argument> S_k^{(\ell )}^
+                         2
+l.1003     \end{align}
+                      
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 )
@@ -4053,7 +4295,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[56] (sections/general/bibpage.tex)
+[58] (sections/general/bibpage.tex)
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 .
 
@@ -4068,7 +4310,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[57] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
+[59] (C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\out\main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -4079,10 +4321,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27281 strings out of 476315
- 542733 string characters out of 5787197
+ 27287 strings out of 476315
+ 542907 string characters out of 5787197
  1875068 words of memory out of 5000000
- 47131 multiletter control sequences out of 15000+600000
+ 47134 multiletter control sequences out of 15000+600000
  536594 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,18n,79p,1789b,2664s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -4130,9 +4372,9 @@ eX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/frigi/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/doublestroke/dsrom8.pfb><C:/Users/frigi/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on C:/Users\frigi\Desktop\Code\Stage-Microbiote\Reports\Notes\ou
-t\main.pdf (58 pages, 2969241 bytes).
+t\main.pdf (60 pages, 2980268 bytes).
 PDF statistics:
- 1360 PDF objects out of 1440 (max. 8388607)
- 168 named destinations out of 1000 (max. 500000)
+ 1377 PDF objects out of 1440 (max. 8388607)
+ 171 named destinations out of 1000 (max. 500000)
  513 words of extra memory for PDF output out of 10000 (max. 10000000)
 
